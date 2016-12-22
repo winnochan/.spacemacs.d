@@ -57,8 +57,8 @@ values."
               chinese-enable-youdao-dict t)
 
      ;; !!! Programming and markup languages
-     (c-c++ :variables
-            c-c++-default-mode-for-headers 'c++-mode)
+     ;; (c-c++ :variables
+     ;;        c-c++-default-mode-for-headers 'c++-mode)
      emacs-lisp
      (go :variables
          ;; go-use-gometalinter t
@@ -68,6 +68,7 @@ values."
              python-test-runner '(pytest node)
              python-enable-yapf-format-on-save t
              python-sort-imports-on-save t)
+     ;; (scala)
 
      ;; !!! Source control layer
      ;; git
