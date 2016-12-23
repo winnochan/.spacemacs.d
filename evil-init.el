@@ -365,7 +365,7 @@ you should place your code here."
   (global-set-key (kbd "<C-f1>") 'turn-on-evil-mode)
   (global-set-key (kbd "<C-f2>") 'turn-off-evil-mode)
 
-  (turn-off-evil-mode)
+  ;; (turn-off-evil-mode)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
