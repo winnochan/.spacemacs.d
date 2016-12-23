@@ -360,10 +360,6 @@ you should place your code here."
   (add-hook 'c++-mode-hook 'clang-format-bindings)
   (defun clang-format-bindings ()
     (define-key c++-mode-map [tab] 'clang-format-buffer))
-
-  ;; add keybinding for evil
-  ;; (global-set-key [f5] 'turn-on-evil-mode)
-  ;; (global-set-key [f6] 'turn-off-evil-mode)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
