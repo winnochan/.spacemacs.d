@@ -38,7 +38,9 @@ values."
      ;; ----------------------------------------------------------------
 
      ;; !!! Checkers
-     spell-checking
+     (spell-checking :variables
+                     =enable-flyspell-auto-completion= t
+                     spell-checking-enable-auto-dictionary t)
      syntax-checking
 
      ;; !!! Completion layer
