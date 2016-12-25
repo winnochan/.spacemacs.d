@@ -79,6 +79,9 @@ values."
      shell-script
      vimscript
 
+     ;; !!! Operating systems
+     osx
+
      ;; !!! Source control layer
      git
      github
