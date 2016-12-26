@@ -90,9 +90,9 @@ values."
      ;; !!! Spacemacs distribution layers
 
      ;; !!! Tags layer
-     ;; cscope
+     cscope
      ;; (gtags :variables gtags-enable-by-default nil)
-     gtags
+     ;; gtags
 
      ;; Themes layer
      themes-megapack
