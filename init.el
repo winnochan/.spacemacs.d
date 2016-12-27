@@ -362,10 +362,10 @@ before packages are loaded. If you are unsure, you should try in setting them in
           ("org-cn"   . "http://elpa.emacs-china.org/org/")
           ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
 
-  (setq-default default-tab-width 4
-                indent-tabs-mode nil
-                c-default-style "Linux"
-                c-basic-offset 4)
+  (setq-default indent-tabs-mode nil)
+  (setq-default default-tab-width 4)
+  (setq-default c-default-style "Linux")
+  (setq-default c-basic-offset 4)
   )
 
 (defun dotspacemacs/user-config ()
