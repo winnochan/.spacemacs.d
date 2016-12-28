@@ -27,85 +27,9 @@ values."
    ;; If non-nil layers with lazy install support are lazy installed.
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
-   dotspacemacs-configuration-layer-path '()
+   dotspacemacs-configuration-layer-path wow-configuration-layer-path
    ;; List of configuration layers to load.
-   dotspacemacs-configuration-layers
-   '(
-     ;; ----------------------------------------------------------------
-     ;; Example of useful layers you may want to use right away.
-     ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
-     ;; <M-m f e R> (Emacs style) to install them.
-     ;; ----------------------------------------------------------------
-
-     ;; !!! Checkers
-     (spell-checking :variables
-                     =enable-flyspell-auto-completion= t
-                     spell-checking-enable-auto-dictionary t)
-     syntax-checking
-
-     ;; !!! Completion layer
-     helm
-     auto-completion
-
-     ;; !!! Distributions layer
-     spacemacs
-
-     ;; !!! Emacs layer
-     better-defaults
-     ibuffer
-     org
-
-     ;; !!! International support
-     (chinese :variables
-              chinese-enable-youdao-dict t)
-
-     ;; !!! Programming and markup languages
-     (c-c++ :variables
-            c-c++-default-mode-for-headers 'c++-mode
-            )
-     csv
-     emacs-lisp
-     (go :variables
-         ;; go-use-gometalinter t
-         go-tab-width 4)
-     ;; html
-     ;; javascript
-     markdown
-     (python :variables
-             python-test-runner '(pytest node)
-             python-enable-yapf-format-on-save t
-             python-sort-imports-on-save t)
-     ;; scala
-     shell-script
-     vimscript
-
-     ;; !!! Operating systems
-     osx
-
-     ;; !!! Source control layer
-     git
-     github
-     version-control
-
-     ;; !!! Spacemacs distribution layers
-
-     ;; !!! Tags layer
-     cscope
-     ;; (gtags :variables gtags-enable-by-default nil)
-     ;; gtags
-
-     ;; Themes layer
-     themes-megapack
-
-     ;; !!! Tool layer
-     command-log
-     imenu-list
-     systemd
-     shell
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
-     )
+   dotspacemacs-configuration-layers wow-configuration-layers
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
@@ -113,9 +37,9 @@ values."
    ;; dotspacemacs-additional-packages '()
    dotspacemacs-additional-packages wow-additional-packages
    ;; A list of packages that cannot be updated.
-   dotspacemacs-frozen-packages '()
+   dotspacemacs-frozen-packages wow-frozen-packages
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages wow-excluded-packages
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and uninstall any
@@ -134,7 +58,9 @@ values."
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
   (add-to-list 'load-path "~/.spacemacs.d/wowchan/")
+  (require 'wow-layers)
   (require 'wow-packages)
+
   (setq-default
    ;; If non nil ELPA repositories are contacted via HTTPS whenever it's
    ;; possible. Set it to nil if you have no way to use HTTPS in your
@@ -169,7 +95,7 @@ values."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner nil
+   dotspacemacs-startup-banner 'official
    ;; List of items to show in startup buffer or an association list of
    ;; the form `(list-type . list-size)`. If nil then it is disabled.
    ;; Possible values for list-type are:
@@ -186,12 +112,12 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
-                         zenburn
                          labburn
+                         zenburn
                          hc-zenburn
+                         spacemacs-dark
+                         spacemacs-light
                          )
-   ;; dotspacemacs-themes '(spacemacs-dark
-   ;;                       spacemacs-light)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
@@ -253,7 +179,7 @@ values."
    ;; (default 'cache)
    dotspacemacs-auto-save-file-location 'cache
    ;; Maximum number of rollback slots to keep in the cache. (default 5)
-   dotspacemacs-max-rollback-slots 7
+   dotspacemacs-max-rollback-slots 5
    ;; If non nil, `helm' will try to minimize the space it uses. (default nil)
    dotspacemacs-helm-resize nil
    ;; if non nil, the helm header is hidden when there is only one source.
@@ -269,7 +195,7 @@ values."
    dotspacemacs-helm-use-fuzzy 'always
    ;; If non nil the paste micro-state is enabled. When enabled pressing `p`
    ;; several times cycle between the kill ring content. (default nil)
-   dotspacemacs-enable-paste-transient-state 'p
+   dotspacemacs-enable-paste-transient-state nil
    ;; Which-key delay in seconds. The which-key buffer is the popup listing
    ;; the commands bound to the current keystroke sequence. (default 0.4)
    dotspacemacs-which-key-delay 0.4
@@ -281,7 +207,7 @@ values."
    ;; If non nil a progress bar is displayed when spacemacs is loading. This
    ;; may increase the boot time on some systems and emacs builds, set it to
    ;; nil to boost the loading time. (default t)
-   dotspacemacs-loading-progress-bar nil
+   dotspacemacs-loading-progress-bar t
    ;; If non nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
    dotspacemacs-fullscreen-at-startup nil
@@ -309,7 +235,7 @@ values."
    ;; If non nil smooth scrolling (native-scrolling) is enabled. Smooth
    ;; scrolling overrides the default behavior of Emacs which recenters point
    ;; when it reaches the top or bottom of the screen. (default t)
-   dotspacemacs-smooth-scrolling 4
+   dotspacemacs-smooth-scrolling t
    ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
    ;; derivatives. If set to `relative', also turns on relative line numbers.
    ;; (default nil)
@@ -355,23 +281,6 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-
-  ;; zilongshanren elpa mirrors
-  ;; (setq configuration-layer--elpa-archives
-  ;;       '(("melpa-cn" . "https://elpa.zilongshanren.com/melpa/")
-  ;;         ("org-cn"   . "https://elpa.zilongshanren.com/org/")
-  ;;         ("gnu-cn"   . "https://elpa.zilongshanren.com/gnu/")))
-
-  ;; emacs-china elpa mirrors
-  (setq configuration-layer--elpa-archives
-        '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
-          ("org-cn"   . "http://elpa.emacs-china.org/org/")
-          ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
-
-  (setq-default indent-tabs-mode nil)
-  (setq-default default-tab-width 4)
-  (setq-default c-default-style "Linux")
-  (setq-default c-basic-offset 4)
   )
 
 (defun dotspacemacs/user-config ()
@@ -381,65 +290,7 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  ;; Personal Information Configuration
-  (setq user-full-name "wowchan")
-  (setq user-email-address "wow4chan@gmail.com")
-
-  ;; 自动在文件最后加一个空行
-  (setq require-final-newline t)
-
-  ;; 设置不自动保存
-  (setq auto-save-mode nil)
-  ;; 设置不生成#filename#临时文件
-  (setq auto-save-default nil)
-  ;; 设置不生成备份文件
-  (setq make-backup-files nil)
-
-  ;; 多行移动
-  (global-set-key (kbd "C-M-n")
-                  (lambda () (interactive) (next-line 5)))
-  (global-set-key (kbd "C-M-p")
-                  (lambda () (interactive) (previous-line 5)))
-
-  ;; 设置单行的复制以剪切
-  (defadvice kill-ring-save (before slickcopy activate compile)
-    (interactive
-     (if mark-active (list (region-beginning) (region-end))
-       (list (line-beginning-position)
-             (line-beginning-position 2)))))
-  (defadvice kill-region (before slickcut activate compile)
-    (interactive
-     (if mark-active (list (region-beginning) (region-end))
-       (list (line-beginning-position)
-             (line-beginning-position 2)))))
-
-  ;; 快捷注释
-  (defun optimized-comment-dwim-line (&optional arg)
-    (interactive "*P")
-    (comment-normalize-vars)
-    (if (and (not (region-active-p)) (not (looking-at "[ \t]*$")))
-        (comment-or-uncomment-region (line-beginning-position) (line-end-position))
-      (comment-dwim arg)))
-  (global-set-key "\M-;" 'optimized-comment-dwim-line)
-
-  ;; 刷新文件
-  (defun refresh-file ()
-    (interactive)
-    (revert-buffer t (not (buffer-modified-p)) t))
-
-  (global-set-key (kbd "M-m m o r") 'refresh-file)
-  (global-set-key (kbd "<f5>") 'refresh-file)
-
-  ;; add keybinding for evil
-  (global-set-key (kbd "<C-f1>") 'turn-on-evil-mode)
-  (global-set-key (kbd "<C-f2>") 'turn-off-evil-mode)
-
-  ;; Bind clang-format-region to C-M-tab in all modes:
-  (global-set-key [C-M-tab] 'clang-format-region)
-  ;; Bind clang-format-buffer to tab on the c++-mode only:
-  (add-hook 'c++-mode-hook 'clang-format-bindings)
-  (defun clang-format-bindings ()
-    (define-key c++-mode-map [tab] 'clang-format-buffer))
+  (require 'wow-base)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -452,7 +303,7 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl xterm-color vimrc-mode shell-pop org-projectile org-present org-pomodoro alert log4e gntp org-download multi-term magit-gh-pulls ibuffer-projectile htmlize gnuplot github-search github-clone github-browse-file gist gh marshal logito pcache ht eshell-z eshell-prompt-extras esh-help dactyl-mode csv-mode command-log-mode powerline smeargle spinner orgit org mwim mmm-mode markdown-toc markdown-mode magit-gitflow hydra parent-mode projectile helm-gitignore helm-company helm-c-yasnippet go-guru go-eldoc gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md flyspell-correct-helm flyspell-correct flycheck-pos-tip flycheck pkg-info epl flx evil-magit magit magit-popup git-commit with-editor smartparens iedit anzu evil goto-chg undo-tree highlight diminish diff-hl company-statistics company-go go-mode company pos-tip bind-map bind-key auto-yasnippet yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode pythonic zonokai-theme zenburn-theme zen-and-art-theme youdao-dictionary names chinese-word-at-point underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme tronesque-theme toxi-theme tao-theme tangotango-theme tango-plus-theme tango-2-theme systemd sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme seti-theme reverse-theme railscasts-theme purple-haze-theme professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme pastels-on-dark-theme pangu-spacing organic-green-theme omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme niflheim-theme naquadah-theme mustang-theme monokai-theme monochrome-theme molokai-theme moe-theme minimal-theme material-theme majapahit-theme lush-theme light-soap-theme jbeans-theme jazz-theme ir-black-theme inkpot-theme imenu-list heroku-theme hemisu-theme hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme gandalf-theme flatui-theme flatland-theme firebelly-theme find-by-pinyin-dired farmhouse-theme espresso-theme dracula-theme django-theme disaster darktooth-theme autothemer darkokai-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme company-c-headers color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized cmake-mode clues-theme clang-format chinese-pyim chinese-pyim-basedict cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme badwolf-theme apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes afternoon-theme ace-pinyin pinyinlib ace-jump-mode helm-gtags helm-cscope xcscope ggtags yasnippet auto-dictionary ac-ispell auto-complete ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spacemacs-theme spaceline restart-emacs request rainbow-delimiters quelpa popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+    (vlf reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl xterm-color vimrc-mode shell-pop org-projectile org-present org-pomodoro alert log4e gntp org-download multi-term magit-gh-pulls ibuffer-projectile htmlize gnuplot github-search github-clone github-browse-file gist gh marshal logito pcache ht eshell-z eshell-prompt-extras esh-help dactyl-mode csv-mode command-log-mode powerline smeargle spinner orgit org mwim mmm-mode markdown-toc markdown-mode magit-gitflow hydra parent-mode projectile helm-gitignore helm-company helm-c-yasnippet go-guru go-eldoc gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter gh-md flyspell-correct-helm flyspell-correct flycheck-pos-tip flycheck pkg-info epl flx evil-magit magit magit-popup git-commit with-editor smartparens iedit anzu evil goto-chg undo-tree highlight diminish diff-hl company-statistics company-go go-mode company pos-tip bind-map bind-key auto-yasnippet yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode pythonic zonokai-theme zenburn-theme zen-and-art-theme youdao-dictionary names chinese-word-at-point underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme tronesque-theme toxi-theme tao-theme tangotango-theme tango-plus-theme tango-2-theme systemd sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme seti-theme reverse-theme railscasts-theme purple-haze-theme professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme pastels-on-dark-theme pangu-spacing organic-green-theme omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme niflheim-theme naquadah-theme mustang-theme monokai-theme monochrome-theme molokai-theme moe-theme minimal-theme material-theme majapahit-theme lush-theme light-soap-theme jbeans-theme jazz-theme ir-black-theme inkpot-theme imenu-list heroku-theme hemisu-theme hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme gandalf-theme flatui-theme flatland-theme firebelly-theme find-by-pinyin-dired farmhouse-theme espresso-theme dracula-theme django-theme disaster darktooth-theme autothemer darkokai-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme company-c-headers color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized cmake-mode clues-theme clang-format chinese-pyim chinese-pyim-basedict cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme badwolf-theme apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes afternoon-theme ace-pinyin pinyinlib ace-jump-mode helm-gtags helm-cscope xcscope ggtags yasnippet auto-dictionary ac-ispell auto-complete ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spacemacs-theme spaceline restart-emacs request rainbow-delimiters quelpa popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
