@@ -14,23 +14,23 @@
     ;; (spell-checking :variables
     ;;                 =enable-flyspell-auto-completion= t
     ;;                 spell-checking-enable-auto-dictionary t)
-    syntax-checking
+    ;; syntax-checking
 
     ;; !!! Completion layer
-    helm
-    auto-completion
+    ;; helm
+    ;; auto-completion
 
     ;; !!! Distributions layer
-    spacemacs
+    ;; spacemacs
 
     ;; !!! Emacs layer
-    better-defaults
+    ;; better-defaults
     ;; ibuffer
-    org
+    ;; org
 
     ;; !!! International support
-    (chinese :variables
-             chinese-enable-youdao-dict t)
+    ;; (chinese :variables
+    ;;          chinese-enable-youdao-dict t)
 
     ;; !!! Programming and markup languages
     ;; (c-c++ :variables
@@ -44,10 +44,10 @@
     ;; html
     ;; javascript
     ;; markdown
-    (python :variables
-            python-test-runner '(pytest node)
-            python-enable-yapf-format-on-save t
-            python-sort-imports-on-save t)
+    ;; (python :variables
+    ;;         python-test-runner '(pytest node)
+    ;;         python-enable-yapf-format-on-save t
+    ;;         python-sort-imports-on-save t)
     ;; scala
     ;; shell-script
     ;; vimscript
@@ -56,14 +56,14 @@
     ;; osx
 
     ;; !!! Source control layer
-    git
+    ;; git
     ;; github
     ;; version-control
 
     ;; !!! Spacemacs distribution layers
 
     ;; !!! Tags layer
-    cscope
+    ;; cscope
     ;; (gtags :variables gtags-enable-by-default nil)
     ;; gtags
 

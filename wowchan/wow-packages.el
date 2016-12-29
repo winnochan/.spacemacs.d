@@ -8,6 +8,8 @@
   '(
     vlf                     ;; view large files
     labburn-theme
+    zenburn-theme
+    hc-zenburn-theme
     ))
 
 (defvar wow-frozen-packages
