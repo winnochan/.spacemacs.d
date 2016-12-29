@@ -17,14 +17,11 @@
     ;; syntax-checking
 
     ;; !!! Completion layer
-    ;; helm
+    helm
     ;; auto-completion
 
-    ;; !!! Distributions layer
-    ;; spacemacs
-
     ;; !!! Emacs layer
-    ;; better-defaults
+    better-defaults
     ;; ibuffer
     ;; org
 
