@@ -1,5 +1,6 @@
 (defvar wow-configuration-layer-path
-  '()
+  '(
+    )
   )
 
 (defvar wow-configuration-layers
@@ -11,19 +12,19 @@
     ;; ----------------------------------------------------------------
 
     ;; !!! Checkers
-    ;; (spell-checking :variables
-    ;;                 =enable-flyspell-auto-completion= t
-    ;;                 spell-checking-enable-auto-dictionary t)
-    ;; syntax-checking
+    (spell-checking :variables
+                    =enable-flyspell-auto-completion= t
+                    spell-checking-enable-auto-dictionary t)
+    syntax-checking
 
     ;; !!! Completion layer
     helm
-    ;; auto-completion
+    auto-completion
 
     ;; !!! Emacs layer
     better-defaults
     ;; ibuffer
-    ;; org
+    org
 
     ;; !!! International support
     ;; (chinese :variables
@@ -60,7 +61,7 @@
     ;; !!! Spacemacs distribution layers
 
     ;; !!! Tags layer
-    ;; cscope
+    cscope
     ;; (gtags :variables gtags-enable-by-default nil)
     ;; gtags
 
