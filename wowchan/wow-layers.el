@@ -13,50 +13,58 @@
 
     ;; !!! Checkers
     (spell-checking :variables
-                    =enable-flyspell-auto-completion= t
-                    spell-checking-enable-auto-dictionary t)
-    syntax-checking
+                    spell-checking-enable-by-default nil
+                    spell-checking-enable-auto-dictionary nil
+                    enable-flyspell-auto-completion t)
+    (syntax-checking :variables
+                     syntax-checking-enable-by-default nil)
 
     ;; !!! Completion layer
     helm
-    auto-completion
+    (auto-completion :variables
+                     auto-completion-tab-key-behavior 'complete
+                     auto-completion-enable-snippets-in-popup t
+                     auto-completion-enable-sort-by-usage t
+                     auto-completion-enable-help-tooltip t)
 
     ;; !!! Emacs layer
-    better-defaults
+    (better-defaults :variables
+                     better-defaults-move-to-beginning-of-code-first t
+                     better-defaults-move-to-end-of-code-first t)
     ;; ibuffer
     org
 
     ;; !!! International support
-    ;; (chinese :variables
-    ;;          chinese-enable-youdao-dict t)
+    (chinese :variables
+             chinese-enable-youdao-dict t)
 
     ;; !!! Programming and markup languages
-    ;; (c-c++ :variables
-    ;;        c-c++-default-mode-for-headers 'c++-mode
-    ;;        )
+    (c-c++ :variables
+           c-c++-enable-clang-support nil
+           c-c++-default-mode-for-headers 'c-mode)
     ;; csv
-    ;; emacs-lisp
-    ;; (go :variables
-    ;;     ;; go-use-gometalinter t
-    ;;     go-tab-width 4)
+    emacs-lisp
+    (go :variables
+        go-use-gometalinter t
+        go-tab-width 4)
     ;; html
     ;; javascript
-    ;; markdown
-    ;; (python :variables
-    ;;         python-test-runner '(pytest node)
-    ;;         python-enable-yapf-format-on-save t
-    ;;         python-sort-imports-on-save t)
+    markdown
+    (python :variables
+            python-test-runner '(pytest nose)
+            python-enable-yapf-format-on-save t
+            python-sort-imports-on-save t)
     ;; scala
     ;; shell-script
     ;; vimscript
 
     ;; !!! Operating systems
-    ;; osx
+    osx
 
     ;; !!! Source control layer
-    ;; git
+    git
     ;; github
-    ;; version-control
+    version-control
 
     ;; !!! Spacemacs distribution layers
 

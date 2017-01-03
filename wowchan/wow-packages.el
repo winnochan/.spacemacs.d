@@ -14,28 +14,36 @@
 
 (defvar wow-excluded-packages
   '(
+    spacemacs-language
     spacemacs-theme
     spacemacs-evil
     ;; spaceline
-    ;; evil
-    evil-magit
-    evil-visualstar
-    evil-visual-mark-mode
-    evil-unimpaired
-    evil-tutor
-    evil-surround
-    evil-search-highlight-persist
-    evil-numbers
-    evil-nerd-commenter
-    evil-mc evil-matchit
-    evil-lisp-state
-    evil-indent-plus
-    evil-iedit-state
-    evil-exchange
-    evil-escape
-    evil-ediff
-    evil-args
+
+    ;; packages for evil
     evil-anzu
+    evil-args
+    evil-ediff
+    evil-exchange
+    evil-iedit-state
+    evil-indent-plus
+    evil-lisp-state
+    evil-mc
+    evil-nerd-commenter
+    evil-matchit
+    evil-numbers
+    evil-search-highlight-persist
+    evil-surround
+    evil-tutor
+    evil-unimpaired
+    evil-visual-mark-mode
+    evil-visualstar
+    hs-minor-mode
+    linum-relative
+    vi-tilde-fringe
+
+    ;; packages for magit
+    evil-magit
+    ;; evil-escape
     )
   )
 
