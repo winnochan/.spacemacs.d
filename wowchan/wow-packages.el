@@ -4,6 +4,8 @@
     labburn-theme
     zenburn-theme
     ;; hc-zenburn-theme
+    google-c-style
+    ;; highlight-chars
     )
   )
 

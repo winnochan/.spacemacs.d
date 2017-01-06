@@ -39,8 +39,7 @@
              chinese-enable-youdao-dict t)
 
     ;; !!! Programming and markup languages
-    (c-c++ :variables
-           c-c++-enable-clang-support nil
+    (c-c++ :variables c-c++-enable-clang-support nil
            c-c++-default-mode-for-headers 'c-mode)
     ;; csv
     emacs-lisp
