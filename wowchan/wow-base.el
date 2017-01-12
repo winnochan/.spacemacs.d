@@ -73,7 +73,7 @@
 
 ;; highlight-chars
 ;; (add-hook 'font-lock-mode-hook 'hc-highlight-tabs)
-(setq whitespace-style '(spaces tabs newline space-mark tab-mark))
+(setq whitespace-style '(spaces tabs newline tab-mark))
 (setq whitespace-display-mappings
       ;; all numbers are Unicode codepoint in decimal. try (insert-char 182 ) to see it
       '(
