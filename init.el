@@ -133,6 +133,8 @@ values."
                                       vlf
                                       google-c-style
                                       labburn-theme
+                                      org2blog
+                                      ;; htmlize
                                       zenburn-theme
                                       )
    ;; A list of packages that cannot be updated.
@@ -496,12 +498,39 @@ you should place your code here."
           ("blog"
            :components ("blog-notes" "blog-static"))
           ))
+
+  ;; org2blog
+  (setq org2blog/wp-blog-alist
+        '(("wordpress"
+           :url "https://wow4chan.wordpress.com/xmlrpc.php"
+           :username "wow4chan"
+           :password "CKing14WowChan!"
+           :default-title "Hello Org2Blog"
+           :default-categories ("org2blog" "emacs" "org-mode")
+           :tags-as-categories nil)))
+  (setq org2blog/wp-buffer-template
+        "-----------------------
+#+STARTUP: content
+#+TITLE: %s
+#+DATE: %s
+#+AUTHOR: %s
+#+EMAIL: %s
+-----------------------
+
+#+HTML: <!--more-->\n")
+  (defun my-format-function (format-string)
+    (format format-string
+            org2blog/wp-default-title
+            (format-time-string "%Y-%m-%d %H:%M:%S" current-time)
+            user-full-name
+            user-email-address))
+  (setq org2blog/wp-buffer-format-function 'my-format-function)
   )
 
+;; Do not write anything past this comment. This is where Emacs will
+;; auto-generate custom variable definitions.
 (setq custom-file (expand-file-name
                    "custom.el"
                    dotspacemacs-directory))
 (load custom-file 'no-error 'no-message)
 
-;; Do not write anything past this comment. This is where Emacs will
-;; auto-generate custom variable definitions.
