@@ -36,25 +36,102 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     helm
-     auto-completion
-     ;; better-defaults
-     emacs-lisp
-     git
-     ;; markdown
-     org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
-     ;; spell-checking
-     ;; syntax-checking
-     ;; version-control
+
+     ;; !!! Checkers
+    (spell-checking :variables
+                    spell-checking-enable-by-default t
+                    spell-checking-enable-auto-dictionary t
+                    enable-flyspell-auto-completion t)
+    (syntax-checking :variables
+                     syntax-checking-enable-by-default nil)
+
+    ;; !!! Completion layer
+    helm
+    (auto-completion :variables
+                     ;; 'company or 'auto-completion
+                     auto-completion-front-end 'company
+                     ;; 'complete or 'nil
+                     auto-completion-return-key-behavior 'complete
+                     ;; 'complete or 'cycle or 'nil
+                     auto-completion-tab-key-behavior 'complete
+                     auto-completion-complete-with-key-sequence nil
+                     auto-completion-complete-with-key-sequence-delay 0.01
+                     auto-completion-enable-snippets-in-popup t
+                     auto-completion-enable-sort-by-usage t
+                     auto-completion-enable-help-tooltip t
+                     company-mode-completion-cancel-keywords '("do"
+                                                               "then"
+                                                               "begin"
+                                                               "case")
+                     auto-completion-private-snippets-directory nil)
+
+    ;; !!! Emacs layer
+    (better-defaults :variables
+                     better-defaults-move-to-beginning-of-code-first t
+                     better-defaults-move-to-end-of-code-first t)
+    (org :variables
+         org-enable-bootstrap-support t
+         org-enable-github-support t
+         org-enable-reveal-js-support nil
+         org-projectile-file "TODOs.org")
+
+    ;; !!! International support
+    (chinese :variables
+             chinese-enable-youdao-dict t)
+
+    ;; !!! Programming and markup languages
+    (c-c++ :variables c-c++-enable-clang-support nil
+           c-c++-default-mode-for-headers 'c-mode)
+    emacs-lisp
+    (go :variables
+        go-use-gometalinter t
+        go-tab-width 4)
+    html
+    (javascript :variables
+                javascript-disable-tern-port-files t)
+    (markdown :variables
+              markdown-live-preview-engine 'eww)
+    (python :variables
+            python-test-runner '(pytest nose)
+            python-enable-yapf-format-on-save t
+            python-sort-imports-on-save t)
+    shell-script
+
+    ;; !!! Operating systems
+    osx
+
+    ;; !!! Source control layer
+    git
+    ;; github
+    (version-control :variables
+                     version-control-global-margin t
+                     ;; 'git-gutter, 'git-gutter+, 'diff-hl
+                     version-control-diff-tool 'git-gutter+)
+
+    ;; !!! Spacemacs distribution layers
+
+    ;; !!! Tags layer
+    cscope
+    (gtags :variables gtags-enable-by-default t)
+
+    ;; Themes layer
+    ;; themes-megapack
+
+    ;; !!! Tool layer
+    ;; command-log
+    ;; imenu-list
+    ;; systemd
+    ;; (shell :variables
+    ;;        shell-default-height 30
+    ;;        shell-default-position 'bottom)
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(
+                                      vlf
+                                      google-c-style
                                       labburn-theme
                                       zenburn-theme
                                       )
@@ -93,20 +170,20 @@ values."
    ;; when the current branch is not `develop'. Note that checking for
    ;; new versions works via git commands, thus it calls GitHub services
    ;; whenever you start Emacs. (default nil)
-   dotspacemacs-check-for-update nil
+   dotspacemacs-check-for-update t
    ;; If non-nil, a form that evaluates to a package directory. For example, to
    ;; use different package directories for different Emacs versions, set this
    ;; to `emacs-version'.
-   dotspacemacs-elpa-subdirectory nil
+   dotspacemacs-elpa-subdirectory emacs-version
    ;; One of `vim', `emacs' or `hybrid'.
    ;; `hybrid' is like `vim' except that `insert state' is replaced by the
    ;; `hybrid state' with `emacs' key bindings. The value can also be a list
    ;; with `:variables' keyword (similar to layers). Check the editing styles
    ;; section of the documentation for details on available variables.
    ;; (default 'vim)
-   dotspacemacs-editing-style 'hybrid
+   dotspacemacs-editing-style 'emacs
    ;; If non nil output loading progress in `*Messages*' buffer. (default nil)
-   dotspacemacs-verbose-loading nil
+   dotspacemacs-verbose-loading t
    ;; Specify the startup banner. Default value is `official', it displays
    ;; the official spacemacs logo. An integer value is the index of text
    ;; banner, `random' chooses a random text banner in `core/banners'
@@ -231,7 +308,7 @@ values."
    ;; If non nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup nil
+   dotspacemacs-maximized-at-startup t
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
@@ -253,7 +330,7 @@ values."
    ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
    ;; derivatives. If set to `relative', also turns on relative line numbers.
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers 'prog-mode
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -285,6 +362,7 @@ values."
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
    dotspacemacs-whitespace-cleanup nil
+   exec-path-from-shell-check-startup-files nil
    ))
 
 (defun dotspacemacs/user-init ()
@@ -294,6 +372,11 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  ;; emacs-china elpa mirrors
+  (setq configuration-layer--elpa-archives
+        '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
+          ("org-cn"   . "http://elpa.emacs-china.org/org/")
+          ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
   )
 
 (defun dotspacemacs/user-config ()
@@ -303,6 +386,107 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  ;; Personal Information Configuration
+  (setq user-full-name "wowchan")
+  (setq user-email-address "wow4chan@gmail.com")
+
+  ;; 自动在文件最后加一个空行
+  (setq require-final-newline t)
+  ;; 设置不自动保存
+  (setq auto-save-mode nil)
+  ;; 设置不生成#filename#临时文件
+  (setq auto-save-default nil)
+  ;; 设置不生成备份文件
+  (setq make-backup-files nil)
+
+  ;; 多行移动
+  (global-set-key (kbd "C-M-n")
+                  (lambda () (interactive) (next-line 5)))
+  (global-set-key (kbd "C-M-p")
+                  (lambda () (interactive) (previous-line 5)))
+
+  ;; 设置单行的复制以剪切
+  (defadvice kill-ring-save (before slickcopy activate compile)
+    (interactive
+     (if mark-active (list (region-beginning) (region-end))
+       (list (line-beginning-position)
+             (line-beginning-position 2)))))
+  (defadvice kill-region (before slickcut activate compile)
+    (interactive
+     (if mark-active (list (region-beginning) (region-end))
+       (list (line-beginning-position)
+             (line-beginning-position 2)))))
+
+  ;; 快捷注释
+  (defun optimized-comment-dwim-line (&optional arg)
+    (interactive "*P")
+    (comment-normalize-vars)
+    (if (and (not (region-active-p)) (not (looking-at "[ \t]*$")))
+        (comment-or-uncomment-region (line-beginning-position) (line-end-position))
+      (comment-dwim arg)))
+  (global-set-key "\M-;" 'optimized-comment-dwim-line)
+
+  ;; 刷新文件
+  (defun refresh-file ()
+    (interactive)
+    (revert-buffer t (not (buffer-modified-p)) t))
+
+  ;; (global-set-key (kbd "M-m m o r") 'refresh-file)
+  (global-set-key (kbd "<f5>") 'refresh-file)
+
+  ;; Bind clang-format-region to C-M-tab in all modes:
+  (global-set-key [C-M-tab] 'clang-format-region)
+  ;; Bind clang-format-buffer to tab on the c++-mode only:
+  (add-hook 'c++-mode-hook 'clang-format-bindings)
+  (defun clang-format-bindings ()
+    (define-key c++-mode-map [tab] 'clang-format-buffer))
+
+  ;; google-c-style
+  (add-hook 'c-mode-common-hook 'google-set-c-style)
+  (add-hook 'c-mode-common-hook 'google-make-newline-indent)
+  (setq c-default-style "linux")
+  (setq default-tab-width 4)
+  (setq-default tab-width 4
+                c-basic-offset 4
+                indent-tabs-mode nil)
+
+  ;; highlight-chars
+  ;; (add-hook 'font-lock-mode-hook 'hc-highlight-tabs)
+  (setq whitespace-style '(spaces tabs newline tab-mark))
+  (setq whitespace-display-mappings
+        ;; all numbers are Unicode codepoint in decimal. try (insert-char 182 ) to see it
+        '(
+          ;; (space-mark 32 [183] [46]) ; 32 SPACE, 183 MIDDLE DOT 「·」, 46 FULL STOP 「.」
+          (space-mark 32 [9059] [46])  ; ⍣
+          ;; (newline-mark 10 [182 10]) ; 10 LINE FEED
+          (newline-mark 10 [10558 10])  ; ⤾
+          ;; (tab-mark 9 [128073 9] [92 9]) ; 9 TAB, 9655 WHITE RIGHT-POINTING TRIANGLE 「▷」
+          (tab-mark 9 [10609 9] [92 9])  ; ⥱
+          ;; (tab-mark 9 [128073 9] [92 9])  ; 👉
+          ))
+  ;; (setq-default whitespace-line-column 80)
+  (global-whitespace-mode 1)
+
+  (setq org-publish-project-alist
+        '(
+          ;; config
+          ("blog-notes"
+           :base-directory "~/org/notes"
+           :base-extension "org"
+           :publishing-directory "~/org/public_html/"
+           :recursive t
+           :publishing-function org-html-publish-to-html
+           :author "WowChan"
+           :email "wow4chan@gmail.com")
+          ("blog-static"
+           :base-directory "~/org/notes/static"
+           :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+           :publishing-directory "~/org/public_html/"
+           :recursive t
+           :publishing-function org-publish-attachment)
+          ("blog"
+           :components ("blog-notes" "blog-static"))
+          ))
   )
 
 (setq custom-file (expand-file-name
