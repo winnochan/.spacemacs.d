@@ -450,6 +450,15 @@ you should place your code here."
                 c-basic-offset 4
                 indent-tabs-mode nil)
 
+  ;; astyle this buffer
+  (defun astyle-this-buffer (pmin pmax)
+    (interactive "r")
+    (shell-command-on-region pmin pmax
+                             "astyle" ;; add options here...
+                             (current-buffer) t
+                             (get-buffer-create "*Astyle Errors*") t))
+  (global-set-key (kbd "C-M-S-f") 'astyle-this-buffer)
+
   ;; highlight-chars
   ;; (add-hook 'font-lock-mode-hook 'hc-highlight-tabs)
   (setq whitespace-style '(spaces tabs newline tab-mark))
