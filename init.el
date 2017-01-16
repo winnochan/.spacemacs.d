@@ -130,8 +130,10 @@ values."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(
+                                      blog-admin
                                       vlf
                                       google-c-style
+                                      hyde
                                       labburn-theme
                                       org2blog
                                       ;; htmlize
@@ -505,26 +507,26 @@ you should place your code here."
            :url "https://wow4chan.wordpress.com/xmlrpc.php"
            :username "wow4chan"
            :password "CKing14WowChan!"
-           :default-title "Hello Org2Blog"
+           :default-title "Org2Blog"
            :default-categories ("org2blog" "emacs" "org-mode")
            :tags-as-categories nil)))
-  (setq org2blog/wp-buffer-template
-        "-----------------------
-#+STARTUP: content
-#+TITLE: %s
-#+DATE: %s
-#+AUTHOR: %s
-#+EMAIL: %s
------------------------
+;;   (setq org2blog/wp-buffer-template
+;;         "-----------------------
+;; #+STARTUP: content
+;; #+TITLE: %s
+;; #+DATE: %s
+;; #+AUTHOR: %s
+;; #+EMAIL: %s
+;; -----------------------
 
-#+HTML: <!--more-->\n")
-  (defun my-format-function (format-string)
-    (format format-string
-            org2blog/wp-default-title
-            (format-time-string "%Y-%m-%d %H:%M:%S" current-time)
-            user-full-name
-            user-email-address))
-  (setq org2blog/wp-buffer-format-function 'my-format-function)
+;; #+HTML: <!--more-->\n")
+;;   (defun my-format-function (format-string)
+;;     (format format-string
+;;             org2blog/wp-default-title
+;;             (format-time-string "%Y-%m-%d %H:%M:%S" current-time)
+;;             user-full-name
+;;             user-email-address))
+;;   (setq org2blog/wp-buffer-format-function 'my-format-function)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
