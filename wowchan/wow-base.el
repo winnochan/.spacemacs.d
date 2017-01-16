@@ -102,7 +102,7 @@
          :author "WowChan"
          :email "wow4chan@gmail.com")
         ("blog-static"
-         :base-directory "~/org/notes"
+         :base-directory "~/org/notes/static"
          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
          :publishing-directory "~/org/public_html/"
          :recursive t
