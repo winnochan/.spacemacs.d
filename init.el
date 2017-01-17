@@ -448,10 +448,14 @@ you should place your code here."
   ;; google-c-style
   (add-hook 'c-mode-common-hook 'google-set-c-style)
   (add-hook 'c-mode-common-hook 'google-make-newline-indent)
-  (setq c-default-style "linux")
-  (setq default-tab-width 4)
+  ;; (setq c-default-style "linux")
+  ;; (setq default-tab-width 4)
+
+  (setq c-basic-offset 4
+        default-tab-width 4
+        indent-tabs-mode nil
+        c-default-style "linux")
   (setq-default tab-width 4
-                c-basic-offset 4
                 indent-tabs-mode nil)
 
   ;; astyle this buffer
