@@ -10,7 +10,7 @@ values."
    ;; Base distribution to use. This is a layer contained in the directory
    ;; `+distribution'. For now available distributions are `spacemacs-base'
    ;; or `spacemacs'. (default 'spacemacs)
-   dotspacemacs-distribution 'spacemacs
+   dotspacemacs-distribution 'spacemacs-base
    ;; Lazy installation of layers (i.e. layers are installed only when a file
    ;; with a supported type is opened). Possible values are `all', `unused'
    ;; and `nil'. `unused' will lazy install only unused layers (i.e. layers
@@ -20,7 +20,7 @@ values."
    ;; installation feature and you have to explicitly list a layer in the
    ;; variable `dotspacemacs-configuration-layers' to install it.
    ;; (default 'unused)
-   dotspacemacs-enable-lazy-installation 'nil
+   dotspacemacs-enable-lazy-installation 'all
    ;; If non-nil then Spacemacs will ask for confirmation before installing
    ;; a layer lazily. (default t)
    dotspacemacs-ask-for-lazy-installation t
@@ -37,82 +37,88 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
 
+     ;; spacemacs distributions
+     ;; spacemacs-completion
+     ;; spacemacs-editing
+     ;; spacemacs-ui-visual
+
      ;; !!! Checkers
-    (spell-checking :variables
-                    spell-checking-enable-by-default t
-                    spell-checking-enable-auto-dictionary t
-                    enable-flyspell-auto-completion t)
-    (syntax-checking :variables
-                     syntax-checking-enable-by-default nil)
+    ;; (spell-checking :variables
+    ;;                 spell-checking-enable-by-default t
+    ;;                 spell-checking-enable-auto-dictionary t
+    ;;                 enable-flyspell-auto-completion t)
+    ;; (syntax-checking :variables
+    ;;                  syntax-checking-enable-by-default nil)
 
     ;; !!! Completion layer
     helm
-    (auto-completion :variables
-                     ;; 'company or 'auto-completion
-                     auto-completion-front-end 'company
-                     ;; 'complete or 'nil
-                     auto-completion-return-key-behavior 'complete
-                     ;; 'complete or 'cycle or 'nil
-                     auto-completion-tab-key-behavior 'complete
-                     auto-completion-complete-with-key-sequence nil
-                     auto-completion-complete-with-key-sequence-delay 0.01
-                     auto-completion-enable-snippets-in-popup t
-                     auto-completion-enable-sort-by-usage t
-                     auto-completion-enable-help-tooltip t
-                     company-mode-completion-cancel-keywords '("do"
-                                                               "then"
-                                                               "begin"
-                                                               "case")
-                     auto-completion-private-snippets-directory nil)
+    ;; (auto-completion :variables
+    ;;                  ;; 'company or 'auto-completion
+    ;;                  auto-completion-front-end 'company
+    ;;                  ;; 'complete or 'nil
+    ;;                  auto-completion-return-key-behavior 'complete
+    ;;                  ;; 'complete or 'cycle or 'nil
+    ;;                  auto-completion-tab-key-behavior 'complete
+    ;;                  auto-completion-complete-with-key-sequence nil
+    ;;                  auto-completion-complete-with-key-sequence-delay 0.01
+    ;;                  auto-completion-enable-snippets-in-popup t
+    ;;                  auto-completion-enable-sort-by-usage t
+    ;;                  auto-completion-enable-help-tooltip t
+    ;;                  company-mode-completion-cancel-keywords '("do"
+    ;;                                                            "then"
+    ;;                                                            "begin"
+    ;;                                                            "case")
+    ;;                  auto-completion-private-snippets-directory nil)
 
     ;; !!! Emacs layer
-    (better-defaults :variables
-                     better-defaults-move-to-beginning-of-code-first t
-                     better-defaults-move-to-end-of-code-first t)
-    (org :variables
-         org-enable-bootstrap-support t
-         org-enable-github-support t
-         org-enable-reveal-js-support nil
-         org-projectile-file "TODOs.org")
+    ;; (better-defaults :variables
+    ;;                  better-defaults-move-to-beginning-of-code-first t
+    ;;                  better-defaults-move-to-end-of-code-first t)
+    ;; (org :variables
+    ;;      org-enable-bootstrap-support t
+    ;;      org-enable-github-support t
+    ;;      org-enable-reveal-js-support nil
+    ;;      org-projectile-file "TODOs.org")
 
-    ;; !!! International support
-    (chinese :variables
-             chinese-enable-youdao-dict t)
+    ;; ;; !!! International support
+    ;; (chinese :variables
+    ;;          chinese-enable-youdao-dict t)
 
-    ;; !!! Programming and markup languages
-    (c-c++ :variables c-c++-enable-clang-support nil
-           c-c++-default-mode-for-headers 'c-mode)
-    emacs-lisp
-    (go :variables
-        go-use-gometalinter t
-        go-tab-width 4)
-    html
-    (javascript :variables
-                javascript-disable-tern-port-files t)
-    (markdown :variables
-              markdown-live-preview-engine 'eww)
-    (python :variables
-            python-test-runner '(pytest nose)
-            python-enable-yapf-format-on-save t
-            python-sort-imports-on-save t)
-    shell-script
+    ;; ;; !!! Programming and markup languages
+    ;; (c-c++ :variables c-c++-enable-clang-support nil
+    ;;        c-c++-default-mode-for-headers 'c-mode)
+    ;; emacs-lisp
+    ;; (go :variables
+    ;;     go-use-gometalinter t
+    ;;     go-tab-width 4)
+    ;; html
+    ;; (javascript :variables
+    ;;             javascript-disable-tern-port-files t)
+    ;; (markdown :variables
+    ;;           ;; default: 'eww, available: 'vmd
+    ;;           markdown-live-preview-engine 'vmd)
+    ;; (python :variables
+    ;;         python-test-runner '(pytest nose)
+    ;;         python-enable-yapf-format-on-save t
+    ;;         python-sort-imports-on-save t)
+    ;; shell-script
 
     ;; !!! Operating systems
-    osx
+    ;; osx
 
     ;; !!! Source control layer
-    git
+    ;; git
     ;; github
-    (version-control :variables
-                     version-control-global-margin t
-                     ;; 'git-gutter, 'git-gutter+, 'diff-hl
-                     version-control-diff-tool 'git-gutter+)
+    ;; (version-control :variables
+    ;;                  version-control-global-margin t
+    ;;                  ;; 'git-gutter, 'git-gutter+, 'diff-hl
+    ;;                  version-control-diff-tool 'git-gutter+)
 
     ;; !!! Spacemacs distribution layers
 
     ;; !!! Tags layer
-    cscope
-    (gtags :variables gtags-enable-by-default t)
+    ;; cscope
+    ;; (gtags :variables gtags-enable-by-default t)
 
     ;; Themes layer
     ;; themes-megapack
@@ -130,11 +136,11 @@ values."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(
-                                      blog-admin
+                                      ;; blog-admin
                                       vlf
                                       google-c-style
-                                      hyde
-                                      labburn-theme
+                                      ;; hyde
+                                      ;; labburn-theme
                                       org2blog
                                       ;; htmlize
                                       zenburn-theme
@@ -142,7 +148,9 @@ values."
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(
+                                    spaceline
+                                    )
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and uninstall any
