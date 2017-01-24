@@ -102,8 +102,8 @@ values."
          go-tab-width 4
          go-use-gometalinter t)
      html
-     (javascript :variables
-                 javascript-disable-tern-port-files t)
+     ;; (javascript :variables
+     ;;             javascript-disable-tern-port-files t)
      (markdown :variables
                ;; default: 'eww, available: 'vmd
                markdown-live-preview-engine 'eww)
