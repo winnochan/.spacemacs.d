@@ -38,98 +38,113 @@ values."
      ;; ----------------------------------------------------------------
 
      ;; spacemacs distributions
-     ;; spacemacs-completion
-     ;; spacemacs-editing
-     ;; spacemacs-ui-visual
+     spacemacs-completion
+     spacemacs-editing
+     spacemacs-editing-visual
+     ;; spacemacs-evil
+     ;; spacemacs-language
+     ;; spacemacs-layouts
+     ;; spacemacs-misc
+     spacemacs-org
+     spacemacs-ui
+     spacemacs-ui-visual
 
      ;; !!! Checkers
-    ;; (spell-checking :variables
-    ;;                 spell-checking-enable-by-default t
-    ;;                 spell-checking-enable-auto-dictionary t
-    ;;                 enable-flyspell-auto-completion t)
-    ;; (syntax-checking :variables
-    ;;                  syntax-checking-enable-by-default nil)
+     (spell-checking :variables
+                     spell-checking-enable-by-default t
+                     spell-checking-enable-auto-dictionary nil
+                     enable-flyspell-auto-completion t)
+     (syntax-checking :variables
+                      syntax-checking-enable-tooltips t
+                      syntax-checking-enable-by-default nil
+                      syntax-checking-use-original-bitmaps nil)
 
-    ;; !!! Completion layer
-    ;; helm
-    ;; (auto-completion :variables
-    ;;                  ;; 'company or 'auto-completion
-    ;;                  auto-completion-front-end 'company
-    ;;                  ;; 'complete or 'nil
-    ;;                  auto-completion-return-key-behavior 'complete
-    ;;                  ;; 'complete or 'cycle or 'nil
-    ;;                  auto-completion-tab-key-behavior 'complete
-    ;;                  auto-completion-complete-with-key-sequence nil
-    ;;                  auto-completion-complete-with-key-sequence-delay 0.01
-    ;;                  auto-completion-enable-snippets-in-popup t
-    ;;                  auto-completion-enable-sort-by-usage t
-    ;;                  auto-completion-enable-help-tooltip t
-    ;;                  company-mode-completion-cancel-keywords '("do"
-    ;;                                                            "then"
-    ;;                                                            "begin"
-    ;;                                                            "case")
-    ;;                  auto-completion-private-snippets-directory nil)
+     ;; !!! Completion layer
+     helm
+     (auto-completion :variables
+                      ;; 'company or 'auto-completion
+                      auto-completion-front-end 'company
+                      ;; 'complete or nil
+                      auto-completion-return-key-behavior nil
+                      ;; 'complete or 'cycle or nil
+                      auto-completion-tab-key-behavior 'complete
+                      auto-completion-complete-with-key-sequence nil
+                      auto-completion-complete-with-key-sequence-delay 0.01
+                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-enable-sort-by-usage t
+                      auto-completion-enable-help-tooltip t
+                      company-mode-completion-cancel-keywords '("do"
+                                                                "then"
+                                                                "begin"
+                                                                "case")
+                      auto-completion-private-snippets-directory nil)
 
-    ;; !!! Emacs layer
-    ;; (better-defaults :variables
-    ;;                  better-defaults-move-to-beginning-of-code-first t
-    ;;                  better-defaults-move-to-end-of-code-first t)
-    ;; (org :variables
-    ;;      org-enable-bootstrap-support t
-    ;;      org-enable-github-support t
-    ;;      org-enable-reveal-js-support nil
-    ;;      org-projectile-file "TODOs.org")
+     ;; !!! Emacs layer
+     (better-defaults :variables
+                      better-defaults-move-to-beginning-of-code-first t
+                      better-defaults-move-to-end-of-code-first nil)
+     (org :variables
+          org-enable-bootstrap-support t
+          org-enable-github-support t
+          org-enable-reveal-js-support nil
+          org-projectile-file "TODOs.org")
 
-    ;; ;; !!! International support
-    ;; (chinese :variables
-    ;;          chinese-enable-youdao-dict t)
+     ;; ;; !!! International support
+     (chinese :variables
+              chinese-enable-youdao-dict t)
 
-    ;; ;; !!! Programming and markup languages
-    ;; (c-c++ :variables c-c++-enable-clang-support nil
-    ;;        c-c++-default-mode-for-headers 'c-mode)
-    ;; emacs-lisp
-    ;; (go :variables
-    ;;     go-use-gometalinter t
-    ;;     go-tab-width 4)
-    ;; html
-    ;; (javascript :variables
-    ;;             javascript-disable-tern-port-files t)
-    ;; (markdown :variables
-    ;;           ;; default: 'eww, available: 'vmd
-    ;;           markdown-live-preview-engine 'vmd)
-    ;; (python :variables
-    ;;         python-test-runner '(pytest nose)
-    ;;         python-enable-yapf-format-on-save t
-    ;;         python-sort-imports-on-save t)
-    ;; shell-script
+     ;; ;; !!! Programming and markup languages
+     ;; (c-c++ :variables c-c++-enable-clang-support nil
+     ;;        c-c++-default-mode-for-headers 'c-mode)
+     emacs-lisp
+     (go :variables
+         go-use-gocheck-for-testing nil
+         go-tab-width 4
+         go-use-gometalinter t)
+     html
+     (javascript :variables
+                 javascript-disable-tern-port-files t)
+     (markdown :variables
+               ;; default: 'eww, available: 'vmd
+               markdown-live-preview-engine 'eww)
+     (python :variables
+             python-enable-yapf-format-on-save t
+             python-test-runner '(pytest nose)
+             python-fill-column 79
+             python-tab-width 4
+             python-auto-set-local-pyenv-version nil
+             python-sort-imports-on-save t)
+     shell-scripts
 
-    ;; !!! Operating systems
-    ;; osx
+     ;; !!! Operating systems
+     (osx :variables
+          osx-use-option-as-meta t
+          osx-use-dictionary-app t)
 
-    ;; !!! Source control layer
-    ;; git
-    ;; github
-    ;; (version-control :variables
-    ;;                  version-control-global-margin t
-    ;;                  ;; 'git-gutter, 'git-gutter+, 'diff-hl
-    ;;                  version-control-diff-tool 'git-gutter+)
+     ;; !!! Source control layer
+     ;; git
+     ;; github
+     (version-control :variables
+                      version-control-global-margin t
+                      ;; 'git-gutter, 'git-gutter+, 'diff-hl
+                      version-control-diff-tool 'git-gutter+)
 
-    ;; !!! Spacemacs distribution layers
+     ;; !!! Spacemacs distribution layers
 
-    ;; !!! Tags layer
-    ;; cscope
-    ;; (gtags :variables gtags-enable-by-default t)
+     ;; !!! Tags layer
+     cscope
+     ;; (gtags :variables gtags-enable-by-default t)
 
-    ;; Themes layer
-    ;; themes-megapack
+     ;; Themes layer
+     ;; themes-megapack
 
-    ;; !!! Tool layer
-    ;; command-log
-    ;; imenu-list
-    ;; systemd
-    ;; (shell :variables
-    ;;        shell-default-height 30
-    ;;        shell-default-position 'bottom)
+     ;; !!! Tool layer
+     command-log
+     ;; imenu-list
+     ;; systemd
+     ;; (shell :variables
+     ;;        shell-default-height 30
+     ;;        shell-default-position 'bottom)
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -144,7 +159,6 @@ values."
                                       ;; org2blog
                                       ;; htmlize
                                       zenburn-theme
-                                      hc-zenburn-theme
                                       )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -159,7 +173,8 @@ values."
    ;; `used-but-keep-unused' installs only the used packages but won't uninstall
    ;; them if they become unused. `all' installs *all* packages supported by
    ;; Spacemacs and never uninstall them. (default is `used-only')
-   dotspacemacs-install-packages 'used-but-keep-unused))
+   ;; dotspacemacs-install-packages 'used-but-keep-unused))
+   dotspacemacs-install-packages 'used-only))
 
 (defun dotspacemacs/init ()
   "Initialization function.
@@ -270,10 +285,10 @@ values."
    dotspacemacs-default-layout-name "Default"
    ;; If non nil the default layout name is displayed in the mode-line.
    ;; (default nil)
-   dotspacemacs-display-default-layout t
+   dotspacemacs-display-default-layout nil
    ;; If non nil then the last auto saved layouts are resume automatically upon
    ;; start. (default nil)
-   dotspacemacs-auto-resume-layouts t
+   dotspacemacs-auto-resume-layouts nil
    ;; Size (in MB) above which spacemacs will prompt to open the large file
    ;; literally to avoid performance issues. Opening a file literally means that
    ;; no major mode or minor modes are active. (default is 1)
@@ -286,7 +301,7 @@ values."
    ;; Maximum number of rollback slots to keep in the cache. (default 5)
    dotspacemacs-max-rollback-slots 22
    ;; If non nil, `helm' will try to minimize the space it uses. (default nil)
-   dotspacemacs-helm-resize t
+   dotspacemacs-helm-resize nil
    ;; if non nil, the helm header is hidden when there is only one source.
    ;; (default nil)
    dotspacemacs-helm-no-header t
@@ -400,6 +415,9 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  ;; layer config
+  (aggressive-indent-global-mode t)
+
   ;; Personal Information Configuration
   (setq user-full-name "wowchan")
   (setq user-email-address "wow4chan@gmail.com")
