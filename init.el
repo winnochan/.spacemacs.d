@@ -152,12 +152,12 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(
                                       ;; blog-admin
-                                      ;; vlf
-                                      ;; google-c-style
+                                      vlf
+                                      google-c-style
                                       ;; hyde
-                                      ;; labburn-theme
+                                      labburn-theme
                                       ;; org2blog
-                                      ;; htmlize
+                                      htmlize
                                       zenburn-theme
                                       )
    ;; A list of packages that cannot be updated.
