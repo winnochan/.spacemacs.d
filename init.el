@@ -50,10 +50,10 @@ values."
      spacemacs-ui-visual
 
      ;; !!! Checkers
-     ;; (spell-checking :variables
-     ;;                 spell-checking-enable-by-default t
-     ;;                 spell-checking-enable-auto-dictionary nil
-     ;;                 enable-flyspell-auto-completion t)
+     (spell-checking :variables
+                     spell-checking-enable-by-default t
+                     spell-checking-enable-auto-dictionary nil
+                     enable-flyspell-auto-completion nil)
      ;; (syntax-checking :variables
      ;;                  syntax-checking-enable-tooltips t
      ;;                  syntax-checking-enable-by-default nil
@@ -79,7 +79,7 @@ values."
 
      ;; !!! Emacs layer
      (better-defaults :variables
-                      better-defaults-move-to-beginning-of-code-first t
+                      better-defaults-move-to-beginning-of-code-first nil
                       better-defaults-move-to-end-of-code-first nil)
      (org :variables
           org-enable-bootstrap-support t
@@ -87,11 +87,11 @@ values."
           org-enable-reveal-js-support nil
           org-projectile-file "TODOs.org")
 
-     ;; ;; !!! International support
+     ;; !!! International support
      (chinese :variables
               chinese-enable-youdao-dict t)
 
-     ;; ;; !!! Programming and markup languages
+     ;; !!! Programming and markup languages
      ;; (c-c++ :variables c-c++-enable-clang-support nil
      ;;        c-c++-default-mode-for-headers 'c-mode)
      ;; emacs-lisp
@@ -115,9 +115,9 @@ values."
      ;; shell-scripts
 
      ;; !!! Operating systems
-     ;; (osx :variables
-     ;;      osx-use-option-as-meta t
-     ;;      osx-use-dictionary-app t)
+     (osx :variables
+          osx-use-option-as-meta t
+          osx-use-dictionary-app t)
 
      ;; !!! Source control layer
      ;; git
@@ -164,6 +164,7 @@ values."
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
    dotspacemacs-excluded-packages '(
+                                    company
                                     ;; spaceline
                                     ;; spacemacs-evil
                                     ;; spacemacs-language
@@ -421,6 +422,12 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  ;; company-mode config
+
+  ;; auto-complete config
+  (require 'auto-complete-config)
+  (ac-config-default)
+
   ;; layer config
   (global-aggressive-indent-mode t)
   (global-hungry-delete-mode t)
