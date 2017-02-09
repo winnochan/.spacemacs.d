@@ -107,7 +107,7 @@ values."
                markdown-live-preview-engine 'eww)
      (python :variables
              python-enable-yapf-format-on-save t
-             ;; python-test-runner '(pytest nose)
+             python-test-runner '(pytest nose)
              python-fill-column 79
              python-tab-width 4
              python-auto-set-local-pyenv-version nil
@@ -200,7 +200,7 @@ values."
    ;; when the current branch is not `develop'. Note that checking for
    ;; new versions works via git commands, thus it calls GitHub services
    ;; whenever you start Emacs. (default nil)
-   dotspacemacs-check-for-update nil
+   dotspacemacs-check-for-update t
    ;; If non-nil, a form that evaluates to a package directory. For example, to
    ;; use different package directories for different Emacs versions, set this
    ;; to `emacs-version'.
@@ -220,7 +220,7 @@ values."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner nil
+   dotspacemacs-startup-banner 'official
    ;; List of items to show in startup buffer or an association list of
    ;; the form `(list-type . list-size)`. If nil then it is disabled.
    ;; Possible values for list-type are:
@@ -422,7 +422,7 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   ;; layer config
-  (global-aggressive-indent-global-mode t)
+  (global-aggressive-indent-mode t)
   (global-hungry-delete-mode t)
 
   ;; Personal Information Configuration
