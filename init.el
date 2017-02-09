@@ -20,10 +20,10 @@ values."
    ;; installation feature and you have to explicitly list a layer in the
    ;; variable `dotspacemacs-configuration-layers' to install it.
    ;; (default 'unused)
-   dotspacemacs-enable-lazy-installation 'all
+   dotspacemacs-enable-lazy-installation nil
    ;; If non-nil then Spacemacs will ask for confirmation before installing
    ;; a layer lazily. (default t)
-   dotspacemacs-ask-for-lazy-installation t
+   dotspacemacs-ask-for-lazy-installation nil
    ;; If non-nil layers with lazy install support are lazy installed.
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
@@ -43,36 +43,34 @@ values."
      spacemacs-editing-visual
      ;; spacemacs-evil
      ;; spacemacs-language
-     ;; spacemacs-layouts
-     ;; spacemacs-misc
+     spacemacs-layouts
+     spacemacs-misc
      spacemacs-org
      spacemacs-ui
      spacemacs-ui-visual
 
      ;; !!! Checkers
-     (spell-checking :variables
-                     spell-checking-enable-by-default t
-                     spell-checking-enable-auto-dictionary nil
-                     enable-flyspell-auto-completion t)
-     (syntax-checking :variables
-                      syntax-checking-enable-tooltips t
-                      syntax-checking-enable-by-default nil
-                      syntax-checking-use-original-bitmaps nil)
+     ;; (spell-checking :variables
+     ;;                 spell-checking-enable-by-default t
+     ;;                 spell-checking-enable-auto-dictionary nil
+     ;;                 enable-flyspell-auto-completion t)
+     ;; (syntax-checking :variables
+     ;;                  syntax-checking-enable-tooltips t
+     ;;                  syntax-checking-enable-by-default nil
+     ;;                  syntax-checking-use-original-bitmaps nil)
 
      ;; !!! Completion layer
      helm
      (auto-completion :variables
-                      ;; 'company or 'auto-completion
-                      auto-completion-front-end 'company
                       ;; 'complete or nil
                       auto-completion-return-key-behavior nil
                       ;; 'complete or 'cycle or nil
                       auto-completion-tab-key-behavior 'complete
                       auto-completion-complete-with-key-sequence nil
-                      auto-completion-complete-with-key-sequence-delay 0.01
+                      auto-completion-complete-with-key-sequence-delay 0.04
                       auto-completion-enable-snippets-in-popup t
-                      auto-completion-enable-sort-by-usage t
-                      auto-completion-enable-help-tooltip t
+                      auto-completion-enable-sort-by-usage nil
+                      auto-completion-enable-help-tooltip nil
                       company-mode-completion-cancel-keywords '("do"
                                                                 "then"
                                                                 "begin"
@@ -96,12 +94,12 @@ values."
      ;; ;; !!! Programming and markup languages
      ;; (c-c++ :variables c-c++-enable-clang-support nil
      ;;        c-c++-default-mode-for-headers 'c-mode)
-     emacs-lisp
-     (go :variables
-         go-use-gocheck-for-testing nil
-         go-tab-width 4
-         go-use-gometalinter t)
-     html
+     ;; emacs-lisp
+     ;; (go :variables
+     ;;     go-use-gocheck-for-testing nil
+     ;;     go-tab-width 4
+     ;;     go-use-gometalinter t)
+     ;; html
      ;; (javascript :variables
      ;;             javascript-disable-tern-port-files t)
      (markdown :variables
@@ -109,17 +107,17 @@ values."
                markdown-live-preview-engine 'eww)
      (python :variables
              python-enable-yapf-format-on-save t
-             python-test-runner '(pytest nose)
+             ;; python-test-runner '(pytest nose)
              python-fill-column 79
              python-tab-width 4
              python-auto-set-local-pyenv-version nil
              python-sort-imports-on-save t)
-     shell-scripts
+     ;; shell-scripts
 
      ;; !!! Operating systems
-     (osx :variables
-          osx-use-option-as-meta t
-          osx-use-dictionary-app t)
+     ;; (osx :variables
+     ;;      osx-use-option-as-meta t
+     ;;      osx-use-dictionary-app t)
 
      ;; !!! Source control layer
      ;; git
@@ -139,7 +137,7 @@ values."
      ;; themes-megapack
 
      ;; !!! Tool layer
-     command-log
+     ;; command-log
      ;; imenu-list
      ;; systemd
      ;; (shell :variables
@@ -150,21 +148,25 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(
+   dotspacemacs-additional-packages '(;; theme
+                                      ;; github-theme
+                                      ;; labburn-theme
+                                      ;; leuven-theme
+                                      ;; zenburn-theme
                                       ;; blog-admin
                                       vlf
                                       google-c-style
                                       ;; hyde
-                                      labburn-theme
                                       ;; org2blog
-                                      htmlize
-                                      zenburn-theme
+                                      ;; htmlize
                                       )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
    dotspacemacs-excluded-packages '(
-                                    spaceline
+                                    ;; spaceline
+                                    ;; spacemacs-evil
+                                    ;; spacemacs-language
                                     )
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
@@ -218,7 +220,7 @@ values."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner 'official
+   dotspacemacs-startup-banner nil
    ;; List of items to show in startup buffer or an association list of
    ;; the form `(list-type . list-size)`. If nil then it is disabled.
    ;; Possible values for list-type are:
@@ -235,15 +237,19 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(zenburn
-                         spacemacs-dark
-                         spacemacs-light)
+   dotspacemacs-themes '(
+                         ;; github
+                         ;; leuven
+                         spacemacs-light
+                         ;; spacemacs-dark
+                         )
    ;; If non nil the cursor color matches the state color in GUI Emacs.
-   dotspacemacs-colorize-cursor-according-to-state t
+   dotspacemacs-colorize-cursor-according-to-state nil
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+   dotspacemacs-default-font '(;; "Source Code Pro"
+                               "Go Mono"
+                               :size 15
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -304,7 +310,7 @@ values."
    dotspacemacs-helm-resize nil
    ;; if non nil, the helm header is hidden when there is only one source.
    ;; (default nil)
-   dotspacemacs-helm-no-header t
+   dotspacemacs-helm-no-header nil
    ;; define the position to display `helm', options are `bottom', `top',
    ;; `left', or `right'. (default 'bottom)
    dotspacemacs-helm-position 'bottom
@@ -318,7 +324,7 @@ values."
    dotspacemacs-enable-paste-transient-state t
    ;; Which-key delay in seconds. The which-key buffer is the popup listing
    ;; the commands bound to the current keystroke sequence. (default 0.4)
-   dotspacemacs-which-key-delay 0.7
+   dotspacemacs-which-key-delay 0.4
    ;; Which-key frame position. Possible values are `right', `bottom' and
    ;; `right-then-bottom'. right-then-bottom tries to display the frame to the
    ;; right; if there is insufficient space it displays it at the bottom.
@@ -327,7 +333,7 @@ values."
    ;; If non nil a progress bar is displayed when spacemacs is loading. This
    ;; may increase the boot time on some systems and emacs builds, set it to
    ;; nil to boost the loading time. (default t)
-   dotspacemacs-loading-progress-bar nil
+   dotspacemacs-loading-progress-bar t
    ;; If non nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
    dotspacemacs-fullscreen-at-startup nil
@@ -362,10 +368,10 @@ values."
    dotspacemacs-line-numbers 'prog-mode
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
-   dotspacemacs-folding-method 'origami
+   dotspacemacs-folding-method 'evil
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    ;; (default nil)
-   dotspacemacs-smartparens-strict-mode nil
+   dotspacemacs-smartparens-strict-mode t
    ;; If non-nil pressing the closing parenthesis `)' key in insert mode passes
    ;; over any automatically added closing parenthesis, bracket, quote, etc…
    ;; This can be temporary disabled by pressing `C-q' before `)'. (default nil)
@@ -416,7 +422,8 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   ;; layer config
-  (aggressive-indent-global-mode t)
+  (global-aggressive-indent-global-mode t)
+  (global-hungry-delete-mode t)
 
   ;; Personal Information Configuration
   (setq user-full-name "wowchan")
@@ -474,17 +481,17 @@ you should place your code here."
     (define-key c++-mode-map [tab] 'clang-format-buffer))
 
   ;; google-c-style
-  (add-hook 'c-mode-common-hook 'google-set-c-style)
+  ;; (add-hook 'c-mode-common-hook 'google-set-c-style)
   (add-hook 'c-mode-common-hook 'google-make-newline-indent)
   ;; (setq c-default-style "linux")
   ;; (setq default-tab-width 4)
 
   (setq c-basic-offset 4
-        default-tab-width 4
+        c-default-style "linux"
         indent-tabs-mode nil
-        c-default-style "linux")
-  (setq-default tab-width 4
-                indent-tabs-mode nil)
+        default-tab-width 4
+        tab-width 4)
+  (setq-default tab-width 4)  
 
   ;; astyle this buffer
   (defun astyle-this-buffer (pmin pmax)
@@ -542,23 +549,23 @@ you should place your code here."
            :default-title "Org2Blog"
            :default-categories ("org2blog" "emacs" "org-mode")
            :tags-as-categories nil)))
-;;   (setq org2blog/wp-buffer-template
-;;         "-----------------------
-;; #+STARTUP: content
-;; #+TITLE: %s
-;; #+DATE: %s
-;; #+AUTHOR: %s
-;; #+EMAIL: %s
-;; -----------------------
+  ;;   (setq org2blog/wp-buffer-template
+  ;;         "-----------------------
+  ;; #+STARTUP: content
+  ;; #+TITLE: %s
+  ;; #+DATE: %s
+  ;; #+AUTHOR: %s
+  ;; #+EMAIL: %s
+  ;; -----------------------
 
-;; #+HTML: <!--more-->\n")
-;;   (defun my-format-function (format-string)
-;;     (format format-string
-;;             org2blog/wp-default-title
-;;             (format-time-string "%Y-%m-%d %H:%M:%S" current-time)
-;;             user-full-name
-;;             user-email-address))
-;;   (setq org2blog/wp-buffer-format-function 'my-format-function)
+  ;; #+HTML: <!--more-->\n")
+  ;;   (defun my-format-function (format-string)
+  ;;     (format format-string
+  ;;             org2blog/wp-default-title
+  ;;             (format-time-string "%Y-%m-%d %H:%M:%S" current-time)
+  ;;             user-full-name
+  ;;             user-email-address))
+  ;;   (setq org2blog/wp-buffer-format-function 'my-format-function)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
