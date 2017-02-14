@@ -46,25 +46,109 @@ values."
      spacemacs-layouts
      ;; spacemacs-misc
      spacemacs-org
-     spacemacs-purpose ;; develop only
+     ;; spacemacs-purpose ;; develop only
      spacemacs-ui
      spacemacs-ui-visual
 
+     ;; !!! Chat
+     slack
+
+     ;; !!! Checkers
+     spell-checking
+     (syntax-checking :variables
+                      syntax-checking-enable-tooltips t
+                      syntax-checking-enable-by-default nil
+                      syntax-checking-use-original-bitmaps nil)
+
+     ;; !!! Completion layer
      helm
-     ;; auto-completion
-     ;; (better-defaults :variables
-     ;;                  better-defaults-move-to-beginning-of-code-first nil
-     ;;                  better-defaults-move-to-end-of-code-first nil)
+     (auto-completion :variables
+                      ;; `complete' or `nil'
+                      auto-completion-return-key-behavior nil
+                      ;; `complete', `cycle' or `nil'
+                      auto-completion-tab-key-behavior 'complete
+                      auto-completion-complete-with-key-sequence-delay 0.04
+                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-enable-sort-by-usage t)
+
+     ;; !!! Emacs layer
+     (better-defaults :variables
+                      better-defaults-move-to-beginning-of-code-first nil
+                      better-defaults-move-to-end-of-code-first nil)
+     (org :variables
+          org-enable-bootstrap-support t
+          org-enable-github-support t
+          org-enable-reveal-js-support nil
+          org-projectile-file "TODOs.org"
+          org-enable-org-journal-support t)
+
+     ;; !!! International support
+     (chinese :variables
+              chinese-enable-youdao-dict t)
+
+     ;; !!! Programming and markup languages
+     ;; (c-c++ :variables c-c++-enable-clang-support nil
+     ;;        c-c++-default-mode-for-headers 'c-mode)
      ;; emacs-lisp
-     ;; git
-     ;; markdown
-     ;; org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
-     ;; spell-checking
-     ;; syntax-checking
-     ;; version-control
+     (go :variables
+         go-use-gocheck-for-testing nil
+         go-tab-width 4
+         go-use-gometalinter nil)
+     html
+     java
+     (javascript :variables
+                 javascript-disable-tern-port-files nil)
+     lua
+     (markdown :variables
+               ;; `eww' or `vmd'
+               markdown-live-preview-engine 'eww)
+     (python :variables
+             python-enable-yapf-format-on-save t
+             ;; `nose' or `pytest'
+             python-test-runner 'nose
+             python-fill-column 79
+             python-tab-width 4
+             ;; `on-visit', `on-project-switch' or `nil'
+             python-auto-set-local-pyenv-version nil
+             ;; `on-visit', `on-project-switch' or `nil'
+             python-auto-set-local-pyvenv-virtualenv nil
+             python-sort-imports-on-save t)
+     ;; shell-scripts
+     ;; swift
+     (typescript :variables
+                 typescript-fmt-on-save t
+                 ;; `tide' or `typescript-formatter'
+                 typescript-fmt-tool 'tide)
+     yaml
+
+     ;; !!! Operating systems
+     (osx :variables
+          osx-use-option-as-meta t
+          osx-use-dictionary-app nil)
+
+     ;; !!! Pair Programming
+     floobits
+
+     ;; !!! Source control layer
+     git
+     github
+     (version-control :variables
+                      version-control-global-margin t
+                      ;; `git-gutter', `git-gutter+', and `diff-hl'
+                      version-control-diff-tool 'git-gutter+
+                      version-control-diff-side 'right)
+
+     ;; !!! Tags layer
+     cscope
+     ;; (gtags :variables gtags-enable-by-default t)
+
+     ;; !!! Themes layer
+     ;; themes-megapack
+
+     ;; !!! Tools
+     dash
+     nginx
+     speed-reading
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -74,7 +158,12 @@ values."
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(
+                                    spacemacs-evil
+                                    spacemacs-language
+                                    spacemacs-misc
+                                    spacemacs-purpose
+                                    )
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and uninstall any
@@ -314,7 +403,6 @@ values."
    ;; (default nil)
    dotspacemacs-whitespace-cleanup nil
 
-   ;; config start
    exec-path-from-shell-check-startup-files nil
    ))
 
@@ -339,6 +427,94 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  ;; Personal Information Configuration
+  (setq user-full-name "wowchan")
+  (setq user-email-address "wow4chan@gmail.com")
+
+  ;; 自动在文件最后加一个空行
+  (setq require-final-newline t)
+  ;; 设置不自动保存
+  ;; (setq auto-save-mode nil)
+  ;; 设置不生成#filename#临时文件
+  ;; (setq auto-save-default nil)
+  ;; 设置不生成备份文件
+  ;; (setq make-backup-files nil)
+
+  ;; 多行移动
+  (global-set-key (kbd "C-M-n")
+                  (lambda () (interactive) (next-line 5)))
+  (global-set-key (kbd "C-M-p")
+                  (lambda () (interactive) (previous-line 5)))
+
+  ;; 设置单行的复制以剪切
+  (defadvice kill-ring-save (before slickcopy activate compile)
+    (interactive
+     (if mark-active (list (region-beginning) (region-end))
+       (list (line-beginning-position)
+             (line-beginning-position 2)))))
+  (defadvice kill-region (before slickcut activate compile)
+    (interactive
+     (if mark-active (list (region-beginning) (region-end))
+       (list (line-beginning-position)
+             (line-beginning-position 2)))))
+
+  ;; 快捷注释
+  (defun optimized-comment-dwim-line (&optional arg)
+    (interactive "*P")
+    (comment-normalize-vars)
+    (if (and (not (region-active-p)) (not (looking-at "[ \t]*$")))
+        (comment-or-uncomment-region (line-beginning-position) (line-end-position))
+      (comment-dwim arg)))
+  (global-set-key "\M-;" 'optimized-comment-dwim-line)
+
+  ;; 刷新文件
+  (defun refresh-file ()
+    (interactive)
+    (revert-buffer t (not (buffer-modified-p)) t))
+
+  ;; (global-set-key (kbd "M-m m o r") 'refresh-file)
+  (global-set-key (kbd "<f5>") 'refresh-file)
+
+  ;; Bind clang-format-region to C-M-tab in all modes:
+  (global-set-key [C-M-tab] 'clang-format-region)
+  ;; Bind clang-format-buffer to tab on the c++-mode only:
+  (add-hook 'c++-mode-hook 'clang-format-bindings)
+  (defun clang-format-bindings ()
+    (define-key c++-mode-map [tab] 'clang-format-buffer))
+
+  ;; c-c++ code style
+  (setq c-basic-offset 4
+        c-default-style "linux"
+        indent-tabs-mode nil
+        default-tab-width 4
+        tab-width 4)
+  (setq-default tab-width 4)
+
+  ;; astyle this buffer
+  (defun astyle-this-buffer (pmin pmax)
+    (interactive "r")
+    (shell-command-on-region pmin pmax
+                             "astyle" ;; add options here...
+                             (current-buffer) t
+                             (get-buffer-create "*Astyle Errors*") t))
+  (global-set-key (kbd "C-M-S-f") 'astyle-this-buffer)
+
+  ;; highlight-chars
+  ;; (add-hook 'font-lock-mode-hook 'hc-highlight-tabs)
+  (setq whitespace-style '(spaces tabs newline tab-mark))
+  (setq whitespace-display-mappings
+        ;; all numbers are Unicode codepoint in decimal. try (insert-char 182 ) to see it
+        '(
+          ;; (space-mark 32 [183] [46]) ; 32 SPACE, 183 MIDDLE DOT 「·」, 46 FULL STOP 「.」
+          (space-mark 32 [9059] [46])  ; ⍣
+          ;; (newline-mark 10 [182 10]) ; 10 LINE FEED
+          (newline-mark 10 [10558 10])  ; ⤾
+          ;; (tab-mark 9 [128073 9] [92 9]) ; 9 TAB, 9655 WHITE RIGHT-POINTING TRIANGLE 「▷」
+          (tab-mark 9 [10609 9] [92 9])  ; ⥱
+          ;; (tab-mark 9 [128073 9] [92 9])  ; 👉
+          ))
+  ;; (setq-default whitespace-line-column 80)
+  (global-whitespace-mode 1)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

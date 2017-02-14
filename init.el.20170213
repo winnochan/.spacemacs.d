@@ -498,7 +498,7 @@ you should place your code here."
         indent-tabs-mode nil
         default-tab-width 4
         tab-width 4)
-  (setq-default tab-width 4)  
+  (setq-default tab-width 4)
 
   ;; astyle this buffer
   (defun astyle-this-buffer (pmin pmax)
