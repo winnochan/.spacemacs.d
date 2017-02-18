@@ -490,6 +490,9 @@ you should place your code here."
         tab-width 4)
   (setq-default tab-width 4)
 
+  ;; js-mode config
+  (setq js-indent-level 2)
+
   ;; astyle this buffer
   (defun astyle-this-buffer (pmin pmax)
     (interactive "r")
