@@ -490,6 +490,13 @@ you should place your code here."
         tab-width 4)
   (setq-default tab-width 4)
 
+  ;; html, css and code indent config
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+  ;; emmet for web-mode config
+  (add-hook 'web-mode-hook 'emmet-mode)
+
   ;; js-mode config
   (setq js-indent-level 2)
   ;; pug-mode config
