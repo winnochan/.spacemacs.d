@@ -494,8 +494,6 @@ you should place your code here."
   (setq web-mode-markup-indent-offset 2)
   (setq web-mode-css-indent-offset 2)
   (setq web-mode-code-indent-offset 2)
-  ;; emmet for web-mode config
-  (add-hook 'web-mode-hook 'emmet-mode)
 
   ;; js-mode config
   (setq js-indent-level 2)
