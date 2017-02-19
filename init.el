@@ -492,6 +492,14 @@ you should place your code here."
 
   ;; js-mode config
   (setq js-indent-level 2)
+  ;; pug-mode config
+  ;; (add-hook 'after-save-hook 'pug-compile)
+  (add-hook 'after-save-hook
+            '(lambda ()
+               (interactive)
+               (if (memq major-mode '(pug-mode jade-mode))
+                   (compile (format "pug -P %s" buffer-file-name)))))
+
 
   ;; astyle this buffer
   (defun astyle-this-buffer (pmin pmax)
