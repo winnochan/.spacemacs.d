@@ -103,7 +103,7 @@ values."
                ;; `eww' or `vmd'
                markdown-live-preview-engine 'eww)
      (python :variables
-             python-enable-yapf-format-on-save t
+             python-enable-yapf-format-on-save nil
              ;; `nose' or `pytest'
              python-test-runner 'nose
              python-fill-column 79
@@ -154,7 +154,10 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(
+                                      eslintd-fix
+                                      quickrun
+                                      )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -483,12 +486,18 @@ you should place your code here."
     (define-key c++-mode-map [tab] 'clang-format-buffer))
 
   ;; c-c++ code style
-  (setq c-basic-offset 4
-        c-default-style "linux"
-        indent-tabs-mode nil
-        default-tab-width 4
-        tab-width 4)
-  (setq-default tab-width 4)
+  ;; (setq c-basic-offset 4
+  ;;       c-default-style "linux"
+  ;;       indent-tabs-mode nil
+  ;;       default-tab-width 4
+  ;;       tab-width 4)
+  ;; (setq-default tab-width 4)
+
+  ;; quickrun config
+  (require 'quickrun)
+  (global-set-key (kbd "M-m m r r") 'quickrun)
+  (global-set-key (kbd "M-m m r s") 'quickrun-shell)
+  (global-set-key (kbd "M-m m r a") 'quickrun-with-arg)
 
   ;; html, css and code indent config
   (setq web-mode-markup-indent-offset 2)
@@ -499,11 +508,13 @@ you should place your code here."
   (setq js-indent-level 2)
   ;; pug-mode config
   ;; (add-hook 'after-save-hook 'pug-compile)
-  (add-hook 'after-save-hook
-            '(lambda ()
-               (interactive)
-               (if (memq major-mode '(pug-mode jade-mode))
-                   (compile (format "pug -P %s" buffer-file-name)))))
+  ;; (add-hook 'after-save-hook
+  ;;           '(lambda ()
+  ;;              (interactive)
+  ;;              (if (memq major-mode '(pug-mode jade-mode))
+  ;;                  (compile (format "pug -P %s" buffer-file-name)))))
+
+  (add-hook 'js2-mode-hook 'eslintd-fix-mode)
 
 
   ;; astyle this buffer
