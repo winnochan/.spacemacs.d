@@ -486,12 +486,9 @@ you should place your code here."
     (define-key c++-mode-map [tab] 'clang-format-buffer))
 
   ;; c-c++ code style
-  ;; (setq c-basic-offset 4
-  ;;       c-default-style "linux"
-  ;;       indent-tabs-mode nil
-  ;;       default-tab-width 4
-  ;;       tab-width 4)
-  ;; (setq-default tab-width 4)
+  (setq c-default-style "linux")
+  (setq c-basic-offset 4)
+  (setq default-tab-width 4)
 
   ;; quickrun config
   (require 'quickrun)
@@ -506,16 +503,7 @@ you should place your code here."
 
   ;; js-mode config
   (setq js-indent-level 2)
-  ;; pug-mode config
-  ;; (add-hook 'after-save-hook 'pug-compile)
-  ;; (add-hook 'after-save-hook
-  ;;           '(lambda ()
-  ;;              (interactive)
-  ;;              (if (memq major-mode '(pug-mode jade-mode))
-  ;;                  (compile (format "pug -P %s" buffer-file-name)))))
-
   (add-hook 'js2-mode-hook 'eslintd-fix-mode)
-
 
   ;; astyle this buffer
   (defun astyle-this-buffer (pmin pmax)
