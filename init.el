@@ -487,7 +487,7 @@ you should place your code here."
 
   ;; c-c++ code style
   (setq c-default-style "linux")
-  (setq c-basic-offset 4)
+  (setq-default c-basic-offset 4)
   (setq default-tab-width 4)
 
   ;; quickrun config
