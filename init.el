@@ -45,13 +45,14 @@ values."
      ;; spacemacs-language
      spacemacs-layouts
      ;; spacemacs-misc
+     spacemacs-modeline
+     spacemacs-navigation
      spacemacs-org
      ;; spacemacs-purpose ;; develop only
-     spacemacs-ui
-     spacemacs-ui-visual
+     spacemacs-visual
 
      ;; !!! Chat
-     slack
+     ;; slack
 
      ;; !!! Checkers
      spell-checking
@@ -87,8 +88,8 @@ values."
               chinese-enable-youdao-dict t)
 
      ;; !!! Programming and markup languages
-     ;; (c-c++ :variables c-c++-enable-clang-support nil
-     ;;        c-c++-default-mode-for-headers 'c-mode)
+     (c-c++ :variables c-c++-enable-clang-support nil
+            c-c++-default-mode-for-headers 'c-mode)
      ;; emacs-lisp
      (go :variables
          go-use-gocheck-for-testing nil
@@ -157,6 +158,7 @@ values."
    dotspacemacs-additional-packages '(
                                       eslintd-fix
                                       quickrun
+                                      vlf
                                       )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -486,7 +488,8 @@ you should place your code here."
     (define-key c++-mode-map [tab] 'clang-format-buffer))
 
   ;; c-c++ code style
-  (setq c-default-style "linux")
+  ;; (setq c-default-style "linux")
+  (setq c-default-style "java")
   (setq-default c-basic-offset 4)
   (setq default-tab-width 4)
 
@@ -495,6 +498,19 @@ you should place your code here."
   (global-set-key (kbd "M-m m r r") 'quickrun)
   (global-set-key (kbd "M-m m r s") 'quickrun-shell)
   (global-set-key (kbd "M-m m r a") 'quickrun-with-arg)
+
+  ;; vlf
+;;   (require 'vlf-setup)
+;;   (defcustom vlf-application 'always
+;;     "Determines when `vlf' will be offered on opening files.
+;; Possible values are: nil to never use it;
+;; `ask' offer `vlf' when file size is beyond `large-file-warning-threshold';
+;; `dont-ask' automatically use `vlf' for large files;
+;; `always' use `vlf' for all files."
+;;     :group 'vlf :type '(radio (const :format "%v " nil)
+;;                               (const :format "%v " ask)
+;;                               (const :format "%v " dont-ask)
+;;                               (const :format "%v" always)))
 
   ;; html, css and code indent config
   (setq web-mode-markup-indent-offset 2)
