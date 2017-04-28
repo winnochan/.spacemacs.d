@@ -159,6 +159,7 @@ values."
                                       eslintd-fix
                                       quickrun
                                       vlf
+                                      e2wm
                                       )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -511,6 +512,11 @@ you should place your code here."
 ;;                               (const :format "%v " ask)
 ;;                               (const :format "%v " dont-ask)
 ;;                               (const :format "%v" always)))
+
+  ;; e2wm config
+  (require 'e2wm)
+  (global-set-key (kbd "M-RET e w") 'e2wm:start-management)
+  (global-set-key (kbd "M-RET e d") 'e2wm:stop-management)
 
   ;; html, css and code indent config
   (setq web-mode-markup-indent-offset 2)
