@@ -88,7 +88,9 @@ values."
               chinese-enable-youdao-dict t)
 
      ;; !!! Programming and markup languages
-     (c-c++ :variables c-c++-enable-clang-support nil
+     (c-c++ :variables
+            c-c++-enable-clang-support t
+            c-c++-enable-clang-format-on-save t
             c-c++-default-mode-for-headers 'c-mode)
      ;; emacs-lisp
      (go :variables
@@ -99,7 +101,7 @@ values."
      java
      (javascript :variables
                  javascript-disable-tern-port-files nil)
-     lua
+     ;; lua
      (markdown :variables
                ;; `eww' or `vmd'
                markdown-live-preview-engine 'eww)
@@ -123,9 +125,9 @@ values."
      yaml
 
      ;; !!! Operating systems
-     (osx :variables
-          osx-use-option-as-meta t
-          osx-use-dictionary-app nil)
+     ;; (osx :variables
+     ;;      osx-use-option-as-meta t
+     ;;      osx-use-dictionary-app nil)
 
      ;; !!! Pair Programming
      floobits
@@ -141,15 +143,15 @@ values."
 
      ;; !!! Tags layer
      cscope
-     ;; (gtags :variables gtags-enable-by-default t)
+     (gtags :variables gtags-enable-by-default t)
 
      ;; !!! Themes layer
      ;; themes-megapack
 
      ;; !!! Tools
-     dash
-     nginx
-     speed-reading
+     ;; dash
+     ;; nginx
+     ;; speed-reading
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -212,6 +214,7 @@ values."
    ;; with `:variables' keyword (similar to layers). Check the editing styles
    ;; section of the documentation for details on available variables.
    ;; (default 'vim)
+   ;; dotspacemacs-editing-style 'emacs
    dotspacemacs-editing-style 'emacs
    ;; If non-nil output loading progress in `*Messages*' buffer. (default nil)
    dotspacemacs-verbose-loading t
