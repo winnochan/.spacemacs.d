@@ -27,7 +27,9 @@ values."
    ;; If non-nil layers with lazy install support are lazy installed.
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
-   dotspacemacs-configuration-layer-path '()
+   dotspacemacs-configuration-layer-path '(
+                                           ;; "~/.spacemacs.d/layers/"
+                                           )
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
@@ -41,14 +43,14 @@ values."
      spacemacs-completion
      spacemacs-editing
      spacemacs-editing-visual
-     ;; spacemacs-evil
+     spacemacs-evil
      ;; spacemacs-language
      spacemacs-layouts
-     ;; spacemacs-misc
+     spacemacs-misc
      spacemacs-modeline
      spacemacs-navigation
      spacemacs-org
-     ;; spacemacs-purpose ;; develop only
+     spacemacs-purpose ;; develop only
      spacemacs-visual
 
      ;; !!! Chat
@@ -65,9 +67,9 @@ values."
      helm
      (auto-completion :variables
                       ;; `complete' or `nil'
-                      auto-completion-return-key-behavior nil
+                      auto-completion-return-key-behavior 'complete
                       ;; `complete', `cycle' or `nil'
-                      auto-completion-tab-key-behavior 'complete
+                      auto-completion-tab-key-behavior 'cycle
                       auto-completion-complete-with-key-sequence-delay 0.04
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-sort-by-usage t)
@@ -76,12 +78,12 @@ values."
      (better-defaults :variables
                       better-defaults-move-to-beginning-of-code-first nil
                       better-defaults-move-to-end-of-code-first nil)
-     (org :variables
-          org-enable-bootstrap-support t
-          org-enable-github-support t
-          org-enable-reveal-js-support nil
-          org-projectile-file "TODOs.org"
-          org-enable-org-journal-support t)
+     ;; (org :variables
+     ;;      org-enable-bootstrap-support t
+     ;;      org-enable-github-support t
+     ;;      org-enable-reveal-js-support nil
+     ;;      org-projectile-file "TODOs.org"
+     ;;      org-enable-org-journal-support t)
 
      ;; !!! International support
      (chinese :variables
@@ -97,10 +99,10 @@ values."
          go-use-gocheck-for-testing nil
          go-tab-width 4
          go-use-gometalinter nil)
-     html
-     java
-     (javascript :variables
-                 javascript-disable-tern-port-files nil)
+     ;; html
+     ;; java
+     ;; (javascript :variables
+     ;;             javascript-disable-tern-port-files t)
      ;; lua
      (markdown :variables
                ;; `eww' or `vmd'
@@ -118,11 +120,11 @@ values."
              python-sort-imports-on-save t)
      ;; shell-scripts
      ;; swift
-     (typescript :variables
-                 typescript-fmt-on-save t
-                 ;; `tide' or `typescript-formatter'
-                 typescript-fmt-tool 'tide)
-     yaml
+     ;; (typescript :variables
+     ;;             typescript-fmt-on-save t
+     ;;             ;; `tide' or `typescript-formatter'
+     ;;             typescript-fmt-tool 'tide)
+     ;; yaml
 
      ;; !!! Operating systems
      ;; (osx :variables
@@ -142,8 +144,10 @@ values."
                       version-control-diff-side 'right)
 
      ;; !!! Tags layer
-     cscope
-     (gtags :variables gtags-enable-by-default t)
+     ;; cscope
+     ;; (gtags :variables gtags-enable-by-default t)
+     cscope-custom
+     gtags-custom
 
      ;; !!! Themes layer
      ;; themes-megapack
@@ -158,7 +162,7 @@ values."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(
-                                      eslintd-fix
+                                      ;; eslintd-fix
                                       quickrun
                                       vlf
                                       e2wm
@@ -522,22 +526,22 @@ you should place your code here."
   (global-set-key (kbd "M-RET e d") 'e2wm:stop-management)
 
   ;; html, css and code indent config
-  (setq web-mode-markup-indent-offset 2)
-  (setq web-mode-css-indent-offset 2)
-  (setq web-mode-code-indent-offset 2)
+  ;; (setq web-mode-markup-indent-offset 2)
+  ;; (setq web-mode-css-indent-offset 2)
+  ;; (setq web-mode-code-indent-offset 2)
 
   ;; js-mode config
-  (setq js-indent-level 2)
-  (add-hook 'js2-mode-hook 'eslintd-fix-mode)
+  ;; (setq js-indent-level 2)
+  ;; (add-hook 'js2-mode-hook 'eslintd-fix-mode)
 
   ;; astyle this buffer
-  (defun astyle-this-buffer (pmin pmax)
-    (interactive "r")
-    (shell-command-on-region pmin pmax
-                             "astyle" ;; add options here...
-                             (current-buffer) t
-                             (get-buffer-create "*Astyle Errors*") t))
-  (global-set-key (kbd "C-M-S-f") 'astyle-this-buffer)
+  ;; (defun astyle-this-buffer (pmin pmax)
+  ;;   (interactive "r")
+  ;;   (shell-command-on-region pmin pmax
+  ;;                            "astyle" ;; add options here...
+  ;;                            (current-buffer) t
+  ;;                            (get-buffer-create "*Astyle Errors*") t))
+  ;; (global-set-key (kbd "C-M-S-f") 'astyle-this-buffer)
 
   ;; highlight-chars
   ;; (add-hook 'font-lock-mode-hook 'hc-highlight-tabs)
