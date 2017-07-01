@@ -153,6 +153,7 @@ values."
      ;; themes-megapack
 
      ;; !!! Tools
+     ;; ssh
      ;; dash
      ;; nginx
      ;; speed-reading
@@ -496,8 +497,8 @@ you should place your code here."
     (define-key c++-mode-map [tab] 'clang-format-buffer))
 
   ;; c-c++ code style
-  ;; (setq c-default-style "linux")
-  (setq c-default-style "java")
+  (setq c-default-style "linux")
+  ;; (setq c-default-style "java")
   (setq-default c-basic-offset 4)
   (setq default-tab-width 4)
 
@@ -506,6 +507,8 @@ you should place your code here."
   (global-set-key (kbd "M-m m r r") 'quickrun)
   (global-set-key (kbd "M-m m r s") 'quickrun-shell)
   (global-set-key (kbd "M-m m r a") 'quickrun-with-arg)
+
+  ;; (global-centered-cursor-mode t)
 
   ;; vlf
 ;;   (require 'vlf-setup)

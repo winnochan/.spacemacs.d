@@ -44,12 +44,12 @@
     :init
     (progn
       (setq helm-gtags-ignore-case t
-            helm-gtags-read-only t
+            ;; helm-gtags-read-only t
             helm-gtags-use-input-at-cursor t
             helm-gtags-highlight-candidate t
             helm-gtags-display-style 'detail
             helm-gtags-auto-update t
-            helm-gtags-update-interval-second nil
+            ;; helm-gtags-update-interval-second nil
             helm-gtags-cache-select-result t
             helm-gtags-cache-max-result-size 100
             helm-gtags-pulse-at-cursor t
