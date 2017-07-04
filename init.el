@@ -118,7 +118,7 @@ values."
              ;; `on-visit', `on-project-switch' or `nil'
              python-auto-set-local-pyvenv-virtualenv nil
              python-sort-imports-on-save t)
-     ;; shell-scripts
+     shell-scripts
      ;; swift
      ;; (typescript :variables
      ;;             typescript-fmt-on-save t
