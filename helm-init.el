@@ -3,8 +3,9 @@
 ;; It must be stored in your home directory.
 
 (defun dotspacemacs/layers ()
-  "Layer configuration:
-This  function should only modify configuration layer settings."
+  "Configuration Layers declaration.
+You should not put any user code in this function besides modifying the variable
+values."
   (setq-default
    ;; Base distribution to use. This is a layer contained in the directory
    ;; `+distribution'. For now available distributions are `spacemacs-base'
@@ -19,27 +20,30 @@ This  function should only modify configuration layer settings."
    ;; installation feature and you have to explicitly list a layer in the
    ;; variable `dotspacemacs-configuration-layers' to install it.
    ;; (default 'unused)
-   dotspacemacs-enable-lazy-installation 'unused
+   dotspacemacs-enable-lazy-installation nil
    ;; If non-nil then Spacemacs will ask for confirmation before installing
    ;; a layer lazily. (default t)
-   dotspacemacs-ask-for-lazy-installation t
+   dotspacemacs-ask-for-lazy-installation nil
    ;; If non-nil layers with lazy install support are lazy installed.
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
-   dotspacemacs-configuration-layer-path '()
+   dotspacemacs-configuration-layer-path '(
+                                           ;; "~/.spacemacs.d/layers/"
+                                           )
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
-     ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
-     ;; `M-m f e R' (Emacs style) to install them.
+     ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
+     ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
 
+     ;; spacemacs distributions
      spacemacs-completion
      spacemacs-editing
      spacemacs-editing-visual
-     ;; spacemacs-evil
+     spacemacs-evil
      ;; spacemacs-language
      spacemacs-layouts
      spacemacs-misc
@@ -49,15 +53,17 @@ This  function should only modify configuration layer settings."
      spacemacs-purpose ;; develop only
      spacemacs-visual
 
+     ;; !!! Chat
+     ;; slack
+
      ;; !!! Checkers
-     ;; spell-checking
-     ;; (syntax-checking :variables
-     ;;                  syntax-checking-enable-tooltips t
-     ;;                  syntax-checking-enable-by-default nil
-     ;;                  syntax-checking-use-original-bitmaps nil)
+     spell-checking
+     (syntax-checking :variables
+                      syntax-checking-enable-tooltips t
+                      syntax-checking-enable-by-default nil
+                      syntax-checking-use-original-bitmaps nil)
 
      ;; !!! Completion layer
-     ;; ivy
      helm
      (auto-completion :variables
                       ;; `complete' or `nil'
@@ -72,7 +78,6 @@ This  function should only modify configuration layer settings."
      (better-defaults :variables
                       better-defaults-move-to-beginning-of-code-first nil
                       better-defaults-move-to-end-of-code-first nil)
-
      ;; (org :variables
      ;;      org-enable-bootstrap-support t
      ;;      org-enable-github-support t
@@ -80,12 +85,16 @@ This  function should only modify configuration layer settings."
      ;;      org-projectile-file "TODOs.org"
      ;;      org-enable-org-journal-support t)
 
+     ;; !!! International support
+     (chinese :variables
+              chinese-enable-youdao-dict t)
+
      ;; !!! Programming and markup languages
      (c-c++ :variables
             c-c++-enable-clang-support t
             c-c++-enable-clang-format-on-save t
             c-c++-default-mode-for-headers 'c-mode)
-     emacs-lisp
+     ;; emacs-lisp
      (go :variables
          go-use-gocheck-for-testing nil
          go-tab-width 4
@@ -124,7 +133,7 @@ This  function should only modify configuration layer settings."
      ;;      osx-use-dictionary-app nil)
 
      ;; !!! Pair Programming
-     ;; floobits
+     floobits
 
      ;; !!! Source control layer
      git
@@ -135,22 +144,29 @@ This  function should only modify configuration layer settings."
                       version-control-diff-tool 'git-gutter+
                       version-control-diff-side 'right)
 
-
      ;; !!! Tags layer
-     cscope
-     (gtags :variables gtags-enable-by-default t)
+     ;; cscope
+     ;; (gtags :variables gtags-enable-by-default t)
+     cscope-custom
+     gtags-custom
 
-     ;; !!! Custom
-     ;; more smarter commenter
-     commenter
-     e2wm
+     ;; !!! Themes layer
+     ;; themes-megapack
+
+     ;; !!! Tools
+     ;; ssh
+     ;; dash
+     ;; nginx
+     ;; speed-reading
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(
-                                      ;; evil-nerd-commenter
+                                      ;; eslintd-fix
+                                      quickrun
+                                      vlf
                                       )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -158,18 +174,19 @@ This  function should only modify configuration layer settings."
    dotspacemacs-excluded-packages '()
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
-   ;; `used-only' installs only explicitly used packages and deletes any unused
-   ;; packages as well as their unused dependencies. `used-but-keep-unused'
-   ;; installs only the used packages but won't delete unused ones. `all'
-   ;; installs *all* packages supported by Spacemacs and never uninstalls them.
-   ;; (default is `used-only')
+   ;; `used-only' installs only explicitly used packages and uninstall any
+   ;; unused packages as well as their unused dependencies.
+   ;; `used-but-keep-unused' installs only the used packages but won't uninstall
+   ;; them if they become unused. `all' installs *all* packages supported by
+   ;; Spacemacs and never uninstall them. (default is `used-only')
    dotspacemacs-install-packages 'used-only))
 
 (defun dotspacemacs/init ()
-  "Initialization:
-This function is called at the very beginning of Spacemacs startup,
-before layer configuration.
-It should only modify the values of Spacemacs settings."
+  "Initialization function.
+This function is called at the very startup of Spacemacs initialization
+before layers configuration.
+You should not put any user code in there besides modifying the variable
+values."
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
   (setq-default
@@ -197,9 +214,10 @@ It should only modify the values of Spacemacs settings."
    ;; with `:variables' keyword (similar to layers). Check the editing styles
    ;; section of the documentation for details on available variables.
    ;; (default 'vim)
+   ;; dotspacemacs-editing-style 'emacs
    dotspacemacs-editing-style 'emacs
    ;; If non-nil output loading progress in `*Messages*' buffer. (default nil)
-   dotspacemacs-verbose-loading nil
+   dotspacemacs-verbose-loading t
    ;; Specify the startup banner. Default value is `official', it displays
    ;; the official spacemacs logo. An integer value is the index of text
    ;; banner, `random' chooses a random text banner in `core/banners'
@@ -210,7 +228,7 @@ It should only modify the values of Spacemacs settings."
    ;; List of items to show in startup buffer or an association list of
    ;; the form `(list-type . list-size)`. If nil then it is disabled.
    ;; Possible values for list-type are:
-   ;; `recents' `bookmarks' `projects' `agenda' `todos'.
+   ;; `recents' `bookmarks' `projects' `agenda' `todos'."
    ;; List sizes may be nil, in which case
    ;; `spacemacs-buffer-startup-lists-length' takes effect.
    dotspacemacs-startup-lists '((recents . 5)
@@ -220,12 +238,10 @@ It should only modify the values of Spacemacs settings."
    ;; Default major mode of the scratch buffer (default `text-mode')
    dotspacemacs-scratch-mode 'text-mode
    ;; List of themes, the first of the list is loaded when spacemacs starts.
-   ;; Press `SPC T n' to cycle to the next theme in the list (works great
+   ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(
-                         spacemacs-light
-                         spacemacs-dark
-                         )
+   dotspacemacs-themes '(spacemacs-light
+                         spacemacs-dark)
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
@@ -237,7 +253,7 @@ It should only modify the values of Spacemacs settings."
                                :powerline-scale 1.1)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
-   ;; The key used for Emacs commands `M-x' (after pressing on the leader key).
+   ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
    ;; (default "SPC")
    dotspacemacs-emacs-command-key "SPC"
    ;; The key used for Vim Ex commands (default ":")
@@ -252,9 +268,9 @@ It should only modify the values of Spacemacs settings."
    ;; (default "C-M-m")
    dotspacemacs-major-mode-emacs-leader-key "C-M-m"
    ;; These variables control whether separate commands are bound in the GUI to
-   ;; the key pairs `C-i', `TAB' and `C-m', `RET'.
-   ;; Setting it to a non-nil value, allows for separate commands under `C-i'
-   ;; and TAB or `C-m' and `RET'.
+   ;; the key pairs C-i, TAB and C-m, RET.
+   ;; Setting it to a non-nil value, allows for separate commands under <C-i>
+   ;; and TAB or <C-m> and RET.
    ;; In the terminal, these pairs are generally indistinguishable, so this only
    ;; works in the GUI. (default nil)
    dotspacemacs-distinguish-gui-tab nil
@@ -263,7 +279,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil, the shift mappings `<' and `>' retain visual state if used
    ;; there. (default t)
    dotspacemacs-retain-visual-state-on-shift t
-   ;; If non-nil, `J' and `K' move lines up and down when in visual mode.
+   ;; If non-nil, J and K move lines up and down when in visual mode.
    ;; (default nil)
    dotspacemacs-visual-line-move-text nil
    ;; If non-nil, inverse the meaning of `g' in `:substitute' Evil ex-command.
@@ -274,12 +290,9 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil the default layout name is displayed in the mode-line.
    ;; (default nil)
    dotspacemacs-display-default-layout nil
-   ;; If non-nil then the last auto saved layouts are resumed automatically upon
+   ;; If non-nil then the last auto saved layouts are resume automatically upon
    ;; start. (default nil)
    dotspacemacs-auto-resume-layouts nil
-   ;; If non-nil, auto-generate layout name when creating new layouts. Only has
-   ;; effect when using the "jump to layout by number" commands.
-   dotspacemacs-auto-generate-layout-names nil
    ;; Size (in MB) above which spacemacs will prompt to open the large file
    ;; literally to avoid performance issues. Opening a file literally means that
    ;; no major mode or minor modes are active. (default is 1)
@@ -304,7 +317,7 @@ It should only modify the values of Spacemacs settings."
    ;; source settings. Else, disable fuzzy matching in all sources.
    ;; (default 'always)
    dotspacemacs-helm-use-fuzzy 'always
-   ;; If non-nil the paste micro-state is enabled. When enabled pressing `p'
+   ;; If non-nil the paste micro-state is enabled. When enabled pressing `p`
    ;; several times cycle between the kill ring content. (default nil)
    dotspacemacs-enable-paste-transient-state nil
    ;; Which-key delay in seconds. The which-key buffer is the popup listing
@@ -370,7 +383,7 @@ It should only modify the values of Spacemacs settings."
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
-   ;; If non-nil `smartparens-strict-mode' will be enabled in programming modes.
+   ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    ;; (default nil)
    dotspacemacs-smartparens-strict-mode nil
    ;; If non-nil pressing the closing parenthesis `)' key in insert mode passes
@@ -392,57 +405,133 @@ It should only modify the values of Spacemacs settings."
    ;; specified with an installed package.
    ;; Not used for now. (default nil)
    dotspacemacs-default-package-repository nil
-   ;; Format specification for setting the frame title.
-   ;; %a - the `abbreviated-file-name', or `buffer-name'
-   ;; %t - `projectile-project-name'
-   ;; %I - `invocation-name'
-   ;; %S - `system-name'
-   ;; %U - contents of $USER
-   ;; %b - buffer name
-   ;; %f - visited file name
-   ;; %F - frame name
-   ;; %s - process status
-   ;; %p - percent of buffer above top of window, or Top, Bot or All
-   ;; %P - percent of buffer above bottom of window, perhaps plus Top, or Bot or All
-   ;; %m - mode name
-   ;; %n - Narrow if appropriate
-   ;; %z - mnemonics of buffer, terminal, and keyboard coding systems
-   ;; %Z - like %z, but including the end-of-line format
-   dotspacemacs-frame-title-format "%I@%S"
-   ;; Format specification for setting the icon title format
-   ;; (default nil - same as frame-title-format)
-   dotspacemacs-icon-title-format nil
    ;; Delete whitespace while saving buffer. Possible values are `all'
    ;; to aggressively delete empty line and long sequences of whitespace,
-   ;; `trailing' to delete only the whitespace at end of lines, `changed' to
+   ;; `trailing' to delete only the whitespace at end of lines, `changed'to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup 'all
-   ;; Either nil or a number of seconds. If non-nil zone out after the specified
-   ;; number of seconds. (default nil)
-   dotspacemacs-zone-out-when-idle nil
-   ;; Run `spacemacs/prettify-org-buffer' when
-   ;; visiting README.org files of Spacemacs.
-   ;; (default nil)
-   dotspacemacs-pretty-docs t
+   dotspacemacs-whitespace-cleanup nil
+
    exec-path-from-shell-check-startup-files nil
    ))
 
 (defun dotspacemacs/user-init ()
-  "Initialization for user code:
-This function is called immediately after `dotspacemacs/init', before layer
-configuration.
-It is mostly for variables that should be set before packages are loaded.
-If you are unsure, try setting them in `dotspacemacs/user-config' first."
-  (load-file (concat dotspacemacs-directory "spacemacs-user-init.el")))
+  "Initialization function for user code.
+It is called immediately after `dotspacemacs/init', before layer configuration
+executes.
+ This function is mostly useful for variables that need to be set
+before packages are loaded. If you are unsure, you should try in setting them in
+`dotspacemacs/user-config' first."
+  ;; emacs-china elpa mirrors
+  (setq configuration-layer--elpa-archives
+        '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
+          ("org-cn"   . "http://elpa.emacs-china.org/org/")
+          ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
+  )
 
 (defun dotspacemacs/user-config ()
-  "Configuration for user code:
-This function is called at the very end of Spacemacs startup, after layer
-configuration.
-Put your configuration code here, except for variables that should be set
-before packages are loaded."
-  (load-file (concat dotspacemacs-directory "spacemacs-user-config.el")))
+  "Configuration function for user code.
+This function is called at the very end of Spacemacs initialization after
+layers configuration.
+This is the place where most of your configurations should be done. Unless it is
+explicitly specified that a variable should be set before a package is loaded,
+you should place your code here."
+  ;; Personal Information Configuration
+  (setq user-full-name "wowchan")
+  (setq user-email-address "wow4chan@gmail.com")
+
+  ;; 多行移动
+  (global-set-key (kbd "C-M-n")
+                  (lambda () (interactive) (next-line 5)))
+  (global-set-key (kbd "C-M-p")
+                  (lambda () (interactive) (previous-line 5)))
+
+  ;; 设置单行的复制以剪切
+  (defadvice kill-ring-save (before slickcopy activate compile)
+    (interactive
+     (if mark-active (list (region-beginning) (region-end))
+       (list (line-beginning-position)
+             (line-beginning-position 2)))))
+  (defadvice kill-region (before slickcut activate compile)
+    (interactive
+     (if mark-active (list (region-beginning) (region-end))
+       (list (line-beginning-position)
+             (line-beginning-position 2)))))
+
+  ;; refresh-file
+  (defun refresh-file ()
+    (interactive)
+    (revert-buffer t (not (buffer-modified-p)) t))
+  (global-set-key (kbd "<f5>") 'refresh-file)
+
+  ;; Bind clang-format-region to C-M-tab in all modes:
+  (global-set-key [C-M-tab] 'clang-format-region)
+  ;; Bind clang-format-buffer to tab on the c++-mode only:
+  (add-hook 'c++-mode-hook 'clang-format-bindings)
+  (defun clang-format-bindings ()
+    (define-key c++-mode-map [tab] 'clang-format-buffer))
+
+  ;; c-c++ code style
+  (setq c-default-style "linux")
+  (setq-default c-basic-offset 4)
+  (setq default-tab-width 4)
+
+  ;; quickrun config
+  (require 'quickrun)
+  (global-set-key (kbd "M-m m r r") 'quickrun)
+  (global-set-key (kbd "M-m m r s") 'quickrun-shell)
+  (global-set-key (kbd "M-m m r a") 'quickrun-with-arg)
+
+  ;; (global-centered-cursor-mode t)
+
+  ;; vlf
+;;   (require 'vlf-setup)
+;;   (defcustom vlf-application 'always
+;;     "Determines when `vlf' will be offered on opening files.
+;; Possible values are: nil to never use it;
+;; `ask' offer `vlf' when file size is beyond `large-file-warning-threshold';
+;; `dont-ask' automatically use `vlf' for large files;
+;; `always' use `vlf' for all files."
+;;     :group 'vlf :type '(radio (const :format "%v " nil)
+;;                               (const :format "%v " ask)
+;;                               (const :format "%v " dont-ask)
+;;                               (const :format "%v" always)))
+
+  ;; html, css and code indent config
+  ;; (setq web-mode-markup-indent-offset 2)
+  ;; (setq web-mode-css-indent-offset 2)
+  ;; (setq web-mode-code-indent-offset 2)
+
+  ;; js-mode config
+  ;; (setq js-indent-level 2)
+  ;; (add-hook 'js2-mode-hook 'eslintd-fix-mode)
+
+  ;; astyle this buffer
+  ;; (defun astyle-this-buffer (pmin pmax)
+  ;;   (interactive "r")
+  ;;   (shell-command-on-region pmin pmax
+  ;;                            "astyle" ;; add options here...
+  ;;                            (current-buffer) t
+  ;;                            (get-buffer-create "*Astyle Errors*") t))
+  ;; (global-set-key (kbd "C-M-S-f") 'astyle-this-buffer)
+
+  ;; highlight-chars
+  ;; (add-hook 'font-lock-mode-hook 'hc-highlight-tabs)
+  (setq whitespace-style '(spaces tabs newline tab-mark))
+  (setq whitespace-display-mappings
+        ;; all numbers are Unicode codepoint in decimal. try (insert-char 182 ) to see it
+        '(
+          ;; (space-mark 32 [183] [46]) ; 32 SPACE, 183 MIDDLE DOT 「·」, 46 FULL STOP 「.」
+          (space-mark 32 [9059] [46])  ; ⍣
+          ;; (newline-mark 10 [182 10]) ; 10 LINE FEED
+          (newline-mark 10 [10558 10])  ; ⤾
+          ;; (tab-mark 9 [128073 9] [92 9]) ; 9 TAB, 9655 WHITE RIGHT-POINTING TRIANGLE 「▷」
+          (tab-mark 9 [10609 9] [92 9])  ; ⥱
+          ;; (tab-mark 9 [128073 9] [92 9])  ; 👉
+          ))
+  ;; (setq-default whitespace-line-column 80)
+  (global-whitespace-mode 1)
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
