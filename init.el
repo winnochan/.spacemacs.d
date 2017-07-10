@@ -92,8 +92,8 @@ This  function should only modify configuration layer settings."
          go-use-gometalinter nil)
      ;; html
      ;; java
-     ;; (javascript :variables
-     ;;             javascript-disable-tern-port-files t)
+     (javascript :variables
+                 javascript-disable-tern-port-files t)
      ;; lua
      (markdown :variables
                ;; `eww' or `vmd'

@@ -3,9 +3,13 @@
 (setq user-email-address "wow4chan@gmail.com")
 
 ;; 多行移动
-(global-set-key (kbd "C-M-n")
+;; (global-set-key (kbd "C-M-n")
+;;                 (lambda () (interactive) (next-line 7)))
+;; (global-set-key (kbd "C-M-p")
+;;                 (lambda () (interactive) (previous-line 7)))
+(global-set-key (kbd "M-n")
                 (lambda () (interactive) (next-line 7)))
-(global-set-key (kbd "C-M-p")
+(global-set-key (kbd "M-p")
                 (lambda () (interactive) (previous-line 7)))
 
 ;; refresh-file
