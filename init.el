@@ -50,11 +50,11 @@ This  function should only modify configuration layer settings."
      spacemacs-visual
 
      ;; !!! Checkers
-     ;; spell-checking
-     ;; (syntax-checking :variables
-     ;;                  syntax-checking-enable-tooltips t
-     ;;                  syntax-checking-enable-by-default nil
-     ;;                  syntax-checking-use-original-bitmaps nil)
+     spell-checking
+     (syntax-checking :variables
+                      syntax-checking-enable-tooltips t
+                      syntax-checking-enable-by-default nil
+                      syntax-checking-use-original-bitmaps nil)
 
      ;; !!! Completion layer
      ;; ivy
@@ -73,12 +73,12 @@ This  function should only modify configuration layer settings."
                       better-defaults-move-to-beginning-of-code-first nil
                       better-defaults-move-to-end-of-code-first nil)
 
-     ;; (org :variables
-     ;;      org-enable-bootstrap-support t
-     ;;      org-enable-github-support t
-     ;;      org-enable-reveal-js-support nil
-     ;;      org-projectile-file "TODOs.org"
-     ;;      org-enable-org-journal-support t)
+     (org :variables
+          org-enable-bootstrap-support t
+          org-enable-github-support t
+          org-enable-reveal-js-support nil
+          org-projectile-file "TODOs.org"
+          org-enable-org-journal-support t)
 
      ;; !!! Programming and markup languages
      (c-c++ :variables
@@ -124,7 +124,7 @@ This  function should only modify configuration layer settings."
      ;;      osx-use-dictionary-app nil)
 
      ;; !!! Pair Programming
-     ;; floobits
+     floobits
 
      ;; !!! Source control layer
      git
