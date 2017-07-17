@@ -37,4 +37,6 @@
      (list (line-beginning-position)
            (line-beginning-position 2)))))
 
+(add-hook 'rust-mode-hook (lambda () (rust-enable-format-on-save)))
+
 (provide 'spacemacs-user-config)
