@@ -37,6 +37,4 @@
      (list (line-beginning-position)
            (line-beginning-position 2)))))
 
-(setq rust-format-on-save t)
-
 (provide 'spacemacs-user-config)

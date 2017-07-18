@@ -109,7 +109,8 @@ This  function should only modify configuration layer settings."
              ;; `on-visit', `on-project-switch' or `nil'
              python-auto-set-local-pyvenv-virtualenv nil
              python-sort-imports-on-save t)
-     rust
+     (rust :variables
+           rust-format-on-save t)
      shell-scripts
      ;; swift
      ;; (typescript :variables
