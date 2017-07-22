@@ -65,7 +65,7 @@ This  function should only modify configuration layer settings."
                       ;; `complete', `cycle' or `nil'
                       auto-completion-tab-key-behavior nil
                       auto-completion-complete-with-key-sequence-delay 0.01
-                      auto-completion-enable-snippets-in-popup nil
+                      auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-sort-by-usage t)
 
      ;; !!! Emacs layer
