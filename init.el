@@ -84,7 +84,8 @@ This  function should only modify configuration layer settings."
      (c-c++ :variables
             c-c++-enable-clang-support t
             c-c++-enable-clang-format-on-save t
-            c-c++-default-mode-for-headers 'c-mode)
+            ;; `c-mode' or `c++-mode'
+            c-c++-default-mode-for-headers 'c++-mode)
      emacs-lisp
      (go :variables
          go-use-gocheck-for-testing nil
