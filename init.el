@@ -73,12 +73,12 @@ This  function should only modify configuration layer settings."
                       better-defaults-move-to-beginning-of-code-first nil
                       better-defaults-move-to-end-of-code-first nil)
 
-     (org :variables
-          org-enable-bootstrap-support t
-          org-enable-github-support t
-          org-enable-reveal-js-support nil
-          org-projectile-file "TODOs.org"
-          org-enable-org-journal-support t)
+     ;; (org :variables
+     ;;      org-enable-bootstrap-support t
+     ;;      org-enable-github-support t
+     ;;      org-enable-reveal-js-support nil
+     ;;      org-projectile-file "TODOs.org"
+     ;;      org-enable-org-journal-support t)
 
      ;; !!! Programming and markup languages
      (c-c++ :variables
@@ -140,7 +140,19 @@ This  function should only modify configuration layer settings."
 
      ;; !!! Tags layer
      cscope
-     (gtags :variables gtags-enable-by-default t)
+     (gtags :variables
+            gtags-enable-by-default t
+            helm-gtags-prefix-key "\C-t"
+            helm-gtags-suggested-key-mapping t
+            helm-gtags-read-only t
+            helm-gtags-use-input-at-cursor t
+            helm-gtags-auto-update t
+            helm-gtags-update-interval-second nil
+            helm-gtags-cache-select-result t
+            helm-gtags-cache-max-result-size 100
+            helm-gtags-pulse-at-cursor t
+            helm-gtags-fuzzy-match t
+            helm-gtags-preselect t)
 
      ;; !!! Custom
      ;; more smarter commenter
