@@ -144,7 +144,7 @@ This  function should only modify configuration layer settings."
             gtags-enable-by-default t
             helm-gtags-prefix-key "\C-t"
             helm-gtags-suggested-key-mapping t
-            helm-gtags-read-only t
+            helm-gtags-read-only nil
             helm-gtags-use-input-at-cursor t
             helm-gtags-auto-update t
             helm-gtags-update-interval-second nil
