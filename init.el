@@ -82,7 +82,7 @@ This  function should only modify configuration layer settings."
 
      ;; !!! Programming and markup languages
      (c-c++ :variables
-            c-c++-enable-clang-support t
+            ;; c-c++-enable-clang-support t
             c-c++-enable-clang-format-on-save t
             ;; `c-mode' or `c++-mode'
             c-c++-default-mode-for-headers 'c++-mode)
