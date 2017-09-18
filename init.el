@@ -83,7 +83,7 @@ This  function should only modify configuration layer settings."
      ;; !!! Programming and markup languages
      (c-c++ :variables
             ;; c-c++-enable-clang-support t
-            c-c++-enable-clang-format-on-save t
+            ;; c-c++-enable-clang-format-on-save t
             ;; `c-mode' or `c++-mode'
             c-c++-default-mode-for-headers 'c++-mode)
      emacs-lisp
@@ -147,7 +147,7 @@ This  function should only modify configuration layer settings."
             helm-gtags-read-only nil
             helm-gtags-use-input-at-cursor t
             helm-gtags-auto-update t
-            helm-gtags-update-interval-second nil
+            helm-gtags-update-interval-second 5
             helm-gtags-cache-select-result t
             helm-gtags-cache-max-result-size 100
             helm-gtags-pulse-at-cursor t
@@ -431,7 +431,7 @@ It should only modify the values of Spacemacs settings."
    ;; `trailing' to delete only the whitespace at end of lines, `changed' to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup 'all
+   dotspacemacs-whitespace-cleanup 'changed
    ;; Either nil or a number of seconds. If non-nil zone out after the specified
    ;; number of seconds. (default nil)
    dotspacemacs-zone-out-when-idle nil
