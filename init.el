@@ -74,10 +74,10 @@ This  function should only modify configuration layer settings."
                       better-defaults-move-to-end-of-code-first nil)
 
      ;; !!! File
-     (treemacs :variables
-               treemacs-use-follow-mode t
-               treemacs-use-filewatch-mode t
-               treemacs-use-collapsed-directories 3)
+     ;; (treemacs :variables
+     ;;           treemacs-use-follow-mode t
+     ;;           treemacs-use-filewatch-mode t
+     ;;           treemacs-use-collapsed-directories 3)
 
      ;; (org :variables
      ;;      org-enable-bootstrap-support t
