@@ -39,7 +39,7 @@ This  function should only modify configuration layer settings."
      spacemacs-completion
      spacemacs-editing
      spacemacs-editing-visual
-     ;; spacemacs-evil
+     spacemacs-evil
      ;; spacemacs-language
      spacemacs-layouts
      spacemacs-misc
@@ -218,7 +218,7 @@ It should only modify the values of Spacemacs settings."
    ;; with `:variables' keyword (similar to layers). Check the editing styles
    ;; section of the documentation for details on available variables.
    ;; (default 'vim)
-   dotspacemacs-editing-style 'emacs
+   dotspacemacs-editing-style 'vim
    ;; If non-nil output loading progress in `*Messages*' buffer. (default nil)
    dotspacemacs-verbose-loading nil
    ;; Specify the startup banner. Default value is `official', it displays

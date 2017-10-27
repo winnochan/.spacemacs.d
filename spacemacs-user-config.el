@@ -37,4 +37,6 @@
      (list (line-beginning-position)
            (line-beginning-position 2)))))
 
+;; graphviz-dot-mode config
+
 (provide 'spacemacs-user-config)
