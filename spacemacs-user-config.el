@@ -39,4 +39,7 @@
 
 ;; graphviz-dot-mode config
 
+;; outorg config
+;; (require 'outorg)
+
 (provide 'spacemacs-user-config)

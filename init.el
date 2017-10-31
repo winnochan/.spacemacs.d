@@ -85,7 +85,7 @@ This  function should only modify configuration layer settings."
           org-enable-reveal-js-support nil
           org-projectile-file "TODOs.org"
           org-enable-org-journal-support t)
-     (outorg)
+     ;; (outorg)
 
      ;; !!! Programming and markup languages
      (c-c++ :variables

@@ -14,4 +14,5 @@
 
 (defun outorg/init-outorg ()
   (use-package outorg
+    :defer t
     :init (defvar outline-minor-mode-prefix "\M-#")))
