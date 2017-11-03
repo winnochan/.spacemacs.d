@@ -43,11 +43,13 @@ This  function should only modify configuration layer settings."
      ;; spacemacs-language
      spacemacs-layouts
      spacemacs-misc
-     spacemacs-modeline
-     spacemacs-navigation
+     spacemacs-modeline  ;; develop only
+     spacemacs-navigation  ;; develop only
      spacemacs-org
-     spacemacs-purpose ;; develop only
-     spacemacs-visual
+     spacemacs-purpose  ;; develop only
+     spacemacs-visual  ;; develop only
+     ;; spacemacs-ui  ;; master only
+     ;; spacemacs-ui-visual  ;; master only
 
      ;; !!! Checkers
      spell-checking
