@@ -73,6 +73,10 @@ This  function should only modify configuration layer settings."
                       better-defaults-move-to-beginning-of-code-first nil
                       better-defaults-move-to-end-of-code-first nil)
 
+     ;; !!! Email layer
+     (gnus)
+     ;; (mu4e)
+
      ;; !!! File
      ;; (treemacs :variables
      ;;           treemacs-use-follow-mode t
