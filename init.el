@@ -465,7 +465,7 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-  (load-file (concat dotspacemacs-directory "spacemacs-user-init.el")))
+  (load-file (concat dotspacemacs-directory "user-init.el")))
 
 (defun dotspacemacs/user-config ()
   "Configuration for user code:
@@ -473,7 +473,7 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  (load-file (concat dotspacemacs-directory "spacemacs-user-config.el")))
+  (load-file (concat dotspacemacs-directory "user-config.el")))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
