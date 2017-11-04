@@ -42,4 +42,6 @@
 ;; outorg config
 ;; (require 'outorg)
 
+;; java config
+
 (provide 'spacemacs-user-config)
