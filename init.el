@@ -105,9 +105,10 @@ This  function should only modify configuration layer settings."
          go-tab-width 4
          go-use-gometalinter nil)
      html
-     ;; (java :variables
-     ;;       ;; `eclim', `ensime' or `meghanada', default: `meghanada'
-     ;;       java-backend 'meghanada)
+     (java :variables
+           ;; `eclim', `ensime' or `meghanada', default: `meghanada'
+           java-backend 'ensime
+           java--ensime-modes '(java-mode))
      (javascript :variables
                  javascript-disable-tern-port-files t)
      ;; lua
