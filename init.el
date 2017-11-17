@@ -137,9 +137,23 @@ This  function should only modify configuration layer settings."
      ;; yaml
 
      ;; !!! Operating systems
-     ;; (osx :variables
-     ;;      osx-use-option-as-meta t
-     ;;      osx-use-dictionary-app nil)
+     (osx :variables
+          ;; `super' `meta' `hyper' `alt' `none'. default: `hyper'
+          osx-command-as 'hyper
+          ;; `super' `meta' `hyper' `alt' `none'. default: `meta'
+          osx-option-as 'meta
+          ;; `super' `meta' `hyper' `alt' `none'. default: `none'
+          osx-function-as 'none
+          ;; `super' `meta' `hyper' `alt' `none'. default: `control'
+          osx-control-as 'control
+          ;; `super' `meta' `hyper' `alt' `left' `none'. default: `left'
+          osx-right-control-as 'left
+          ;; `super' `meta' `hyper' `alt' `left' `none'. default: `left'
+          osx-right-command-as 'left
+          ;; `super' `meta' `hyper' `alt' `left' `none'. default: `left'
+          osx-right-option-as 'left
+          ;; `t' `nil'. default: `t'
+          osx-use-dictionary-app t)
 
      ;; !!! Pair Programming
      ;; floobits
