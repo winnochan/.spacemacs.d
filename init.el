@@ -107,8 +107,8 @@ This  function should only modify configuration layer settings."
      html
      (java :variables
            ;; `eclim', `ensime' or `meghanada', default: `meghanada'
-           ;; java--ensime-modes '(java-mode)
-           java-backend 'meghanada)
+           java--ensime-modes '(java-mode)
+           java-backend 'ensime)
      (javascript :variables
                  javascript-disable-tern-port-files t)
      ;; lua
