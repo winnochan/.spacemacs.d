@@ -1,6 +1,6 @@
 ;; Personal Information Configuration
 (setq user-full-name "wowchan")
-(setq user-email-address "wow4chan@gmail.com")
+(setq user-email-address "wowchan@icloud.com")
 
 ;; 多行移动
 ;; (global-set-key (kbd "C-M-n")
@@ -8,9 +8,9 @@
 ;; (global-set-key (kbd "C-M-p")
 ;;                 (lambda () (interactive) (previous-line 7)))
 (global-set-key (kbd "M-n")
-                (lambda () (interactive) (next-line 7)))
+                (lambda () (interactive) (next-line 5)))
 (global-set-key (kbd "M-p")
-                (lambda () (interactive) (previous-line 7)))
+                (lambda () (interactive) (previous-line 5)))
 
 ;; refresh-file
 (defun refresh-file ()
@@ -19,11 +19,11 @@
 (global-set-key (kbd "<f5>") 'refresh-file)
 
 ;; c-c++ code style
-(setq c-default-style "java")
-(setq-default c-basic-offset 4)
-(setq default-tab-width 4)
+;; (setq c-default-style "java")
+;; (setq-default c-basic-offset 4)
+;; (setq default-tab-width 4)
 
-(global-spacemacs-whitespace-cleanup-mode t)
+;; (global-spacemacs-whitespace-cleanup-mode t)
 
 ;; 设置单行的复制以剪切
 (defadvice kill-ring-save (before slickcopy activate compile)
@@ -39,14 +39,12 @@
 
 ;; graphviz-dot-mode config
 
-;; outorg config
-;; (require 'outorg)
 
 ;; java config
 ;; (require 'ensime)
 ;; (setq ensime-startup-notification nil)
 ;; (add-hook 'java-mode-hook 'ensime-java-mode-hook)
 ;; (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
-;; (add-hook 'ensime-mode-hook 'ensime)
+(add-hook 'ensime-mode-hook 'ensime)
 
 (provide 'spacemacs-user-config)
