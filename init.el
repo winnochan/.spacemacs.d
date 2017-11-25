@@ -53,8 +53,8 @@ This function should only modify configuration layer settings."
      ;; checker
      (spell-checking :variables
                      spell-checking-enable-by-default t
-                     spell-checking-enable-auto-dictionary t
-                     enable-flyspell-auto-completion t)
+                     spell-checking-enable-auto-dictionary nil
+                     enable-flyspell-auto-completion nil)
      (syntax-checking :variables
                       syntax-checking-enable-tooltips t
                       syntax-checking-enable-by-default nil
@@ -423,7 +423,7 @@ It should only modify the values of Spacemacs settings."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers prog-mode
+   dotspacemacs-line-numbers t
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
