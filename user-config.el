@@ -47,4 +47,4 @@
 ;; (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 (add-hook 'ensime-mode-hook 'ensime)
 
-(provide 'spacemacs-user-config)
+(provide 'user-config)

@@ -9,7 +9,7 @@ This function should only modify configuration layer settings."
    ;; Base distribution to use. This is a layer contained in the directory
    ;; `+distribution'. For now available distributions are `spacemacs-base'
    ;; or `spacemacs'. (default 'spacemacs)
-   dotspacemacs-distribution 'spacemacs-base
+   dotspacemacs-distribution 'spacemace
    ;; Lazy installation of layers (i.e. layers are installed only when a file
    ;; with a supported type is opened). Possible values are `all', `unused'
    ;; and `nil'. `unused' will lazy install only unused layers (i.e. layers
@@ -26,7 +26,7 @@ This function should only modify configuration layer settings."
    ;; If non-nil layers with lazy install support are lazy installed.
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
-   dotspacemacs-configuration-layer-path '("~/.spacemacs.d/layers/")
+   dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
@@ -37,18 +37,18 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
 
      ;; spacemacs
-     spacemacs-completion
-     spacemacs-editing
-     spacemacs-editing-visual
-     spacemacs-evil
-     spacemacs-language
-     spacemacs-layouts
-     spacemacs-misc
-     spacemacs-modeline
-     spacemacs-navigation
-     spacemacs-org
-     spacemacs-purpose
-     spacemacs-visual
+     ;; spacemacs-completion
+     ;; spacemacs-editing
+     ;; spacemacs-editing-visual
+     ;; spacemacs-evil
+     ;; spacemacs-language
+     ;; spacemacs-layouts
+     ;; spacemacs-misc
+     ;; spacemacs-modeline
+     ;; spacemacs-navigation
+     ;; spacemacs-org
+     ;; spacemacs-purpose
+     ;; spacemacs-visual
 
      ;; checker
      (spell-checking :variables
@@ -102,10 +102,10 @@ This function should only modify configuration layer settings."
      gnus
 
      ;; filetree
-     (treemacs :variables
-               treemacs-use-follow-mode t
-               treemacs-use-filewatch-mode t
-               treemacs-use-collapsed-directories 3)
+     ;; (treemacs :variables
+     ;;           treemacs-use-follow-mode t
+     ;;           treemacs-use-filewatch-mode t
+     ;;           treemacs-use-collapsed-directories 3)
 
      ;; framework
      django
@@ -160,9 +160,12 @@ This function should only modify configuration layer settings."
 
      ;; os
      (osx :variables
-          osx-command-as 'hyper
-          osx-option-as 'meta
-          osx-function-as 'none
+          ;; default: 'hyper
+          osx-command-as 'meta
+          ;; default: 'meta
+          osx-option-as 'hyper
+          ;; default: 'none
+          osx-function-as 'control
           osx-control-as 'control
           osx-right-control-as 'left
           osx-right-command-as 'left
@@ -247,7 +250,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil, a form that evaluates to a package directory. For example, to
    ;; use different package directories for different Emacs versions, set this
    ;; to `emacs-version'. (default 'emacs-version)
-   dotspacemacs-elpa-subdirectory 'emacs-version
+   dotspacemacs-elpa-subdirectory nil
    ;; One of `vim', `emacs' or `hybrid'.
    ;; `hybrid' is like `vim' except that `insert state' is replaced by the
    ;; `hybrid state' with `emacs' key bindings. The value can also be a list
@@ -492,7 +495,12 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-  (load-file (concat dotspacemacs-directory "user-init.el")))
+  (load-file (concat dotspacemacs-directory "user-init.el"))
+  ;; https://github.com/syl20bnr/spacemacs/issues/2705
+  (setq tramp-mode nil)
+  ;; ss proxy. But it will cause anacond-mode failed.
+  (setq socks-server '("Default server" "127.0.0.1" 1086 5))
+)
 
 (defun dotspacemacs/user-config ()
   "Configuration for user code:
