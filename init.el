@@ -9,7 +9,7 @@ This function should only modify configuration layer settings."
    ;; Base distribution to use. This is a layer contained in the directory
    ;; `+distribution'. For now available distributions are `spacemacs-base'
    ;; or `spacemacs'. (default 'spacemacs)
-   dotspacemacs-distribution 'spacemace
+   dotspacemacs-distribution 'spacemacs-base
    ;; Lazy installation of layers (i.e. layers are installed only when a file
    ;; with a supported type is opened). Possible values are `all', `unused'
    ;; and `nil'. `unused' will lazy install only unused layers (i.e. layers
@@ -37,24 +37,24 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
 
      ;; spacemacs
-     ;; spacemacs-completion
-     ;; spacemacs-editing
-     ;; spacemacs-editing-visual
+     spacemacs-completion
+     spacemacs-editing
+     spacemacs-editing-visual
      ;; spacemacs-evil
      ;; spacemacs-language
-     ;; spacemacs-layouts
-     ;; spacemacs-misc
-     ;; spacemacs-modeline
-     ;; spacemacs-navigation
-     ;; spacemacs-org
-     ;; spacemacs-purpose
-     ;; spacemacs-visual
+     spacemacs-layouts
+     spacemacs-misc
+     spacemacs-modeline
+     spacemacs-navigation
+     spacemacs-org
+     spacemacs-purpose
+     spacemacs-visual
 
      ;; checker
      (spell-checking :variables
-                     spell-checking-enable-by-default t
+                     spell-checking-enable-by-default nil
                      spell-checking-enable-auto-dictionary nil
-                     enable-flyspell-auto-completion nil)
+                     enable-flyspell-auto-completion t)
      (syntax-checking :variables
                       syntax-checking-enable-tooltips t
                       syntax-checking-enable-by-default nil
@@ -112,11 +112,11 @@ This function should only modify configuration layer settings."
      react
 
      ;; intl
-     (chinese :variables
-              chinese-default-input-method 'pinyin
-              chinese-enable-youdao-dict t
-              chinese-enable-avy-pinyin t
-              chinese-enable-fcitx nil)
+     ;; (chinese :variables
+     ;;          chinese-default-input-method 'pinyin
+     ;;          chinese-enable-youdao-dict t
+     ;;          chinese-enable-avy-pinyin t
+     ;;          chinese-enable-fcitx nil)
 
      ;; lang
      (c-c++ :variables
@@ -135,7 +135,7 @@ This function should only modify configuration layer settings."
            java-backend 'ensime
            java--ensime-modes '(java-mode))
      (javascript :variables
-                 javascript-disable-tern-port-files nil)
+                 javascript-disable-tern-port-files t)
      (markdown :variables
                markdown-live-preview-engine 'eww
                markdown-mmm-auto-modes '("c" "c++" "css" "java" "javascript"
@@ -159,23 +159,23 @@ This function should only modify configuration layer settings."
      yaml
 
      ;; os
-     (osx :variables
-          ;; default: 'hyper
-          osx-command-as 'meta
-          ;; default: 'meta
-          osx-option-as 'hyper
-          ;; default: 'none
-          osx-function-as 'control
-          osx-control-as 'control
-          osx-right-control-as 'left
-          osx-right-command-as 'left
-          osx-right-option-as 'left
-          osx-use-dictionary-app t)
+     ;; (osx :variables
+     ;;      ;; default: 'hyper
+     ;;      osx-command-as 'meta
+     ;;      ;; default: 'meta
+     ;;      osx-option-as 'hyper
+     ;;      ;; default: 'none
+     ;;      osx-function-as 'control
+     ;;      osx-control-as 'control
+     ;;      osx-right-control-as 'left
+     ;;      osx-right-command-as 'left
+     ;;      osx-right-option-as 'left
+     ;;      osx-use-dictionary-app t)
 
      ;; source-control
-     (git :variables
-          git-enable-magit-svn-plugin t
-          git-magit-status-fullscreen t)
+     ;; (git :variables
+     ;;      git-enable-magit-svn-plugin t
+     ;;      git-magit-status-fullscreen t)
      (version-control :variables
                       version-control-global-margin t
                       version-control-diff-tool 'git-gutter+
@@ -188,7 +188,7 @@ This function should only modify configuration layer settings."
             helm-gtags-read-only nil
             helm-gtags-use-input-at-cursor t
             helm-gtags-auto-update t
-            helm-gtags-update-interval-second 5
+            helm-gtags-update-interval-second 20
             helm-gtags-cache-select-result t
             helm-gtags-cache-max-result-size 100
             helm-gtags-pulse-at-cursor t
@@ -266,7 +266,7 @@ It should only modify the values of Spacemacs settings."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner 'official
+   dotspacemacs-startup-banner nil
    ;; List of items to show in startup buffer or an association list of
    ;; the form `(list-type . list-size)`. If nil then it is disabled.
    ;; Possible values for list-type are:
@@ -335,7 +335,7 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-display-default-layout nil
    ;; If non-nil then the last auto saved layouts are resumed automatically upon
    ;; start. (default nil)
-   dotspacemacs-auto-resume-layouts t
+   dotspacemacs-auto-resume-layouts nil
    ;; If non-nil, auto-generate layout name when creating new layouts. Only has
    ;; effect when using the "jump to layout by number" commands. (default nil)
    dotspacemacs-auto-generate-layout-names nil
@@ -349,7 +349,7 @@ It should only modify the values of Spacemacs settings."
    ;; (default 'cache)
    dotspacemacs-auto-save-file-location 'cache
    ;; Maximum number of rollback slots to keep in the cache. (default 5)
-   dotspacemacs-max-rollback-slots 22
+   dotspacemacs-max-rollback-slots 7
    ;; If non-nil, `helm' will try to minimize the space it uses. (default nil)
    dotspacemacs-helm-resize nil
    ;; if non-nil, the helm header is hidden when there is only one source.
@@ -380,11 +380,11 @@ It should only modify the values of Spacemacs settings."
    ;; another same-purpose window is available. If non-nil, `switch-to-buffer'
    ;; displays the buffer in a same-purpose window even if the buffer can be
    ;; displayed in the current window. (default nil)
-   dotspacemacs-switch-to-buffer-prefers-purpose t
+   dotspacemacs-switch-to-buffer-prefers-purpose nil
    ;; If non-nil a progress bar is displayed when spacemacs is loading. This
    ;; may increase the boot time on some systems and emacs builds, set it to
    ;; nil to boost the loading time. (default t)
-   dotspacemacs-loading-progress-bar t
+   dotspacemacs-loading-progress-bar nil
    ;; If non-nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
    dotspacemacs-fullscreen-at-startup nil
@@ -394,15 +394,15 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup t
+   dotspacemacs-maximized-at-startup nil
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
-   dotspacemacs-active-transparency 70
+   dotspacemacs-active-transparency 90
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's inactive or deselected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
-   dotspacemacs-inactive-transparency 70
+   dotspacemacs-inactive-transparency 90
    ;; If non-nil show the titles of transient states. (default t)
    dotspacemacs-show-transient-state-title t
    ;; If non-nil show the color guide hint for transient state keys. (default t)
@@ -426,7 +426,7 @@ It should only modify the values of Spacemacs settings."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers t
+   dotspacemacs-line-numbers nil
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -495,12 +495,7 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-  (load-file (concat dotspacemacs-directory "user-init.el"))
-  ;; https://github.com/syl20bnr/spacemacs/issues/2705
-  (setq tramp-mode nil)
-  ;; ss proxy. But it will cause anacond-mode failed.
-  (setq socks-server '("Default server" "127.0.0.1" 1086 5))
-)
+  (load-file (concat dotspacemacs-directory "user-init.el")))
 
 (defun dotspacemacs/user-config ()
   "Configuration for user code:

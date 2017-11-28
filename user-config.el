@@ -1,12 +1,12 @@
 ;; Personal Information Configuration
-(setq user-full-name "wowchan")
-(setq user-email-address "wowchan@icloud.com")
+(setq user-full-name "WinnoChan")
+(setq user-email-address "winnochan@icloud.com")
 
 ;; 多行移动
 ;; (global-set-key (kbd "C-M-n")
-;;                 (lambda () (interactive) (next-line 7)))
+;;                 (lambda () (interactive) (next-line 5)))
 ;; (global-set-key (kbd "C-M-p")
-;;                 (lambda () (interactive) (previous-line 7)))
+;;                 (lambda () (interactive) (previous-line 5)))
 (global-set-key (kbd "M-n")
                 (lambda () (interactive) (next-line 5)))
 (global-set-key (kbd "M-p")
@@ -19,11 +19,11 @@
 (global-set-key (kbd "<f5>") 'refresh-file)
 
 ;; c-c++ code style
-;; (setq c-default-style "java")
-;; (setq-default c-basic-offset 4)
-;; (setq default-tab-width 4)
+(setq c-default-style "java")
+(setq-default c-basic-offset 4)
+(setq default-tab-width 4)
 
-;; (global-spacemacs-whitespace-cleanup-mode t)
+(global-spacemacs-whitespace-cleanup-mode t)
 
 ;; 设置单行的复制以剪切
 (defadvice kill-ring-save (before slickcopy activate compile)
