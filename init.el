@@ -52,7 +52,7 @@ This function should only modify configuration layer settings."
 
      ;; checker
      (spell-checking :variables
-                     spell-checking-enable-by-default nil
+                     spell-checking-enable-by-default t
                      spell-checking-enable-auto-dictionary nil
                      enable-flyspell-auto-completion t)
      (syntax-checking :variables
@@ -82,7 +82,7 @@ This function should only modify configuration layer settings."
 
      ;; emacs
      (better-defaults :variables
-                      better-defaults-move-to-beginning-of-code-first t
+                      better-defaults-move-to-beginning-of-code-first nil
                       better-defaults-move-to-end-of-code-first nil)
      ibuffer
      (org :variables
@@ -95,17 +95,17 @@ This function should only modify configuration layer settings."
           org-enable-hugo-support t)
      semantic
      smex
-     (typography :variables
-                 typography-enable-typographic-editing t)
+     ;; (typography :variables
+     ;;             typography-enable-typographic-editing t)
 
      ;; email
      gnus
 
      ;; filetree
-     ;; (treemacs :variables
-     ;;           treemacs-use-follow-mode t
-     ;;           treemacs-use-filewatch-mode t
-     ;;           treemacs-use-collapsed-directories 3)
+     (treemacs :variables
+               treemacs-use-follow-mode t
+               treemacs-use-filewatch-mode t
+               treemacs-use-collapsed-directories 3)
 
      ;; framework
      django
@@ -122,7 +122,7 @@ This function should only modify configuration layer settings."
      (c-c++ :variables
             c-c++-enable-clang-support t
             c-c++-enable-clang-format-on-save t
-            c-c++-default-mode-for-headers 'c-mode)
+            c-c++-default-mode-for-headers 'c++-mode)
      emacs-lisp
      (go :variables
          go-use-gocheck-for-testing nil
@@ -159,18 +159,15 @@ This function should only modify configuration layer settings."
      yaml
 
      ;; os
-     ;; (osx :variables
-     ;;      ;; default: 'hyper
-     ;;      osx-command-as 'meta
-     ;;      ;; default: 'meta
-     ;;      osx-option-as 'hyper
-     ;;      ;; default: 'none
-     ;;      osx-function-as 'control
-     ;;      osx-control-as 'control
-     ;;      osx-right-control-as 'left
-     ;;      osx-right-command-as 'left
-     ;;      osx-right-option-as 'left
-     ;;      osx-use-dictionary-app t)
+     (osx :variables
+          osx-command-as 'hyper
+          osx-option-as 'meta
+          osx-function-as 'none
+          osx-control-as 'control
+          osx-right-control-as 'left
+          osx-right-command-as 'left
+          osx-right-option-as 'left
+          osx-use-dictionary-app t)
 
      ;; source-control
      ;; (git :variables
@@ -188,7 +185,7 @@ This function should only modify configuration layer settings."
             helm-gtags-read-only nil
             helm-gtags-use-input-at-cursor t
             helm-gtags-auto-update t
-            helm-gtags-update-interval-second 20
+            helm-gtags-update-interval-second 10
             helm-gtags-cache-select-result t
             helm-gtags-cache-max-result-size 100
             helm-gtags-pulse-at-cursor t
