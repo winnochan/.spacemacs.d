@@ -120,7 +120,7 @@ This function should only modify configuration layer settings."
 
      ;; lang
      (c-c++ :variables
-            c-c++-enable-clang-support t
+            c-c++-enable-clang-support nil
             c-c++-enable-clang-format-on-save t
             c-c++-default-mode-for-headers 'c++-mode)
      emacs-lisp
