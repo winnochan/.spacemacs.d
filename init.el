@@ -192,6 +192,11 @@ This function should only modify configuration layer settings."
             helm-gtags-fuzzy-match t
             helm-gtags-preselect t)
 
+     ;; theme
+     ;; (colors :variables colors-colorize-identifiers 'all)
+     ;; themes-megapack
+     ;; theming
+
      ;; custom
      commenter
      e2wm
