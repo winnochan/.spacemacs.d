@@ -131,9 +131,9 @@ This function should only modify configuration layer settings."
          go-test-buffer-name "*go test*"
          go-use-test-args "")
      html
-     (java :variables
-           java-backend 'ensime
-           java--ensime-modes '(java-mode))
+     ;; (java :variables
+     ;;       java-backend 'ensime
+     ;;       java--ensime-modes '(java-mode))
      (javascript :variables
                  javascript-disable-tern-port-files t)
      (markdown :variables
