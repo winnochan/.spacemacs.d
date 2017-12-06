@@ -41,9 +41,9 @@
 
 
 ;; java config
-;; (setq ensime-startup-notification nil)
+(setq ensime-startup-notification nil)
 ;; (add-hook 'java-mode-hook 'ensime-java-mode-hook)
 ;; (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
-;; (add-hook 'ensime-mode-hook 'ensime)
+(add-hook 'ensime-mode-hook 'ensime)
 
 (provide 'user-config)

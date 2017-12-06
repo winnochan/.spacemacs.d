@@ -131,9 +131,9 @@ This function should only modify configuration layer settings."
          go-test-buffer-name "*go test*"
          go-use-test-args "")
      html
-     ;; (java :variables
-     ;;       java-backend 'ensime
-     ;;       java--ensime-modes '(java-mode))
+     (java :variables
+           java-backend 'ensime
+           java--ensime-modes '(java-mode scala-mode))
      (javascript :variables
                  javascript-disable-tern-port-files t)
      (markdown :variables
@@ -155,6 +155,14 @@ This function should only modify configuration layer settings."
              python-auto-set-local-pyvenv-virtualenv 'on-visit
              python-sort-imports-on-save t)
      rust
+     (scala :variables
+            scala-enable-eldoc t
+            scala-auto-start-ensime t
+            scala-indent:use-javadoc-style t
+            scala-auto-insert-asterisk-in-comments t
+            flycheck-scalastyle-jar "/usr/local/Cellar/scalastyle/1.0.0/libexec/scalastyle_2.12-1.0.0-batch.jar"
+            flycheck-scalastylerc "/usr/local/etc/scalastyle_config.xml")
+
      shell-scripts
      yaml
 
