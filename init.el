@@ -93,7 +93,7 @@ This function should only modify configuration layer settings."
           org-projectile-file "TODOs.org"
           org-enable-org-journal-support t
           org-enable-hugo-support t)
-     semantic
+     ;; semantic
      smex
      ;; (typography :variables
      ;;             typography-enable-typographic-editing t)
@@ -121,7 +121,7 @@ This function should only modify configuration layer settings."
      ;; lang
      (c-c++ :variables
             c-c++-enable-clang-support nil
-            c-c++-enable-clang-format-on-save t
+            c-c++-enable-clang-format-on-save nil
             c-c++-default-mode-for-headers 'c-mode)
      emacs-lisp
      (go :variables
@@ -199,11 +199,6 @@ This function should only modify configuration layer settings."
             helm-gtags-pulse-at-cursor t
             helm-gtags-fuzzy-match t
             helm-gtags-preselect t)
-
-     ;; theme
-     ;; (colors :variables colors-colorize-identifiers 'all)
-     ;; themes-megapack
-     ;; theming
 
      ;; custom
      commenter
@@ -488,7 +483,7 @@ It should only modify the values of Spacemacs settings."
    ;; `trailing' to delete only the whitespace at end of lines, `changed' to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup 'changed
+   dotspacemacs-whitespace-cleanup 'all
    ;; Either nil or a number of seconds. If non-nil zone out after the specified
    ;; number of seconds. (default nil)
    dotspacemacs-zone-out-when-idle nil
