@@ -93,7 +93,7 @@ This function should only modify configuration layer settings."
           org-projectile-file "TODOs.org"
           org-enable-org-journal-support t
           org-enable-hugo-support t)
-     ;; semantic
+     semantic
      smex
      ;; (typography :variables
      ;;             typography-enable-typographic-editing t)
@@ -190,14 +190,19 @@ This function should only modify configuration layer settings."
      (gtags :variables
             gtags-enable-by-default t
             helm-gtags-suggested-key-mapping t
+            helm-gtags-path-style 'relative
+            helm-gtags-ignore-case t
             helm-gtags-read-only nil
             helm-gtags-use-input-at-cursor t
-            helm-gtags-auto-update t
-            helm-gtags-update-interval-second 10
+            helm-gtags-highlight-candidate t
+            helm-gtags-display-style 'detail
+            helm-gtags-auto-update nil
+            helm-gtags-update-interval-second 60
             helm-gtags-cache-select-result t
-            helm-gtags-cache-max-result-size 100
-            helm-gtags-pulse-at-cursor t
-            helm-gtags-fuzzy-match t
+            helm-gtags-cache-max-result-size 10
+            helm-gtags-pulse-at-cursor nil
+            helm-gtags-fuzzy-match nil
+            helm-gtags-direct-helm-completing t
             helm-gtags-preselect t)
 
      ;; custom
