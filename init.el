@@ -52,11 +52,11 @@ This function should only modify configuration layer settings."
 
      ;; checker
      (spell-checking :variables
-                     spell-checking-enable-by-default t
+                     spell-checking-enable-by-default nil
                      spell-checking-enable-auto-dictionary nil
                      enable-flyspell-auto-completion t)
      (syntax-checking :variables
-                      syntax-checking-enable-tooltips t
+                      syntax-checking-enable-tooltips nil
                       syntax-checking-enable-by-default nil
                       syntax-checking-use-original-bitmaps nil)
 
@@ -93,8 +93,8 @@ This function should only modify configuration layer settings."
           org-projectile-file "TODOs.org"
           org-enable-org-journal-support t
           org-enable-hugo-support t)
-     semantic
-     smex
+     ;; semantic
+     ;; smex
      ;; (typography :variables
      ;;             typography-enable-typographic-editing t)
 
@@ -146,13 +146,13 @@ This function should only modify configuration layer settings."
                                          ("html" "web"))
                markdown--key-bindings-modes '(markdown-mode gfm-mode))
      (python :variables
-             python-enable-yapf-format-on-save t
+             python-enable-yapf-format-on-save nil
              ;; `nose' or `pytest'
              python-test-runner 'nose
              python-fill-column 79
              python-tab-width 4
-             python-auto-set-local-pyenv-version 'on-visit
-             python-auto-set-local-pyvenv-virtualenv 'on-visit
+             python-auto-set-local-pyenv-version nil
+             python-auto-set-local-pyvenv-virtualenv nil
              python-sort-imports-on-save t)
      rust
      (scala :variables
@@ -204,6 +204,9 @@ This function should only modify configuration layer settings."
             helm-gtags-fuzzy-match nil
             helm-gtags-direct-helm-completing t
             helm-gtags-preselect t)
+
+     ;; tools
+     fasd
 
      ;; custom
      commenter
