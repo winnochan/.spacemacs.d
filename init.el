@@ -47,7 +47,7 @@ This function should only modify configuration layer settings."
      spacemacs-modeline
      spacemacs-navigation
      spacemacs-org
-     spacemacs-purpose
+     ;; spacemacs-purpose
      spacemacs-visual
 
      ;; checker
