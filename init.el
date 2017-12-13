@@ -190,7 +190,7 @@ This function should only modify configuration layer settings."
      (gtags :variables
             gtags-enable-by-default t
             helm-gtags-suggested-key-mapping t
-            helm-gtags-path-style 'relative
+            ;; helm-gtags-path-style 'relative
             helm-gtags-ignore-case t
             helm-gtags-read-only nil
             helm-gtags-use-input-at-cursor t
