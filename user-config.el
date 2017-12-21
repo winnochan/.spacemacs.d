@@ -46,4 +46,7 @@
 ;; (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 (add-hook 'ensime-mode-hook 'ensime)
 
+;; winum
+(setq winum-scope 'frame-local)
+
 (provide 'user-config)

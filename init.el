@@ -206,7 +206,9 @@ This function should only modify configuration layer settings."
             helm-gtags-preselect t)
 
      ;; tools
+     command-log
      fasd
+     imenu-list
 
      ;; custom
      commenter
