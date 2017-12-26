@@ -93,7 +93,7 @@ This function should only modify configuration layer settings."
           org-projectile-file "TODOs.org"
           org-enable-org-journal-support t
           org-enable-hugo-support t)
-     ;; semantic
+     semantic
      ;; smex
      ;; (typography :variables
      ;;             typography-enable-typographic-editing t)
@@ -153,7 +153,7 @@ This function should only modify configuration layer settings."
              python-tab-width 4
              python-auto-set-local-pyenv-version nil
              python-auto-set-local-pyvenv-virtualenv nil
-             python-sort-imports-on-save t)
+             python-sort-imports-on-save nil)
      rust
      (scala :variables
             scala-enable-eldoc t
