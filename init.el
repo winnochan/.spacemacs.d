@@ -56,9 +56,9 @@ This function should only modify configuration layer settings."
                      spell-checking-enable-auto-dictionary nil
                      enable-flyspell-auto-completion t)
      (syntax-checking :variables
-                      syntax-checking-enable-tooltips nil
+                      syntax-checking-enable-tooltips t
                       syntax-checking-enable-by-default nil
-                      syntax-checking-use-original-bitmaps nil)
+                      syntax-checking-use-original-bitmaps t)
 
      ;; completion
      helm
@@ -69,7 +69,9 @@ This function should only modify configuration layer settings."
                         company-files company-dabbrev)
                       auto-completion-return-key-behavior 'complete
                       auto-completion-tab-key-behavior 'cycle
-                      auto-completion-complete-with-key-sequence-delay 0.1
+                      auto-completion-complete-with-key-sequence nil
+                      auto-completion-complete-with-key-sequence-delay 0.01
+                      auto-completion-idle-delay 0.02
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-sort-by-usage t
                       auto-completion-enable-help-tooltip t
@@ -121,11 +123,17 @@ This function should only modify configuration layer settings."
      ;; lang
      (c-c++ :variables
             c-c++-enable-clang-support nil
+            c-c++-enable-google-style t
+            c-c++-enable-google-newline t
+            c-c++-enable-rtags-support t
+            c-c++-enable-cmake-ide-support t
             c-c++-enable-clang-format-on-save nil
+            c-c++-enable-c++11 t
             c-c++-default-mode-for-headers 'c-mode)
-     emacs-lisp
+     (emacs-lisp :variables
+                 emacs-lisp-hide-namespace-prefix nil)
      (go :variables
-         go-use-gocheck-for-testing nil
+         go-use-gocheck-for-testing t
          go-tab-width 4
          go-use-gometalinter t
          go-test-buffer-name "*go test*"
@@ -135,31 +143,39 @@ This function should only modify configuration layer settings."
            java-backend 'ensime
            java--ensime-modes '(java-mode scala-mode))
      (javascript :variables
-                 javascript-disable-tern-port-files t)
+                 javascript-disable-tern-port-files nil)
      (markdown :variables
                markdown-live-preview-engine 'eww
-               markdown-mmm-auto-modes '("c" "c++" "css" "java" "javascript"
-                                         "python" "ruby" "rust" "scala"
+               markdown-mmm-auto-modes '("c"
+                                         "c++"
+                                         "css"
+                                         "java"
+                                         "javascript"
+                                         "python"
+                                         "ruby"
+                                         "rust"
+                                         "scala"
                                          ("elisp" "emacs-lisp")
                                          ("ess" "R")
                                          ("ini" "conf-unix")
                                          ("html" "web"))
                markdown--key-bindings-modes '(markdown-mode gfm-mode))
      (python :variables
-             python-enable-yapf-format-on-save nil
-             ;; `nose' or `pytest'
+             python-enable-yapf-format-on-save t
              python-test-runner 'nose
+             python-save-before-test t
              python-fill-column 79
              python-tab-width 4
-             python-auto-set-local-pyenv-version nil
-             python-auto-set-local-pyvenv-virtualenv nil
-             python-sort-imports-on-save nil)
+             python-auto-set-local-pyenv-version 'on-visit
+             python-auto-set-local-pyvenv-virtualenv 'on-visit
+             python-sort-imports-on-save t)
      rust
      (scala :variables
             scala-enable-eldoc t
+            scala-auto-insert-asterisk-in-comments t
+            scala-use-unicode-arrows t
             scala-auto-start-ensime t
             scala-indent:use-javadoc-style t
-            scala-auto-insert-asterisk-in-comments t
             flycheck-scalastyle-jar "/usr/local/Cellar/scalastyle/1.0.0/libexec/scalastyle_2.12-1.0.0-batch.jar"
             flycheck-scalastylerc "/usr/local/etc/scalastyle_config.xml")
 
@@ -189,6 +205,7 @@ This function should only modify configuration layer settings."
      ;; tags
      (gtags :variables
             gtags-enable-by-default t
+            spacemacs--counsel-gtags-dwim-success t
             helm-gtags-suggested-key-mapping t
             ;; helm-gtags-path-style 'relative
             helm-gtags-ignore-case t
