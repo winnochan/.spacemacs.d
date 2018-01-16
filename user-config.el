@@ -19,9 +19,9 @@
 (global-set-key (kbd "<f5>") 'refresh-file)
 
 ;; c-c++ code style
-(setq c-default-style "java")
-(setq-default c-basic-offset 4)
-(setq default-tab-width 4)
+;; (setq c-default-style "java")
+;; (setq-default c-basic-offset 4)
+;; (setq default-tab-width 4)
 
 (global-spacemacs-whitespace-cleanup-mode t)
 
