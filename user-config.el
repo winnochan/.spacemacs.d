@@ -20,8 +20,8 @@
 
 ;; c-c++ code style
 ;; (setq c-default-style "java")
-;; (setq-default c-basic-offset 4)
-;; (setq default-tab-width 4)
+(setq-default c-basic-offset 4)
+(setq default-tab-width 4)
 
 (global-spacemacs-whitespace-cleanup-mode t)
 
