@@ -123,12 +123,12 @@ This function should only modify configuration layer settings."
      ;; lang
      (c-c++ :variables
             c-c++-enable-clang-support nil
-            c-c++-enable-google-style t
-            c-c++-enable-google-newline t
+            ;; c-c++-enable-google-style t
+            ;; c-c++-enable-google-newline t
             c-c++-enable-rtags-support t
-            c-c++-enable-cmake-ide-support t
+            c-c++-enable-cmake-ide-support nil
             c-c++-enable-clang-format-on-save nil
-            c-c++-enable-c++11 t
+            c-c++-enable-c++11 nil
             c-c++-default-mode-for-headers 'c-mode)
      (emacs-lisp :variables
                  emacs-lisp-hide-namespace-prefix nil)
