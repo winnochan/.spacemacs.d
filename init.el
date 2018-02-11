@@ -127,9 +127,9 @@ This function should only modify configuration layer settings."
             ;; c-c++-enable-google-newline t
             c-c++-enable-rtags-support t
             c-c++-enable-cmake-ide-support nil
-            c-c++-enable-clang-format-on-save nil
+            c-c++-enable-clang-format-on-save t
             c-c++-enable-c++11 nil
-            c-c++-default-mode-for-headers 'c-mode)
+            c-c++-default-mode-for-headers 'c++-mode)
      (emacs-lisp :variables
                  emacs-lisp-hide-namespace-prefix nil)
      (go :variables
@@ -161,14 +161,14 @@ This function should only modify configuration layer settings."
                                          ("html" "web"))
                markdown--key-bindings-modes '(markdown-mode gfm-mode))
      (python :variables
-             python-enable-yapf-format-on-save t
+             python-enable-yapf-format-on-save nil
              python-test-runner 'nose
-             python-save-before-test t
+             python-save-before-test nil
              python-fill-column 79
              python-tab-width 4
              python-auto-set-local-pyenv-version 'on-visit
              python-auto-set-local-pyvenv-virtualenv 'on-visit
-             python-sort-imports-on-save t)
+             python-sort-imports-on-save nil)
      rust
      (scala :variables
             scala-enable-eldoc t

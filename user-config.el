@@ -20,6 +20,9 @@
 
 ;; c-c++ code style
 ;; (setq c-default-style "java")
+;; (setq c-default-style "linux")
+;; (setq c-default-style "k&r")
+;; (setq c-default-style "stroustrup")
 (setq-default c-basic-offset 4)
 (setq default-tab-width 4)
 
