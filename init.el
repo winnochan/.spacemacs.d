@@ -188,6 +188,9 @@ This function should only modify configuration layer settings."
      shell-scripts
      yaml
 
+     ;; misc
+     (nlinum)
+
      ;; os
      (osx :variables
           osx-command-as 'hyper
@@ -542,7 +545,7 @@ It should only modify the values of Spacemacs settings."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers '(prog-mode)
 
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
