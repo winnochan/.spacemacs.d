@@ -129,13 +129,12 @@ This function should only modify configuration layer settings."
      ;; lang
      (c-c++ :variables
             c-c++-enable-clang-support nil
-            ;; c-c++-enable-google-style t
-            ;; c-c++-enable-google-newline t
+            c-c++-enable-google-style nil
+            c-c++-enable-google-newline nil
             c-c++-enable-rtags-support t
-            c-c++-enable-cmake-ide-support nil
             c-c++-enable-clang-format-on-save t
             c-c++-enable-c++11 nil
-            c-c++-default-mode-for-headers 'c++-mode)
+            c-c++-default-mode-for-headers 'c-mode)
      (emacs-lisp :variables
                  emacs-lisp-hide-namespace-prefix nil)
      (go :variables
@@ -307,7 +306,8 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil, a form that evaluates to a package directory. For example, to
    ;; use different package directories for different Emacs versions, set this
    ;; to `emacs-version'. (default 'emacs-version)
-   dotspacemacs-elpa-subdirectory 'emacs-version
+   ;; dotspacemacs-elpa-subdirectory 'emacs-version
+   dotspacemacs-elpa-subdirectory nil
 
    ;; One of `vim', `emacs' or `hybrid'.
    ;; `hybrid' is like `vim' except that `insert state' is replaced by the
@@ -542,7 +542,7 @@ It should only modify the values of Spacemacs settings."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers 'prog-mode
+   dotspacemacs-line-numbers nil
 
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
