@@ -101,7 +101,7 @@ This function should only modify configuration layer settings."
           org-projectile-file "TODOs.org"
           org-enable-org-journal-support t
           org-enable-hugo-support t)
-     ;; semantic
+     semantic
      ;; smex
      ;; (typography :variables
      ;;             typography-enable-typographic-editing t)
