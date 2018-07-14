@@ -190,9 +190,6 @@ This function should only modify configuration layer settings."
      shell-scripts
      yaml
 
-     ;; misc
-     (nlinum)
-
      ;; os
      (osx :variables
           osx-command-as 'hyper
