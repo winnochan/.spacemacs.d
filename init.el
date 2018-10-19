@@ -213,22 +213,26 @@ This function should only modify configuration layer settings."
      ;; tags
      (gtags :variables
             gtags-enable-by-default t
-            spacemacs--counsel-gtags-dwim-success t
-            helm-gtags-suggested-key-mapping t
-            ;; helm-gtags-path-style 'relative
-            helm-gtags-ignore-case t
-            helm-gtags-read-only nil
-            helm-gtags-use-input-at-cursor t
-            helm-gtags-highlight-candidate t
-            helm-gtags-display-style 'detail
-            helm-gtags-auto-update nil
-            helm-gtags-update-interval-second 60
-            helm-gtags-cache-select-result t
-            helm-gtags-cache-max-result-size 10
-            helm-gtags-pulse-at-cursor nil
-            helm-gtags-fuzzy-match nil
-            helm-gtags-direct-helm-completing t
-            helm-gtags-preselect t)
+            spacemacs--counsel-gtags-dwim-success nil
+
+            ;; ;; helm-gtags-suggested-key-mapping t
+            ;; helm-gtags-path-style 'root ; 'root, 'relative, 'absolute
+            ;; helm-gtags-ignore-case nil
+            ;; helm-gtags-read-only nil
+            ;; helm-gtags-use-input-at-cursor t
+            ;; helm-gtags-highlight-candidate t
+            ;; ;; helm-gtags-display-style 'detail ; 'detail, nil
+            ;; helm-gtags-auto-update nil
+            ;; helm-gtags-update-interval-second 60
+            ;; helm-gtags-cache-select-result t
+            ;; ;; helm-gtags-cache-max-result-size 10MB
+            ;; helm-gtags-pulse-at-cursor t
+            ;; helm-gtags-fuzzy-match t
+            ;; helm-gtags-direct-helm-completing t
+            ;; ;; helm-gtags-maximum-candidates 9999
+            ;; helm-gtags-preselect t
+            ;; helm-gtags-cygwin-use-global-w32-port nil
+            )
 
      ;; tools
      command-log
