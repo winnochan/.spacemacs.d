@@ -52,4 +52,10 @@
 ;; winum
 (setq winum-scope 'frame-local)
 
+;; purpose-mode
+(setq purpose-mode nil)
+
+;; hungry-mode
+(global-hungry-delete-mode t)
+
 (provide 'user-config)

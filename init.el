@@ -44,48 +44,49 @@ This function should only modify configuration layer settings."
      spacemacs-bootstrap
      spacemacs-completion
      spacemacs-defaults
+     ;; spacemacs-docker
      spacemacs-editing
      spacemacs-editing-visual
      ;; spacemacs-evil
      ;; spacemacs-language
      spacemacs-layouts
-     spacemacs-misc
-     spacemacs-modeline
+     ;; spacemacs-misc
+     ;; spacemacs-modeline
      spacemacs-navigation
-     spacemacs-org
-     spacemacs-project
-     spacemacs-purpose
+     ;; spacemacs-org
+     ;; spacemacs-project
+     ;; spacemacs-purpose
      spacemacs-visual
 
      ;; checker
-     (spell-checking :variables
-                     spell-checking-enable-by-default nil
-                     spell-checking-enable-auto-dictionary nil
-                     enable-flyspell-auto-completion t)
-     (syntax-checking :variables
-                      syntax-checking-enable-tooltips t
-                      syntax-checking-enable-by-default nil
-                      syntax-checking-use-original-bitmaps t)
+     ;; (spell-checking :variables
+     ;;                 spell-checking-enable-by-default nil
+     ;;                 spell-checking-enable-auto-dictionary nil
+     ;;                 enable-flyspell-auto-completion t)
+     ;; (syntax-checking :variables
+     ;;                  syntax-checking-enable-tooltips t
+     ;;                  syntax-checking-enable-by-default nil
+     ;;                  syntax-checking-use-original-bitmaps t)
 
      ;; completion
      helm
      (auto-completion :variables
-                      spacemacs-default-company-backends
-                      '((company-dabbrev-code company-gtags company-etags
-                                              company-keywords)
-                        company-files company-dabbrev)
+                      ;; spacemacs-default-company-backends
+                      ;; '((company-dabbrev-code company-gtags company-etags
+                      ;;                         company-keywords)
+                      ;;   company-files company-dabbrev)
                       auto-completion-return-key-behavior 'complete
                       auto-completion-tab-key-behavior 'cycle
-                      auto-completion-complete-with-key-sequence nil
-                      auto-completion-complete-with-key-sequence-delay 0.01
-                      auto-completion-idle-delay 0.02
-                      auto-completion-enable-snippets-in-popup t
-                      auto-completion-enable-sort-by-usage t
-                      auto-completion-enable-help-tooltip t
-                      company-mode-completion-cancel-keywords '("do"
-                                                                "then"
-                                                                "begin"
-                                                                "case")
+                      ;; auto-completion-complete-with-key-sequence nil
+                      ;; auto-completion-complete-with-key-sequence-delay 0.01
+                      auto-completion-idle-delay 0.01
+                      ;; auto-completion-enable-snippets-in-popup t
+                      ;; auto-completion-enable-sort-by-usage t
+                      ;; auto-completion-enable-help-tooltip t
+                      ;; company-mode-completion-cancel-keywords '("do"
+                      ;;                                           "then"
+                      ;;                                           "begin"
+                      ;;                                           "case")
                       auto-completion-private-snippets-directory
                       "~/.spacemacs.d/snippets/")
 
@@ -93,15 +94,15 @@ This function should only modify configuration layer settings."
      (better-defaults :variables
                       better-defaults-move-to-beginning-of-code-first nil
                       better-defaults-move-to-end-of-code-first nil)
-     ibuffer
-     (org :variables
-          org-want-todo-bindings t
-          org-enable-bootstrap-support t
-          org-enable-github-support t
-          org-enable-reveal-js-support t
-          org-projectile-file "TODOs.org"
-          org-enable-org-journal-support t
-          org-enable-hugo-support t)
+     ;; ibuffer
+     ;; (org :variables
+     ;;      org-want-todo-bindings t
+     ;;      org-enable-bootstrap-support t
+     ;;      org-enable-github-support t
+     ;;      org-enable-reveal-js-support t
+     ;;      org-projectile-file "TODOs.org"
+     ;;      org-enable-org-journal-support t
+     ;;      org-enable-hugo-support t)
 
      ;; semantic
      ;; smex
@@ -109,17 +110,17 @@ This function should only modify configuration layer settings."
      ;;             typography-enable-typographic-editing t)
 
      ;; email
-     gnus
+     ;; gnus
 
      ;; filetree
-     (treemacs :variables
-               treemacs-use-follow-mode t
-               treemacs-use-filewatch-mode t
-               treemacs-use-collapsed-directories 3)
+     ;; (treemacs :variables
+     ;;           treemacs-use-follow-mode t
+     ;;           treemacs-use-filewatch-mode t
+     ;;           treemacs-use-collapsed-directories 3)
 
      ;; framework
-     django
-     react
+     ;; django
+     ;; react
 
      ;; intl
      ;; (chinese :variables
@@ -177,29 +178,29 @@ This function should only modify configuration layer settings."
              python-auto-set-local-pyenv-version 'on-visit
              python-auto-set-local-pyvenv-virtualenv 'on-visit
              python-sort-imports-on-save nil)
-     rust
-     (scala :variables
-            scala-enable-eldoc t
-            scala-auto-insert-asterisk-in-comments t
-            scala-use-unicode-arrows t
-            scala-auto-start-ensime t
-            scala-indent:use-javadoc-style t
-            flycheck-scalastyle-jar "/usr/local/Cellar/scalastyle/1.0.0/libexec/scalastyle_2.12-1.0.0-batch.jar"
-            flycheck-scalastylerc "/usr/local/etc/scalastyle_config.xml")
+     ;; rust
+     ;; (scala :variables
+     ;;        scala-enable-eldoc t
+     ;;        scala-auto-insert-asterisk-in-comments t
+     ;;        scala-use-unicode-arrows t
+     ;;        scala-auto-start-ensime t
+     ;;        scala-indent:use-javadoc-style t
+     ;;        flycheck-scalastyle-jar "/usr/local/Cellar/scalastyle/1.0.0/libexec/scalastyle_2.12-1.0.0-batch.jar"
+     ;;        flycheck-scalastylerc "/usr/local/etc/scalastyle_config.xml")
 
      shell-scripts
-     yaml
+     ;; yaml
 
      ;; os
-     (osx :variables
-          osx-command-as 'hyper
-          osx-option-as 'meta
-          osx-function-as 'none
-          osx-control-as 'control
-          osx-right-control-as 'left
-          osx-right-command-as 'left
-          osx-right-option-as 'left
-          osx-use-dictionary-app t)
+     ;; (osx :variables
+     ;;      osx-command-as 'hyper
+     ;;      osx-option-as 'meta
+     ;;      osx-function-as 'none
+     ;;      osx-control-as 'control
+     ;;      osx-right-control-as 'left
+     ;;      osx-right-command-as 'left
+     ;;      osx-right-option-as 'left
+     ;;      osx-use-dictionary-app t)
 
      ;; source-control
      ;; (git :variables
@@ -237,6 +238,7 @@ This function should only modify configuration layer settings."
      ;; tools
      command-log
      fasd
+     fzf
      imenu-list
 
      ;; custom
@@ -257,7 +259,8 @@ This function should only modify configuration layer settings."
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(
+                                    )
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
