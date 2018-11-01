@@ -55,4 +55,9 @@
 ;; hungry-mode
 (global-hungry-delete-mode t)
 
+;; newline-and-indent is too slow.
+(defun newline-and-indent ()
+  (interactive "*")
+  (c-indent-new-comment-line))
+
 (provide 'user-config)

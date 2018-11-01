@@ -131,11 +131,12 @@ This function should only modify configuration layer settings."
 
      ;; lang
      (c-c++ :variables
+            c-c++-enable-auto-newline t
             c-c++-enable-clang-support nil
             c-c++-enable-google-style nil
-            c-c++-enable-google-newline nil
-            c-c++-enable-rtags-support t
-            c-c++-enable-clang-format-on-save t
+            c-c++-enable-google-newline t
+            c-c++-enable-rtags-support nil
+            c-c++-enable-clang-format-on-save nil
             c-c++-enable-c++11 nil
             c-c++-default-mode-for-headers 'c-mode)
      (emacs-lisp :variables
