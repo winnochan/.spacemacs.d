@@ -11,6 +11,8 @@
 (setq tramp-ssh-controlmaster-options
       "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
 
+(setq-default bidi-display-reordering nil)
+
 ;; purpose-mode
 ;; (setq purpose-mode nil)
 

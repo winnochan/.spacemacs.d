@@ -60,4 +60,7 @@
 ;;   (interactive "*")
 ;;   (c-indent-new-comment-line))
 
+(when (require 'so-long nil :noerror)
+  (so-long-enable))
+
 (provide 'user-config)
