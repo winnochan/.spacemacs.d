@@ -76,12 +76,12 @@ This function should only modify configuration layer settings."
                       ;;                         company-keywords)
                       ;;   company-files company-dabbrev)
                       auto-completion-return-key-behavior 'complete
-                      auto-completion-tab-key-behavior 'cycle
+                      auto-completion-tab-key-behavior 'complete ; 'cycle
                       ;; auto-completion-complete-with-key-sequence nil
                       ;; auto-completion-complete-with-key-sequence-delay 0.01
                       auto-completion-idle-delay 0.01
                       ;; auto-completion-enable-snippets-in-popup t
-                      ;; auto-completion-enable-sort-by-usage t
+                      auto-completion-enable-sort-by-usage t
                       ;; auto-completion-enable-help-tooltip t
                       ;; company-mode-completion-cancel-keywords '("do"
                       ;;                                           "then"
@@ -104,7 +104,7 @@ This function should only modify configuration layer settings."
      ;;      org-enable-org-journal-support t
      ;;      org-enable-hugo-support t)
 
-     ;; semantic
+     semantic
      ;; smex
      ;; (typography :variables
      ;;             typography-enable-typographic-editing t)
@@ -254,7 +254,9 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(
+                                      helm-tramp
+                                      )
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()

@@ -12,26 +12,6 @@
 (setq fzf-packages
       '(fzf))
 
-(defun fzf-fzf ()
-  (interactive)
-  (fzf))
-
-(defun fzf-fzf-git ()
-  (interactive)
-  (fzf-git))
-
-(defun fzf-fzf-directory ()
-  (interactive)
-  (fzf-directory))
-
-(defun fzf-fzf-projectile ()
-  (interactive)
-  (fzf-projectile))
-
-(defun fzf-fzf-counsel ()
-  (interactive)
-  (counsel-fzf))
-
 (defun fzf/init-fzf ()
   "initializes fzf-emacs and adds a key binding to `SPC f z'"
   (use-package fasd
