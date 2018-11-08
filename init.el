@@ -59,14 +59,14 @@ This function should only modify configuration layer settings."
      spacemacs-visual
 
      ;; checker
-     ;; (spell-checking :variables
-     ;;                 spell-checking-enable-by-default nil
-     ;;                 spell-checking-enable-auto-dictionary nil
-     ;;                 enable-flyspell-auto-completion t)
-     ;; (syntax-checking :variables
-     ;;                  syntax-checking-enable-tooltips t
-     ;;                  syntax-checking-enable-by-default nil
-     ;;                  syntax-checking-use-original-bitmaps t)
+     (spell-checking :variables
+                     spell-checking-enable-by-default nil
+                     spell-checking-enable-auto-dictionary nil
+                     enable-flyspell-auto-completion t)
+     (syntax-checking :variables
+                      syntax-checking-enable-tooltips t
+                      syntax-checking-enable-by-default nil
+                      syntax-checking-use-original-bitmaps t)
 
      ;; completion
      helm
@@ -95,14 +95,14 @@ This function should only modify configuration layer settings."
                       better-defaults-move-to-beginning-of-code-first nil
                       better-defaults-move-to-end-of-code-first nil)
      ;; ibuffer
-     ;; (org :variables
-     ;;      org-want-todo-bindings t
-     ;;      org-enable-bootstrap-support t
-     ;;      org-enable-github-support t
-     ;;      org-enable-reveal-js-support t
-     ;;      org-projectile-file "TODOs.org"
-     ;;      org-enable-org-journal-support t
-     ;;      org-enable-hugo-support t)
+     (org :variables
+          org-want-todo-bindings t
+          org-enable-bootstrap-support t
+          org-enable-github-support t
+          org-enable-reveal-js-support t
+          org-projectile-file "TODOs.org"
+          org-enable-org-journal-support t
+          org-enable-hugo-support t)
 
      ;; semantic
      ;; smex
@@ -113,10 +113,10 @@ This function should only modify configuration layer settings."
      ;; gnus
 
      ;; filetree
-     ;; (treemacs :variables
-     ;;           treemacs-use-follow-mode t
-     ;;           treemacs-use-filewatch-mode t
-     ;;           treemacs-use-collapsed-directories 3)
+     (treemacs :variables
+               treemacs-use-follow-mode t
+               treemacs-use-filewatch-mode t
+               treemacs-use-collapsed-directories 3)
 
      ;; framework
      ;; django
@@ -137,7 +137,6 @@ This function should only modify configuration layer settings."
             c-c++-enable-google-newline nil
             c-c++-enable-rtags-support nil
             c-c++-enable-clang-format-on-save nil
-            c-c++-enable-c++11 nil
             c-c++-default-mode-for-headers 'c-mode)
      (emacs-lisp :variables
                  emacs-lisp-hide-namespace-prefix nil)
