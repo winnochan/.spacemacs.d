@@ -44,18 +44,18 @@ This function should only modify configuration layer settings."
      spacemacs-bootstrap
      spacemacs-completion
      spacemacs-defaults
-     ;; spacemacs-docker
+     spacemacs-docker
      spacemacs-editing
      spacemacs-editing-visual
      ;; spacemacs-evil
      ;; spacemacs-language
      spacemacs-layouts
-     ;; spacemacs-misc
-     ;; spacemacs-modeline
+     spacemacs-misc
+     spacemacs-modeline
      spacemacs-navigation
-     ;; spacemacs-org
-     ;; spacemacs-project
-     ;; spacemacs-purpose
+     spacemacs-org
+     spacemacs-project
+     spacemacs-purpose
      spacemacs-visual
 
      ;; checker
@@ -120,7 +120,7 @@ This function should only modify configuration layer settings."
 
      ;; framework
      ;; django
-     ;; react
+     react
 
      ;; intl
      ;; (chinese :variables
@@ -131,10 +131,10 @@ This function should only modify configuration layer settings."
 
      ;; lang
      (c-c++ :variables
-            c-c++-enable-auto-newline t
+            c-c++-enable-auto-newline nil
             c-c++-enable-clang-support nil
             c-c++-enable-google-style nil
-            c-c++-enable-google-newline t
+            c-c++-enable-google-newline nil
             c-c++-enable-rtags-support nil
             c-c++-enable-clang-format-on-save nil
             c-c++-enable-c++11 nil
@@ -179,7 +179,7 @@ This function should only modify configuration layer settings."
              python-auto-set-local-pyenv-version 'on-visit
              python-auto-set-local-pyvenv-virtualenv 'on-visit
              python-sort-imports-on-save nil)
-     ;; rust
+     rust
      ;; (scala :variables
      ;;        scala-enable-eldoc t
      ;;        scala-auto-insert-asterisk-in-comments t
