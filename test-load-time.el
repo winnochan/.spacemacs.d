@@ -1,0 +1,8 @@
+(defadvice require (around my-require activate)
+  (let ((start (current-time))
+        res delta)
+    (setq res ad-do-it)
+    (setq delta (float-time (time-since start)))
+    (when (> delta 0.001)
+      (message "Required %s: %s sec" (ad-get-arg 0) delta))
+    res))
