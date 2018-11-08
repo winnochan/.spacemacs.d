@@ -63,4 +63,6 @@
 (when (require 'so-long nil :noerror)
   (so-long-enable))
 
+(setq company-minimum-prefix-length 4)
+
 (provide 'user-config)
