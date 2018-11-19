@@ -146,12 +146,14 @@ This function should only modify configuration layer settings."
          go-use-gometalinter t
          go-test-buffer-name "*go test*"
          go-use-test-args "")
-     html
+     (html :variables
+           web-fmt-tool 'web-beautify)
      (java :variables
            java-backend 'ensime
            java--ensime-modes '(java-mode scala-mode))
      (javascript :variables
-                 javascript-disable-tern-port-files nil)
+                 javascript-backend 'lsp
+                 javascript-fmt-tool 'web-beautify)
      (lua)
      (markdown :variables
                markdown-live-preview-engine 'eww
