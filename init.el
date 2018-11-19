@@ -243,6 +243,14 @@ This function should only modify configuration layer settings."
      fasd
      fzf
      imenu-list
+     (lsp :variables
+          lsp-remap-xref-keybindings nil
+          lsp-navigation 'both
+          lsp-ui-doc-enable t
+          lsp-ui-doc-include-signature nil
+          lsp-ui-sideline-enable t
+          lsp-ui-sideline-show-symbol nil
+          lsp-ui-sideline-ignore-duplicate t)
 
      ;; custom
      commenter
