@@ -71,4 +71,7 @@
 (setq indent-guide-char "|")
 ;; (set-face-background 'indent-guide-face "dimgray")
 
+;; turn off highlight current line
+(spacemacs/toggle-highlight-current-line-globally-off)
+
 (provide 'user-config)
