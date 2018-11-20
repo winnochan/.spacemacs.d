@@ -73,5 +73,6 @@
 
 ;; turn off highlight current line
 (spacemacs/toggle-highlight-current-line-globally-off)
+(global-auto-highlight-symbol-mode)
 
 (provide 'user-config)
