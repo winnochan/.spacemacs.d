@@ -52,7 +52,9 @@ This function should only modify configuration layer settings."
      spacemacs-layouts
      spacemacs-misc
      spacemacs-modeline
-     spacemacs-navigation
+     (spacemacs-navigation :variables
+                           ahs-default-range 'ahs-range-beginning-of-defun
+                           ahs-idle-interval 0.25)
      spacemacs-org
      spacemacs-project
      spacemacs-purpose
@@ -597,7 +599,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil `smartparens-strict-mode' will be enabled in programming modes.
    ;; (default nil)
-   dotspacemacs-smartparens-strict-mode nil
+   dotspacemacs-smartparens-strict-mode t
 
    ;; If non-nil pressing the closing parenthesis `)' key in insert mode passes
    ;; over any automatically added closing parenthesis, bracket, quote, etc…

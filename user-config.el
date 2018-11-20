@@ -53,7 +53,7 @@
 (setq winum-scope 'frame-local)
 
 ;; hungry-mode
-(global-hungry-delete-mode t)
+;; (global-hungry-delete-mode t)
 
 ;; newline-and-indent is too slow.
 ;; (defun newline-and-indent ()
@@ -66,7 +66,7 @@
 (setq company-minimum-prefix-length 4)
 
 (indent-guide-global-mode)
-(setq indent-guide-delay 0.001)
+;; (setq indent-guide-delay 0.001)
 (setq indent-guide-recursive t)
 (setq indent-guide-char "|")
 ;; (set-face-background 'indent-guide-face "dimgray")
