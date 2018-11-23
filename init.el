@@ -60,6 +60,17 @@ This function should only modify configuration layer settings."
      spacemacs-purpose
      spacemacs-visual
 
+     ;; lsp-mode
+     (lsp :variables
+          lsp-remap-xref-keybindings nil
+          lsp-navigation 'both
+          lsp-ui-doc-enable t
+          lsp-ui-doc-include-signature nil
+          lsp-ui-sideline-enable t
+          lsp-ui-sideline-show-symbol nil
+          lsp-ui-sideline-ignore-duplicate t)
+
+
      ;; checker
      (spell-checking :variables
                      spell-checking-enable-by-default nil
@@ -133,25 +144,37 @@ This function should only modify configuration layer settings."
 
      ;; lang
      (c-c++ :variables
+            c-c++-backend nil
             c-c++-enable-auto-newline nil
             c-c++-enable-clang-support nil
             c-c++-enable-google-style nil
             c-c++-enable-google-newline nil
-            c-c++-enable-rtags-support nil
+            c-c++-enable-rtags-completion t
             c-c++-enable-clang-format-on-save nil
-            c-c++-default-mode-for-headers 'c-mode)
+            c-c++-default-mode-for-headers 'c-mode
+            c-c++-adopt-subprojects nil
+            c-c++-lsp-cache-dir nil
+            c-c++-lsp-executable nil
+            c-c++-lsp-project-whitelist nil
+            c-c++-lsp-project-blacklist nil
+            c-c++-lsp-sem-highlight-method nil
+            c-c++-lsp-sem-highlight-rainbow nil
+            c-c++-lsp-extra-init-params '(:cacheFormat "msgpack"))
      (emacs-lisp :variables
                  emacs-lisp-hide-namespace-prefix nil)
      (go :variables
-         go-use-gocheck-for-testing t
+         go-backend 'lsp
+         go-use-gocheck-for-testing nil
+         go-format-before-save nil
          go-tab-width 4
-         go-use-gometalinter t
+         go-use-gometalinter nil
+         go-use-golangci-lint nil
          go-test-buffer-name "*go test*"
          go-use-test-args "")
      (html :variables
            web-fmt-tool 'web-beautify)
      (java :variables
-           java-backend 'ensime
+           java-backend 'lsp
            java--ensime-modes '(java-mode scala-mode))
      (javascript :variables
                  javascript-backend 'lsp
@@ -174,15 +197,24 @@ This function should only modify configuration layer settings."
                                          ("html" "web"))
                markdown--key-bindings-modes '(markdown-mode gfm-mode))
      (python :variables
+             python-backend 'lsp
              python-enable-yapf-format-on-save nil
              python-test-runner 'nose
              python-save-before-test nil
              python-fill-column 79
              python-tab-width 4
+             python-spacemacs-indent-guess t
              python-auto-set-local-pyenv-version 'on-visit
              python-auto-set-local-pyvenv-virtualenv 'on-visit
-             python-sort-imports-on-save nil)
-     rust
+             python-sort-imports-on-save nil
+             spacemacs--python-pyenv-modes nil
+             spacemacs--python-pyvenv-modes nil
+             python-shell--interpreter nil
+             python-shell--interpreter-args nil)
+     (rust :variables
+           rust-backend 'lsp
+           rust-rls-cmd '("rustup" "run" "nightly" "rls")
+           rust-format-on-save t)
      ;; (scala :variables
      ;;        scala-enable-eldoc t
      ;;        scala-auto-insert-asterisk-in-comments t
@@ -193,7 +225,7 @@ This function should only modify configuration layer settings."
      ;;        flycheck-scalastylerc "/usr/local/etc/scalastyle_config.xml")
 
      shell-scripts
-     ;; yaml
+     yaml
 
      ;; os
      ;; (osx :variables
@@ -247,14 +279,6 @@ This function should only modify configuration layer settings."
      fasd
      fzf
      imenu-list
-     (lsp :variables
-          lsp-remap-xref-keybindings nil
-          lsp-navigation 'both
-          lsp-ui-doc-enable t
-          lsp-ui-doc-include-signature nil
-          lsp-ui-sideline-enable t
-          lsp-ui-sideline-show-symbol nil
-          lsp-ui-sideline-ignore-duplicate t)
 
      ;; custom
      commenter
