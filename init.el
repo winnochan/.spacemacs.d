@@ -225,6 +225,10 @@ This function should only modify configuration layer settings."
      ;;        flycheck-scalastylerc "/usr/local/etc/scalastyle_config.xml")
 
      shell-scripts
+     (typescript :variables
+                 typescript-fmt-on-save t
+                 typescript-fmt-tool 'tide
+                 typescript-backend 'tide)
      yaml
 
      ;; os
