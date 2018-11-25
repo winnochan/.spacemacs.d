@@ -47,7 +47,7 @@ This function should only modify configuration layer settings."
      spacemacs-docker
      spacemacs-editing
      spacemacs-editing-visual
-     ;; spacemacs-evil
+     spacemacs-evil
      ;; spacemacs-language
      spacemacs-layouts
      spacemacs-misc
@@ -89,13 +89,13 @@ This function should only modify configuration layer settings."
                       ;;                         company-keywords)
                       ;;   company-files company-dabbrev)
                       auto-completion-return-key-behavior 'complete
-                      auto-completion-tab-key-behavior 'complete ; 'cycle
-                      ;; auto-completion-complete-with-key-sequence nil
-                      ;; auto-completion-complete-with-key-sequence-delay 0.01
-                      auto-completion-idle-delay 0.01
-                      ;; auto-completion-enable-snippets-in-popup t
+                      auto-completion-tab-key-behavior 'complete
+                      auto-completion-complete-with-key-sequence nil
+                      auto-completion-complete-with-key-sequence-delay 0.1
+                      auto-completion-idle-delay 0.2
+                      auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-sort-by-usage t
-                      ;; auto-completion-enable-help-tooltip t
+                      auto-completion-enable-help-tooltip t
                       ;; company-mode-completion-cancel-keywords '("do"
                       ;;                                           "then"
                       ;;                                           "begin"
@@ -109,13 +109,14 @@ This function should only modify configuration layer settings."
                       better-defaults-move-to-end-of-code-first nil)
      ;; ibuffer
      ;; (org :variables
-     ;;      org-want-todo-bindings t
-     ;;      org-enable-bootstrap-support t
-     ;;      org-enable-github-support t
-     ;;      org-enable-reveal-js-support t
+     ;;      org-want-todo-bindings nil
+     ;;      org-enable-bootstrap-support nil
+     ;;      org-enable-github-support nil
+     ;;      org-enable-reveal-js-support nil
      ;;      org-projectile-file "TODOs.org"
-     ;;      org-enable-org-journal-support t
-     ;;      org-enable-hugo-support t)
+     ;;      org-enable-org-journal-support nil
+     ;;      org-enable-hugo-support nil
+     ;;      org-enable-trello-support nil)
 
      ;; semantic
      ;; smex
@@ -177,7 +178,7 @@ This function should only modify configuration layer settings."
            java-backend 'lsp
            java--ensime-modes '(java-mode scala-mode))
      (javascript :variables
-                 javascript-backend 'lsp
+                 ;; javascript-backend 'lsp
                  javascript-fmt-tool 'web-beautify)
      (lua)
      (markdown :variables
@@ -246,10 +247,10 @@ This function should only modify configuration layer settings."
      ;; (git :variables
      ;;      git-enable-magit-svn-plugin t
      ;;      git-magit-status-fullscreen t)
-     ;; (version-control :variables
-     ;;                  version-control-global-margin t
-     ;;                  version-control-diff-tool 'git-gutter+
-     ;;                  version-control-diff-side 'right)
+     (version-control :variables
+                      version-control-global-margin t
+                      version-control-diff-tool 'git-gutter+
+                      version-control-diff-side 'right)
 
      ;; tags
      (gtags :variables
@@ -276,7 +277,7 @@ This function should only modify configuration layer settings."
             )
 
      ;; themes
-     ;; (themes-megapack)
+     (themes-megapack)
 
      ;; tools
      command-log
@@ -314,7 +315,7 @@ This function should only modify configuration layer settings."
    ;; installs only the used packages but won't delete unused ones. `all'
    ;; installs *all* packages supported by Spacemacs and never uninstalls them.
    ;; (default is `used-only')
-   dotspacemacs-install-packages 'used-only))
+   dotspacemacs-install-packages 'used-but-keep-unused))
 
 (defun dotspacemacs/init ()
   "Initialization:

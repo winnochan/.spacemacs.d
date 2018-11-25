@@ -46,10 +46,10 @@
 
 
 ;; java config
-(setq ensime-startup-notification nil)
+;; (setq ensime-startup-notification nil)
 ;; (add-hook 'java-mode-hook 'ensime-java-mode-hook)
 ;; (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
-(add-hook 'ensime-mode-hook 'ensime)
+;; (add-hook 'ensime-mode-hook 'ensime)
 
 ;; winum
 (setq winum-scope 'frame-local)
@@ -67,7 +67,7 @@
 
 (setq company-minimum-prefix-length 4)
 
-(indent-guide-global-mode)
+;; (spacemacs/toggle-indent-guide-globally-on)
 ;; (setq indent-guide-delay 0.001)
 (setq indent-guide-recursive t)
 (setq indent-guide-char "|")
