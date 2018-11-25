@@ -1,4 +1,4 @@
-(spacemacs/toggle-debug-on-error-on)
+;; (spacemacs/toggle-debug-on-error-on)
 
 ;; Personal Information Configuration
 (setq user-full-name "WinnoChan")
