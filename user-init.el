@@ -10,11 +10,13 @@
       )
 
 ;; tramp-ssh
-;; (setq tramp-mode nil)
 (setq tramp-ssh-controlmaster-options
       "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
 
-(setq-default bidi-display-reordering nil)
+;; (setq-default bidi-display-reordering nil)
+
+;; (setq-default max-specpdl-size 5000)
+;; (setq max-lisp-eval-depth 4000)
 
 ;; purpose-mode
 ;; (setq purpose-mode nil)

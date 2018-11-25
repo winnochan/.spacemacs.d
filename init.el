@@ -76,10 +76,10 @@ This function should only modify configuration layer settings."
                      spell-checking-enable-by-default nil
                      spell-checking-enable-auto-dictionary nil
                      enable-flyspell-auto-completion t)
-     (syntax-checking :variables
-                      syntax-checking-enable-tooltips t
-                      syntax-checking-enable-by-default nil
-                      syntax-checking-use-original-bitmaps t)
+     ;; (syntax-checking :variables
+     ;;                  syntax-checking-enable-tooltips t
+     ;;                  syntax-checking-enable-by-default nil
+     ;;                  syntax-checking-use-original-bitmaps t)
 
      ;; completion
      helm
@@ -108,14 +108,14 @@ This function should only modify configuration layer settings."
                       better-defaults-move-to-beginning-of-code-first nil
                       better-defaults-move-to-end-of-code-first nil)
      ;; ibuffer
-     (org :variables
-          org-want-todo-bindings t
-          org-enable-bootstrap-support t
-          org-enable-github-support t
-          org-enable-reveal-js-support t
-          org-projectile-file "TODOs.org"
-          org-enable-org-journal-support t
-          org-enable-hugo-support t)
+     ;; (org :variables
+     ;;      org-want-todo-bindings t
+     ;;      org-enable-bootstrap-support t
+     ;;      org-enable-github-support t
+     ;;      org-enable-reveal-js-support t
+     ;;      org-projectile-file "TODOs.org"
+     ;;      org-enable-org-journal-support t
+     ;;      org-enable-hugo-support t)
 
      ;; semantic
      ;; smex
@@ -126,14 +126,14 @@ This function should only modify configuration layer settings."
      ;; gnus
 
      ;; filetree
-     (treemacs :variables
-               treemacs-use-follow-mode t
-               treemacs-use-filewatch-mode t
-               treemacs-use-collapsed-directories 3)
+     ;; (treemacs :variables
+     ;;           treemacs-use-follow-mode t
+     ;;           treemacs-use-filewatch-mode t
+     ;;           treemacs-use-collapsed-directories 3)
 
      ;; framework
      ;; django
-     react
+     ;; (react)
 
      ;; intl
      ;; (chinese :variables
@@ -246,10 +246,10 @@ This function should only modify configuration layer settings."
      ;; (git :variables
      ;;      git-enable-magit-svn-plugin t
      ;;      git-magit-status-fullscreen t)
-     (version-control :variables
-                      version-control-global-margin t
-                      version-control-diff-tool 'git-gutter+
-                      version-control-diff-side 'right)
+     ;; (version-control :variables
+     ;;                  version-control-global-margin t
+     ;;                  version-control-diff-tool 'git-gutter+
+     ;;                  version-control-diff-side 'right)
 
      ;; tags
      (gtags :variables
@@ -276,13 +276,13 @@ This function should only modify configuration layer settings."
             )
 
      ;; themes
-     (themes-megapack)
+     ;; (themes-megapack)
 
      ;; tools
      command-log
      fasd
      fzf
-     imenu-list
+     ;; imenu-list
 
      ;; custom
      commenter
@@ -423,11 +423,11 @@ It should only modify the values of Spacemacs settings."
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(sanityinc-tomorrow-night
-                         ample-zen
-                         ample-flat
-                         zen-and-art
-                         hc-zenburn
-                         zenburn
+                         ;; ample-zen
+                         ;; ample-flat
+                         ;; zen-and-art
+                         ;; hc-zenburn
+                         ;; zenburn
                          spacemacs-light
                          spacemacs-dark)
 
