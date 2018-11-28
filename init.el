@@ -73,8 +73,8 @@ This function should only modify configuration layer settings."
 
      ;; checker
      (spell-checking :variables
-                     spell-checking-enable-by-default nil
-                     spell-checking-enable-auto-dictionary nil
+                     spell-checking-enable-by-default t
+                     spell-checking-enable-auto-dictionary t
                      enable-flyspell-auto-completion t)
      ;; (syntax-checking :variables
      ;;                  syntax-checking-enable-tooltips t
@@ -134,7 +134,7 @@ This function should only modify configuration layer settings."
 
      ;; framework
      ;; django
-     ;; (react)
+     (react)
 
      ;; intl
      ;; (chinese :variables
@@ -164,7 +164,7 @@ This function should only modify configuration layer settings."
      (emacs-lisp :variables
                  emacs-lisp-hide-namespace-prefix nil)
      (go :variables
-         go-backend 'lsp
+         ;; go-backend 'lsp
          go-use-gocheck-for-testing nil
          go-format-before-save nil
          go-tab-width 4
@@ -198,7 +198,7 @@ This function should only modify configuration layer settings."
                                          ("html" "web"))
                markdown--key-bindings-modes '(markdown-mode gfm-mode))
      (python :variables
-             python-backend 'lsp
+             ;; python-backend 'lsp
              python-enable-yapf-format-on-save nil
              python-test-runner 'nose
              python-save-before-test nil
@@ -213,7 +213,7 @@ This function should only modify configuration layer settings."
              python-shell--interpreter nil
              python-shell--interpreter-args nil)
      (rust :variables
-           rust-backend 'lsp
+           ;; rust-backend 'lsp
            rust-rls-cmd '("rustup" "run" "nightly" "rls")
            rust-format-on-save t)
      ;; (scala :variables
@@ -284,6 +284,11 @@ This function should only modify configuration layer settings."
      fasd
      fzf
      ;; imenu-list
+
+     ;; web-services
+     evernote
+     search-engine
+     twitter
 
      ;; custom
      commenter
@@ -423,14 +428,14 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(sanityinc-tomorrow-bright
-                         sanityinc-tomorrow-night
+   dotspacemacs-themes '(sanityinc-tomorrow-night
+                         doom-tomorrow-night
                          ;; ample-zen
                          ;; ample-flat
                          ;; zen-and-art
                          ;; hc-zenburn
                          ;; zenburn
-                         spacemacs-light
+                         ;; spacemacs-light
                          spacemacs-dark)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',

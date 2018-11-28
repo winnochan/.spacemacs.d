@@ -67,9 +67,9 @@
 
 (setq company-minimum-prefix-length 4)
 
-;; (spacemacs/toggle-indent-guide-globally-on)
-;; (setq indent-guide-delay 0.001)
-(setq indent-guide-recursive t)
+(spacemacs/toggle-indent-guide-globally-on)
+(setq indent-guide-delay 0.01)
+(setq indent-guide-recursive nil)
 (setq indent-guide-char "|")
 ;; (set-face-background 'indent-guide-face "dimgray")
 
