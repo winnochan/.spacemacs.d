@@ -73,9 +73,9 @@ This function should only modify configuration layer settings."
 
      ;; checker
      (spell-checking :variables
-                     spell-checking-enable-by-default t
-                     spell-checking-enable-auto-dictionary t
-                     enable-flyspell-auto-completion t)
+                     spell-checking-enable-by-default nil
+                     spell-checking-enable-auto-dictionary nil
+                     enable-flyspell-auto-completion nil)
      ;; (syntax-checking :variables
      ;;                  syntax-checking-enable-tooltips t
      ;;                  syntax-checking-enable-by-default nil
