@@ -44,47 +44,62 @@ This function should only modify configuration layer settings."
      spacemacs-bootstrap
      spacemacs-completion
      spacemacs-defaults
+     spacemacs-docker
      spacemacs-editing
      spacemacs-editing-visual
-     ;; spacemacs-evil
+     spacemacs-evil
      ;; spacemacs-language
      spacemacs-layouts
      spacemacs-misc
      spacemacs-modeline
-     spacemacs-navigation
+     (spacemacs-navigation :variables
+                           ahs-default-range 'ahs-range-beginning-of-defun
+                           ahs-idle-interval 0.25)
      spacemacs-org
+     spacemacs-project
      spacemacs-purpose
      spacemacs-visual
+
+     ;; lsp-mode
+     (lsp :variables
+          lsp-remap-xref-keybindings nil
+          lsp-navigation 'both
+          lsp-ui-doc-enable t
+          lsp-ui-doc-include-signature nil
+          lsp-ui-sideline-enable t
+          lsp-ui-sideline-show-symbol nil
+          lsp-ui-sideline-ignore-duplicate t)
+
 
      ;; checker
      (spell-checking :variables
                      spell-checking-enable-by-default nil
                      spell-checking-enable-auto-dictionary nil
-                     enable-flyspell-auto-completion t)
-     (syntax-checking :variables
-                      syntax-checking-enable-tooltips t
-                      syntax-checking-enable-by-default nil
-                      syntax-checking-use-original-bitmaps t)
+                     enable-flyspell-auto-completion nil)
+     ;; (syntax-checking :variables
+     ;;                  syntax-checking-enable-tooltips t
+     ;;                  syntax-checking-enable-by-default nil
+     ;;                  syntax-checking-use-original-bitmaps t)
 
      ;; completion
      helm
      (auto-completion :variables
-                      spacemacs-default-company-backends
-                      '((company-dabbrev-code company-gtags company-etags
-                                              company-keywords)
-                        company-files company-dabbrev)
+                      ;; spacemacs-default-company-backends
+                      ;; '((company-dabbrev-code company-gtags company-etags
+                      ;;                         company-keywords)
+                      ;;   company-files company-dabbrev)
                       auto-completion-return-key-behavior 'complete
-                      auto-completion-tab-key-behavior 'cycle
+                      auto-completion-tab-key-behavior 'complete
                       auto-completion-complete-with-key-sequence nil
-                      auto-completion-complete-with-key-sequence-delay 0.01
-                      auto-completion-idle-delay 0.02
+                      auto-completion-complete-with-key-sequence-delay 0.001
+                      auto-completion-idle-delay 0.001
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-sort-by-usage t
                       auto-completion-enable-help-tooltip t
-                      company-mode-completion-cancel-keywords '("do"
-                                                                "then"
-                                                                "begin"
-                                                                "case")
+                      ;; company-mode-completion-cancel-keywords '("do"
+                      ;;                                           "then"
+                      ;;                                           "begin"
+                      ;;                                           "case")
                       auto-completion-private-snippets-directory
                       "~/.spacemacs.d/snippets/")
 
@@ -92,32 +107,34 @@ This function should only modify configuration layer settings."
      (better-defaults :variables
                       better-defaults-move-to-beginning-of-code-first nil
                       better-defaults-move-to-end-of-code-first nil)
-     ibuffer
-     (org :variables
-          org-want-todo-bindings t
-          org-enable-bootstrap-support t
-          org-enable-github-support t
-          org-enable-reveal-js-support t
-          org-projectile-file "TODOs.org"
-          org-enable-org-journal-support t
-          org-enable-hugo-support t)
+     ;; ibuffer
+     ;; (org :variables
+     ;;      org-want-todo-bindings nil
+     ;;      org-enable-bootstrap-support nil
+     ;;      org-enable-github-support nil
+     ;;      org-enable-reveal-js-support nil
+     ;;      org-projectile-file "TODOs.org"
+     ;;      org-enable-org-journal-support nil
+     ;;      org-enable-hugo-support nil
+     ;;      org-enable-trello-support nil)
+
      ;; semantic
      ;; smex
      ;; (typography :variables
      ;;             typography-enable-typographic-editing t)
 
      ;; email
-     gnus
+     ;; gnus
 
      ;; filetree
-     (treemacs :variables
-               treemacs-use-follow-mode t
-               treemacs-use-filewatch-mode t
-               treemacs-use-collapsed-directories 3)
+     ;; (treemacs :variables
+     ;;           treemacs-use-follow-mode t
+     ;;           treemacs-use-filewatch-mode t
+     ;;           treemacs-use-collapsed-directories 3)
 
      ;; framework
-     django
-     react
+     ;; django
+     (react)
 
      ;; intl
      ;; (chinese :variables
@@ -128,27 +145,41 @@ This function should only modify configuration layer settings."
 
      ;; lang
      (c-c++ :variables
+            c-c++-backend nil
+            c-c++-enable-auto-newline nil
             c-c++-enable-clang-support nil
             c-c++-enable-google-style nil
             c-c++-enable-google-newline nil
-            c-c++-enable-rtags-support t
-            c-c++-enable-clang-format-on-save t
-            c-c++-enable-c++11 nil
-            c-c++-default-mode-for-headers 'c-mode)
+            c-c++-enable-rtags-completion t
+            c-c++-enable-clang-format-on-save nil
+            c-c++-default-mode-for-headers 'c-mode
+            c-c++-adopt-subprojects nil
+            c-c++-lsp-cache-dir nil
+            c-c++-lsp-executable nil
+            c-c++-lsp-project-whitelist nil
+            c-c++-lsp-project-blacklist nil
+            c-c++-lsp-sem-highlight-method nil
+            c-c++-lsp-sem-highlight-rainbow nil
+            c-c++-lsp-extra-init-params '(:cacheFormat "msgpack"))
      (emacs-lisp :variables
                  emacs-lisp-hide-namespace-prefix nil)
      (go :variables
-         go-use-gocheck-for-testing t
+         ;; go-backend 'lsp
+         go-use-gocheck-for-testing nil
+         go-format-before-save nil
          go-tab-width 4
-         go-use-gometalinter t
+         go-use-gometalinter nil
+         go-use-golangci-lint nil
          go-test-buffer-name "*go test*"
          go-use-test-args "")
-     html
+     (html :variables
+           web-fmt-tool 'web-beautify)
      (java :variables
-           java-backend 'ensime
+           java-backend 'lsp
            java--ensime-modes '(java-mode scala-mode))
      (javascript :variables
-                 javascript-disable-tern-port-files nil)
+                 ;; javascript-backend 'lsp
+                 javascript-fmt-tool 'web-beautify)
      (lua)
      (markdown :variables
                markdown-live-preview-engine 'eww
@@ -167,40 +198,50 @@ This function should only modify configuration layer settings."
                                          ("html" "web"))
                markdown--key-bindings-modes '(markdown-mode gfm-mode))
      (python :variables
+             ;; python-backend 'lsp
              python-enable-yapf-format-on-save nil
              python-test-runner 'nose
              python-save-before-test nil
              python-fill-column 79
              python-tab-width 4
+             python-spacemacs-indent-guess t
              python-auto-set-local-pyenv-version 'on-visit
              python-auto-set-local-pyvenv-virtualenv 'on-visit
-             python-sort-imports-on-save nil)
-     rust
-     (scala :variables
-            scala-enable-eldoc t
-            scala-auto-insert-asterisk-in-comments t
-            scala-use-unicode-arrows t
-            scala-auto-start-ensime t
-            scala-indent:use-javadoc-style t
-            flycheck-scalastyle-jar "/usr/local/Cellar/scalastyle/1.0.0/libexec/scalastyle_2.12-1.0.0-batch.jar"
-            flycheck-scalastylerc "/usr/local/etc/scalastyle_config.xml")
+             python-sort-imports-on-save nil
+             spacemacs--python-pyenv-modes nil
+             spacemacs--python-pyvenv-modes nil
+             python-shell--interpreter nil
+             python-shell--interpreter-args nil)
+     (rust :variables
+           ;; rust-backend 'lsp
+           rust-rls-cmd '("rustup" "run" "nightly" "rls")
+           rust-format-on-save t)
+     ;; (scala :variables
+     ;;        scala-enable-eldoc t
+     ;;        scala-auto-insert-asterisk-in-comments t
+     ;;        scala-use-unicode-arrows t
+     ;;        scala-auto-start-ensime t
+     ;;        scala-indent:use-javadoc-style t
+     ;;        flycheck-scalastyle-jar "/usr/local/Cellar/scalastyle/1.0.0/libexec/scalastyle_2.12-1.0.0-batch.jar"
+     ;;        flycheck-scalastylerc "/usr/local/etc/scalastyle_config.xml")
 
      shell-scripts
+     (typescript :variables
+                 typescript-fmt-on-save t
+                 typescript-fmt-tool 'tide
+                 typescript-backend 'tide)
      yaml
 
-     ;; misc
-     (nlinum)
-
      ;; os
-     (osx :variables
-          osx-command-as 'hyper
-          osx-option-as 'meta
-          osx-function-as 'none
-          osx-control-as 'control
-          osx-right-control-as 'left
-          osx-right-command-as 'left
-          osx-right-option-as 'left
-          osx-use-dictionary-app t)
+     ;; (osx :variables
+     ;;      osx-command-as 'hyper
+     ;;      osx-option-as 'meta
+     ;;      osx-function-as 'none
+     ;;      osx-control-as 'control
+     ;;      osx-right-control-as 'left
+     ;;      osx-right-command-as 'left
+     ;;      osx-right-option-as 'left
+     ;;      osx-use-dictionary-app t)
 
      ;; source-control
      ;; (git :variables
@@ -214,27 +255,40 @@ This function should only modify configuration layer settings."
      ;; tags
      (gtags :variables
             gtags-enable-by-default t
-            spacemacs--counsel-gtags-dwim-success t
-            helm-gtags-suggested-key-mapping t
-            ;; helm-gtags-path-style 'relative
-            helm-gtags-ignore-case t
-            helm-gtags-read-only nil
-            helm-gtags-use-input-at-cursor t
-            helm-gtags-highlight-candidate t
-            helm-gtags-display-style 'detail
-            helm-gtags-auto-update nil
-            helm-gtags-update-interval-second 60
-            helm-gtags-cache-select-result t
-            helm-gtags-cache-max-result-size 10
-            helm-gtags-pulse-at-cursor nil
-            helm-gtags-fuzzy-match nil
-            helm-gtags-direct-helm-completing t
-            helm-gtags-preselect t)
+            spacemacs--counsel-gtags-dwim-success nil
+
+            ;; ;; helm-gtags-suggested-key-mapping t
+            ;; helm-gtags-path-style 'root ; 'root, 'relative, 'absolute
+            ;; helm-gtags-ignore-case nil
+            ;; helm-gtags-read-only nil
+            ;; helm-gtags-use-input-at-cursor t
+            ;; helm-gtags-highlight-candidate t
+            ;; ;; helm-gtags-display-style 'detail ; 'detail, nil
+            ;; helm-gtags-auto-update nil
+            ;; helm-gtags-update-interval-second 60
+            ;; helm-gtags-cache-select-result t
+            ;; ;; helm-gtags-cache-max-result-size 10MB
+            ;; helm-gtags-pulse-at-cursor t
+            ;; helm-gtags-fuzzy-match t
+            ;; helm-gtags-direct-helm-completing t
+            ;; ;; helm-gtags-maximum-candidates 9999
+            ;; helm-gtags-preselect t
+            ;; helm-gtags-cygwin-use-global-w32-port nil
+            )
+
+     ;; themes
+     (themes-megapack)
 
      ;; tools
      command-log
      fasd
-     imenu-list
+     fzf
+     ;; imenu-list
+
+     ;; web-services
+     evernote
+     search-engine
+     twitter
 
      ;; custom
      commenter
@@ -248,13 +302,16 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(
+                                      helm-tramp
+                                      )
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(
+                                    )
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
@@ -263,7 +320,7 @@ This function should only modify configuration layer settings."
    ;; installs only the used packages but won't delete unused ones. `all'
    ;; installs *all* packages supported by Spacemacs and never uninstalls them.
    ;; (default is `used-only')
-   dotspacemacs-install-packages 'used-only))
+   dotspacemacs-install-packages 'used-but-keep-unused))
 
 (defun dotspacemacs/init ()
   "Initialization:
@@ -273,6 +330,25 @@ It should only modify the values of Spacemacs settings."
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
   (setq-default
+   ;; If non-nil then enable support for the portable dumper. You'll need
+   ;; to compile Emacs 27 from source following the instructions in file
+   ;; EXPERIMENTAL.org at to root of the git repository.
+   ;; (default nil)
+   dotspacemacs-enable-emacs-pdumper nil
+
+   ;; File path pointing to emacs 27.1 executable compiled with support
+   ;; for the portable dumper (this is currently the branch pdumper).
+   ;; (default "emacs-27.0.50")
+   dotspacemacs-emacs-pdumper-executable-file "emacs-27.0.50"
+
+   ;; Name of the Spacemacs dump file. This is the file will be created by the
+   ;; portable dumper in the cache directory under dumps sub-directory.
+   ;; To load it when starting Emacs add the parameter `--dump-file'
+   ;; when invoking Emacs 27.1 executable on the command line, for instance:
+   ;;   ./emacs --dump-file=~/.emacs.d/.cache/dumps/spacemacs.pdmp
+   ;; (default spacemacs.pdmp)
+   dotspacemacs-emacs-dumper-dump-file "spacemacs.pdmp"
+
    ;; If non-nil ELPA repositories are contacted via HTTPS whenever it's
    ;; possible. Set it to nil if you have no way to use HTTPS in your
    ;; environment, otherwise it is strongly recommended to let it set to t.
@@ -309,7 +385,6 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil, a form that evaluates to a package directory. For example, to
    ;; use different package directories for different Emacs versions, set this
    ;; to `emacs-version'. (default 'emacs-version)
-   ;; dotspacemacs-elpa-subdirectory 'emacs-version
    dotspacemacs-elpa-subdirectory nil
 
    ;; One of `vim', `emacs' or `hybrid'.
@@ -337,7 +412,7 @@ It should only modify the values of Spacemacs settings."
    ;; `recents' `bookmarks' `projects' `agenda' `todos'.
    ;; List sizes may be nil, in which case
    ;; `spacemacs-buffer-startup-lists-length' takes effect.
-   dotspacemacs-startup-lists '((recents . 7)
+   dotspacemacs-startup-lists '((recents . 5)
                                 (projects . 7))
 
    ;; True if the home buffer should respond to resize events. (default t)
@@ -353,7 +428,14 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-light
+   dotspacemacs-themes '(sanityinc-tomorrow-night
+                         doom-tomorrow-night
+                         ;; ample-zen
+                         ;; ample-flat
+                         ;; zen-and-art
+                         ;; hc-zenburn
+                         ;; zenburn
+                         ;; spacemacs-light
                          spacemacs-dark)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
@@ -371,11 +453,10 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Go Mono"
-                               :size 15
+   dotspacemacs-default-font '("Source Code Pro"
+                               :size 13
                                :weight normal
-                               :width normal
-                               :powerline-scale 1.1)
+                               :width normal)
 
    ;; The leader key (default "SPC")
    dotspacemacs-leader-key "SPC"
@@ -449,7 +530,7 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-auto-save-file-location 'cache
 
    ;; Maximum number of rollback slots to keep in the cache. (default 5)
-   dotspacemacs-max-rollback-slots 7
+   dotspacemacs-max-rollback-slots 5
 
    ;; If non-nil, `helm' will try to minimize the space it uses. (default nil)
    dotspacemacs-helm-resize nil
@@ -471,7 +552,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil, the paste transient-state is enabled. While enabled, pressing
    ;; `p' several times cycles through the elements in the `kill-ring'.
    ;; (default nil)
-   dotspacemacs-enable-paste-transient-state t
+   dotspacemacs-enable-paste-transient-state nil
 
    ;; Which-key delay in seconds. The which-key buffer is the popup listing
    ;; the commands bound to the current keystroke sequence. (default 0.4)
@@ -545,7 +626,7 @@ It should only modify the values of Spacemacs settings."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers '(prog-mode)
+   dotspacemacs-line-numbers nil
 
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
@@ -558,7 +639,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil pressing the closing parenthesis `)' key in insert mode passes
    ;; over any automatically added closing parenthesis, bracket, quote, etc…
    ;; This can be temporary disabled by pressing `C-q' before `)'. (default nil)
-   dotspacemacs-smart-closing-parenthesis t
+   dotspacemacs-smart-closing-parenthesis nil
 
    ;; Select a scope to highlight delimiters. Possible values are `any',
    ;; `current', `all' or `nil'. Default is `all' (highlight any scope and
@@ -566,7 +647,8 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-highlight-delimiters 'all
 
    ;; If non-nil, start an Emacs server if one is not already running.
-   dotspacemacs-enable-server t
+   ;; (default nil)
+   dotspacemacs-enable-server nil
 
    ;; If non-nil, advise quit functions to keep server open when quitting.
    ;; (default nil)
@@ -614,7 +696,7 @@ It should only modify the values of Spacemacs settings."
    ;; Run `spacemacs/prettify-org-buffer' when
    ;; visiting README.org files of Spacemacs.
    ;; (default nil)
-   dotspacemacs-pretty-docs t
+   dotspacemacs-pretty-docs nil
    exec-path-from-shell-check-startup-files nil))
 
 (defun dotspacemacs/user-init ()
@@ -624,6 +706,13 @@ configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (load-file (concat dotspacemacs-directory "user-init.el")))
+
+(defun dotspacemacs/user-load ()
+  "Library to load while dumping.
+This function is called while dumping Spacemacs configuration. You can
+`require' or `load' the libraries of your choice that will be included
+in the dump."
+  (load-file (concat dotspacemacs-directory "user-load.el")))
 
 (defun dotspacemacs/user-config ()
   "Configuration for user code:
