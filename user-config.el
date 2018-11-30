@@ -77,4 +77,10 @@
 (spacemacs/toggle-highlight-current-line-globally-on)
 (spacemacs/toggle-automatic-symbol-highlight-on)
 
+;; ng2-mode
+;; (ng2-html-mode)
+;; (ng2-ts-mode)
+
+;; vue-mode
+
 (provide 'user-config)

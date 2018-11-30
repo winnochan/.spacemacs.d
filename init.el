@@ -226,6 +226,7 @@ This function should only modify configuration layer settings."
      ;;        flycheck-scalastylerc "/usr/local/etc/scalastyle_config.xml")
 
      shell-scripts
+     swift
      (typescript :variables
                  typescript-fmt-on-save t
                  typescript-fmt-tool 'tide
@@ -304,6 +305,8 @@ This function should only modify configuration layer settings."
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(
                                       helm-tramp
+                                      ;; ng2-mode
+                                      ;; vue-mode
                                       )
 
    ;; A list of packages that cannot be updated.
