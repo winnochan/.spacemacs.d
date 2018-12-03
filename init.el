@@ -244,6 +244,10 @@ This function should only modify configuration layer settings."
      ;;      osx-right-option-as 'left
      ;;      osx-use-dictionary-app t)
 
+     ;; readers
+     (dash :variables
+           helm-dash-docset-newpath "~/Library/Application Support/Dash/DocSets")
+
      ;; source-control
      ;; (git :variables
      ;;      git-enable-magit-svn-plugin t
