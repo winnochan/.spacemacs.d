@@ -41,19 +41,20 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
 
      ;; spacemacs
-     spacemacs-bootstrap
+     ;; spacemacs-bootstrap
      spacemacs-completion
      spacemacs-defaults
-     spacemacs-docker
+     ;; spacemacs-docker
      spacemacs-editing
      spacemacs-editing-visual
-     spacemacs-evil
+     ;; spacemacs-evil
      ;; spacemacs-language
-     spacemacs-layouts
-     spacemacs-misc
-     spacemacs-modeline
+     ;; spacemacs-layouts
+     ;; spacemacs-misc
+     ;; spacemacs-modeline
      (spacemacs-navigation :variables
-                           ahs-default-range 'ahs-range-beginning-of-defun
+                           ;; ahs-default-range 'ahs-range-beginning-of-defun
+                           ahs-default-range 'ahs-range-display
                            ahs-idle-interval 0.25)
      spacemacs-org
      spacemacs-project
@@ -61,14 +62,14 @@ This function should only modify configuration layer settings."
      spacemacs-visual
 
      ;; lsp-mode
-     (lsp :variables
-          lsp-remap-xref-keybindings nil
-          lsp-navigation 'both
-          lsp-ui-doc-enable t
-          lsp-ui-doc-include-signature nil
-          lsp-ui-sideline-enable t
-          lsp-ui-sideline-show-symbol nil
-          lsp-ui-sideline-ignore-duplicate t)
+     ;; (lsp :variables
+     ;;      lsp-remap-xref-keybindings nil
+     ;;      lsp-navigation 'both
+     ;;      lsp-ui-doc-enable t
+     ;;      lsp-ui-doc-include-signature nil
+     ;;      lsp-ui-sideline-enable t
+     ;;      lsp-ui-sideline-show-symbol nil
+     ;;      lsp-ui-sideline-ignore-duplicate t)
 
 
      ;; checker
@@ -134,7 +135,7 @@ This function should only modify configuration layer settings."
 
      ;; framework
      ;; django
-     (react)
+     ;; (react)
 
      ;; intl
      ;; (chinese :variables
@@ -163,40 +164,40 @@ This function should only modify configuration layer settings."
             c-c++-lsp-extra-init-params '(:cacheFormat "msgpack"))
      (emacs-lisp :variables
                  emacs-lisp-hide-namespace-prefix nil)
-     (go :variables
-         ;; go-backend 'lsp
-         go-use-gocheck-for-testing nil
-         go-format-before-save nil
-         go-tab-width 4
-         go-use-gometalinter nil
-         go-use-golangci-lint nil
-         go-test-buffer-name "*go test*"
-         go-use-test-args "")
+     ;; (go :variables
+     ;;     ;; go-backend 'lsp
+     ;;     go-use-gocheck-for-testing nil
+     ;;     go-format-before-save nil
+     ;;     go-tab-width 4
+     ;;     go-use-gometalinter nil
+     ;;     go-use-golangci-lint nil
+     ;;     go-test-buffer-name "*go test*"
+     ;;     go-use-test-args "")
      (html :variables
            web-fmt-tool 'web-beautify)
-     (java :variables
-           java-backend 'lsp
-           java--ensime-modes '(java-mode scala-mode))
+     ;; (java :variables
+     ;;       java-backend 'lsp
+     ;;       java--ensime-modes '(java-mode scala-mode))
      (javascript :variables
                  ;; javascript-backend 'lsp
                  javascript-fmt-tool 'web-beautify)
-     (lua)
-     (markdown :variables
-               markdown-live-preview-engine 'eww
-               markdown-mmm-auto-modes '("c"
-                                         "c++"
-                                         "css"
-                                         "java"
-                                         "javascript"
-                                         "python"
-                                         "ruby"
-                                         "rust"
-                                         "scala"
-                                         ("elisp" "emacs-lisp")
-                                         ("ess" "R")
-                                         ("ini" "conf-unix")
-                                         ("html" "web"))
-               markdown--key-bindings-modes '(markdown-mode gfm-mode))
+     ;; (lua)
+     ;; (markdown :variables
+     ;;           markdown-live-preview-engine 'eww
+     ;;           markdown-mmm-auto-modes '("c"
+     ;;                                     "c++"
+     ;;                                     "css"
+     ;;                                     "java"
+     ;;                                     "javascript"
+     ;;                                     "python"
+     ;;                                     "ruby"
+     ;;                                     "rust"
+     ;;                                     "scala"
+     ;;                                     ("elisp" "emacs-lisp")
+     ;;                                     ("ess" "R")
+     ;;                                     ("ini" "conf-unix")
+     ;;                                     ("html" "web"))
+     ;;           markdown--key-bindings-modes '(markdown-mode gfm-mode))
      (python :variables
              ;; python-backend 'lsp
              python-pipenv-activate nil
@@ -213,10 +214,10 @@ This function should only modify configuration layer settings."
              spacemacs--python-pyvenv-modes nil
              python-shell--interpreter nil
              python-shell--interpreter-args nil)
-     (rust :variables
-           ;; rust-backend 'lsp
-           rust-rls-cmd '("rustup" "run" "nightly" "rls")
-           rust-format-on-save t)
+     ;; (rust :variables
+     ;;       ;; rust-backend 'lsp
+     ;;       rust-rls-cmd '("rustup" "run" "nightly" "rls")
+     ;;       rust-format-on-save t)
      ;; (scala :variables
      ;;        scala-enable-eldoc t
      ;;        scala-auto-insert-asterisk-in-comments t
@@ -227,12 +228,12 @@ This function should only modify configuration layer settings."
      ;;        flycheck-scalastylerc "/usr/local/etc/scalastyle_config.xml")
 
      shell-scripts
-     swift
+     ;; swift
      (typescript :variables
                  typescript-fmt-on-save t
                  typescript-fmt-tool 'tide
                  typescript-backend 'tide)
-     yaml
+     ;; yaml
 
      ;; os
      ;; (osx :variables
@@ -246,8 +247,8 @@ This function should only modify configuration layer settings."
      ;;      osx-use-dictionary-app t)
 
      ;; readers
-     (dash :variables
-           helm-dash-docset-newpath "~/Library/Application Support/Dash/DocSets")
+     ;; (dash :variables
+     ;;       helm-dash-docset-newpath "~/Library/Application Support/Dash/DocSets")
 
      ;; source-control
      ;; (git :variables
@@ -292,9 +293,9 @@ This function should only modify configuration layer settings."
      ;; imenu-list
 
      ;; web-services
-     evernote
-     search-engine
-     twitter
+     ;; evernote
+     ;; search-engine
+     ;; twitter
 
      ;; custom
      commenter
