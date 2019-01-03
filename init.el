@@ -199,6 +199,7 @@ This function should only modify configuration layer settings."
                markdown--key-bindings-modes '(markdown-mode gfm-mode))
      (python :variables
              ;; python-backend 'lsp
+             python-pipenv-activate nil
              python-enable-yapf-format-on-save nil
              python-test-runner 'nose
              python-save-before-test nil
