@@ -41,17 +41,17 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
 
      ;; spacemacs
-     ;; spacemacs-bootstrap
+     spacemacs-bootstrap
      spacemacs-completion
      spacemacs-defaults
-     ;; spacemacs-docker
+     spacemacs-docker
      spacemacs-editing
      spacemacs-editing-visual
      ;; spacemacs-evil
      ;; spacemacs-language
-     ;; spacemacs-layouts
+     spacemacs-layouts
      ;; spacemacs-misc
-     ;; spacemacs-modeline
+     spacemacs-modeline
      (spacemacs-navigation :variables
                            ;; ahs-default-range 'ahs-range-beginning-of-defun
                            ahs-default-range 'ahs-range-display
@@ -288,6 +288,7 @@ This function should only modify configuration layer settings."
 
      ;; tools
      command-log
+     docker
      fasd
      fzf
      ;; imenu-list
