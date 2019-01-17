@@ -175,12 +175,14 @@ This function should only modify configuration layer settings."
      ;;     go-use-test-args "")
      (html :variables
            web-fmt-tool 'web-beautify)
-     ;; (java :variables
-     ;;       java-backend 'lsp
-     ;;       java--ensime-modes '(java-mode scala-mode))
+     (java :variables
+           java-backend 'lsp
+           js-indent-level 2
+           node-add-modules-path t
+           java--ensime-modes '(java-mode))
      (javascript :variables
-                 ;; javascript-backend 'lsp
-                 javascript-fmt-tool 'web-beautify)
+                 javascript-backend 'lsp
+                 javascript-fmt-tool 'prettier)
      ;; (lua)
      ;; (markdown :variables
      ;;           markdown-live-preview-engine 'eww
