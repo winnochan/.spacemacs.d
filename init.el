@@ -61,17 +61,6 @@ This function should only modify configuration layer settings."
      spacemacs-purpose
      spacemacs-visual
 
-     ;; lsp-mode
-     ;; (lsp :variables
-     ;;      lsp-remap-xref-keybindings nil
-     ;;      lsp-navigation 'both
-     ;;      lsp-ui-doc-enable t
-     ;;      lsp-ui-doc-include-signature nil
-     ;;      lsp-ui-sideline-enable t
-     ;;      lsp-ui-sideline-show-symbol nil
-     ;;      lsp-ui-sideline-ignore-duplicate t)
-
-
      ;; checker
      (spell-checking :variables
                      spell-checking-enable-by-default nil
@@ -294,6 +283,14 @@ This function should only modify configuration layer settings."
      fasd
      fzf
      ;; imenu-list
+     (lsp :variables
+          lsp-remap-xref-keybindings t
+          lsp-navigation 'both
+          lsp-ui-doc-enable t
+          lsp-ui-doc-include-signature t
+          lsp-ui-sideline-enable nil
+          lsp-ui-sideline-show-symbol nil
+          lsp-ui-sideline-ignore-duplicate t)
 
      ;; web-services
      ;; evernote
