@@ -153,15 +153,16 @@ This function should only modify configuration layer settings."
             c-c++-lsp-extra-init-params '(:cacheFormat "msgpack"))
      (emacs-lisp :variables
                  emacs-lisp-hide-namespace-prefix nil)
-     ;; (go :variables
-     ;;     ;; go-backend 'lsp
-     ;;     go-use-gocheck-for-testing nil
-     ;;     go-format-before-save nil
-     ;;     go-tab-width 4
-     ;;     go-use-gometalinter nil
-     ;;     go-use-golangci-lint nil
-     ;;     go-test-buffer-name "*go test*"
-     ;;     go-use-test-args "")
+     (go :variables
+         go-backend 'lsp
+         go-use-gocheck-for-testing t
+         go-format-before-save t
+         go-tab-width 4
+         go-use-gometalinter t
+         go-use-golangci-lint t
+         go-test-buffer-name "*go test*"
+         go-use-test-args "")
+     graphviz
      (html :variables
            web-fmt-tool 'web-beautify)
      (java :variables
@@ -172,6 +173,8 @@ This function should only modify configuration layer settings."
      (javascript :variables
                  javascript-backend 'lsp
                  javascript-fmt-tool 'prettier)
+     (json :variables
+           json-fmt-tool 'prettier)
      ;; (lua)
      ;; (markdown :variables
      ;;           markdown-live-preview-engine 'eww
@@ -189,26 +192,24 @@ This function should only modify configuration layer settings."
      ;;                                     ("ini" "conf-unix")
      ;;                                     ("html" "web"))
      ;;           markdown--key-bindings-modes '(markdown-mode gfm-mode))
-     ;; (python :variables
-     ;;         python-backend 'lsp
-     ;;         python-pipenv-activate nil
-     ;;         python-enable-yapf-format-on-save nil
-     ;;         python-test-runner 'nose
-     ;;         python-save-before-test t
-     ;;         python-fill-column 79
-     ;;         python-tab-width 4
-     ;;         python-spacemacs-indent-guess t
-     ;;         python-auto-set-local-pyenv-version 'on-visit
-     ;;         python-auto-set-local-pyvenv-virtualenv 'on-visit
-     ;;         python-sort-imports-on-save nil
-     ;;         spacemacs--python-pyenv-modes nil
-     ;;         spacemacs--python-pyvenv-modes nil
-     ;;         python-shell--interpreter nil
-     ;;         python-shell--interpreter-args nil)
-     ;; (rust :variables
-     ;;       ;; rust-backend 'lsp
-     ;;       rust-rls-cmd '("rustup" "run" "nightly" "rls")
-     ;;       rust-format-on-save t)
+     (python :variables
+             python-backend 'lsp
+             python-pipenv-activate nil
+             python-enable-yapf-format-on-save nil
+             python-test-runner 'nose
+             python-save-before-test t
+             python-fill-column 79
+             python-tab-width 4
+             python-spacemacs-indent-guess t
+             python-auto-set-local-pyenv-version 'on-visit
+             python-auto-set-local-pyvenv-virtualenv 'on-visit
+             python-sort-imports-on-save nil
+             spacemacs--python-pyenv-modes nil
+             spacemacs--python-pyvenv-modes nil
+             python-shell--interpreter nil
+             python-shell--interpreter-args nil)
+     (rust :variables
+           rust-backend 'lsp)
      ;; (scala :variables
      ;;        scala-enable-eldoc t
      ;;        scala-auto-insert-asterisk-in-comments t
@@ -224,7 +225,7 @@ This function should only modify configuration layer settings."
                  typescript-fmt-on-save t
                  typescript-fmt-tool 'tide
                  typescript-backend 'tide)
-     ;; yaml
+     yaml
 
      ;; os
      ;; (osx :variables
