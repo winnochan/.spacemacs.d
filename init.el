@@ -108,7 +108,7 @@ This function should only modify configuration layer settings."
      ;;      org-enable-hugo-support nil
      ;;      org-enable-trello-support nil)
 
-     ;; semantic
+     semantic
      ;; smex
      ;; (typography :variables
      ;;             typography-enable-typographic-editing t)
@@ -135,22 +135,23 @@ This function should only modify configuration layer settings."
 
      ;; lang
      (c-c++ :variables
-            c-c++-backend nil
+            c-c++-backend 'lsp-ccls
             c-c++-enable-auto-newline nil
             c-c++-enable-clang-support nil
-            c-c++-enable-google-style nil
+            c-c++-enable-google-style t
             c-c++-enable-google-newline nil
             c-c++-enable-rtags-completion t
             c-c++-enable-clang-format-on-save nil
-            c-c++-default-mode-for-headers 'c-mode
-            c-c++-adopt-subprojects nil
+            c-c++-default-mode-for-headers 'c++-mode
+            c-c++-adopt-subprojects t
             c-c++-lsp-cache-dir nil
             c-c++-lsp-executable nil
             c-c++-lsp-project-whitelist nil
             c-c++-lsp-project-blacklist nil
             c-c++-lsp-sem-highlight-method nil
             c-c++-lsp-sem-highlight-rainbow nil
-            c-c++-lsp-extra-init-params '(:cacheFormat "msgpack"))
+            c-c++-lsp-initialization-options nil
+            c-c++-lsp-args nil)
      (emacs-lisp :variables
                  emacs-lisp-hide-namespace-prefix nil)
      (go :variables
@@ -192,22 +193,22 @@ This function should only modify configuration layer settings."
      ;;                                     ("ini" "conf-unix")
      ;;                                     ("html" "web"))
      ;;           markdown--key-bindings-modes '(markdown-mode gfm-mode))
-     (python :variables
-             python-backend 'lsp
-             python-pipenv-activate nil
-             python-enable-yapf-format-on-save nil
-             python-test-runner 'nose
-             python-save-before-test t
-             python-fill-column 79
-             python-tab-width 4
-             python-spacemacs-indent-guess t
-             python-auto-set-local-pyenv-version 'on-visit
-             python-auto-set-local-pyvenv-virtualenv 'on-visit
-             python-sort-imports-on-save nil
-             spacemacs--python-pyenv-modes nil
-             spacemacs--python-pyvenv-modes nil
-             python-shell--interpreter nil
-             python-shell--interpreter-args nil)
+     ;; (python :variables
+     ;;         python-backend 'lsp
+     ;;         python-pipenv-activate nil
+     ;;         python-enable-yapf-format-on-save nil
+     ;;         python-test-runner 'nose
+     ;;         python-save-before-test t
+     ;;         python-fill-column 79
+     ;;         python-tab-width 4
+     ;;         python-spacemacs-indent-guess t
+     ;;         python-auto-set-local-pyenv-version 'on-visit
+     ;;         python-auto-set-local-pyvenv-virtualenv 'on-visit
+     ;;         python-sort-imports-on-save nil
+     ;;         spacemacs--python-pyenv-modes nil
+     ;;         spacemacs--python-pyvenv-modes nil
+     ;;         python-shell--interpreter nil
+     ;;         python-shell--interpreter-args nil)
      (rust :variables
            rust-backend 'lsp)
      ;; (scala :variables
@@ -314,6 +315,7 @@ This function should only modify configuration layer settings."
                                       helm-tramp
                                       ;; ng2-mode
                                       ;; vue-mode
+                                      quickrun
                                       )
 
    ;; A list of packages that cannot be updated.
