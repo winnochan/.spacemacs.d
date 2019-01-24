@@ -135,10 +135,10 @@ This function should only modify configuration layer settings."
 
      ;; lang
      (c-c++ :variables
-            c-c++-backend 'lsp-ccls
+            ;; c-c++-backend 'lsp-ccls
             c-c++-enable-auto-newline nil
             c-c++-enable-clang-support nil
-            c-c++-enable-google-style t
+            c-c++-enable-google-style nil
             c-c++-enable-google-newline nil
             c-c++-enable-rtags-completion t
             c-c++-enable-clang-format-on-save nil
