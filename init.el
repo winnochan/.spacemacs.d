@@ -168,12 +168,12 @@ This function should only modify configuration layer settings."
            web-fmt-tool 'web-beautify)
      (java :variables
            java-backend 'lsp
-           js-indent-level 2
-           node-add-modules-path t
            java--ensime-modes '(java-mode))
      (javascript :variables
                  javascript-backend 'lsp
-                 javascript-fmt-tool 'prettier)
+                 javascript-fmt-tool 'prettier
+                 js-indent-level 2
+                 node-add-modules-path t)
      (json :variables
            json-fmt-tool 'prettier)
      ;; (lua)
