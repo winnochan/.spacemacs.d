@@ -117,10 +117,7 @@ This function should only modify configuration layer settings."
      ;; gnus
 
      ;; filetree
-     ;; (treemacs :variables
-     ;;           treemacs-use-follow-mode t
-     ;;           treemacs-use-filewatch-mode t
-     ;;           treemacs-use-collapsed-directories 3)
+     treemacs
 
      ;; framework
      ;; django
