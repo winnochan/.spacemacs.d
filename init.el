@@ -202,12 +202,13 @@ This function should only modify configuration layer settings."
              python-auto-set-local-pyenv-version 'on-visit
              python-auto-set-local-pyvenv-virtualenv 'on-visit
              python-sort-imports-on-save t
-             spacemacs--python-pyenv-modes t
-             spacemacs--python-pyvenv-modes t
+             spacemacs--python-pyenv-modes nil
+             spacemacs--python-pyvenv-modes nil
              python-shell--interpreter nil
              python-shell--interpreter-args nil)
      (rust :variables
-           rust-backend 'lsp)
+           rust-backend 'lsp
+           rust-format-on-save t)
      ;; (scala :variables
      ;;        scala-enable-eldoc t
      ;;        scala-auto-insert-asterisk-in-comments t
