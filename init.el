@@ -190,22 +190,22 @@ This function should only modify configuration layer settings."
      ;;                                     ("ini" "conf-unix")
      ;;                                     ("html" "web"))
      ;;           markdown--key-bindings-modes '(markdown-mode gfm-mode))
-     ;; (python :variables
-     ;;         python-backend 'lsp
-     ;;         python-pipenv-activate nil
-     ;;         python-enable-yapf-format-on-save nil
-     ;;         python-test-runner 'nose
-     ;;         python-save-before-test t
-     ;;         python-fill-column 79
-     ;;         python-tab-width 4
-     ;;         python-spacemacs-indent-guess t
-     ;;         python-auto-set-local-pyenv-version 'on-visit
-     ;;         python-auto-set-local-pyvenv-virtualenv 'on-visit
-     ;;         python-sort-imports-on-save nil
-     ;;         spacemacs--python-pyenv-modes nil
-     ;;         spacemacs--python-pyvenv-modes nil
-     ;;         python-shell--interpreter nil
-     ;;         python-shell--interpreter-args nil)
+     (python :variables
+             python-backend 'lsp
+             python-pipenv-activate t
+             python-enable-yapf-format-on-save t
+             python-test-runner 'nose
+             python-save-before-test t
+             python-fill-column 79
+             python-tab-width 4
+             python-spacemacs-indent-guess t
+             python-auto-set-local-pyenv-version 'on-visit
+             python-auto-set-local-pyvenv-virtualenv 'on-visit
+             python-sort-imports-on-save t
+             spacemacs--python-pyenv-modes t
+             spacemacs--python-pyvenv-modes t
+             python-shell--interpreter nil
+             python-shell--interpreter-args nil)
      (rust :variables
            rust-backend 'lsp)
      ;; (scala :variables
@@ -244,6 +244,7 @@ This function should only modify configuration layer settings."
      ;; (git :variables
      ;;      git-enable-magit-svn-plugin t
      ;;      git-magit-status-fullscreen t)
+     (github)
      (version-control :variables
                       version-control-global-margin t
                       version-control-diff-tool 'git-gutter+
