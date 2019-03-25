@@ -245,7 +245,7 @@ This function should only modify configuration layer settings."
      ;; (git :variables
      ;;      git-enable-magit-svn-plugin t
      ;;      git-magit-status-fullscreen t)
-     (github)
+     ;; (github)
      (version-control :variables
                       version-control-global-margin t
                       version-control-diff-tool 'git-gutter+

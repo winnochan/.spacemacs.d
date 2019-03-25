@@ -84,9 +84,9 @@
 ;; vue-mode
 
 ;; magithub
-(magit-set "true" "--global" "magithub.online")
-(magit-set "true" "--global" "magithub.status.includeStatusHeader")
-(magit-set "true" "--global" "magithub.status.includePullRequestsSection")
-(magit-set "true" "--global" "magithub.status.includeIssuesSection")
+;; (magit-set "true" "--global" "magithub.online")
+;; (magit-set "true" "--global" "magithub.status.includeStatusHeader")
+;; (magit-set "true" "--global" "magithub.status.includePullRequestsSection")
+;; (magit-set "true" "--global" "magithub.status.includeIssuesSection")
 
 (provide 'user-config)
