@@ -108,7 +108,7 @@ This function should only modify configuration layer settings."
      ;;      org-enable-hugo-support nil
      ;;      org-enable-trello-support nil)
 
-     semantic
+     ;; semantic
      ;; smex
      ;; (typography :variables
      ;;             typography-enable-typographic-editing t)
