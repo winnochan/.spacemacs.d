@@ -196,7 +196,7 @@ This function should only modify configuration layer settings."
              python-enable-yapf-format-on-save t
              python-test-runner 'nose
              python-save-before-test t
-             python-fill-column 79
+             python-fill-column 99
              python-tab-width 4
              python-spacemacs-indent-guess t
              python-auto-set-local-pyenv-version 'on-visit
