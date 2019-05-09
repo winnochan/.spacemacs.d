@@ -82,7 +82,7 @@ This function should only modify configuration layer settings."
                       auto-completion-tab-key-behavior 'complete
                       auto-completion-complete-with-key-sequence nil
                       auto-completion-complete-with-key-sequence-delay 0.001
-                      auto-completion-idle-delay 0.001
+                      auto-completion-idle-delay 0.1
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-sort-by-usage t
                       auto-completion-enable-help-tooltip t
@@ -108,7 +108,7 @@ This function should only modify configuration layer settings."
      ;;      org-enable-hugo-support nil
      ;;      org-enable-trello-support nil)
 
-     ;; semantic
+     semantic
      ;; smex
      ;; (typography :variables
      ;;             typography-enable-typographic-editing t)
@@ -169,6 +169,8 @@ This function should only modify configuration layer settings."
      (javascript :variables
                  javascript-backend 'lsp
                  javascript-fmt-tool 'prettier
+                 javascript-import-tool 'import-js
+                 javascript-fmt-on-save t
                  js-indent-level 2
                  node-add-modules-path t)
      (json :variables
@@ -193,7 +195,8 @@ This function should only modify configuration layer settings."
      (python :variables
              python-backend 'lsp
              python-pipenv-activate t
-             python-enable-yapf-format-on-save t
+             python-formatter 'yapf
+             python-format-on-save t
              python-test-runner 'nose
              python-save-before-test t
              python-fill-column 99
