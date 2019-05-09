@@ -1,7 +1,7 @@
 ;; (spacemacs/toggle-debug-on-error-on)
 
 ;; Personal Information Configuration
-(setq user-full-name "WinnoChan")
+(setq user-full-name "winnochan")
 (setq user-email-address "winnochan@icloud.com")
 
 ;; 多行移动
