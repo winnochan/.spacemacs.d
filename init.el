@@ -75,17 +75,17 @@ This function should only modify configuration layer settings."
      helm
      (auto-completion :variables
                       ;; spacemacs-default-company-backends
-                      ;; '((company-dabbrev-code company-gtags company-etags
-                      ;;                         company-keywords)
+                      ;; '((company-semantic company-dabbrev-code company-gtags
+                      ;;                     company-etags company-keywords)
                       ;;   company-files company-dabbrev)
                       auto-completion-return-key-behavior 'complete
-                      auto-completion-tab-key-behavior 'complete
+                      auto-completion-tab-key-behavior 'cycle
                       auto-completion-complete-with-key-sequence nil
-                      auto-completion-complete-with-key-sequence-delay 0.001
-                      auto-completion-idle-delay 0.1
-                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-complete-with-key-sequence-delay 0.1
+                      auto-completion-idle-delay 0.2
+                      auto-completion-enable-snippets-in-popup nil
                       auto-completion-enable-sort-by-usage t
-                      auto-completion-enable-help-tooltip t
+                      auto-completion-enable-help-tooltip nil
                       ;; company-mode-completion-cancel-keywords '("do"
                       ;;                                           "then"
                       ;;                                           "begin"
@@ -108,7 +108,7 @@ This function should only modify configuration layer settings."
      ;;      org-enable-hugo-support nil
      ;;      org-enable-trello-support nil)
 
-     semantic
+     ;; semantic
      ;; smex
      ;; (typography :variables
      ;;             typography-enable-typographic-editing t)
@@ -137,7 +137,7 @@ This function should only modify configuration layer settings."
             c-c++-enable-clang-support nil
             c-c++-enable-google-style nil
             c-c++-enable-google-newline nil
-            c-c++-enable-rtags-completion t
+            c-c++-enable-rtags-completion nil
             c-c++-enable-clang-format-on-save nil
             c-c++-default-mode-for-headers 'c++-mode
             c-c++-adopt-subprojects t
@@ -283,6 +283,7 @@ This function should only modify configuration layer settings."
 
      ;; tools
      command-log
+     dap
      docker
      fasd
      fzf
