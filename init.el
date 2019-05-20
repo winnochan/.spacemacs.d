@@ -137,7 +137,7 @@ This function should only modify configuration layer settings."
             c-c++-enable-clang-support nil
             c-c++-enable-google-style nil
             c-c++-enable-google-newline nil
-            c-c++-enable-rtags-completion nil
+            c-c++-enable-rtags-completion t
             c-c++-enable-clang-format-on-save nil
             c-c++-default-mode-for-headers 'c++-mode
             c-c++-adopt-subprojects t
@@ -175,23 +175,9 @@ This function should only modify configuration layer settings."
                  node-add-modules-path t)
      (json :variables
            json-fmt-tool 'prettier)
-     ;; (lua)
-     ;; (markdown :variables
-     ;;           markdown-live-preview-engine 'eww
-     ;;           markdown-mmm-auto-modes '("c"
-     ;;                                     "c++"
-     ;;                                     "css"
-     ;;                                     "java"
-     ;;                                     "javascript"
-     ;;                                     "python"
-     ;;                                     "ruby"
-     ;;                                     "rust"
-     ;;                                     "scala"
-     ;;                                     ("elisp" "emacs-lisp")
-     ;;                                     ("ess" "R")
-     ;;                                     ("ini" "conf-unix")
-     ;;                                     ("html" "web"))
-     ;;           markdown--key-bindings-modes '(markdown-mode gfm-mode))
+     (lua)
+     (markdown :variables
+               markdown-live-preview-engine 'eww)
      (python :variables
              python-backend 'lsp
              python-pipenv-activate t
