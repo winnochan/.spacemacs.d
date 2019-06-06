@@ -181,7 +181,7 @@ This function should only modify configuration layer settings."
      (python :variables
              python-backend 'lsp
              python-pipenv-activate t
-             python-formatter 'yapf
+             python-formatter 'black
              python-format-on-save t
              python-test-runner 'nose
              python-save-before-test t
