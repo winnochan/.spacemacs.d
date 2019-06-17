@@ -305,6 +305,7 @@ This function should only modify configuration layer settings."
                                       ;; ng2-mode
                                       ;; vue-mode
                                       quickrun
+                                      base16-theme
                                       )
 
    ;; A list of packages that cannot be updated.
@@ -429,6 +430,7 @@ It should only modify the values of Spacemacs settings."
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
+                         base16-tomorrow-night
                          sanityinc-tomorrow-night
                          spacemacs-dark
                          )
