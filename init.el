@@ -62,10 +62,10 @@ This function should only modify configuration layer settings."
      spacemacs-visual
 
      ;; checker
-     (spell-checking :variables
-                     spell-checking-enable-by-default nil
-                     spell-checking-enable-auto-dictionary nil
-                     enable-flyspell-auto-completion nil)
+     ;; (spell-checking :variables
+     ;;                 spell-checking-enable-by-default nil
+     ;;                 spell-checking-enable-auto-dictionary nil
+     ;;                 enable-flyspell-auto-completion nil)
      ;; (syntax-checking :variables
      ;;                  syntax-checking-enable-tooltips t
      ;;                  syntax-checking-enable-by-default nil
@@ -117,7 +117,7 @@ This function should only modify configuration layer settings."
      ;; gnus
 
      ;; filetree
-     treemacs
+     ;; treemacs
 
      ;; framework
      ;; django
@@ -151,21 +151,21 @@ This function should only modify configuration layer settings."
             c-c++-lsp-args nil)
      (emacs-lisp :variables
                  emacs-lisp-hide-namespace-prefix nil)
-     (go :variables
-         go-backend 'lsp
-         go-use-gocheck-for-testing t
-         go-format-before-save t
-         go-tab-width 4
-         go-use-gometalinter t
-         go-use-golangci-lint t
-         go-test-buffer-name "*go test*"
-         go-use-test-args "")
-     graphviz
+     ;; (go :variables
+     ;;     go-backend 'lsp
+     ;;     go-use-gocheck-for-testing t
+     ;;     go-format-before-save t
+     ;;     go-tab-width 4
+     ;;     go-use-gometalinter t
+     ;;     go-use-golangci-lint t
+     ;;     go-test-buffer-name "*go test*"
+     ;;     go-use-test-args "")
+     ;; graphviz
      (html :variables
            web-fmt-tool 'web-beautify)
-     (java :variables
-           java-backend 'lsp
-           java--ensime-modes '(java-mode))
+     ;; (java :variables
+     ;;       java-backend 'lsp
+     ;;       java--ensime-modes '(java-mode))
      (javascript :variables
                  javascript-backend 'lsp
                  javascript-fmt-tool 'prettier
@@ -175,7 +175,7 @@ This function should only modify configuration layer settings."
                  node-add-modules-path t)
      (json :variables
            json-fmt-tool 'prettier)
-     (lua)
+     ;; (lua)
      (markdown :variables
                markdown-live-preview-engine 'eww)
      (python :variables
@@ -209,10 +209,10 @@ This function should only modify configuration layer settings."
 
      shell-scripts
      ;; swift
-     (typescript :variables
-                 typescript-fmt-on-save t
-                 typescript-fmt-tool 'tide
-                 typescript-backend 'tide)
+     ;; (typescript :variables
+     ;;             typescript-fmt-on-save t
+     ;;             typescript-fmt-tool 'tide
+     ;;             typescript-backend 'tide)
      yaml
 
      ;; os
@@ -235,10 +235,10 @@ This function should only modify configuration layer settings."
      ;;      git-enable-magit-svn-plugin t
      ;;      git-magit-status-fullscreen t)
      ;; (github)
-     (version-control :variables
-                      version-control-global-margin t
-                      version-control-diff-tool 'git-gutter+
-                      version-control-diff-side 'right)
+     ;; (version-control :variables
+     ;;                  version-control-global-margin t
+     ;;                  version-control-diff-tool 'git-gutter+
+     ;;                  version-control-diff-side 'right)
 
      ;; tags
      (gtags :variables
@@ -265,12 +265,12 @@ This function should only modify configuration layer settings."
             )
 
      ;; themes
-     (themes-megapack)
+     ;; (themes-megapack)
 
      ;; tools
      command-log
-     dap
-     docker
+     ;; dap
+     ;; docker
      fasd
      fzf
      ;; imenu-list
@@ -428,9 +428,10 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(sanityinc-tomorrow-night
+   dotspacemacs-themes '(
+                         sanityinc-tomorrow-night
                          spacemacs-dark
-                         spacemacs-light)
+                         )
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
    ;; `all-the-icons', `custom', `doom', `vim-powerline' and `vanilla'. The
