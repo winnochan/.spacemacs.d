@@ -269,7 +269,7 @@ This function should only modify configuration layer settings."
 
      ;; tools
      command-log
-     ;; dap
+     dap
      ;; docker
      fasd
      fzf
