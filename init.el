@@ -301,11 +301,12 @@ This function should only modify configuration layer settings."
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(
-                                      helm-tramp
+                                      ;; helm-tramp
                                       ;; ng2-mode
                                       ;; vue-mode
-                                      quickrun
-                                      base16-theme
+                                      ;; quickrun
+                                      ;; base16-theme
+                                      color-theme-sanityinc-tomorrow
                                       )
 
    ;; A list of packages that cannot be updated.
@@ -321,7 +322,8 @@ This function should only modify configuration layer settings."
    ;; installs only the used packages but won't delete unused ones. `all'
    ;; installs *all* packages supported by Spacemacs and never uninstalls them.
    ;; (default is `used-only')
-   dotspacemacs-install-packages 'used-but-keep-unused))
+   dotspacemacs-install-packages 'used-but-keep-unused
+   ))
 
 (defun dotspacemacs/init ()
   "Initialization:
@@ -430,7 +432,7 @@ It should only modify the values of Spacemacs settings."
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
-                         base16-tomorrow-night
+                         ;; base16-tomorrow-night
                          sanityinc-tomorrow-night
                          spacemacs-dark
                          )
@@ -442,7 +444,7 @@ It should only modify the values of Spacemacs settings."
    ;; refer to the DOCUMENTATION.org for more info on how to create your own
    ;; spaceline theme. Value can be a symbol or list with additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
-   dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
+   dotspacemacs-mode-line-theme '(doom)
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
