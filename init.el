@@ -168,13 +168,13 @@ This function should only modify configuration layer settings."
      ;;       java--ensime-modes '(java-mode))
      (javascript :variables
                  javascript-backend 'lsp
-                 javascript-fmt-tool 'prettier
+                 javascript-fmt-tool 'web-beautify
                  javascript-import-tool 'import-js
                  javascript-fmt-on-save t
                  js-indent-level 2
                  node-add-modules-path t)
      (json :variables
-           json-fmt-tool 'prettier)
+           json-fmt-tool 'web-beautify)
      ;; (lua)
      (markdown :variables
                markdown-live-preview-engine 'eww)
@@ -209,10 +209,11 @@ This function should only modify configuration layer settings."
 
      shell-scripts
      ;; swift
-     ;; (typescript :variables
-     ;;             typescript-fmt-on-save t
-     ;;             typescript-fmt-tool 'tide
-     ;;             typescript-backend 'tide)
+     (typescript :variables
+                 typescript-fmt-on-save t
+                 typescript-fmt-tool 'typescript-formater
+                 typescript-backend 'lsp
+                 typescript-linter 'tslint)
      yaml
 
      ;; os

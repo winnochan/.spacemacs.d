@@ -1,12 +1,12 @@
 ;; emacs-china elpa mirrors
-;; (setq configuration-layer-elpa-archives
-;;       '(
-;;         ("gnu-cn"       . "http://elpa.emacs-china.org/gnu/")
-;;         ("melpa-cn"     . "http://elpa.emacs-china.org/melpa/")
-;;         ("marmalade-cn" . "http://elpa.emacs-china.org/marmalade/")
-;;         ("org-cn"       . "http://elpa.emacs-china.org/org/")
-;;         )
-;;       )
+(setq configuration-layer-elpa-archives
+      '(
+        ("gnu-cn"       . "http://elpa.emacs-china.org/gnu/")
+        ("melpa-cn"     . "http://elpa.emacs-china.org/melpa/")
+        ("marmalade-cn" . "http://elpa.emacs-china.org/marmalade/")
+        ("org-cn"       . "http://elpa.emacs-china.org/org/")
+        )
+      )
 
 ;; tramp-ssh
 (setq tramp-ssh-controlmaster-options
