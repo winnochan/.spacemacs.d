@@ -25,8 +25,8 @@
 ;; (setq c-default-style "linux")
 ;; (setq c-default-style "k&r")
 ;; (setq c-default-style "stroustrup")
-(setq-default c-basic-offset 4)
-(setq default-tab-width 4)
+;; (setq-default c-basic-offset 4)
+;; (setq default-tab-width 4)
 
 (global-spacemacs-whitespace-cleanup-mode t)
 
@@ -65,7 +65,7 @@
 (when (require 'so-long nil :noerror)
   (so-long-enable))
 
-(setq company-minimum-prefix-length 4)
+;; (setq company-minimum-prefix-length 2)
 
 (spacemacs/toggle-indent-guide-globally-on)
 (setq indent-guide-delay 0.01)
