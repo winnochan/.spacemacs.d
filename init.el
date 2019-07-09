@@ -171,7 +171,7 @@ This function should only modify configuration layer settings."
                  javascript-fmt-tool 'prettier
                  javascript-import-tool 'import-js
                  javascript-fmt-on-save t
-                 js-indent-level 2
+                 js-indent-level 4
                  node-add-modules-path t)
      (json :variables
            json-fmt-tool 'prettier)
