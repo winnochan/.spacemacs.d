@@ -171,10 +171,10 @@ This function should only modify configuration layer settings."
                  javascript-fmt-tool 'prettier
                  javascript-import-tool 'import-js
                  javascript-fmt-on-save t
-                 js-indent-level 4
+                 js-indent-level 2
                  node-add-modules-path t)
      (json :variables
-           json-fmt-tool 'prettier)
+           json-fmt-tool 'web-beautify)
      ;; (lua)
      (markdown :variables
                markdown-live-preview-engine 'eww)
@@ -213,7 +213,8 @@ This function should only modify configuration layer settings."
                  typescript-fmt-on-save t
                  typescript-fmt-tool 'prettier
                  typescript-backend 'lsp
-                 typescript-linter 'eslint)
+                 typescript-linter 'tslint
+                 typescript-indent-level 2)
      yaml
 
      ;; os
