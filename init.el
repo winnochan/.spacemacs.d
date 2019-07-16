@@ -279,8 +279,8 @@ This function should only modify configuration layer settings."
      (lsp :variables
           lsp-remap-xref-keybindings t
           lsp-navigation 'both
-          lsp-ui-doc-enable t
-          lsp-ui-doc-include-signature t
+          lsp-ui-doc-enable nil
+          lsp-ui-doc-include-signature nil
           lsp-ui-sideline-enable nil
           lsp-ui-sideline-show-symbol nil
           lsp-ui-sideline-ignore-duplicate t)
