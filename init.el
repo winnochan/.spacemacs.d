@@ -168,7 +168,15 @@ This function should only modify configuration layer settings."
            scss-enable-lsp t
            web-mode-markup-indent-offset 2
            web-mode-css-indent-offset 2
-           web-mode-code-indent-offset 2)
+           web-mode-code-indent-offset 2
+           web-mode-enable-auto-pairing t
+           web-mode-enable-css-colorization t
+           web-mode-enable-block-face t
+           web-mode-enable-part-face t
+           web-mode-enable-comment-interpolation t
+           web-mode-enable-heredoc-fontification t
+           web-mode-enable-current-element-highlight t
+           web-mode-enable-current-column-highlight t)
      ;; (java :variables
      ;;       java-backend 'lsp
      ;;       java--ensime-modes '(java-mode))
