@@ -293,6 +293,7 @@ This function should only modify configuration layer settings."
      ;; custom
      commenter
      e2wm
+     vue
      )
 
    ;; List of additional packages that will be installed without being
