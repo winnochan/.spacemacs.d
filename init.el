@@ -162,7 +162,13 @@ This function should only modify configuration layer settings."
      ;;     go-use-test-args "")
      ;; graphviz
      (html :variables
-           web-fmt-tool 'web-beautify)
+           web-fmt-tool 'prettier
+           css-enable-lsp t
+           less-enable-lsp t
+           scss-enable-lsp t
+           web-mode-markup-indent-offset 2
+           web-mode-css-indent-offset 2
+           web-mode-code-indent-offset 2)
      ;; (java :variables
      ;;       java-backend 'lsp
      ;;       java--ensime-modes '(java-mode))
