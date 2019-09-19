@@ -194,8 +194,10 @@ This function should only modify configuration layer settings."
                markdown-live-preview-engine 'eww)
      (python :variables
              python-backend 'lsp
-             python-pipenv-activate t
-             python-formatter 'black
+             python-lsp-server 'pyls
+             python-lsp-git-root nil
+             python-pipenv-activate nil
+             python-formatter 'yapf
              python-format-on-save t
              python-test-runner 'nose
              python-save-before-test t
