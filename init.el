@@ -149,6 +149,7 @@ This function should only modify configuration layer settings."
             c-c++-lsp-sem-highlight-rainbow nil
             c-c++-lsp-initialization-options nil
             c-c++-lsp-args nil)
+     (dart)
      (emacs-lisp :variables
                  emacs-lisp-hide-namespace-prefix nil)
      ;; (go :variables
@@ -223,7 +224,8 @@ This function should only modify configuration layer settings."
      ;;        flycheck-scalastyle-jar "/usr/local/Cellar/scalastyle/1.0.0/libexec/scalastyle_2.12-1.0.0-batch.jar"
      ;;        flycheck-scalastylerc "/usr/local/etc/scalastyle_config.xml")
 
-     shell-scripts
+     (shell-scripts :variables
+                    shell-scripts-backend 'lsp)
      ;; swift
      (typescript :variables
                  typescript-fmt-on-save t
