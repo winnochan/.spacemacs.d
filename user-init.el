@@ -1,3 +1,7 @@
+;; (setq url-proxy-services
+;;       '(("http" . "127.0.0.1:1087")
+;;         ("https" . "127.0.0.1:1087")))
+
 ;; emacs-china elpa mirrors
 ;; (setq configuration-layer-elpa-archives
 ;;       '(
