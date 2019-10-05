@@ -152,15 +152,19 @@ This function should only modify configuration layer settings."
      (dart)
      (emacs-lisp :variables
                  emacs-lisp-hide-namespace-prefix nil)
-     ;; (go :variables
-     ;;     go-backend 'lsp
-     ;;     go-use-gocheck-for-testing t
-     ;;     go-format-before-save t
-     ;;     go-tab-width 4
-     ;;     go-use-gometalinter t
-     ;;     go-use-golangci-lint t
-     ;;     go-test-buffer-name "*go test*"
-     ;;     go-use-test-args "")
+     (go :variables
+         go-backend 'lsp
+         go-use-gocheck-for-testing nil
+         go-use-testify-for-testing nil
+         go-format-before-save t
+         go-tab-width 4
+         go-use-golangci-lint t
+         go-use-gometalinter t
+         go-test-buffer-name "*go test*"
+         go-use-test-args ""
+         go-test-verbose nil
+         go-run-args ""
+         godoc-at-point-function 'godoc-gogetdoc)
      ;; graphviz
      (html :variables
            web-fmt-tool 'prettier
