@@ -233,9 +233,10 @@ This function should only modify configuration layer settings."
      ;; swift
      (typescript :variables
                  typescript-fmt-on-save t
-                 typescript-fmt-tool 'prettier
-                 typescript-backend 'lsp
+                 typescript-fmt-tool 'tide
+                 typescript-backend 'tide
                  typescript-linter 'tslint
+                 typescript-lsp-linter t
                  typescript-indent-level 2)
      yaml
 
