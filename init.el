@@ -72,7 +72,8 @@ This function should only modify configuration layer settings."
      ;;                  syntax-checking-use-original-bitmaps t)
 
      ;; completion
-     helm
+     (helm :variables
+           spacemacs-helm-rg-max-column-number 256)
      (auto-completion :variables
                       ;; spacemacs-default-company-backends
                       ;; '((company-semantic company-dabbrev-code company-gtags
@@ -82,9 +83,9 @@ This function should only modify configuration layer settings."
                       auto-completion-tab-key-behavior 'cycle
                       auto-completion-complete-with-key-sequence nil
                       auto-completion-complete-with-key-sequence-delay 0.1
-                      auto-completion-idle-delay 0.2
-                      auto-completion-enable-snippets-in-popup nil
-                      auto-completion-enable-sort-by-usage t
+                      auto-completion-idle-delay 0.1
+                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-enable-sort-by-usage nil
                       auto-completion-enable-help-tooltip nil
                       ;; company-mode-completion-cancel-keywords '("do"
                       ;;                                           "then"
@@ -186,10 +187,11 @@ This function should only modify configuration layer settings."
      ;;       java-backend 'lsp
      ;;       java--ensime-modes '(java-mode))
      (javascript :variables
-                 javascript-backend 'lsp
+                 javascript-backend 'tern
                  javascript-fmt-tool 'prettier
                  javascript-import-tool 'import-js
                  javascript-fmt-on-save t
+                 javascript-repl 'nodejs
                  js-indent-level 2
                  node-add-modules-path t)
      (json :variables
@@ -233,10 +235,10 @@ This function should only modify configuration layer settings."
      ;; swift
      (typescript :variables
                  typescript-fmt-on-save t
-                 typescript-fmt-tool 'tide
+                 typescript-fmt-tool 'prettier
                  typescript-backend 'tide
                  typescript-linter 'tslint
-                 typescript-lsp-linter t
+                 ;; typescript-lsp-linter t
                  typescript-indent-level 2)
      yaml
 
@@ -294,7 +296,7 @@ This function should only modify configuration layer settings."
 
      ;; tools
      command-log
-     dap
+     ;; dap
      ;; docker
      fasd
      fzf
@@ -302,11 +304,13 @@ This function should only modify configuration layer settings."
      (lsp :variables
           lsp-remap-xref-keybindings t
           lsp-navigation 'both
-          lsp-ui-doc-enable nil
-          lsp-ui-doc-include-signature nil
-          lsp-ui-sideline-enable nil
-          lsp-ui-sideline-show-symbol nil
-          lsp-ui-sideline-ignore-duplicate t)
+          lsp-prefer-flymake nil
+          lsp-ui-doc-enable t
+          lsp-ui-doc-include-signature t
+          lsp-ui-sideline-enable t
+          lsp-ui-sideline-show-symbol t
+          lsp-ui-sideline-ignore-duplicate t
+          lsp-layer--active-mode-list nil)
 
      ;; web-services
      ;; evernote
