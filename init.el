@@ -187,7 +187,7 @@ This function should only modify configuration layer settings."
      ;;       java-backend 'lsp
      ;;       java--ensime-modes '(java-mode))
      (javascript :variables
-                 javascript-backend 'tern
+                 javascript-backend 'lsp
                  javascript-fmt-tool 'prettier
                  javascript-import-tool 'import-js
                  javascript-fmt-on-save t
@@ -236,9 +236,9 @@ This function should only modify configuration layer settings."
      (typescript :variables
                  typescript-fmt-on-save t
                  typescript-fmt-tool 'prettier
-                 typescript-backend 'tide
+                 typescript-backend 'lsp
                  typescript-linter 'tslint
-                 ;; typescript-lsp-linter t
+                 typescript-lsp-linter t
                  typescript-indent-level 2)
      yaml
 
