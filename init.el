@@ -41,23 +41,23 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
 
      ;; spacemacs
-     spacemacs-bootstrap
+     ;; spacemacs-bootstrap
      spacemacs-completion
      spacemacs-defaults
-     spacemacs-docker
+     ;; spacemacs-docker
      spacemacs-editing
      spacemacs-editing-visual
      ;; spacemacs-evil
      ;; spacemacs-language
      spacemacs-layouts
      ;; spacemacs-misc
-     spacemacs-modeline
+     ;; spacemacs-modeline
      (spacemacs-navigation :variables
                            ahs-default-range 'ahs-range-beginning-of-defun
                            ;; ahs-default-range 'ahs-range-display
                            ahs-idle-interval 0.5)
-     spacemacs-org
-     spacemacs-project
+     ;; spacemacs-org
+     ;; spacemacs-project
      spacemacs-purpose
      spacemacs-visual
 
@@ -66,10 +66,10 @@ This function should only modify configuration layer settings."
      ;;                 spell-checking-enable-by-default nil
      ;;                 spell-checking-enable-auto-dictionary nil
      ;;                 enable-flyspell-auto-completion nil)
-     ;; (syntax-checking :variables
-     ;;                  syntax-checking-enable-tooltips t
-     ;;                  syntax-checking-enable-by-default nil
-     ;;                  syntax-checking-use-original-bitmaps t)
+     (syntax-checking :variables
+                      syntax-checking-enable-tooltips t
+                      syntax-checking-enable-by-default t
+                      syntax-checking-use-original-bitmaps nil)
 
      ;; completion
      (helm :variables
@@ -133,14 +133,15 @@ This function should only modify configuration layer settings."
 
      ;; lang
      (c-c++ :variables
-            ;; c-c++-backend 'lsp-ccls
+            c-c++-backend nil
+            c++-enable-organize-includes-on-save nil
             c-c++-enable-auto-newline nil
-            c-c++-enable-clang-support nil
-            c-c++-enable-google-style nil
+            c-c++-enable-clang-support t
+            c-c++-enable-google-style t
             c-c++-enable-google-newline nil
-            c-c++-enable-rtags-completion t
-            c-c++-enable-clang-format-on-save nil
-            c-c++-default-mode-for-headers 'c++-mode
+            c-c++-enable-rtags-completion nil
+            c-c++-enable-clang-format-on-save t
+            c-c++-default-mode-for-headers 'c-or-c++-mode
             c-c++-adopt-subprojects t
             c-c++-lsp-cache-dir nil
             c-c++-lsp-executable nil
@@ -150,7 +151,7 @@ This function should only modify configuration layer settings."
             c-c++-lsp-sem-highlight-rainbow nil
             c-c++-lsp-initialization-options nil
             c-c++-lsp-args nil)
-     (dart)
+     ;; (dart)
      (emacs-lisp :variables
                  emacs-lisp-hide-namespace-prefix nil)
      (go :variables
@@ -197,8 +198,8 @@ This function should only modify configuration layer settings."
      (json :variables
            json-fmt-tool 'web-beautify)
      ;; (lua)
-     (markdown :variables
-               markdown-live-preview-engine 'eww)
+     ;; (markdown :variables
+     ;;           markdown-live-preview-engine 'eww)
      (python :variables
              python-backend 'lsp
              python-lsp-server 'pyls
@@ -218,9 +219,9 @@ This function should only modify configuration layer settings."
              spacemacs--python-pyvenv-modes nil
              python-shell--interpreter nil
              python-shell--interpreter-args nil)
-     (rust :variables
-           rust-backend 'lsp
-           rust-format-on-save t)
+     ;; (rust :variables
+     ;;       rust-backend 'lsp
+     ;;       rust-format-on-save t)
      ;; (scala :variables
      ;;        scala-enable-eldoc t
      ;;        scala-auto-insert-asterisk-in-comments t
@@ -295,8 +296,11 @@ This function should only modify configuration layer settings."
      ;; (themes-megapack)
 
      ;; tools
-     command-log
+     ;; command-log
      ;; dap
+     (dap :variables
+          spacemacs--dap-supported-modes nil
+          dap-enable-mouse-support nil)
      ;; docker
      fasd
      fzf
@@ -319,8 +323,8 @@ This function should only modify configuration layer settings."
 
      ;; custom
      commenter
-     e2wm
-     vue
+     ;; e2wm
+     ;; vue
      )
 
    ;; List of additional packages that will be installed without being
@@ -482,8 +486,8 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+   dotspacemacs-default-font '("Go Mono"
+                               :size 14
                                :weight normal
                                :width normal)
 
@@ -625,7 +629,7 @@ It should only modify the values of Spacemacs settings."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers t
 
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
