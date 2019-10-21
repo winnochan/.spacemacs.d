@@ -49,7 +49,7 @@ This function should only modify configuration layer settings."
      spacemacs-editing-visual
      ;; spacemacs-evil
      ;; spacemacs-language
-     spacemacs-layouts
+     ;; spacemacs-layouts
      ;; spacemacs-misc
      ;; spacemacs-modeline
      (spacemacs-navigation :variables
@@ -68,29 +68,18 @@ This function should only modify configuration layer settings."
      ;;                 enable-flyspell-auto-completion nil)
      (syntax-checking :variables
                       syntax-checking-enable-tooltips t
-                      syntax-checking-enable-by-default t
+                      syntax-checking-enable-by-default nil
                       syntax-checking-use-original-bitmaps nil)
 
      ;; completion
      (helm :variables
            spacemacs-helm-rg-max-column-number 256)
      (auto-completion :variables
-                      ;; spacemacs-default-company-backends
-                      ;; '((company-semantic company-dabbrev-code company-gtags
-                      ;;                     company-etags company-keywords)
-                      ;;   company-files company-dabbrev)
-                      auto-completion-return-key-behavior 'complete
-                      auto-completion-tab-key-behavior 'cycle
-                      auto-completion-complete-with-key-sequence nil
-                      auto-completion-complete-with-key-sequence-delay 0.1
                       auto-completion-idle-delay 0.1
-                      auto-completion-enable-snippets-in-popup t
-                      auto-completion-enable-sort-by-usage nil
-                      auto-completion-enable-help-tooltip nil
-                      ;; company-mode-completion-cancel-keywords '("do"
-                      ;;                                           "then"
-                      ;;                                           "begin"
-                      ;;                                           "case")
+                      auto-completion-enable-snippets-in-popup nil
+                      auto-completion-enable-sort-by-usage t
+                      auto-completion-enable-help-tooltip t
+                      auto-completion-use-company-box t
                       auto-completion-private-snippets-directory
                       "~/.spacemacs.d/snippets/")
 
@@ -132,18 +121,39 @@ This function should only modify configuration layer settings."
      ;;          chinese-enable-fcitx nil)
 
      ;; lang
+     ;; (c-c++ :variables
+     ;;        c-c++-backend 'lsp-ccls
+     ;;        c++-enable-organize-includes-on-save nil
+     ;;        c-c++-enable-auto-newline nil
+     ;;        c-c++-enable-clang-support nil
+     ;;        c-c++-enable-google-style t
+     ;;        c-c++-enable-google-newline nil
+     ;;        c-c++-enable-rtags-completion nil
+     ;;        c-c++-enable-clang-format-on-save t
+     ;;        c-c++-default-mode-for-headers 'c++-mode
+     ;;        c-c++-adopt-subprojects t
+     ;;        c-c++-lsp-cache-dir nil
+     ;;        c-c++-lsp-executable nil
+     ;;        c-c++-lsp-project-whitelist nil
+     ;;        c-c++-lsp-project-blacklist nil
+     ;;        c-c++-lsp-sem-highlight-method nil
+     ;;        c-c++-lsp-sem-highlight-rainbow nil
+     ;;        c-c++-lsp-initialization-options nil
+     ;;        c-c++-lsp-args nil)
+
      (c-c++ :variables
-            c-c++-backend nil
+            c-c++-backend 'lsp
+            c-c++-lsp-server 'clangd
             c++-enable-organize-includes-on-save nil
             c-c++-enable-auto-newline nil
-            c-c++-enable-clang-support t
+            c-c++-enable-clang-support nil
             c-c++-enable-google-style t
             c-c++-enable-google-newline nil
             c-c++-enable-rtags-completion nil
-            c-c++-enable-clang-format-on-save t
+            c-c++-enable-clang-format-on-save nil
             c-c++-default-mode-for-headers 'c-or-c++-mode
-            c-c++-adopt-subprojects t
-            c-c++-lsp-cache-dir nil
+            c-c++-adopt-subprojects nil
+            c-c++-lsp-cache-dir "~/.emacs.d/.cache/clangd"
             c-c++-lsp-executable nil
             c-c++-lsp-project-whitelist nil
             c-c++-lsp-project-blacklist nil
@@ -151,39 +161,39 @@ This function should only modify configuration layer settings."
             c-c++-lsp-sem-highlight-rainbow nil
             c-c++-lsp-initialization-options nil
             c-c++-lsp-args nil)
+
      ;; (dart)
      (emacs-lisp :variables
                  emacs-lisp-hide-namespace-prefix nil)
-     (go :variables
-         go-backend 'lsp
-         go-use-gocheck-for-testing nil
-         go-use-testify-for-testing nil
-         go-format-before-save t
-         go-tab-width 4
-         go-use-golangci-lint t
-         go-use-gometalinter t
-         go-test-buffer-name "*go test*"
-         go-use-test-args ""
-         go-test-verbose nil
-         go-run-args ""
-         godoc-at-point-function 'godoc-gogetdoc)
-     ;; graphviz
-     (html :variables
-           web-fmt-tool 'prettier
-           css-enable-lsp t
-           less-enable-lsp t
-           scss-enable-lsp t
-           web-mode-markup-indent-offset 2
-           web-mode-css-indent-offset 2
-           web-mode-code-indent-offset 2
-           web-mode-enable-auto-pairing t
-           web-mode-enable-css-colorization t
-           web-mode-enable-block-face t
-           web-mode-enable-part-face t
-           web-mode-enable-comment-interpolation t
-           web-mode-enable-heredoc-fontification t
-           web-mode-enable-current-element-highlight t
-           web-mode-enable-current-column-highlight t)
+     ;; (go :variables
+     ;;     go-backend 'lsp
+     ;;     go-use-gocheck-for-testing nil
+     ;;     go-use-testify-for-testing nil
+     ;;     go-format-before-save t
+     ;;     go-tab-width 4
+     ;;     go-use-golangci-lint t
+     ;;     go-use-gometalinter t
+     ;;     go-test-buffer-name "*go test*"
+     ;;     go-use-test-args ""
+     ;;     go-test-verbose nil
+     ;;     go-run-args ""
+     ;;     godoc-at-point-function 'godoc-gogetdoc)
+     ;; (html :variables
+     ;;       web-fmt-tool 'prettier
+     ;;       css-enable-lsp t
+     ;;       less-enable-lsp t
+     ;;       scss-enable-lsp t
+     ;;       web-mode-markup-indent-offset 2
+     ;;       web-mode-css-indent-offset 2
+     ;;       web-mode-code-indent-offset 2
+     ;;       web-mode-enable-auto-pairing t
+     ;;       web-mode-enable-css-colorization t
+     ;;       web-mode-enable-block-face t
+     ;;       web-mode-enable-part-face t
+     ;;       web-mode-enable-comment-interpolation t
+     ;;       web-mode-enable-heredoc-fontification t
+     ;;       web-mode-enable-current-element-highlight t
+     ;;       web-mode-enable-current-column-highlight t)
      ;; (java :variables
      ;;       java-backend 'lsp
      ;;       java--ensime-modes '(java-mode))
@@ -206,7 +216,7 @@ This function should only modify configuration layer settings."
              python-lsp-git-root nil
              python-pipenv-activate nil
              python-formatter 'yapf
-             python-format-on-save t
+             python-format-on-save nil
              python-test-runner 'nose
              python-save-before-test t
              python-fill-column 99
@@ -214,7 +224,7 @@ This function should only modify configuration layer settings."
              python-spacemacs-indent-guess t
              python-auto-set-local-pyenv-version 'on-visit
              python-auto-set-local-pyvenv-virtualenv 'on-visit
-             python-sort-imports-on-save t
+             python-sort-imports-on-save nil
              spacemacs--python-pyenv-modes nil
              spacemacs--python-pyvenv-modes nil
              python-shell--interpreter nil
@@ -231,8 +241,8 @@ This function should only modify configuration layer settings."
      ;;        flycheck-scalastyle-jar "/usr/local/Cellar/scalastyle/1.0.0/libexec/scalastyle_2.12-1.0.0-batch.jar"
      ;;        flycheck-scalastylerc "/usr/local/etc/scalastyle_config.xml")
 
-     (shell-scripts :variables
-                    shell-scripts-backend 'lsp)
+     ;; (shell-scripts :variables
+     ;;                shell-scripts-backend 'lsp)
      ;; swift
      (typescript :variables
                  typescript-fmt-on-save t
@@ -347,7 +357,9 @@ This function should only modify configuration layer settings."
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(
+                                    projectile
+                                    )
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
