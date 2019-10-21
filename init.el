@@ -66,10 +66,10 @@ This function should only modify configuration layer settings."
      ;;                 spell-checking-enable-by-default nil
      ;;                 spell-checking-enable-auto-dictionary nil
      ;;                 enable-flyspell-auto-completion nil)
-     (syntax-checking :variables
-                      syntax-checking-enable-tooltips t
-                      syntax-checking-enable-by-default nil
-                      syntax-checking-use-original-bitmaps nil)
+     ;; (syntax-checking :variables
+     ;;                  syntax-checking-enable-tooltips t
+     ;;                  syntax-checking-enable-by-default nil
+     ;;                  syntax-checking-use-original-bitmaps nil)
 
      ;; completion
      (helm :variables
@@ -358,7 +358,51 @@ This function should only modify configuration layer settings."
 
    ;; A list of packages that will not be installed and loaded.
    dotspacemacs-excluded-packages '(
-                                    projectile
+                                    ;; company-quickhelp
+                                    ;; company-box
+                                    ;; pyvenv
+                                    ;; markdown-mode
+                                    ;; rtags
+                                    ;; company-rtags
+                                    ;; simple-httpd
+                                    ;; google-translate
+
+                                    ;; evil-visual-mark-mode
+                                    ;; evil-unimpaired
+                                    ;; evil-tutor
+                                    ;; evil-textobj-line
+                                    ;; evil-surround
+                                    ;; evil-numbers
+                                    ;; evil-nerd-commenter
+                                    ;; evil-matchit
+                                    ;; evil-lisp-state
+                                    ;; evil-lion
+                                    ;; evil-indent-plus
+                                    ;; evil-iedit-state
+                                    ;; iedit evil-goggles
+                                    ;; evil-exchange
+                                    ;; evil-escape
+                                    ;; evil-ediff
+                                    ;; evil-cleverparens
+                                    ;; evil-args
+                                    ;; evil-anzu
+
+                                    ;; vue-html-mode
+                                    ;; vue-mode
+
+                                    ;; ws-butler
+                                    ;; web-beautify
+
+                                    ;; restart-emacs
+                                    ;; projectile
+                                    ;; gh-md
+                                    ;; fish-mode
+                                    ;; fancy-battery
+                                    ;; e2wm
+                                    ;; counsel-projectile
+                                    ;; command-log-mode
+                                    ;; ccls
+                                    ;; ac-ispell
                                     )
 
    ;; Defines the behaviour of Spacemacs when installing packages.
