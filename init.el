@@ -58,7 +58,7 @@ This function should only modify configuration layer settings."
                            ahs-idle-interval 0.5)
      ;; spacemacs-org
      ;; spacemacs-project
-     spacemacs-purpose
+     ;; spacemacs-purpose
      spacemacs-visual
 
      ;; checker
@@ -78,8 +78,8 @@ This function should only modify configuration layer settings."
                       auto-completion-idle-delay 0.1
                       auto-completion-enable-snippets-in-popup nil
                       auto-completion-enable-sort-by-usage t
-                      auto-completion-enable-help-tooltip t
-                      auto-completion-use-company-box t
+                      auto-completion-enable-help-tooltip nil
+                      auto-completion-use-company-box nil
                       auto-completion-private-snippets-directory
                       "~/.spacemacs.d/snippets/")
 
@@ -141,26 +141,26 @@ This function should only modify configuration layer settings."
      ;;        c-c++-lsp-initialization-options nil
      ;;        c-c++-lsp-args nil)
 
-     (c-c++ :variables
-            c-c++-backend 'lsp
-            c-c++-lsp-server 'clangd
-            c++-enable-organize-includes-on-save nil
-            c-c++-enable-auto-newline nil
-            c-c++-enable-clang-support nil
-            c-c++-enable-google-style t
-            c-c++-enable-google-newline nil
-            c-c++-enable-rtags-completion nil
-            c-c++-enable-clang-format-on-save nil
-            c-c++-default-mode-for-headers 'c-or-c++-mode
-            c-c++-adopt-subprojects nil
-            c-c++-lsp-cache-dir "~/.emacs.d/.cache/clangd"
-            c-c++-lsp-executable nil
-            c-c++-lsp-project-whitelist nil
-            c-c++-lsp-project-blacklist nil
-            c-c++-lsp-sem-highlight-method nil
-            c-c++-lsp-sem-highlight-rainbow nil
-            c-c++-lsp-initialization-options nil
-            c-c++-lsp-args nil)
+     ; (c-c++ :variables
+            ; c-c++-backend 'lsp
+            ; c-c++-lsp-server 'clangd
+            ; c++-enable-organize-includes-on-save nil
+            ; c-c++-enable-auto-newline nil
+            ; c-c++-enable-clang-support nil
+            ; c-c++-enable-google-style t
+            ; c-c++-enable-google-newline nil
+            ; c-c++-enable-rtags-completion nil
+            ; c-c++-enable-clang-format-on-save nil
+            ; c-c++-default-mode-for-headers 'c-or-c++-mode
+            ; c-c++-adopt-subprojects nil
+            ; c-c++-lsp-cache-dir "~/.emacs.d/.cache/clangd"
+            ; c-c++-lsp-executable nil
+            ; c-c++-lsp-project-whitelist nil
+            ; c-c++-lsp-project-blacklist nil
+            ; c-c++-lsp-sem-highlight-method nil
+            ; c-c++-lsp-sem-highlight-rainbow nil
+            ; c-c++-lsp-initialization-options nil
+            ; c-c++-lsp-args nil)
 
      ;; (dart)
      (emacs-lisp :variables
@@ -245,9 +245,9 @@ This function should only modify configuration layer settings."
      ;;                shell-scripts-backend 'lsp)
      ;; swift
      (typescript :variables
-                 typescript-fmt-on-save t
+                 typescript-fmt-on-save nil
                  typescript-fmt-tool 'prettier
-                 typescript-backend 'lsp
+                 typescript-backend 'tide
                  typescript-linter 'tslint
                  typescript-lsp-linter t
                  typescript-indent-level 2)
@@ -321,9 +321,9 @@ This function should only modify configuration layer settings."
           lsp-prefer-flymake nil
           lsp-ui-doc-enable t
           lsp-ui-doc-include-signature t
-          lsp-ui-sideline-enable t
-          lsp-ui-sideline-show-symbol t
-          lsp-ui-sideline-ignore-duplicate t
+          lsp-ui-sideline-enable nil
+          lsp-ui-sideline-show-symbol nil
+          lsp-ui-sideline-ignore-duplicate nil
           lsp-layer--active-mode-list nil)
 
      ;; web-services
