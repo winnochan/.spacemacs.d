@@ -4,6 +4,10 @@
 (setq user-full-name "winnochan")
 (setq user-email-address "winnochan@icloud.com")
 
+;; projectile
+(setq projectile-enable-caching t)
+;; (setq projectile-indexing-method 'hybrid)
+
 ;; 多行移动
 (global-set-key (kbd "C-M-n")
                 (lambda () (interactive) (next-line 7)))

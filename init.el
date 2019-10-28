@@ -49,15 +49,16 @@ This function should only modify configuration layer settings."
      spacemacs-editing-visual
      ;; spacemacs-evil
      ;; spacemacs-language
-     ;; spacemacs-layouts
+     spacemacs-layouts
      ;; spacemacs-misc
      ;; spacemacs-modeline
      (spacemacs-navigation :variables
                            ahs-default-range 'ahs-range-beginning-of-defun
                            ;; ahs-default-range 'ahs-range-display
-                           ahs-idle-interval 0.5)
-     ;; spacemacs-org
-     ;; spacemacs-project
+                           ahs-idle-interval 0.5
+                           )
+     spacemacs-org
+     spacemacs-project
      ;; spacemacs-purpose
      spacemacs-visual
 
@@ -72,10 +73,13 @@ This function should only modify configuration layer settings."
      ;;                  syntax-checking-use-original-bitmaps nil)
 
      ;; completion
-     (helm :variables
-           spacemacs-helm-rg-max-column-number 256)
+     helm
+     ;; (ivy :variables
+     ;;      ivy-enable-advanced-buffer-information t
+     ;;      ivy-ret-visits-directory t
+     ;;      spacemacs--counsel-search-max-path-length 30)
      (auto-completion :variables
-                      auto-completion-idle-delay 0.1
+                      auto-completion-idle-delay 0.02
                       auto-completion-enable-snippets-in-popup nil
                       auto-completion-enable-sort-by-usage t
                       auto-completion-enable-help-tooltip nil
@@ -197,38 +201,38 @@ This function should only modify configuration layer settings."
      ;; (java :variables
      ;;       java-backend 'lsp
      ;;       java--ensime-modes '(java-mode))
-     (javascript :variables
-                 javascript-backend 'lsp
-                 javascript-fmt-tool 'prettier
-                 javascript-import-tool 'import-js
-                 javascript-fmt-on-save t
-                 javascript-repl 'nodejs
-                 js-indent-level 2
-                 node-add-modules-path t)
+     ;; (javascript :variables
+     ;;             javascript-backend 'lsp
+     ;;             javascript-fmt-tool 'prettier
+     ;;             javascript-import-tool 'import-js
+     ;;             javascript-fmt-on-save t
+     ;;             javascript-repl 'nodejs
+     ;;             js-indent-level 2
+     ;;             node-add-modules-path t)
      (json :variables
            json-fmt-tool 'web-beautify)
      ;; (lua)
      ;; (markdown :variables
      ;;           markdown-live-preview-engine 'eww)
-     (python :variables
-             python-backend 'lsp
-             python-lsp-server 'pyls
-             python-lsp-git-root nil
-             python-pipenv-activate nil
-             python-formatter 'yapf
-             python-format-on-save nil
-             python-test-runner 'nose
-             python-save-before-test t
-             python-fill-column 99
-             python-tab-width 4
-             python-spacemacs-indent-guess t
-             python-auto-set-local-pyenv-version 'on-visit
-             python-auto-set-local-pyvenv-virtualenv 'on-visit
-             python-sort-imports-on-save nil
-             spacemacs--python-pyenv-modes nil
-             spacemacs--python-pyvenv-modes nil
-             python-shell--interpreter nil
-             python-shell--interpreter-args nil)
+     ;; (python :variables
+     ;;         python-backend 'lsp
+     ;;         python-lsp-server 'pyls
+     ;;         python-lsp-git-root nil
+     ;;         python-pipenv-activate nil
+     ;;         python-formatter 'yapf
+     ;;         python-format-on-save nil
+     ;;         python-test-runner 'nose
+     ;;         python-save-before-test t
+     ;;         python-fill-column 99
+     ;;         python-tab-width 4
+     ;;         python-spacemacs-indent-guess t
+     ;;         python-auto-set-local-pyenv-version 'on-visit
+     ;;         python-auto-set-local-pyvenv-virtualenv 'on-visit
+     ;;         python-sort-imports-on-save nil
+     ;;         spacemacs--python-pyenv-modes nil
+     ;;         spacemacs--python-pyvenv-modes nil
+     ;;         python-shell--interpreter nil
+     ;;         python-shell--interpreter-args nil)
      ;; (rust :variables
      ;;       rust-backend 'lsp
      ;;       rust-format-on-save t)
@@ -248,10 +252,10 @@ This function should only modify configuration layer settings."
                  typescript-fmt-on-save nil
                  typescript-fmt-tool 'prettier
                  typescript-backend 'tide
-                 typescript-linter 'tslint
-                 typescript-lsp-linter t
+                 typescript-linter nil
+                 typescript-lsp-linter nil
                  typescript-indent-level 2)
-     yaml
+     ;; yaml
 
      ;; os
      ;; (osx :variables
@@ -279,28 +283,28 @@ This function should only modify configuration layer settings."
      ;;                  version-control-diff-side 'right)
 
      ;; tags
-     (gtags :variables
-            gtags-enable-by-default t
-            spacemacs--counsel-gtags-dwim-success nil
+     ;; (gtags :variables
+     ;;        gtags-enable-by-default t
+     ;;        spacemacs--counsel-gtags-dwim-success nil
 
-            ;; ;; helm-gtags-suggested-key-mapping t
-            ;; helm-gtags-path-style 'root ; 'root, 'relative, 'absolute
-            ;; helm-gtags-ignore-case nil
-            ;; helm-gtags-read-only nil
-            ;; helm-gtags-use-input-at-cursor t
-            ;; helm-gtags-highlight-candidate t
-            ;; ;; helm-gtags-display-style 'detail ; 'detail, nil
-            ;; helm-gtags-auto-update nil
-            ;; helm-gtags-update-interval-second 60
-            ;; helm-gtags-cache-select-result t
-            ;; ;; helm-gtags-cache-max-result-size 10MB
-            ;; helm-gtags-pulse-at-cursor t
-            ;; helm-gtags-fuzzy-match t
-            ;; helm-gtags-direct-helm-completing t
-            ;; ;; helm-gtags-maximum-candidates 9999
-            ;; helm-gtags-preselect t
-            ;; helm-gtags-cygwin-use-global-w32-port nil
-            )
+     ;;        ;; ;; helm-gtags-suggested-key-mapping t
+     ;;        ;; helm-gtags-path-style 'root ; 'root, 'relative, 'absolute
+     ;;        ;; helm-gtags-ignore-case nil
+     ;;        ;; helm-gtags-read-only nil
+     ;;        ;; helm-gtags-use-input-at-cursor t
+     ;;        ;; helm-gtags-highlight-candidate t
+     ;;        ;; ;; helm-gtags-display-style 'detail ; 'detail, nil
+     ;;        ;; helm-gtags-auto-update nil
+     ;;        ;; helm-gtags-update-interval-second 60
+     ;;        ;; helm-gtags-cache-select-result t
+     ;;        ;; ;; helm-gtags-cache-max-result-size 10MB
+     ;;        ;; helm-gtags-pulse-at-cursor t
+     ;;        ;; helm-gtags-fuzzy-match t
+     ;;        ;; helm-gtags-direct-helm-completing t
+     ;;        ;; ;; helm-gtags-maximum-candidates 9999
+     ;;        ;; helm-gtags-preselect t
+     ;;        ;; helm-gtags-cygwin-use-global-w32-port nil
+     ;;        )
 
      ;; themes
      ;; (themes-megapack)
@@ -308,23 +312,23 @@ This function should only modify configuration layer settings."
      ;; tools
      ;; command-log
      ;; dap
-     (dap :variables
-          spacemacs--dap-supported-modes nil
-          dap-enable-mouse-support nil)
+     ;; (dap :variables
+     ;;      spacemacs--dap-supported-modes nil
+     ;;      dap-enable-mouse-support nil)
      ;; docker
      fasd
      fzf
      ;; imenu-list
-     (lsp :variables
-          lsp-remap-xref-keybindings t
-          lsp-navigation 'both
-          lsp-prefer-flymake nil
-          lsp-ui-doc-enable t
-          lsp-ui-doc-include-signature t
-          lsp-ui-sideline-enable nil
-          lsp-ui-sideline-show-symbol nil
-          lsp-ui-sideline-ignore-duplicate nil
-          lsp-layer--active-mode-list nil)
+     ;; (lsp :variables
+     ;;      lsp-remap-xref-keybindings t
+     ;;      lsp-navigation 'both
+     ;;      lsp-prefer-flymake nil
+     ;;      lsp-ui-doc-enable t
+     ;;      lsp-ui-doc-include-signature t
+     ;;      lsp-ui-sideline-enable nil
+     ;;      lsp-ui-sideline-show-symbol nil
+     ;;      lsp-ui-sideline-ignore-duplicate nil
+     ;;      lsp-layer--active-mode-list nil)
 
      ;; web-services
      ;; evernote
@@ -358,14 +362,26 @@ This function should only modify configuration layer settings."
 
    ;; A list of packages that will not be installed and loaded.
    dotspacemacs-excluded-packages '(
-                                    ;; company-quickhelp
+                                    ac-ispell
+
+                                    company-web
+                                    ;; company-tern
+                                    company-statistics
+                                    company-shell
+                                    company-rtags
+                                    company-quickhelp
+                                    company-lsp
+                                    ;; company-go
+                                    company-c-headers
                                     ;; company-box
-                                    ;; pyvenv
-                                    ;; markdown-mode
-                                    ;; rtags
-                                    ;; company-rtags
-                                    ;; simple-httpd
-                                    ;; google-translate
+                                    company-anaconda
+
+                                    counsel
+                                    counsel-projectile
+
+                                    command-log-mode
+                                    ccls
+                                    e2wm
 
                                     ;; evil-visual-mark-mode
                                     ;; evil-unimpaired
@@ -375,11 +391,12 @@ This function should only modify configuration layer settings."
                                     ;; evil-numbers
                                     ;; evil-nerd-commenter
                                     ;; evil-matchit
+                                    ;; evil-magit
                                     ;; evil-lisp-state
                                     ;; evil-lion
                                     ;; evil-indent-plus
                                     ;; evil-iedit-state
-                                    ;; iedit evil-goggles
+                                    ;; evil-goggles
                                     ;; evil-exchange
                                     ;; evil-escape
                                     ;; evil-ediff
@@ -387,22 +404,65 @@ This function should only modify configuration layer settings."
                                     ;; evil-args
                                     ;; evil-anzu
 
-                                    ;; vue-html-mode
-                                    ;; vue-mode
+                                    fancy-battery
+                                    fish-mode
 
-                                    ;; ws-butler
-                                    ;; web-beautify
+                                    flutter
+                                    dart-server
+                                    dart-mode
 
-                                    ;; restart-emacs
-                                    ;; projectile
-                                    ;; gh-md
-                                    ;; fish-mode
-                                    ;; fancy-battery
-                                    ;; e2wm
-                                    ;; counsel-projectile
-                                    ;; command-log-mode
-                                    ;; ccls
-                                    ;; ac-ispell
+                                    flycheck
+                                    flycheck-rust
+                                    flycheck-rtags
+                                    flycheck-pos-tip
+                                    flycheck-package
+                                    flycheck-golangci-lint
+                                    flycheck-bashate
+
+                                    lsp-ui
+                                    lsp-treemacs
+                                    lsp-python-ms
+
+                                    google-c-style
+
+                                    password-generator
+                                    yasnippet-snippets
+                                    auto-yasnippet
+
+                                    ivy
+                                    ivy-yasnippet
+                                    ivy-xref
+                                    ivy-rich
+                                    ivy-hydra
+
+                                    ;; helm-xref
+                                    ;; helm-themes
+                                    ;; helm-swoop
+                                    ;; helm-rtags
+                                    ;; helm-pydoc
+                                    ;; helm-purpose
+                                    ;; helm-projectile
+                                    ;; helm-mode-manager
+                                    ;; helm-make
+                                    ;; helm-lsp
+                                    ;; helm-gtags
+                                    ;; helm-gitignore
+                                    ;; helm-git-grep
+                                    ;; helm-flx
+                                    ;; helm-descbinds
+                                    ;; helm-css-scss
+                                    helm-company
+                                    ;; helm-c-yasnippet
+                                    ;; helm-ag
+
+                                    restart-emacs
+                                    rtags
+
+                                    vue-html-mode
+                                    vue-mode
+
+                                    web-mode
+                                    web-beautify
                                     )
 
    ;; Defines the behaviour of Spacemacs when installing packages.
