@@ -201,16 +201,16 @@ This function should only modify configuration layer settings."
      ;; (java :variables
      ;;       java-backend 'lsp
      ;;       java--ensime-modes '(java-mode))
-     ;; (javascript :variables
-     ;;             javascript-backend 'lsp
-     ;;             javascript-fmt-tool 'prettier
-     ;;             javascript-import-tool 'import-js
-     ;;             javascript-fmt-on-save t
-     ;;             javascript-repl 'nodejs
-     ;;             js-indent-level 2
-     ;;             node-add-modules-path t)
+     (javascript :variables
+                 javascript-backend 'tern
+                 javascript-fmt-tool 'prettier
+                 javascript-import-tool 'import-js
+                 javascript-fmt-on-save nil
+                 javascript-repl 'nodejs
+                 js-indent-level 2
+                 node-add-modules-path t)
      (json :variables
-           json-fmt-tool 'web-beautify)
+           json-fmt-tool 'prettier)
      ;; (lua)
      ;; (markdown :variables
      ;;           markdown-live-preview-engine 'eww)
