@@ -59,7 +59,7 @@
 (setq winum-scope 'frame-local)
 
 ;; hungry-mode
-;; (global-hungry-delete-mode t)
+(global-hungry-delete-mode t)
 
 ;; newline-and-indent is too slow.
 ;; (defun newline-and-indent ()
@@ -69,7 +69,7 @@
 ;; (when (require 'so-long nil :noerror)
 ;;   (so-long-enable))
 
-;; (setq company-minimum-prefix-length 2)
+(setq company-minimum-prefix-length 2)
 
 ;; (spacemacs/toggle-indent-guide-globally-on)
 ;; (setq indent-guide-delay 0.01)
@@ -78,8 +78,8 @@
 ;; (set-face-background 'indent-guide-face "dimgray")
 
 ;; turn off highlight current line
-;; (spacemacs/toggle-highlight-current-line-globally-on)
-;; (spacemacs/toggle-automatic-symbol-highlight-on)
+(spacemacs/toggle-highlight-current-line-globally-on)
+(spacemacs/toggle-automatic-symbol-highlight-on)
 
 ;; ng2-mode
 ;; (ng2-html-mode)

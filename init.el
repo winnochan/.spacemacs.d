@@ -210,7 +210,8 @@ This function should only modify configuration layer settings."
                  js-indent-level 2
                  node-add-modules-path t)
      (json :variables
-           json-fmt-tool 'prettier)
+           json-fmt-tool 'prettier
+           js-indent-level 2)
      ;; (lua)
      ;; (markdown :variables
      ;;           markdown-live-preview-engine 'eww)
@@ -254,7 +255,14 @@ This function should only modify configuration layer settings."
                  typescript-backend 'tide
                  typescript-linter nil
                  typescript-lsp-linter nil
-                 typescript-indent-level 2)
+                 typescript-indent-level 2
+
+                 ;; tide config
+                 tide-completion-detailed t
+                 tide-sync-request-timeout 0.7
+                 tide-completion-enable-autoimport-suggestions t
+                 tide-imenu-flatten t
+                 tide-always-show-documentation t)
      ;; yaml
 
      ;; os
@@ -364,16 +372,16 @@ This function should only modify configuration layer settings."
    dotspacemacs-excluded-packages '(
                                     ac-ispell
 
-                                    company-web
+                                    ;; company-web
                                     ;; company-tern
-                                    company-statistics
-                                    company-shell
+                                    ;; company-statistics
+                                    ;; company-shell
                                     company-rtags
                                     company-quickhelp
                                     company-lsp
                                     ;; company-go
                                     company-c-headers
-                                    ;; company-box
+                                    company-box
                                     company-anaconda
 
                                     counsel
@@ -451,7 +459,7 @@ This function should only modify configuration layer settings."
                                     ;; helm-flx
                                     ;; helm-descbinds
                                     ;; helm-css-scss
-                                    helm-company
+                                    ;; helm-company
                                     ;; helm-c-yasnippet
                                     ;; helm-ag
 
