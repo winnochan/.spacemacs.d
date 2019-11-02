@@ -51,7 +51,7 @@ This function should only modify configuration layer settings."
      ;; spacemacs-language
      spacemacs-layouts
      ;; spacemacs-misc
-     ;; spacemacs-modeline
+     spacemacs-modeline
      (spacemacs-navigation :variables
                            ahs-default-range 'ahs-range-beginning-of-defun
                            ;; ahs-default-range 'ahs-range-display
@@ -59,7 +59,7 @@ This function should only modify configuration layer settings."
                            )
      spacemacs-org
      spacemacs-project
-     ;; spacemacs-purpose
+     spacemacs-purpose
      spacemacs-visual
 
      ;; checker
@@ -215,25 +215,26 @@ This function should only modify configuration layer settings."
      ;; (lua)
      ;; (markdown :variables
      ;;           markdown-live-preview-engine 'eww)
-     ;; (python :variables
-     ;;         python-backend 'lsp
-     ;;         python-lsp-server 'pyls
-     ;;         python-lsp-git-root nil
-     ;;         python-pipenv-activate nil
-     ;;         python-formatter 'yapf
-     ;;         python-format-on-save nil
-     ;;         python-test-runner 'nose
-     ;;         python-save-before-test t
-     ;;         python-fill-column 99
-     ;;         python-tab-width 4
-     ;;         python-spacemacs-indent-guess t
-     ;;         python-auto-set-local-pyenv-version 'on-visit
-     ;;         python-auto-set-local-pyvenv-virtualenv 'on-visit
-     ;;         python-sort-imports-on-save nil
-     ;;         spacemacs--python-pyenv-modes nil
-     ;;         spacemacs--python-pyvenv-modes nil
-     ;;         python-shell--interpreter nil
-     ;;         python-shell--interpreter-args nil)
+     (python :variables
+             ;; python-backend 'lsp
+             ;; python-lsp-server 'pyls
+             ;; python-lsp-git-root nil
+             ;; python-pipenv-activate nil
+             ;; python-formatter 'yapf
+             ;; python-format-on-save nil
+             python-test-runner 'pytest
+             ;; python-save-before-test t
+             python-fill-column 99
+             ;; python-tab-width 4
+             ;; python-spacemacs-indent-guess t
+             ;; python-auto-set-local-pyenv-version 'on-visit
+             ;; python-auto-set-local-pyvenv-virtualenv 'on-visit
+             python-sort-imports-on-save nil
+             ;; spacemacs--python-pyenv-modes nil
+             ;; spacemacs--python-pyvenv-modes nil
+             ;; python-shell--interpreter nil
+             ;; python-shell--interpreter-args nil
+             )
      ;; (rust :variables
      ;;       rust-backend 'lsp
      ;;       rust-format-on-save t)
@@ -377,12 +378,12 @@ This function should only modify configuration layer settings."
                                     ;; company-statistics
                                     ;; company-shell
                                     company-rtags
-                                    company-quickhelp
+                                    ;; company-quickhelp
                                     company-lsp
-                                    ;; company-go
+                                    company-go
                                     company-c-headers
-                                    company-box
-                                    company-anaconda
+                                    ;; company-box
+                                    ;; company-anaconda
 
                                     counsel
                                     counsel-projectile
