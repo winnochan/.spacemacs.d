@@ -247,8 +247,13 @@ This function should only modify configuration layer settings."
      ;;        flycheck-scalastyle-jar "/usr/local/Cellar/scalastyle/1.0.0/libexec/scalastyle_2.12-1.0.0-batch.jar"
      ;;        flycheck-scalastylerc "/usr/local/etc/scalastyle_config.xml")
 
-     ;; (shell-scripts :variables
-     ;;                shell-scripts-backend 'lsp)
+     (shell-scripts :variables
+                    shell-scripts-backend 'lsp)
+     (sql :variables
+          sql-capitalize-keywords nil
+          sql-capitalize-keywords-disable-interactive nil
+          sql-capitalize-keywords-blacklist '("name")
+          sql-auto-indent t)
      ;; swift
      (typescript :variables
                  typescript-fmt-on-save nil
@@ -328,16 +333,16 @@ This function should only modify configuration layer settings."
      fasd
      fzf
      ;; imenu-list
-     ;; (lsp :variables
-     ;;      lsp-remap-xref-keybindings t
-     ;;      lsp-navigation 'both
-     ;;      lsp-prefer-flymake nil
-     ;;      lsp-ui-doc-enable t
-     ;;      lsp-ui-doc-include-signature t
-     ;;      lsp-ui-sideline-enable nil
-     ;;      lsp-ui-sideline-show-symbol nil
-     ;;      lsp-ui-sideline-ignore-duplicate nil
-     ;;      lsp-layer--active-mode-list nil)
+     (lsp :variables
+          lsp-remap-xref-keybindings t
+          lsp-navigation 'both
+          lsp-prefer-flymake nil
+          lsp-ui-doc-enable t
+          lsp-ui-doc-include-signature t
+          lsp-ui-sideline-enable nil
+          lsp-ui-sideline-show-symbol nil
+          lsp-ui-sideline-ignore-duplicate nil
+          lsp-layer--active-mode-list nil)
 
      ;; web-services
      ;; evernote
