@@ -14,7 +14,7 @@
 
 (defun fzf/init-fzf ()
   "initializes fzf-emacs and adds a key binding to `SPC f z'"
-  (use-package fasd
+  (use-package fzf
     :init
     (progn
       (spacemacs/declare-prefix "fz" "fzf-find")
