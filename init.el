@@ -198,6 +198,7 @@ This function should only modify configuration layer settings."
      ;;       web-mode-enable-heredoc-fontification t
      ;;       web-mode-enable-current-element-highlight t
      ;;       web-mode-enable-current-column-highlight t)
+     ipython-notebook
      ;; (java :variables
      ;;       java-backend 'lsp
      ;;       java--ensime-modes '(java-mode))
@@ -269,7 +270,7 @@ This function should only modify configuration layer settings."
                  tide-completion-enable-autoimport-suggestions t
                  tide-imenu-flatten t
                  tide-always-show-documentation t)
-     ;; yaml
+     yaml
 
      ;; os
      ;; (osx :variables
