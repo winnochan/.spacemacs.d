@@ -250,7 +250,7 @@ This function should only modify configuration layer settings."
      (shell-scripts :variables
                     shell-scripts-backend 'lsp)
      (sql :variables
-          sql-capitalize-keywords nil
+          sql-capitalize-keywords t
           sql-capitalize-keywords-disable-interactive nil
           sql-capitalize-keywords-blacklist '("name")
           sql-auto-indent t)
