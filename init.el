@@ -80,10 +80,10 @@ This function should only modify configuration layer settings."
      ;;      spacemacs--counsel-search-max-path-length 30)
      (auto-completion :variables
                       auto-completion-idle-delay 0.02
-                      auto-completion-enable-snippets-in-popup nil
+                      auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-sort-by-usage t
                       auto-completion-enable-help-tooltip nil
-                      auto-completion-use-company-box nil
+                      auto-completion-use-company-box t
                       auto-completion-private-snippets-directory
                       "~/.spacemacs.d/snippets/")
 
@@ -217,20 +217,20 @@ This function should only modify configuration layer settings."
      ;; (markdown :variables
      ;;           markdown-live-preview-engine 'eww)
      (python :variables
-             ;; python-backend 'lsp
-             ;; python-lsp-server 'pyls
+             python-backend 'lsp
+             python-lsp-server 'pyls
              ;; python-lsp-git-root nil
              ;; python-pipenv-activate nil
-             ;; python-formatter 'yapf
+             python-formatter 'yapf
              ;; python-format-on-save nil
-             python-test-runner 'pytest
+             python-test-runner '(pytest nose)
              ;; python-save-before-test t
              python-fill-column 99
-             ;; python-tab-width 4
-             ;; python-spacemacs-indent-guess t
-             ;; python-auto-set-local-pyenv-version 'on-visit
-             ;; python-auto-set-local-pyvenv-virtualenv 'on-visit
-             python-sort-imports-on-save nil
+             python-tab-width 4
+             python-spacemacs-indent-guess t
+             python-auto-set-local-pyenv-version 'on-project-switch
+             python-auto-set-local-pyvenv-virtualenv 'on-project-switch
+             ;; python-sort-imports-on-save t
              ;; spacemacs--python-pyenv-modes nil
              ;; spacemacs--python-pyvenv-modes nil
              ;; python-shell--interpreter nil
@@ -326,24 +326,25 @@ This function should only modify configuration layer settings."
 
      ;; tools
      ;; command-log
-     ;; dap
-     ;; (dap :variables
-     ;;      spacemacs--dap-supported-modes nil
-     ;;      dap-enable-mouse-support nil)
+     (dap :variables
+          spacemacs--dap-supported-modes nil
+          dap-enable-mouse-support nil
+          )
      ;; docker
      fasd
      fzf
      ;; imenu-list
      (lsp :variables
-          lsp-remap-xref-keybindings t
-          lsp-navigation 'both
-          lsp-prefer-flymake nil
-          lsp-ui-doc-enable t
-          lsp-ui-doc-include-signature t
-          lsp-ui-sideline-enable nil
-          lsp-ui-sideline-show-symbol nil
-          lsp-ui-sideline-ignore-duplicate nil
-          lsp-layer--active-mode-list nil)
+          ;; lsp-remap-xref-keybindings t
+          ;; lsp-navigation 'both
+          ;; lsp-prefer-flymake t
+          ;; lsp-ui-doc-enable t
+          ;; lsp-ui-doc-include-signature t
+          ;; lsp-ui-sideline-enable nil
+          ;; lsp-ui-sideline-show-symbol nil
+          ;; lsp-ui-sideline-ignore-duplicate nil
+          ;; lsp-layer--active-mode-list nil
+          )
 
      ;; web-services
      ;; evernote
@@ -377,7 +378,7 @@ This function should only modify configuration layer settings."
 
    ;; A list of packages that will not be installed and loaded.
    dotspacemacs-excluded-packages '(
-                                    ac-ispell
+                                    ;; ac-ispell
 
                                     ;; company-web
                                     ;; company-tern
@@ -385,7 +386,7 @@ This function should only modify configuration layer settings."
                                     ;; company-shell
                                     company-rtags
                                     ;; company-quickhelp
-                                    company-lsp
+                                    ;; company-lsp
                                     company-go
                                     company-c-headers
                                     ;; company-box
@@ -426,13 +427,13 @@ This function should only modify configuration layer settings."
                                     dart-server
                                     dart-mode
 
-                                    flycheck
-                                    flycheck-rust
-                                    flycheck-rtags
-                                    flycheck-pos-tip
-                                    flycheck-package
-                                    flycheck-golangci-lint
-                                    flycheck-bashate
+                                    ;; flycheck
+                                    ;; flycheck-rust
+                                    ;; flycheck-rtags
+                                    ;; flycheck-pos-tip
+                                    ;; flycheck-package
+                                    ;; flycheck-golangci-lint
+                                    ;; flycheck-bashate
 
                                     lsp-ui
                                     lsp-treemacs
@@ -441,8 +442,8 @@ This function should only modify configuration layer settings."
                                     google-c-style
 
                                     password-generator
-                                    yasnippet-snippets
-                                    auto-yasnippet
+                                    ;; yasnippet-snippets
+                                    ;; auto-yasnippet
 
                                     ivy
                                     ivy-yasnippet
@@ -470,7 +471,7 @@ This function should only modify configuration layer settings."
                                     ;; helm-c-yasnippet
                                     ;; helm-ag
 
-                                    restart-emacs
+                                    ;; restart-emacs
                                     rtags
 
                                     vue-html-mode
