@@ -51,7 +51,7 @@ This function should only modify configuration layer settings."
      ;; spacemacs-language
      spacemacs-layouts
      ;; spacemacs-misc
-     spacemacs-modeline
+     ;; spacemacs-modeline
      (spacemacs-navigation :variables
                            ahs-default-range 'ahs-range-beginning-of-defun
                            ;; ahs-default-range 'ahs-range-display
