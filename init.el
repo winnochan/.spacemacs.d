@@ -386,12 +386,12 @@ This function should only modify configuration layer settings."
                                     ;; company-box
                                     ;; company-anaconda
 
-                                    counsel
-                                    counsel-projectile
+                                    ;; counsel
+                                    ;; counsel-projectile
 
-                                    command-log-mode
+                                    ;; command-log-mode
                                     ;; ccls
-                                    e2wm
+                                    ;; e2wm
 
                                     ;; evil-visual-mark-mode
                                     ;; evil-unimpaired
@@ -414,12 +414,12 @@ This function should only modify configuration layer settings."
                                     ;; evil-args
                                     ;; evil-anzu
 
-                                    fancy-battery
-                                    fish-mode
+                                    ;; fancy-battery
+                                    ;; fish-mode
 
-                                    flutter
-                                    dart-server
-                                    dart-mode
+                                    ;; flutter
+                                    ;; dart-server
+                                    ;; dart-mode
 
                                     ;; flycheck
                                     ;; flycheck-rust
@@ -435,15 +435,15 @@ This function should only modify configuration layer settings."
 
                                     ;; google-c-style
 
-                                    password-generator
+                                    ;; password-generator
                                     ;; yasnippet-snippets
                                     ;; auto-yasnippet
 
-                                    ivy
-                                    ivy-yasnippet
-                                    ivy-xref
-                                    ivy-rich
-                                    ivy-hydra
+                                    ;; ivy
+                                    ;; ivy-yasnippet
+                                    ;; ivy-xref
+                                    ;; ivy-rich
+                                    ;; ivy-hydra
 
                                     ;; helm-xref
                                     ;; helm-themes
@@ -468,11 +468,11 @@ This function should only modify configuration layer settings."
                                     ;; restart-emacs
                                     ;; rtags
 
-                                    vue-html-mode
-                                    vue-mode
+                                    ;; vue-html-mode
+                                    ;; vue-mode
 
-                                    web-mode
-                                    web-beautify
+                                    ;; web-mode
+                                    ;; web-beautify
                                     )
 
    ;; Defines the behaviour of Spacemacs when installing packages.
@@ -501,8 +501,8 @@ It should only modify the values of Spacemacs settings."
 
    ;; File path pointing to emacs 27.1 executable compiled with support
    ;; for the portable dumper (this is currently the branch pdumper).
-   ;; (default "emacs-27.0.50")
-   dotspacemacs-emacs-pdumper-executable-file "emacs-27.0.50"
+   ;; (default "emacs")
+   dotspacemacs-emacs-pdumper-executable-file "emacs"
 
    ;; Name of the Spacemacs dump file. This is the file will be created by the
    ;; portable dumper in the cache directory under dumps sub-directory.
@@ -536,8 +536,8 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-use-spacelpa nil
 
    ;; If non-nil then verify the signature for downloaded Spacelpa archives.
-   ;; (default nil)
-   dotspacemacs-verify-spacelpa-archives nil
+   ;; (default t)
+   dotspacemacs-verify-spacelpa-archives t
 
    ;; If non-nil then spacemacs will check for updates at startup
    ;; when the current branch is not `develop'. Note that checking for
@@ -548,7 +548,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil, a form that evaluates to a package directory. For example, to
    ;; use different package directories for different Emacs versions, set this
    ;; to `emacs-version'. (default 'emacs-version)
-   dotspacemacs-elpa-subdirectory nil
+   dotspacemacs-elpa-subdirectory 'emacs-version
 
    ;; One of `vim', `emacs' or `hybrid'.
    ;; `hybrid' is like `vim' except that `insert state' is replaced by the
@@ -557,9 +557,6 @@ It should only modify the values of Spacemacs settings."
    ;; section of the documentation for details on available variables.
    ;; (default 'vim)
    dotspacemacs-editing-style 'emacs
-
-   ;; If non-nil output loading progress in `*Messages*' buffer. (default nil)
-   dotspacemacs-verbose-loading nil
 
    ;; Specify the startup banner. Default value is `official', it displays
    ;; the official spacemacs logo. An integer value is the index of text
@@ -604,7 +601,7 @@ It should only modify the values of Spacemacs settings."
    ;; refer to the DOCUMENTATION.org for more info on how to create your own
    ;; spaceline theme. Value can be a symbol or list with additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
-   dotspacemacs-mode-line-theme '(doom)
+   dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
@@ -683,7 +680,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; Which-key delay in seconds. The which-key buffer is the popup listing
    ;; the commands bound to the current keystroke sequence. (default 0.4)
-   dotspacemacs-which-key-delay 0.2
+   dotspacemacs-which-key-delay 0.4
 
    ;; Which-key frame position. Possible values are `right', `bottom' and
    ;; `right-then-bottom'. right-then-bottom tries to display the frame to the
@@ -701,7 +698,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil a progress bar is displayed when spacemacs is loading. This
    ;; may increase the boot time on some systems and emacs builds, set it to
    ;; nil to boost the loading time. (default t)
-   dotspacemacs-loading-progress-bar nil
+   dotspacemacs-loading-progress-bar t
 
    ;; If non-nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
