@@ -365,6 +365,7 @@ This function should only modify configuration layer settings."
                                       ;; quickrun
                                       ;; base16-theme
                                       color-theme-sanityinc-tomorrow
+                                      exec-path-from-shell
                                       )
 
    ;; A list of packages that cannot be updated.
@@ -832,7 +833,8 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-pretty-docs nil
 
    ;; custom
-   exec-path-from-shell-check-startup-files nil))
+   ;; exec-path-from-shell-check-startup-files nil
+   ))
 
 (defun dotspacemacs/user-env ()
   "Environment variables setup.
