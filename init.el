@@ -125,25 +125,19 @@ This function should only modify configuration layer settings."
      ;;          chinese-enable-fcitx nil)
 
      ;; lang
-     ;; (c-c++ :variables
-     ;;        c-c++-backend 'lsp-ccls
-     ;;        c++-enable-organize-includes-on-save nil
-     ;;        c-c++-enable-auto-newline nil
-     ;;        c-c++-enable-clang-support nil
-     ;;        c-c++-enable-google-style t
-     ;;        c-c++-enable-google-newline nil
-     ;;        c-c++-enable-rtags-completion nil
-     ;;        c-c++-enable-clang-format-on-save t
-     ;;        c-c++-default-mode-for-headers 'c++-mode
-     ;;        c-c++-adopt-subprojects t
-     ;;        c-c++-lsp-cache-dir nil
-     ;;        c-c++-lsp-executable nil
-     ;;        c-c++-lsp-project-whitelist nil
-     ;;        c-c++-lsp-project-blacklist nil
-     ;;        c-c++-lsp-sem-highlight-method nil
-     ;;        c-c++-lsp-sem-highlight-rainbow nil
-     ;;        c-c++-lsp-initialization-options nil
-     ;;        c-c++-lsp-args nil)
+     (c-c++ :variables
+            c-c++-backend 'lsp-ccls
+            c-c++-lsp-enable-semantic-highlight 'rainbow
+
+            c-c++-enable-rtags-completion nil
+            c-c++-enable-clang-format-on-save nil
+
+            c++-enable-organize-includes-on-save nil
+            c-c++-enable-auto-newline nil
+            c-c++-enable-google-style nil
+            c-c++-enable-google-newline nil
+
+            c-c++-adopt-subprojects t)
 
      ; (c-c++ :variables
             ; c-c++-backend 'lsp
