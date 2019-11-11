@@ -378,11 +378,11 @@ This function should only modify configuration layer settings."
                                     ;; company-tern
                                     ;; company-statistics
                                     ;; company-shell
-                                    company-rtags
+                                    ;; company-rtags
                                     ;; company-quickhelp
                                     ;; company-lsp
-                                    company-go
-                                    company-c-headers
+                                    ;; company-go
+                                    ;; company-c-headers
                                     ;; company-box
                                     ;; company-anaconda
 
@@ -390,7 +390,7 @@ This function should only modify configuration layer settings."
                                     counsel-projectile
 
                                     command-log-mode
-                                    ccls
+                                    ;; ccls
                                     e2wm
 
                                     ;; evil-visual-mark-mode
@@ -429,11 +429,11 @@ This function should only modify configuration layer settings."
                                     ;; flycheck-golangci-lint
                                     ;; flycheck-bashate
 
-                                    lsp-ui
-                                    lsp-treemacs
-                                    lsp-python-ms
+                                    ;; lsp-ui
+                                    ;; lsp-treemacs
+                                    ;; lsp-python-ms
 
-                                    google-c-style
+                                    ;; google-c-style
 
                                     password-generator
                                     ;; yasnippet-snippets
@@ -466,7 +466,7 @@ This function should only modify configuration layer settings."
                                     ;; helm-ag
 
                                     ;; restart-emacs
-                                    rtags
+                                    ;; rtags
 
                                     vue-html-mode
                                     vue-mode
