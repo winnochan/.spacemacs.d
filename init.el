@@ -211,8 +211,8 @@ This function should only modify configuration layer settings."
      ;; (markdown :variables
      ;;           markdown-live-preview-engine 'eww)
      (python :variables
-             python-backend 'lsp
-             python-lsp-server 'pyls
+             ;; python-backend 'lsp
+             ;; python-lsp-server 'pyls
              ;; python-lsp-git-root nil
              ;; python-pipenv-activate nil
              python-formatter 'yapf
@@ -246,7 +246,7 @@ This function should only modify configuration layer settings."
                     shell-scripts-backend 'lsp)
      (sql :variables
           sql-capitalize-keywords t
-          sql-capitalize-keywords-disable-interactive nil
+          sql-capitalize-keywords-disable-interactive t
           sql-capitalize-keywords-blacklist '("name")
           sql-auto-indent t)
      ;; swift
@@ -254,7 +254,7 @@ This function should only modify configuration layer settings."
                  typescript-fmt-on-save nil
                  typescript-fmt-tool 'prettier
                  typescript-backend 'tide
-                 typescript-linter nil
+                 typescript-linter 'eslint
                  typescript-lsp-linter nil
                  typescript-indent-level 2
 
@@ -282,14 +282,15 @@ This function should only modify configuration layer settings."
      ;;       helm-dash-docset-newpath "~/Library/Application Support/Dash/DocSets")
 
      ;; source-control
-     ;; (git :variables
-     ;;      git-enable-magit-svn-plugin t
-     ;;      git-magit-status-fullscreen t)
-     ;; (github)
-     ;; (version-control :variables
-     ;;                  version-control-global-margin t
-     ;;                  version-control-diff-tool 'git-gutter+
-     ;;                  version-control-diff-side 'right)
+     (git :variables
+          git-enable-magit-svn-plugin t
+          git-magit-status-fullscreen t)
+     github
+     (version-control :variables
+                      spacemacs--smerge-ts-full-hint-toggle t
+                      version-control-global-margin t
+                      version-control-diff-tool 'git-gutter+
+                      version-control-diff-side 'right)
 
      ;; tags
      ;; (gtags :variables
@@ -365,7 +366,7 @@ This function should only modify configuration layer settings."
                                       ;; quickrun
                                       ;; base16-theme
                                       color-theme-sanityinc-tomorrow
-                                      exec-path-from-shell
+                                      ;; exec-path-from-shell
                                       )
 
    ;; A list of packages that cannot be updated.
@@ -430,9 +431,12 @@ This function should only modify configuration layer settings."
                                     ;; flycheck-golangci-lint
                                     ;; flycheck-bashate
 
+                                    iswitchb
+
                                     ;; lsp-ui
                                     ;; lsp-treemacs
                                     ;; lsp-python-ms
+                                    lsp-origami
 
                                     ;; google-c-style
 
@@ -761,12 +765,12 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil `smartparens-strict-mode' will be enabled in programming modes.
    ;; (default nil)
-   dotspacemacs-smartparens-strict-mode nil
+   dotspacemacs-smartparens-strict-mode t
 
    ;; If non-nil pressing the closing parenthesis `)' key in insert mode passes
    ;; over any automatically added closing parenthesis, bracket, quote, etc…
    ;; This can be temporary disabled by pressing `C-q' before `)'. (default nil)
-   dotspacemacs-smart-closing-parenthesis nil
+   dotspacemacs-smart-closing-parenthesis t
 
    ;; Select a scope to highlight delimiters. Possible values are `any',
    ;; `current', `all' or `nil'. Default is `all' (highlight any scope and
