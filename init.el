@@ -215,7 +215,7 @@ This function should only modify configuration layer settings."
                plantuml-jar-path "~/.spacemacs.d/3rd/plantuml.jar"
                org-plantuml-jar-path "~/.spacemacs.d/3rd/plantuml.jar")
      (python :variables
-             ;; python-backend 'lsp
+             python-backend 'anaconda
              ;; python-lsp-server 'pyls
              ;; python-lsp-git-root nil
              ;; python-pipenv-activate nil
