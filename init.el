@@ -63,14 +63,14 @@ This function should only modify configuration layer settings."
      spacemacs-visual
 
      ;; checker
-     ;; (spell-checking :variables
-     ;;                 spell-checking-enable-by-default nil
-     ;;                 spell-checking-enable-auto-dictionary nil
-     ;;                 enable-flyspell-auto-completion nil)
-     ;; (syntax-checking :variables
-     ;;                  syntax-checking-enable-tooltips t
-     ;;                  syntax-checking-enable-by-default nil
-     ;;                  syntax-checking-use-original-bitmaps nil)
+     (spell-checking :variables
+                     spell-checking-enable-by-default nil
+                     spell-checking-enable-auto-dictionary nil
+                     enable-flyspell-auto-completion nil)
+     (syntax-checking :variables
+                      syntax-checking-enable-tooltips t
+                      syntax-checking-enable-by-default t
+                      syntax-checking-use-original-bitmaps nil)
 
      ;; completion
      helm
@@ -86,21 +86,28 @@ This function should only modify configuration layer settings."
                       auto-completion-use-company-box t
                       auto-completion-private-snippets-directory
                       "~/.spacemacs.d/snippets/")
+     (templates :variables
+                templates-private-directory (concat dotspacemacs-directory "templates")
+                templates-use-default-templates t)
 
      ;; emacs
      (better-defaults :variables
                       better-defaults-move-to-beginning-of-code-first nil
                       better-defaults-move-to-end-of-code-first nil)
-     ;; ibuffer
-     ;; (org :variables
-     ;;      org-want-todo-bindings nil
-     ;;      org-enable-bootstrap-support nil
-     ;;      org-enable-github-support nil
-     ;;      org-enable-reveal-js-support nil
-     ;;      org-projectile-file "TODOs.org"
-     ;;      org-enable-org-journal-support nil
-     ;;      org-enable-hugo-support nil
-     ;;      org-enable-trello-support nil)
+     (ibuffer :variables
+              ibuffer-group-buffers-by 'projects)
+     (org :variables
+          org-want-todo-bindings nil
+          org-enable-bootstrap-support t
+          org-enable-github-support t
+          org-enable-reveal-js-support t
+          org-projectile-file "TODOs.org"
+          org-enable-org-journal-support t
+          org-enable-sticky-header t
+          org-enable-hugo-support t
+          org-enable-trello-support t
+          org-enable-epub-support t
+          org-enable-jira-support t)
 
      ;; semantic
      ;; smex
@@ -125,40 +132,42 @@ This function should only modify configuration layer settings."
      ;;          chinese-enable-fcitx nil)
 
      ;; lang
-     (c-c++ :variables
-            c-c++-backend 'lsp-ccls
-            c-c++-lsp-enable-semantic-highlight 'rainbow
+     ;; (c-c++ :variables
+     ;;        c-c++-backend 'lsp-ccls
+     ;;        c-c++-lsp-enable-semantic-highlight 'rainbow
 
-            c-c++-enable-rtags-completion nil
-            c-c++-enable-clang-format-on-save nil
+     ;;        c-c++-enable-rtags-completion nil
+     ;;        c-c++-enable-clang-format-on-save nil
 
-            c++-enable-organize-includes-on-save nil
-            c-c++-enable-auto-newline nil
-            c-c++-enable-google-style nil
-            c-c++-enable-google-newline nil
+     ;;        c++-enable-organize-includes-on-save nil
+     ;;        c-c++-enable-auto-newline nil
+     ;;        c-c++-enable-google-style nil
+     ;;        c-c++-enable-google-newline nil
 
-            c-c++-adopt-subprojects t)
+     ;;        c-c++-adopt-subprojects t)
 
-     ; (c-c++ :variables
-            ; c-c++-backend 'lsp
-            ; c-c++-lsp-server 'clangd
-            ; c++-enable-organize-includes-on-save nil
-            ; c-c++-enable-auto-newline nil
-            ; c-c++-enable-clang-support nil
-            ; c-c++-enable-google-style t
-            ; c-c++-enable-google-newline nil
-            ; c-c++-enable-rtags-completion nil
-            ; c-c++-enable-clang-format-on-save nil
-            ; c-c++-default-mode-for-headers 'c-or-c++-mode
-            ; c-c++-adopt-subprojects nil
-            ; c-c++-lsp-cache-dir "~/.emacs.d/.cache/clangd"
-            ; c-c++-lsp-executable nil
-            ; c-c++-lsp-project-whitelist nil
-            ; c-c++-lsp-project-blacklist nil
-            ; c-c++-lsp-sem-highlight-method nil
-            ; c-c++-lsp-sem-highlight-rainbow nil
-            ; c-c++-lsp-initialization-options nil
-            ; c-c++-lsp-args nil)
+     csharp
+
+                                        ; (c-c++ :variables
+                                        ; c-c++-backend 'lsp
+                                        ; c-c++-lsp-server 'clangd
+                                        ; c++-enable-organize-includes-on-save nil
+                                        ; c-c++-enable-auto-newline nil
+                                        ; c-c++-enable-clang-support nil
+                                        ; c-c++-enable-google-style t
+                                        ; c-c++-enable-google-newline nil
+                                        ; c-c++-enable-rtags-completion nil
+                                        ; c-c++-enable-clang-format-on-save nil
+                                        ; c-c++-default-mode-for-headers 'c-or-c++-mode
+                                        ; c-c++-adopt-subprojects nil
+                                        ; c-c++-lsp-cache-dir "~/.emacs.d/.cache/clangd"
+                                        ; c-c++-lsp-executable nil
+                                        ; c-c++-lsp-project-whitelist nil
+                                        ; c-c++-lsp-project-blacklist nil
+                                        ; c-c++-lsp-sem-highlight-method nil
+                                        ; c-c++-lsp-sem-highlight-rainbow nil
+                                        ; c-c++-lsp-initialization-options nil
+                                        ; c-c++-lsp-args nil)
 
      ;; (dart)
      (emacs-lisp :variables
@@ -214,6 +223,7 @@ This function should only modify configuration layer settings."
                plantuml-default-exec-mode 'jar
                plantuml-jar-path "~/.spacemacs.d/3rd/plantuml.jar"
                org-plantuml-jar-path "~/.spacemacs.d/3rd/plantuml.jar")
+     protobuf
      (python :variables
              python-backend 'anaconda
              ;; python-lsp-server 'pyls
@@ -247,7 +257,7 @@ This function should only modify configuration layer settings."
      ;;        flycheck-scalastylerc "/usr/local/etc/scalastyle_config.xml")
 
      (shell-scripts :variables
-                    shell-scripts-backend 'lsp)
+                    shell-scripts-backend nil)
      (sql :variables
           sql-capitalize-keywords t
           sql-capitalize-keywords-disable-interactive t
@@ -270,6 +280,12 @@ This function should only modify configuration layer settings."
                  tide-always-show-documentation t)
      yaml
 
+     ;; misc
+     ietf
+     (multiple-cursors :variables
+                       multiple-cursors-backend 'mc)
+     parinfer
+
      ;; os
      ;; (osx :variables
      ;;      osx-command-as 'hyper
@@ -281,9 +297,14 @@ This function should only modify configuration layer settings."
      ;;      osx-right-option-as 'left
      ;;      osx-use-dictionary-app t)
 
+     ;; pair-programming
+     floobits
+
      ;; readers
-     ;; (dash :variables
-     ;;       helm-dash-docset-newpath "~/Library/Application Support/Dash/DocSets")
+     (dash :variables
+           dash-autoload-common-docsets t
+           helm-dash-docset-newpath "~/Library/Application Support/Dash/DocSets")
+     speed-reading
 
      ;; source-control
      (git :variables
@@ -331,7 +352,7 @@ This function should only modify configuration layer settings."
           )
      ;; docker
      fasd
-     ;; fzf
+     fzf
      ;; imenu-list
      (lsp :variables
           ;; lsp-remap-xref-keybindings t
@@ -435,7 +456,7 @@ This function should only modify configuration layer settings."
                                     ;; flycheck-golangci-lint
                                     ;; flycheck-bashate
 
-                                    iswitchb
+                                    ;; iswitchb
 
                                     ;; lsp-ui
                                     ;; lsp-treemacs
@@ -689,7 +710,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; Which-key delay in seconds. The which-key buffer is the popup listing
    ;; the commands bound to the current keystroke sequence. (default 0.4)
-   dotspacemacs-which-key-delay 0.4
+   dotspacemacs-which-key-delay 0.1
 
    ;; Which-key frame position. Possible values are `right', `bottom' and
    ;; `right-then-bottom'. right-then-bottom tries to display the frame to the
@@ -769,12 +790,12 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil `smartparens-strict-mode' will be enabled in programming modes.
    ;; (default nil)
-   dotspacemacs-smartparens-strict-mode t
+   dotspacemacs-smartparens-strict-mode nil
 
    ;; If non-nil pressing the closing parenthesis `)' key in insert mode passes
    ;; over any automatically added closing parenthesis, bracket, quote, etc…
    ;; This can be temporary disabled by pressing `C-q' before `)'. (default nil)
-   dotspacemacs-smart-closing-parenthesis t
+   dotspacemacs-smart-closing-parenthesis nil
 
    ;; Select a scope to highlight delimiters. Possible values are `any',
    ;; `current', `all' or `nil'. Default is `all' (highlight any scope and
