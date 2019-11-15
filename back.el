@@ -26,6 +26,7 @@ This function should only modify configuration layer settings."
    ;; a layer lazily. (default t)
    dotspacemacs-ask-for-lazy-installation nil
 
+   ;; If non-nil layers with lazy install support are lazy installed.
    ;; List of additional paths where to look for configuration layers.
    ;; Paths must have a trailing slash (i.e. `~/.mycontribs/')
    dotspacemacs-configuration-layer-path '()
@@ -40,12 +41,13 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
 
      ;; spacemacs
+     ;; spacemacs-bootstrap
      spacemacs-completion
      spacemacs-defaults
      ;; spacemacs-docker
      spacemacs-editing
      spacemacs-editing-visual
-     ;; spacemacs-evil
+     spacemacs-evil
      ;; spacemacs-language
      spacemacs-layouts
      ;; spacemacs-misc
@@ -122,8 +124,27 @@ This function should only modify configuration layer settings."
           ;; org-enable-jira-support t
           )
 
+     ;; semantic
+     ;; smex
+     ;; (typography :variables
+     ;;             typography-enable-typographic-editing t)
+
+     ;; email
+     ;; gnus
+
      ;; filetree
-     treemacs
+     ;; treemacs
+
+     ;; framework
+     ;; django
+     ;; (react)
+
+     ;; intl
+     ;; (chinese :variables
+     ;;          chinese-default-input-method 'pinyin
+     ;;          chinese-enable-youdao-dict t
+     ;;          chinese-enable-avy-pinyin t
+     ;;          chinese-enable-fcitx nil)
 
      ;; lang
      bibtex
@@ -255,8 +276,24 @@ This function should only modify configuration layer settings."
      yaml
 
      ;; misc
+     ;; ietf
      (multiple-cursors :variables
                        multiple-cursors-backend 'mc)
+     ;; parinfer
+
+     ;; os
+     ;; (osx :variables
+     ;;      osx-command-as 'hyper
+     ;;      osx-option-as 'meta
+     ;;      osx-function-as 'none
+     ;;      osx-control-as 'control
+     ;;      osx-right-control-as 'left
+     ;;      osx-right-command-as 'left
+     ;;      osx-right-option-as 'left
+     ;;      osx-use-dictionary-app t)
+
+     ;; pair-programming
+     floobits
 
      ;; readers
      (dash :variables
@@ -275,12 +312,40 @@ This function should only modify configuration layer settings."
                       version-control-diff-tool 'git-gutter+
                       version-control-diff-side 'right)
 
+     ;; tags
+     ;; (gtags :variables
+     ;;        gtags-enable-by-default t
+     ;;        spacemacs--counsel-gtags-dwim-success nil
+
+     ;;        ;; ;; helm-gtags-suggested-key-mapping t
+     ;;        ;; helm-gtags-path-style 'root ; 'root, 'relative, 'absolute
+     ;;        ;; helm-gtags-ignore-case nil
+     ;;        ;; helm-gtags-read-only nil
+     ;;        ;; helm-gtags-use-input-at-cursor t
+     ;;        ;; helm-gtags-highlight-candidate t
+     ;;        ;; ;; helm-gtags-display-style 'detail ; 'detail, nil
+     ;;        ;; helm-gtags-auto-update nil
+     ;;        ;; helm-gtags-update-interval-second 60
+     ;;        ;; helm-gtags-cache-select-result t
+     ;;        ;; ;; helm-gtags-cache-max-result-size 10MB
+     ;;        ;; helm-gtags-pulse-at-cursor t
+     ;;        ;; helm-gtags-fuzzy-match t
+     ;;        ;; helm-gtags-direct-helm-completing t
+     ;;        ;; ;; helm-gtags-maximum-candidates 9999
+     ;;        ;; helm-gtags-preselect t
+     ;;        ;; helm-gtags-cygwin-use-global-w32-port nil
+     ;;        )
+
+     ;; themes
+     ;; (themes-megapack)
+
      ;; tools
      ;; command-log
      (dap :variables
           spacemacs--dap-supported-modes nil
           dap-enable-mouse-support nil
           )
+     ;; docker
      fasd
      fzf
      ;; imenu-list
@@ -296,8 +361,15 @@ This function should only modify configuration layer settings."
           ;; lsp-layer--active-mode-list nil
           )
 
+     ;; web-services
+     ;; evernote
+     ;; search-engine
+     ;; twitter
+
      ;; custom
      commenter
+     ;; e2wm
+     ;; vue
      )
 
    ;; List of additional packages that will be installed without being
@@ -308,6 +380,11 @@ This function should only modify configuration layer settings."
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(
+                                      ;; helm-tramp
+                                      ;; ng2-mode
+                                      ;; vue-mode
+                                      ;; quickrun
+                                      ;; base16-theme
                                       color-theme-sanityinc-tomorrow
                                       ;; exec-path-from-shell
                                       )
@@ -316,7 +393,112 @@ This function should only modify configuration layer settings."
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(
+                                    ;; ac-ispell
+
+                                    ;; company-web
+                                    ;; company-tern
+                                    ;; company-statistics
+                                    ;; company-shell
+                                    ;; company-rtags
+                                    ;; company-quickhelp
+                                    ;; company-lsp
+                                    ;; company-go
+                                    ;; company-c-headers
+                                    ;; company-box
+                                    ;; company-anaconda
+
+                                    ;; counsel
+                                    ;; counsel-projectile
+
+                                    ;; command-log-mode
+                                    ;; ccls
+                                    ;; e2wm
+
+                                    ;; evil-visual-mark-mode
+                                    ;; evil-unimpaired
+                                    ;; evil-tutor
+                                    ;; evil-textobj-line
+                                    ;; evil-surround
+                                    ;; evil-numbers
+                                    ;; evil-nerd-commenter
+                                    ;; evil-matchit
+                                    ;; evil-magit
+                                    ;; evil-lisp-state
+                                    ;; evil-lion
+                                    ;; evil-indent-plus
+                                    ;; evil-iedit-state
+                                    ;; evil-goggles
+                                    ;; evil-exchange
+                                    ;; evil-escape
+                                    ;; evil-ediff
+                                    ;; evil-cleverparens
+                                    ;; evil-args
+                                    ;; evil-anzu
+
+                                    ;; fancy-battery
+                                    ;; fish-mode
+
+                                    ;; flutter
+                                    ;; dart-server
+                                    ;; dart-mode
+
+                                    ;; flycheck
+                                    ;; flycheck-rust
+                                    ;; flycheck-rtags
+                                    ;; flycheck-pos-tip
+                                    ;; flycheck-package
+                                    ;; flycheck-golangci-lint
+                                    ;; flycheck-bashate
+
+                                    ;; iswitchb
+
+                                    ;; lsp-ui
+                                    ;; lsp-treemacs
+                                    ;; lsp-python-ms
+                                    lsp-origami
+
+                                    ;; google-c-style
+
+                                    ;; password-generator
+                                    ;; yasnippet-snippets
+                                    ;; auto-yasnippet
+
+                                    ;; ivy
+                                    ;; ivy-yasnippet
+                                    ;; ivy-xref
+                                    ;; ivy-rich
+                                    ;; ivy-hydra
+
+                                    ;; helm-xref
+                                    ;; helm-themes
+                                    ;; helm-swoop
+                                    ;; helm-rtags
+                                    ;; helm-pydoc
+                                    ;; helm-purpose
+                                    ;; helm-projectile
+                                    ;; helm-mode-manager
+                                    ;; helm-make
+                                    ;; helm-lsp
+                                    ;; helm-gtags
+                                    ;; helm-gitignore
+                                    ;; helm-git-grep
+                                    ;; helm-flx
+                                    ;; helm-descbinds
+                                    ;; helm-css-scss
+                                    ;; helm-company
+                                    ;; helm-c-yasnippet
+                                    ;; helm-ag
+
+                                    ;; restart-emacs
+                                    ;; rtags
+
+                                    ;; vue-html-mode
+                                    ;; vue-mode
+
+                                    ;; web-mode
+                                    ;; web-beautify
+                                    )
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
@@ -325,7 +507,8 @@ This function should only modify configuration layer settings."
    ;; installs only the used packages but won't delete unused ones. `all'
    ;; installs *all* packages supported by Spacemacs and never uninstalls them.
    ;; (default is `used-only')
-   dotspacemacs-install-packages 'used-but-keep-unused))
+   dotspacemacs-install-packages 'used-but-keep-unused
+   ))
 
 (defun dotspacemacs/init ()
   "Initialization:
@@ -341,8 +524,8 @@ It should only modify the values of Spacemacs settings."
    ;; (default nil)
    dotspacemacs-enable-emacs-pdumper nil
 
-   ;; Name of executable file pointing to emacs 27+. This executable must be
-   ;; in your PATH.
+   ;; File path pointing to emacs 27.1 executable compiled with support
+   ;; for the portable dumper (this is currently the branch pdumper).
    ;; (default "emacs")
    dotspacemacs-emacs-pdumper-executable-file "emacs"
 
@@ -420,11 +603,6 @@ It should only modify the values of Spacemacs settings."
    ;; True if the home buffer should respond to resize events. (default t)
    dotspacemacs-startup-buffer-responsive t
 
-   ;; Default major mode for a new empty buffer. Possible values are mode
-   ;; names such as `text-mode'; and `nil' to use Fundamental mode.
-   ;; (default `text-mode')
-   dotspacemacs-new-empty-buffer-major-mode 'text-mode
-
    ;; Default major mode of the scratch buffer (default `text-mode')
    dotspacemacs-scratch-mode 'text-mode
 
@@ -436,6 +614,7 @@ It should only modify the values of Spacemacs settings."
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
+                         ;; base16-tomorrow-night
                          sanityinc-tomorrow-night
                          spacemacs-dark
                          )
@@ -453,9 +632,10 @@ It should only modify the values of Spacemacs settings."
    ;; (default t)
    dotspacemacs-colorize-cursor-according-to-state t
 
-   ;; Default font or prioritized list of fonts.
+   ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
+   ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Go Mono"
-                               :size 14.0
+                               :size 14
                                :weight normal
                                :width normal)
 
@@ -558,11 +738,6 @@ It should only modify the values of Spacemacs settings."
    ;; (default nil) (Emacs 24.4+ only)
    dotspacemacs-maximized-at-startup nil
 
-   ;; If non-nil the frame is undecorated when Emacs starts up. Combine this
-   ;; variable with `dotspacemacs-maximized-at-startup' in OSX to obtain
-   ;; borderless fullscreen. (default nil)
-   dotspacemacs-undecorated-at-startup nil
-
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
@@ -590,14 +765,10 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-smooth-scrolling t
 
    ;; Control line numbers activation.
-   ;; If set to `t', `relative' or `visual' then line numbers are enabled in all
-   ;; `prog-mode' and `text-mode' derivatives. If set to `relative', line
-   ;; numbers are relative. If set to `visual', line numbers are also relative,
-   ;; but lines are only visual lines are counted. For example, folded lines
-   ;; will not be counted and wrapped lines are counted as multiple lines.
+   ;; If set to `t' or `relative' line numbers are turned on in all `prog-mode' and
+   ;; `text-mode' derivatives. If set to `relative', line numbers are relative.
    ;; This variable can also be set to a property list for finer control:
    ;; '(:relative nil
-   ;;   :visual nil
    ;;   :disabled-for-modes dired-mode
    ;;                       doc-view-mode
    ;;                       markdown-mode
@@ -605,7 +776,6 @@ It should only modify the values of Spacemacs settings."
    ;;                       pdf-view-mode
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
-   ;; When used in a plist, `visual' takes precedence over `relative'.
    ;; (default nil)
    dotspacemacs-line-numbers t
 
@@ -618,7 +788,7 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-smartparens-strict-mode nil
 
    ;; If non-nil pressing the closing parenthesis `)' key in insert mode passes
-   ;; over any automatically added closing parenthesis, bracket, quote, etc...
+   ;; over any automatically added closing parenthesis, bracket, quote, etc…
    ;; This can be temporary disabled by pressing `C-q' before `)'. (default nil)
    dotspacemacs-smart-closing-parenthesis nil
 
@@ -684,7 +854,11 @@ It should only modify the values of Spacemacs settings."
    ;; Run `spacemacs/prettify-org-buffer' when
    ;; visiting README.org files of Spacemacs.
    ;; (default nil)
-   dotspacemacs-pretty-docs nil))
+   dotspacemacs-pretty-docs nil
+
+   ;; custom
+   ;; exec-path-from-shell-check-startup-files nil
+   ))
 
 (defun dotspacemacs/user-env ()
   "Environment variables setup.
