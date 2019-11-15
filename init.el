@@ -97,17 +97,35 @@ This function should only modify configuration layer settings."
      (ibuffer :variables
               ibuffer-group-buffers-by 'projects)
      (org :variables
-          org-want-todo-bindings nil
+          org-directory "~/.spacemacs.d/org"
+
+          org-want-todo-bindings t
           org-enable-bootstrap-support t
           org-enable-github-support t
+
           org-enable-reveal-js-support t
+          org-re-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js@3.8.0"
+
           org-projectile-file "TODOs.org"
+          spaceline-org-clock-p t
+
           org-enable-org-journal-support t
+          org-journal-dir "~/.spacemacs.d/org/journal/"
+          org-journal-file-format "%Y-%m-%d"
+          org-journal-date-prefix "#+TITLE: "
+          org-journal-date-format "%A, %B %d %Y"
+          org-journal-time-prefix "* "
+          org-journal-time-format ""
+
           org-enable-sticky-header t
+
           org-enable-hugo-support t
           org-enable-trello-support t
+          org-bullets-bullet-list '("■" "◆" "▲" "▶")
+
           org-enable-epub-support t
-          org-enable-jira-support t)
+          ;; org-enable-jira-support t
+          )
 
      ;; semantic
      ;; smex
@@ -132,6 +150,7 @@ This function should only modify configuration layer settings."
      ;;          chinese-enable-fcitx nil)
 
      ;; lang
+     bibtex
      (c-c++ :variables
             c-c++-backend 'lsp-ccls
             c-c++-lsp-enable-semantic-highlight 'rainbow
@@ -260,10 +279,10 @@ This function should only modify configuration layer settings."
      yaml
 
      ;; misc
-     ietf
+     ;; ietf
      (multiple-cursors :variables
                        multiple-cursors-backend 'mc)
-     parinfer
+     ;; parinfer
 
      ;; os
      ;; (osx :variables

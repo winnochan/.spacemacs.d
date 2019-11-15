@@ -1,7 +1,18 @@
+;; org-mode config
+(with-eval-after-load 'org
+  ;; here goes your Org config
+  )
+(with-eval-after-load 'org-agenda
+  (require 'org-projectile)
+  (mapcar '(lambda (file)
+             (when (file-exists-p file)
+               (push file org-agenda-files)))
+          (org-projectile-todo-files)))
+
 ;; (spacemacs/toggle-debug-on-error-on)
 
 ;; Personal Information Configuration
-(setq user-full-name "winnochan")
+(setq user-full-name "Winno Chan")
 (setq user-email-address "winnochan@icloud.com")
 
 ;; projectile
@@ -18,79 +29,40 @@
 (global-set-key (kbd "M-p")
                 (lambda () (interactive) (previous-line 7)))
 
-;; refresh-file
-;; (defun refresh-file ()
-;;   (interactive)
-;;   (revert-buffer t (not (buffer-modified-p)) t))
-;; (global-set-key (kbd "<f5>") 'refresh-file)
-
-;; c-c++ code style
-;; (setq c-default-style "java")
-;; (setq c-default-style "linux")
-;; (setq c-default-style "k&r")
-;; (setq c-default-style "stroustrup")
-;; (setq-default c-basic-offset 4)
-;; (setq default-tab-width 4)
-
-(global-spacemacs-whitespace-cleanup-mode t)
-
 ;; 设置单行的复制以剪切
-;; (defadvice kill-ring-save (before slickcopy activate compile)
-;;   (interactive
-;;    (if mark-active (list (region-beginning) (region-end))
-;;      (list (line-beginning-position)
-;;            (line-beginning-position 2)))))
-;; (defadvice kill-region (before slickcut activate compile)
-;;   (interactive
-;;    (if mark-active (list (region-beginning) (region-end))
-;;      (list (line-beginning-position)
-;;            (line-beginning-position 2)))))
-
-;; graphviz-dot-mode config
-
-
-;; java config
-;; (setq ensime-startup-notification nil)
-;; (add-hook 'java-mode-hook 'ensime-java-mode-hook)
-;; (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
-;; (add-hook 'ensime-mode-hook 'ensime)
+(defadvice kill-ring-save (before slickcopy activate compile)
+  (interactive
+   (if mark-active (list (region-beginning) (region-end))
+     (list (line-beginning-position)
+           (line-beginning-position 2)))))
+(defadvice kill-region (before slickcut activate compile)
+  (interactive
+   (if mark-active (list (region-beginning) (region-end))
+     (list (line-beginning-position)
+           (line-beginning-position 2)))))
 
 ;; winum
 (setq winum-scope 'frame-local)
 
 ;; hungry-mode
-(global-hungry-delete-mode t)
-
-;; newline-and-indent is too slow.
-;; (defun newline-and-indent ()
-;;   (interactive "*")
-;;   (c-indent-new-comment-line))
+(spacemacs/toggle-hungry-delete-on)
+(spacemacs/toggle-whitespace-cleanup-on)
 
 ;; (when (require 'so-long nil :noerror)
 ;;   (so-long-enable))
 
 (setq company-minimum-prefix-length 3)
 
-;; (spacemacs/toggle-indent-guide-globally-on)
-;; (setq indent-guide-delay 0.01)
-;; (setq indent-guide-recursive nil)
-;; (setq indent-guide-char "|")
-;; (set-face-background 'indent-guide-face "dimgray")
+(spacemacs/toggle-indent-guide-globally-on)
+(setq indent-guide-delay 0.01)
+(setq indent-guide-recursive nil)
+(setq indent-guide-char "|")
+(set-face-background 'indent-guide-face "dimgray")
 
 ;; turn off highlight current line
 (spacemacs/toggle-highlight-current-line-globally-on)
 (spacemacs/toggle-automatic-symbol-highlight-on)
 
-;; ng2-mode
-;; (ng2-html-mode)
-;; (ng2-ts-mode)
-
-;; vue-mode
-
-;; magithub
-;; (magit-set "true" "--global" "magithub.online")
-;; (magit-set "true" "--global" "magithub.status.includeStatusHeader")
-;; (magit-set "true" "--global" "magithub.status.includePullRequestsSection")
-;; (magit-set "true" "--global" "magithub.status.includeIssuesSection")
+(spacemacs/toggle-smartparens-globally-on)
 
 (provide 'user-config)
