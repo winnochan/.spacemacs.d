@@ -121,7 +121,8 @@ This function should only modify configuration layer settings."
 
           org-enable-hugo-support t
           org-enable-trello-support t
-          org-bullets-bullet-list '("■" "◆" "▲" "▶")
+          ;; org-bullets-bullet-list '("♠" "♥" "♦" "♣")
+          ;; org-bullets-bullet-list '("☞")
 
           org-enable-epub-support t
           ;; org-enable-jira-support t
