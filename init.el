@@ -49,7 +49,7 @@ This function should only modify configuration layer settings."
      ;; spacemacs-language
      spacemacs-layouts
      ;; spacemacs-misc
-     spacemacs-modeline
+     ;; spacemacs-modeline
      (spacemacs-navigation :variables
                            ahs-default-range 'ahs-range-beginning-of-defun
                            ;; ahs-default-range 'ahs-range-display
@@ -61,10 +61,10 @@ This function should only modify configuration layer settings."
      spacemacs-visual
 
      ;; checker
-     (spell-checking :variables
-                     spell-checking-enable-by-default nil
-                     spell-checking-enable-auto-dictionary nil
-                     enable-flyspell-auto-completion nil)
+     ;; (spell-checking :variables
+     ;;                 spell-checking-enable-by-default nil
+     ;;                 spell-checking-enable-auto-dictionary nil
+     ;;                 enable-flyspell-auto-completion nil)
      (syntax-checking :variables
                       syntax-checking-enable-tooltips t
                       syntax-checking-enable-by-default t
@@ -73,16 +73,16 @@ This function should only modify configuration layer settings."
      ;; completion
      helm
      (auto-completion :variables
-                      auto-completion-idle-delay 0.02
+                      auto-completion-idle-delay 0.1
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-sort-by-usage t
                       auto-completion-enable-help-tooltip nil
                       auto-completion-use-company-box t
                       auto-completion-private-snippets-directory
                       "~/.spacemacs.d/snippets/")
-     (templates :variables
-                templates-private-directory (concat dotspacemacs-directory "templates")
-                templates-use-default-templates t)
+     ;; (templates :variables
+     ;;            templates-private-directory (concat dotspacemacs-directory "templates")
+     ;;            templates-use-default-templates t)
 
      ;; emacs
      (better-defaults :variables
@@ -94,54 +94,54 @@ This function should only modify configuration layer settings."
           org-directory "~/.spacemacs.d/org"
 
           org-want-todo-bindings t
-          org-enable-bootstrap-support t
+          ;; org-enable-bootstrap-support t
           org-enable-github-support t
 
-          org-enable-reveal-js-support t
-          org-re-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js@3.8.0"
+          ;; org-enable-reveal-js-support t
+          ;; org-re-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js@3.8.0"
 
           org-projectile-file "TODOs.org"
-          spaceline-org-clock-p t
+          ;; spaceline-org-clock-p t
 
-          org-enable-org-journal-support t
-          org-journal-dir "~/.spacemacs.d/org/journal/"
-          org-journal-file-format "%Y-%m-%d"
-          org-journal-date-prefix "#+TITLE: "
-          org-journal-date-format "%A, %B %d %Y"
-          org-journal-time-prefix "* "
-          org-journal-time-format ""
+          ;; org-enable-org-journal-support t
+          ;; org-journal-dir "~/.spacemacs.d/org/journal/"
+          ;; org-journal-file-format "%Y-%m-%d"
+          ;; org-journal-date-prefix "#+TITLE: "
+          ;; org-journal-date-format "%A, %B %d %Y"
+          ;; org-journal-time-prefix "* "
+          ;; org-journal-time-format ""
 
-          org-enable-sticky-header t
+          ;; org-enable-sticky-header t
 
-          org-enable-hugo-support t
-          org-enable-trello-support t
+          ;; org-enable-hugo-support t
+          ;; org-enable-trello-support t
           ;; org-bullets-bullet-list '("♠" "♥" "♦" "♣")
           ;; org-bullets-bullet-list '("☞")
 
-          org-enable-epub-support t
+          ;; org-enable-epub-support t
           ;; org-enable-jira-support t
           )
 
      ;; filetree
-     treemacs
+     ;; treemacs
 
      ;; lang
-     bibtex
-     (c-c++ :variables
-            c-c++-backend 'lsp-ccls
-            c-c++-lsp-enable-semantic-highlight 'rainbow
+     ;; bibtex
+     ;; (c-c++ :variables
+     ;;        c-c++-backend 'lsp-ccls
+     ;;        c-c++-lsp-enable-semantic-highlight 'rainbow
 
-            c-c++-enable-rtags-completion nil
-            c-c++-enable-clang-format-on-save nil
+     ;;        c-c++-enable-rtags-completion nil
+     ;;        c-c++-enable-clang-format-on-save nil
 
-            c++-enable-organize-includes-on-save nil
-            c-c++-enable-auto-newline nil
-            c-c++-enable-google-style nil
-            c-c++-enable-google-newline nil
+     ;;        c++-enable-organize-includes-on-save nil
+     ;;        c-c++-enable-auto-newline nil
+     ;;        c-c++-enable-google-style nil
+     ;;        c-c++-enable-google-newline nil
 
-            c-c++-adopt-subprojects t)
+     ;;        c-c++-adopt-subprojects t)
 
-     csharp
+     ;; csharp
 
      ;; (dart)
      (emacs-lisp :variables
@@ -175,7 +175,7 @@ This function should only modify configuration layer settings."
      ;;       web-mode-enable-heredoc-fontification t
      ;;       web-mode-enable-current-element-highlight t
      ;;       web-mode-enable-current-column-highlight t)
-     ipython-notebook
+     ;; ipython-notebook
      ;; (java :variables
      ;;       java-backend 'lsp
      ;;       java--ensime-modes '(java-mode))
@@ -193,31 +193,31 @@ This function should only modify configuration layer settings."
      ;; (lua)
      ;; (markdown :variables
      ;;           markdown-live-preview-engine 'eww)
-     (plantuml :variables
-               plantuml-default-exec-mode 'jar
-               plantuml-jar-path "~/.spacemacs.d/3rd/plantuml.jar"
-               org-plantuml-jar-path "~/.spacemacs.d/3rd/plantuml.jar")
-     protobuf
-     (python :variables
-             python-backend 'anaconda
-             ;; python-lsp-server 'pyls
-             ;; python-lsp-git-root nil
-             ;; python-pipenv-activate nil
-             python-formatter 'yapf
-             ;; python-format-on-save nil
-             python-test-runner '(pytest nose)
-             ;; python-save-before-test t
-             python-fill-column 99
-             python-tab-width 4
-             python-spacemacs-indent-guess t
-             python-auto-set-local-pyenv-version 'on-project-switch
-             python-auto-set-local-pyvenv-virtualenv 'on-project-switch
-             ;; python-sort-imports-on-save t
-             ;; spacemacs--python-pyenv-modes nil
-             ;; spacemacs--python-pyvenv-modes nil
-             ;; python-shell--interpreter nil
-             ;; python-shell--interpreter-args nil
-             )
+     ;; (plantuml :variables
+     ;;           plantuml-default-exec-mode 'jar
+     ;;           plantuml-jar-path "~/.spacemacs.d/3rd/plantuml.jar"
+     ;;           org-plantuml-jar-path "~/.spacemacs.d/3rd/plantuml.jar")
+     ;; protobuf
+     ;; (python :variables
+     ;;         python-backend 'anaconda
+     ;;         ;; python-lsp-server 'pyls
+     ;;         ;; python-lsp-git-root nil
+     ;;         ;; python-pipenv-activate nil
+     ;;         python-formatter 'yapf
+     ;;         ;; python-format-on-save nil
+     ;;         python-test-runner '(pytest nose)
+     ;;         ;; python-save-before-test t
+     ;;         python-fill-column 99
+     ;;         python-tab-width 4
+     ;;         python-spacemacs-indent-guess t
+     ;;         python-auto-set-local-pyenv-version 'on-project-switch
+     ;;         python-auto-set-local-pyvenv-virtualenv 'on-project-switch
+     ;;         ;; python-sort-imports-on-save t
+     ;;         ;; spacemacs--python-pyenv-modes nil
+     ;;         ;; spacemacs--python-pyvenv-modes nil
+     ;;         ;; python-shell--interpreter nil
+     ;;         ;; python-shell--interpreter-args nil
+     ;;         )
      ;; (rust :variables
      ;;       rust-backend 'lsp
      ;;       rust-format-on-save t)
@@ -230,13 +230,13 @@ This function should only modify configuration layer settings."
      ;;        flycheck-scalastyle-jar "/usr/local/Cellar/scalastyle/1.0.0/libexec/scalastyle_2.12-1.0.0-batch.jar"
      ;;        flycheck-scalastylerc "/usr/local/etc/scalastyle_config.xml")
 
-     (shell-scripts :variables
-                    shell-scripts-backend nil)
-     (sql :variables
-          sql-capitalize-keywords t
-          sql-capitalize-keywords-disable-interactive t
-          sql-capitalize-keywords-blacklist '("name")
-          sql-auto-indent t)
+     ;; (shell-scripts :variables
+     ;;                shell-scripts-backend nil)
+     ;; (sql :variables
+     ;;      sql-capitalize-keywords t
+     ;;      sql-capitalize-keywords-disable-interactive t
+     ;;      sql-capitalize-keywords-blacklist '("name")
+     ;;      sql-auto-indent t)
      ;; swift
      (typescript :variables
                  typescript-fmt-on-save nil
@@ -252,23 +252,23 @@ This function should only modify configuration layer settings."
                  tide-completion-enable-autoimport-suggestions t
                  tide-imenu-flatten t
                  tide-always-show-documentation t)
-     yaml
+     ;; yaml
 
      ;; misc
      (multiple-cursors :variables
                        multiple-cursors-backend 'mc)
 
      ;; readers
-     (dash :variables
-           dash-autoload-common-docsets t
-           helm-dash-docset-newpath "~/Library/Application Support/Dash/DocSets")
-     speed-reading
+     ;; (dash :variables
+     ;;       dash-autoload-common-docsets t
+     ;;       helm-dash-docset-newpath "~/Library/Application Support/Dash/DocSets")
+     ;; speed-reading
 
      ;; source-control
      (git :variables
           git-enable-magit-svn-plugin t
           git-magit-status-fullscreen t)
-     github
+     ;; github
      (version-control :variables
                       spacemacs--smerge-ts-full-hint-toggle t
                       version-control-global-margin t
@@ -281,20 +281,20 @@ This function should only modify configuration layer settings."
           spacemacs--dap-supported-modes nil
           dap-enable-mouse-support nil
           )
-     fasd
+     ;; fasd
      fzf
      ;; imenu-list
-     (lsp :variables
-          ;; lsp-remap-xref-keybindings t
-          ;; lsp-navigation 'both
-          ;; lsp-prefer-flymake t
-          ;; lsp-ui-doc-enable t
-          ;; lsp-ui-doc-include-signature t
-          ;; lsp-ui-sideline-enable nil
-          ;; lsp-ui-sideline-show-symbol nil
-          ;; lsp-ui-sideline-ignore-duplicate nil
-          ;; lsp-layer--active-mode-list nil
-          )
+     ;; (lsp :variables
+     ;;      ;; lsp-remap-xref-keybindings t
+     ;;      ;; lsp-navigation 'both
+     ;;      ;; lsp-prefer-flymake t
+     ;;      ;; lsp-ui-doc-enable t
+     ;;      ;; lsp-ui-doc-include-signature t
+     ;;      ;; lsp-ui-sideline-enable nil
+     ;;      ;; lsp-ui-sideline-show-symbol nil
+     ;;      ;; lsp-ui-sideline-ignore-duplicate nil
+     ;;      ;; lsp-layer--active-mode-list nil
+     ;;      )
 
      ;; custom
      commenter
@@ -316,7 +316,118 @@ This function should only modify configuration layer settings."
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(
+                                    exec-path-from-shell
+                                    zeal-at-point
+                                    yatemplate
+                                    yaml-mode
+                                    writeroom-mode
+                                    web-beautify
+                                    uuidgen
+                                    treemacs
+                                    treemacs-projectile
+                                    treemacs-magit
+                                    sqlup-mode
+                                    sql-indent
+                                    plantuml-mode
+                                    pytest
+                                    pyenv-mode
+                                    py-isort
+                                    protobuf-mode
+                                    pippel
+                                    pipenv
+                                    pip-requirements
+                                    password-generator
+                                    ox-twbs
+                                    ox-hugo
+                                    ;; ox-gfm
+                                    ox-epub
+                                    org-trello
+                                    org-sticky-header
+                                    org-ref
+                                    org-re-reveal
+                                    org-journal
+                                    org-download
+                                    omnisharp
+                                    ob-ipython
+                                    magit-svn
+                                    magit-gitflow
+                                    lsp-ui
+                                    lsp-treemacs
+                                    lsp-python-ms
+                                    live-py-mode
+                                    hybrid-mode
+                                    helm-c-yasnippet
+                                    helm-themes
+                                    helm-rtags
+                                    helm-pydoc
+                                    helm-lsp
+                                    helm-dash
+                                    github-search
+                                    github-clone
+                                    git-timemachine
+                                    git-messenger
+                                    git-link
+                                    git-gutter-fringe
+                                    gist
+                                    fish-mode
+                                    google-translate
+                                    google-c-style
+                                    gnuplot
+                                    forge
+                                    flycheck-ycmd
+                                    flycheck-rtags
+                                    fish-mode
+                                    fasd
+                                    fancy-battery
+                                    evil-visualstar
+                                    evil-visual-mark-mode
+                                    evil-unimpaired
+                                    evil-tutor
+                                    evil-textobj-line
+                                    evil-surround
+                                    evil-org
+                                    evil-numbers
+                                    evil-nerd-commenter
+                                    evil-mc
+                                    evil-matchit
+                                    evil-magit
+                                    evil-lisp-state
+                                    evil-lion
+                                    evil-indent-plus
+                                    evil-iedit-state
+                                    evil-goggles
+                                    evil-exchange
+                                    evil-escape
+                                    evil-ediff
+                                    evil-cleverparens
+                                    evil-args
+                                    evil-anzu
+                                    eval-sexp-fu
+                                    elisp-slime-nav
+                                    ein
+                                    doom-modeline
+                                    disaster
+                                    devdocs
+                                    dap-mode
+                                    cython-mode
+                                    cquery
+                                    cpp-auto-include
+                                    company-ycmd
+                                    company-tern
+                                    company-statistics
+                                    company-shell
+                                    company-rtags
+                                    company-lsp
+                                    company-c-headers
+                                    company-box
+                                    company-anaconda
+                                    clang-format
+                                    ccls
+                                    browse-at-remote
+                                    auto-dictionary
+                                    ac-ispell
+                                    )
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
