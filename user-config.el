@@ -65,4 +65,8 @@
 
 (spacemacs/toggle-smartparens-globally-on)
 
+;; fix flycheck
+(eval-after-load 'flycheck
+  '(setcar (memq 'source-inplace (flycheck-checker-get 'typescript-tslint 'command)) 'source-original))
+
 (provide 'user-config)
