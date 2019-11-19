@@ -73,7 +73,7 @@ This function should only modify configuration layer settings."
      ;; completion
      helm
      (auto-completion :variables
-                      auto-completion-idle-delay 0.1
+                      auto-completion-idle-delay 0.2
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-sort-by-usage t
                       auto-completion-enable-help-tooltip nil
@@ -90,37 +90,37 @@ This function should only modify configuration layer settings."
                       better-defaults-move-to-end-of-code-first nil)
      (ibuffer :variables
               ibuffer-group-buffers-by 'projects)
-     ;; (org :variables
-     ;;      org-directory "~/.spacemacs.d/org"
+     (org :variables
+          org-directory "~/.spacemacs.d/org"
 
-     ;;      org-want-todo-bindings t
-     ;;      ;; org-enable-bootstrap-support t
-     ;;      org-enable-github-support t
+          org-want-todo-bindings t
+          ;; org-enable-bootstrap-support t
+          org-enable-github-support t
 
-     ;;      ;; org-enable-reveal-js-support t
-     ;;      ;; org-re-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js@3.8.0"
+          ;; org-enable-reveal-js-support t
+          ;; org-re-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js@3.8.0"
 
-     ;;      org-projectile-file "TODOs.org"
-     ;;      ;; spaceline-org-clock-p t
+          org-projectile-file "TODOs.org"
+          ;; spaceline-org-clock-p t
 
-     ;;      ;; org-enable-org-journal-support t
-     ;;      ;; org-journal-dir "~/.spacemacs.d/org/journal/"
-     ;;      ;; org-journal-file-format "%Y-%m-%d"
-     ;;      ;; org-journal-date-prefix "#+TITLE: "
-     ;;      ;; org-journal-date-format "%A, %B %d %Y"
-     ;;      ;; org-journal-time-prefix "* "
-     ;;      ;; org-journal-time-format ""
+          ;; org-enable-org-journal-support t
+          ;; org-journal-dir "~/.spacemacs.d/org/journal/"
+          ;; org-journal-file-format "%Y-%m-%d"
+          ;; org-journal-date-prefix "#+TITLE: "
+          ;; org-journal-date-format "%A, %B %d %Y"
+          ;; org-journal-time-prefix "* "
+          ;; org-journal-time-format ""
 
-     ;;      ;; org-enable-sticky-header t
+          ;; org-enable-sticky-header t
 
-     ;;      ;; org-enable-hugo-support t
-     ;;      ;; org-enable-trello-support t
-     ;;      ;; org-bullets-bullet-list '("♠" "♥" "♦" "♣")
-     ;;      ;; org-bullets-bullet-list '("☞")
+          ;; org-enable-hugo-support t
+          ;; org-enable-trello-support t
+          ;; org-bullets-bullet-list '("♠" "♥" "♦" "♣")
+          ;; org-bullets-bullet-list '("☞")
 
-     ;;      ;; org-enable-epub-support t
-     ;;      ;; org-enable-jira-support t
-     ;;      )
+          ;; org-enable-epub-support t
+          ;; org-enable-jira-support t
+          )
 
      ;; filetree
      ;; treemacs
@@ -175,7 +175,7 @@ This function should only modify configuration layer settings."
      ;;       web-mode-enable-heredoc-fontification t
      ;;       web-mode-enable-current-element-highlight t
      ;;       web-mode-enable-current-column-highlight t)
-     ;; ipython-notebook
+     ipython-notebook
      ;; (java :variables
      ;;       java-backend 'lsp
      ;;       java--ensime-modes '(java-mode))
@@ -281,7 +281,7 @@ This function should only modify configuration layer settings."
           spacemacs--dap-supported-modes nil
           dap-enable-mouse-support nil
           )
-     ;; fasd
+     fasd
      fzf
      ;; imenu-list
      ;; (lsp :variables
@@ -324,19 +324,10 @@ This function should only modify configuration layer settings."
                                     writeroom-mode
                                     web-beautify
                                     uuidgen
-                                    treemacs
-                                    treemacs-projectile
-                                    treemacs-magit
                                     sqlup-mode
                                     sql-indent
                                     plantuml-mode
-                                    ;; pytest
-                                    ;; pyenv-mode
-                                    ;; py-isort
                                     protobuf-mode
-                                    ;; pippel
-                                    ;; pipenv
-                                    ;; pip-requirements
                                     password-generator
                                     ox-twbs
                                     ox-hugo
@@ -349,19 +340,12 @@ This function should only modify configuration layer settings."
                                     org-journal
                                     org-download
                                     omnisharp
-                                    ;; ob-ipython
                                     magit-svn
                                     magit-gitflow
-                                    ;; lsp-ui
-                                    ;; lsp-treemacs
-                                    ;; lsp-python-ms
-                                    ;; live-py-mode
                                     hybrid-mode
                                     ;; helm-c-yasnippet
                                     ;; helm-themes
                                     ;; helm-rtags
-                                    ;; helm-pydoc
-                                    ;; helm-lsp
                                     ;; helm-dash
                                     github-search
                                     github-clone
@@ -378,7 +362,6 @@ This function should only modify configuration layer settings."
                                     ;; flycheck-ycmd
                                     ;; flycheck-rtags
                                     fish-mode
-                                    fasd
                                     fancy-battery
                                     evil-visualstar
                                     evil-visual-mark-mode
@@ -405,23 +388,11 @@ This function should only modify configuration layer settings."
                                     evil-anzu
                                     eval-sexp-fu
                                     elisp-slime-nav
-                                    ein
-                                    doom-modeline
-                                    disaster
                                     devdocs
                                     ;; dap-mode
                                     ;; cython-mode
                                     cquery
                                     cpp-auto-include
-                                    ;; company-ycmd
-                                    ;; company-tern
-                                    ;; company-statistics
-                                    ;; company-shell
-                                    ;; company-rtags
-                                    ;; company-lsp
-                                    ;; company-c-headers
-                                    ;; company-box
-                                    ;; company-anaconda
                                     clang-format
                                     ccls
                                     browse-at-remote

@@ -73,7 +73,7 @@ This function should only modify configuration layer settings."
      ;; completion
      helm
      (auto-completion :variables
-                      auto-completion-idle-delay 0.1
+                      auto-completion-idle-delay 0.2
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-sort-by-usage t
                       auto-completion-enable-help-tooltip nil
@@ -144,8 +144,8 @@ This function should only modify configuration layer settings."
      ;; csharp
 
      ;; (dart)
-     (emacs-lisp :variables
-                 emacs-lisp-hide-namespace-prefix nil)
+     ;; (emacs-lisp :variables
+     ;;             emacs-lisp-hide-namespace-prefix nil)
      ;; (go :variables
      ;;     go-backend 'lsp
      ;;     go-use-gocheck-for-testing nil
@@ -175,21 +175,21 @@ This function should only modify configuration layer settings."
      ;;       web-mode-enable-heredoc-fontification t
      ;;       web-mode-enable-current-element-highlight t
      ;;       web-mode-enable-current-column-highlight t)
-     ;; ipython-notebook
+     ipython-notebook
      ;; (java :variables
      ;;       java-backend 'lsp
      ;;       java--ensime-modes '(java-mode))
-     (javascript :variables
-                 javascript-backend 'tern
-                 javascript-fmt-tool 'prettier
-                 javascript-import-tool 'import-js
-                 javascript-fmt-on-save nil
-                 javascript-repl 'nodejs
-                 js-indent-level 2
-                 node-add-modules-path t)
-     (json :variables
-           json-fmt-tool 'prettier
-           js-indent-level 2)
+     ;; (javascript :variables
+     ;;             javascript-backend 'tern
+     ;;             javascript-fmt-tool 'prettier
+     ;;             javascript-import-tool 'import-js
+     ;;             javascript-fmt-on-save nil
+     ;;             javascript-repl 'nodejs
+     ;;             js-indent-level 2
+     ;;             node-add-modules-path t)
+     ;; (json :variables
+     ;;       json-fmt-tool 'prettier
+     ;;       js-indent-level 2)
      ;; (lua)
      ;; (markdown :variables
      ;;           markdown-live-preview-engine 'eww)
@@ -198,26 +198,26 @@ This function should only modify configuration layer settings."
      ;;           plantuml-jar-path "~/.spacemacs.d/3rd/plantuml.jar"
      ;;           org-plantuml-jar-path "~/.spacemacs.d/3rd/plantuml.jar")
      ;; protobuf
-     ;; (python :variables
-     ;;         python-backend 'anaconda
-     ;;         ;; python-lsp-server 'pyls
-     ;;         ;; python-lsp-git-root nil
-     ;;         ;; python-pipenv-activate nil
-     ;;         python-formatter 'yapf
-     ;;         ;; python-format-on-save nil
-     ;;         python-test-runner '(pytest nose)
-     ;;         ;; python-save-before-test t
-     ;;         python-fill-column 99
-     ;;         python-tab-width 4
-     ;;         python-spacemacs-indent-guess t
-     ;;         python-auto-set-local-pyenv-version 'on-project-switch
-     ;;         python-auto-set-local-pyvenv-virtualenv 'on-project-switch
-     ;;         ;; python-sort-imports-on-save t
-     ;;         ;; spacemacs--python-pyenv-modes nil
-     ;;         ;; spacemacs--python-pyvenv-modes nil
-     ;;         ;; python-shell--interpreter nil
-     ;;         ;; python-shell--interpreter-args nil
-     ;;         )
+     (python :variables
+             python-backend 'anaconda
+             ;; python-lsp-server 'pyls
+             ;; python-lsp-git-root nil
+             ;; python-pipenv-activate nil
+             python-formatter 'yapf
+             ;; python-format-on-save nil
+             python-test-runner '(pytest nose)
+             ;; python-save-before-test t
+             python-fill-column 99
+             python-tab-width 4
+             python-spacemacs-indent-guess t
+             python-auto-set-local-pyenv-version 'on-project-switch
+             python-auto-set-local-pyvenv-virtualenv 'on-project-switch
+             ;; python-sort-imports-on-save t
+             ;; spacemacs--python-pyenv-modes nil
+             ;; spacemacs--python-pyvenv-modes nil
+             ;; python-shell--interpreter nil
+             ;; python-shell--interpreter-args nil
+             )
      ;; (rust :variables
      ;;       rust-backend 'lsp
      ;;       rust-format-on-save t)
@@ -238,20 +238,20 @@ This function should only modify configuration layer settings."
      ;;      sql-capitalize-keywords-blacklist '("name")
      ;;      sql-auto-indent t)
      ;; swift
-     (typescript :variables
-                 typescript-fmt-on-save nil
-                 typescript-fmt-tool 'prettier
-                 typescript-backend 'tide
-                 typescript-linter 'eslint
-                 typescript-lsp-linter nil
-                 typescript-indent-level 2
+     ;; (typescript :variables
+     ;;             typescript-fmt-on-save nil
+     ;;             typescript-fmt-tool 'prettier
+     ;;             typescript-backend 'tide
+     ;;             typescript-linter 'eslint
+     ;;             typescript-lsp-linter nil
+     ;;             typescript-indent-level 2
 
-                 ;; tide config
-                 tide-completion-detailed t
-                 tide-sync-request-timeout 0.7
-                 tide-completion-enable-autoimport-suggestions t
-                 tide-imenu-flatten t
-                 tide-always-show-documentation t)
+     ;;             ;; tide config
+     ;;             tide-completion-detailed t
+     ;;             tide-sync-request-timeout 0.7
+     ;;             tide-completion-enable-autoimport-suggestions t
+     ;;             tide-imenu-flatten t
+     ;;             tide-always-show-documentation t)
      ;; yaml
 
      ;; misc
@@ -265,15 +265,15 @@ This function should only modify configuration layer settings."
      ;; speed-reading
 
      ;; source-control
-     (git :variables
-          git-enable-magit-svn-plugin t
-          git-magit-status-fullscreen t)
-     ;; github
-     (version-control :variables
-                      spacemacs--smerge-ts-full-hint-toggle t
-                      version-control-global-margin t
-                      version-control-diff-tool 'git-gutter+
-                      version-control-diff-side 'right)
+     ;; (git :variables
+     ;;      git-enable-magit-svn-plugin t
+     ;;      git-magit-status-fullscreen t)
+     ;; ;; github
+     ;; (version-control :variables
+     ;;                  spacemacs--smerge-ts-full-hint-toggle t
+     ;;                  version-control-global-margin t
+     ;;                  version-control-diff-tool 'git-gutter+
+     ;;                  version-control-diff-side 'right)
 
      ;; tools
      ;; command-log
@@ -281,7 +281,7 @@ This function should only modify configuration layer settings."
           spacemacs--dap-supported-modes nil
           dap-enable-mouse-support nil
           )
-     ;; fasd
+     fasd
      fzf
      ;; imenu-list
      ;; (lsp :variables
@@ -324,19 +324,10 @@ This function should only modify configuration layer settings."
                                     writeroom-mode
                                     web-beautify
                                     uuidgen
-                                    treemacs
-                                    treemacs-projectile
-                                    treemacs-magit
                                     sqlup-mode
                                     sql-indent
                                     plantuml-mode
-                                    pytest
-                                    pyenv-mode
-                                    py-isort
                                     protobuf-mode
-                                    pippel
-                                    pipenv
-                                    pip-requirements
                                     password-generator
                                     ox-twbs
                                     ox-hugo
@@ -349,20 +340,13 @@ This function should only modify configuration layer settings."
                                     org-journal
                                     org-download
                                     omnisharp
-                                    ob-ipython
                                     magit-svn
                                     magit-gitflow
-                                    lsp-ui
-                                    lsp-treemacs
-                                    lsp-python-ms
-                                    live-py-mode
                                     hybrid-mode
-                                    helm-c-yasnippet
-                                    helm-themes
-                                    helm-rtags
-                                    helm-pydoc
-                                    helm-lsp
-                                    helm-dash
+                                    ;; helm-c-yasnippet
+                                    ;; helm-themes
+                                    ;; helm-rtags
+                                    ;; helm-dash
                                     github-search
                                     github-clone
                                     git-timemachine
@@ -375,10 +359,9 @@ This function should only modify configuration layer settings."
                                     google-c-style
                                     gnuplot
                                     forge
-                                    flycheck-ycmd
-                                    flycheck-rtags
+                                    ;; flycheck-ycmd
+                                    ;; flycheck-rtags
                                     fish-mode
-                                    fasd
                                     fancy-battery
                                     evil-visualstar
                                     evil-visual-mark-mode
@@ -405,23 +388,11 @@ This function should only modify configuration layer settings."
                                     evil-anzu
                                     eval-sexp-fu
                                     elisp-slime-nav
-                                    ein
-                                    doom-modeline
-                                    disaster
                                     devdocs
-                                    dap-mode
-                                    cython-mode
+                                    ;; dap-mode
+                                    ;; cython-mode
                                     cquery
                                     cpp-auto-include
-                                    company-ycmd
-                                    company-tern
-                                    company-statistics
-                                    company-shell
-                                    company-rtags
-                                    company-lsp
-                                    company-c-headers
-                                    company-box
-                                    company-anaconda
                                     clang-format
                                     ccls
                                     browse-at-remote
