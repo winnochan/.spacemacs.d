@@ -74,7 +74,7 @@ This function should only modify configuration layer settings."
      helm
      (auto-completion :variables
                       auto-completion-idle-delay 0.2
-                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-enable-snippets-in-popup nil
                       auto-completion-enable-sort-by-usage t
                       auto-completion-enable-help-tooltip nil
                       auto-completion-use-company-box nil
@@ -144,8 +144,8 @@ This function should only modify configuration layer settings."
      ;; csharp
 
      ;; (dart)
-     ;; (emacs-lisp :variables
-     ;;             emacs-lisp-hide-namespace-prefix nil)
+     (emacs-lisp :variables
+                 emacs-lisp-hide-namespace-prefix nil)
      ;; (go :variables
      ;;     go-backend 'lsp
      ;;     go-use-gocheck-for-testing nil
@@ -179,17 +179,17 @@ This function should only modify configuration layer settings."
      ;; (java :variables
      ;;       java-backend 'lsp
      ;;       java--ensime-modes '(java-mode))
-     ;; (javascript :variables
-     ;;             javascript-backend 'tern
-     ;;             javascript-fmt-tool 'prettier
-     ;;             javascript-import-tool 'import-js
-     ;;             javascript-fmt-on-save nil
-     ;;             javascript-repl 'nodejs
-     ;;             js-indent-level 2
-     ;;             node-add-modules-path t)
-     ;; (json :variables
-     ;;       json-fmt-tool 'prettier
-     ;;       js-indent-level 2)
+     (javascript :variables
+                 javascript-backend 'tern
+                 javascript-fmt-tool 'prettier
+                 javascript-import-tool 'import-js
+                 javascript-fmt-on-save nil
+                 javascript-repl 'nodejs
+                 js-indent-level 2
+                 node-add-modules-path t)
+     (json :variables
+           json-fmt-tool 'prettier
+           js-indent-level 2)
      ;; (lua)
      ;; (markdown :variables
      ;;           markdown-live-preview-engine 'eww)
@@ -218,9 +218,9 @@ This function should only modify configuration layer settings."
              ;; python-shell--interpreter nil
              ;; python-shell--interpreter-args nil
              )
-     ;; (rust :variables
-     ;;       rust-backend 'lsp
-     ;;       rust-format-on-save t)
+     (rust :variables
+           rust-backend 'lsp
+           rust-format-on-save t)
      ;; (scala :variables
      ;;        scala-enable-eldoc t
      ;;        scala-auto-insert-asterisk-in-comments t
@@ -230,8 +230,8 @@ This function should only modify configuration layer settings."
      ;;        flycheck-scalastyle-jar "/usr/local/Cellar/scalastyle/1.0.0/libexec/scalastyle_2.12-1.0.0-batch.jar"
      ;;        flycheck-scalastylerc "/usr/local/etc/scalastyle_config.xml")
 
-     ;; (shell-scripts :variables
-     ;;                shell-scripts-backend nil)
+     (shell-scripts :variables
+                    shell-scripts-backend nil)
      ;; (sql :variables
      ;;      sql-capitalize-keywords t
      ;;      sql-capitalize-keywords-disable-interactive t
