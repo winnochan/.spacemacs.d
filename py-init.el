@@ -77,7 +77,7 @@ This function should only modify configuration layer settings."
                       auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-sort-by-usage t
                       auto-completion-enable-help-tooltip nil
-                      auto-completion-use-company-box nil
+                      auto-completion-use-company-box t
                       auto-completion-private-snippets-directory
                       "~/.spacemacs.d/snippets/")
      ;; (templates :variables
@@ -238,22 +238,20 @@ This function should only modify configuration layer settings."
      ;;      sql-capitalize-keywords-blacklist '("name")
      ;;      sql-auto-indent t)
      ;; swift
-     (typescript :variables
-                 typescript-fmt-on-save nil
-                 typescript-fmt-tool 'prettier
-                 typescript-backend 'tide
-                 typescript-linter 'eslint
-                 typescript-lsp-linter nil
-                 typescript-indent-level 2
+     ;; (typescript :variables
+     ;;             typescript-fmt-on-save nil
+     ;;             typescript-fmt-tool 'prettier
+     ;;             typescript-backend 'tide
+     ;;             typescript-linter 'eslint
+     ;;             typescript-lsp-linter nil
+     ;;             typescript-indent-level 2
 
-                 ;; tide config
-                 ;; tide-completion-detailed nil
-                 ;; tide-sync-request-timeout 1
-                 ;; tide-completion-enable-autoimport-suggestions t
-                 ;; tide-imenu-flatten nil
-                 ;; tide-always-show-documentation t
-                 ;; company-tooltip-align-annotations t
-                 )
+     ;;             ;; tide config
+     ;;             tide-completion-detailed t
+     ;;             tide-sync-request-timeout 0.7
+     ;;             tide-completion-enable-autoimport-suggestions t
+     ;;             tide-imenu-flatten t
+     ;;             tide-always-show-documentation t)
      ;; yaml
 
      ;; misc
@@ -286,17 +284,17 @@ This function should only modify configuration layer settings."
      fasd
      fzf
      ;; imenu-list
-     (lsp :variables
-          ;; lsp-remap-xref-keybindings t
-          ;; lsp-navigation 'both
-          ;; lsp-prefer-flymake t
-          ;; lsp-ui-doc-enable t
-          ;; lsp-ui-doc-include-signature t
-          ;; lsp-ui-sideline-enable nil
-          ;; lsp-ui-sideline-show-symbol nil
-          ;; lsp-ui-sideline-ignore-duplicate nil
-          ;; lsp-layer--active-mode-list nil
-          )
+     ;; (lsp :variables
+     ;;      ;; lsp-remap-xref-keybindings t
+     ;;      ;; lsp-navigation 'both
+     ;;      ;; lsp-prefer-flymake t
+     ;;      ;; lsp-ui-doc-enable t
+     ;;      ;; lsp-ui-doc-include-signature t
+     ;;      ;; lsp-ui-sideline-enable nil
+     ;;      ;; lsp-ui-sideline-show-symbol nil
+     ;;      ;; lsp-ui-sideline-ignore-duplicate nil
+     ;;      ;; lsp-layer--active-mode-list nil
+     ;;      )
 
      ;; custom
      commenter
@@ -345,9 +343,10 @@ This function should only modify configuration layer settings."
                                     magit-svn
                                     magit-gitflow
                                     hybrid-mode
-                                    helm-c-yasnippet
-                                    helm-rtags
-                                    helm-dash
+                                    ;; helm-c-yasnippet
+                                    ;; helm-themes
+                                    ;; helm-rtags
+                                    ;; helm-dash
                                     github-search
                                     github-clone
                                     git-timemachine
@@ -355,10 +354,13 @@ This function should only modify configuration layer settings."
                                     git-link
                                     git-gutter-fringe
                                     gist
+                                    fish-mode
                                     google-translate
                                     google-c-style
                                     gnuplot
                                     forge
+                                    ;; flycheck-ycmd
+                                    ;; flycheck-rtags
                                     fish-mode
                                     fancy-battery
                                     evil-visualstar
@@ -386,9 +388,9 @@ This function should only modify configuration layer settings."
                                     evil-anzu
                                     eval-sexp-fu
                                     elisp-slime-nav
-                                    doom-modeline
-                                    disaster
                                     devdocs
+                                    ;; dap-mode
+                                    ;; cython-mode
                                     cquery
                                     cpp-auto-include
                                     clang-format
@@ -605,7 +607,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; Which-key delay in seconds. The which-key buffer is the popup listing
    ;; the commands bound to the current keystroke sequence. (default 0.4)
-   dotspacemacs-which-key-delay 0.2
+   dotspacemacs-which-key-delay 0.1
 
    ;; Which-key frame position. Possible values are `right', `bottom' and
    ;; `right-then-bottom'. right-then-bottom tries to display the frame to the
