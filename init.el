@@ -74,10 +74,10 @@ This function should only modify configuration layer settings."
      helm
      (auto-completion :variables
                       auto-completion-idle-delay 0.1
-                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-enable-snippets-in-popup nil
                       auto-completion-enable-sort-by-usage t
                       auto-completion-enable-help-tooltip nil
-                      auto-completion-use-company-box t
+                      auto-completion-use-company-box nil
                       auto-completion-private-snippets-directory
                       "~/.spacemacs.d/snippets/")
      ;; (templates :variables
@@ -247,11 +247,13 @@ This function should only modify configuration layer settings."
                  typescript-indent-level 2
 
                  ;; tide config
-                 tide-completion-detailed t
-                 tide-sync-request-timeout 0.7
-                 tide-completion-enable-autoimport-suggestions t
-                 tide-imenu-flatten t
-                 tide-always-show-documentation t)
+                 ;; tide-completion-detailed nil
+                 ;; tide-sync-request-timeout 1
+                 ;; tide-completion-enable-autoimport-suggestions t
+                 ;; tide-imenu-flatten nil
+                 ;; tide-always-show-documentation t
+                 ;; company-tooltip-align-annotations t
+                 )
      ;; yaml
 
      ;; misc
@@ -284,17 +286,17 @@ This function should only modify configuration layer settings."
      ;; fasd
      fzf
      ;; imenu-list
-     ;; (lsp :variables
-     ;;      ;; lsp-remap-xref-keybindings t
-     ;;      ;; lsp-navigation 'both
-     ;;      ;; lsp-prefer-flymake t
-     ;;      ;; lsp-ui-doc-enable t
-     ;;      ;; lsp-ui-doc-include-signature t
-     ;;      ;; lsp-ui-sideline-enable nil
-     ;;      ;; lsp-ui-sideline-show-symbol nil
-     ;;      ;; lsp-ui-sideline-ignore-duplicate nil
-     ;;      ;; lsp-layer--active-mode-list nil
-     ;;      )
+     (lsp :variables
+          ;; lsp-remap-xref-keybindings t
+          ;; lsp-navigation 'both
+          ;; lsp-prefer-flymake t
+          ;; lsp-ui-doc-enable t
+          ;; lsp-ui-doc-include-signature t
+          ;; lsp-ui-sideline-enable nil
+          ;; lsp-ui-sideline-show-symbol nil
+          ;; lsp-ui-sideline-ignore-duplicate nil
+          ;; lsp-layer--active-mode-list nil
+          )
 
      ;; custom
      commenter
@@ -330,13 +332,7 @@ This function should only modify configuration layer settings."
                                     sqlup-mode
                                     sql-indent
                                     plantuml-mode
-                                    pytest
-                                    pyenv-mode
-                                    py-isort
                                     protobuf-mode
-                                    pippel
-                                    pipenv
-                                    pip-requirements
                                     password-generator
                                     ox-twbs
                                     ox-hugo
@@ -349,19 +345,11 @@ This function should only modify configuration layer settings."
                                     org-journal
                                     org-download
                                     omnisharp
-                                    ob-ipython
                                     magit-svn
                                     magit-gitflow
-                                    lsp-ui
-                                    lsp-treemacs
-                                    lsp-python-ms
-                                    live-py-mode
                                     hybrid-mode
                                     helm-c-yasnippet
-                                    helm-themes
                                     helm-rtags
-                                    helm-pydoc
-                                    helm-lsp
                                     helm-dash
                                     github-search
                                     github-clone
@@ -370,15 +358,11 @@ This function should only modify configuration layer settings."
                                     git-link
                                     git-gutter-fringe
                                     gist
-                                    fish-mode
                                     google-translate
                                     google-c-style
                                     gnuplot
                                     forge
-                                    flycheck-ycmd
-                                    flycheck-rtags
                                     fish-mode
-                                    fasd
                                     fancy-battery
                                     evil-visualstar
                                     evil-visual-mark-mode
@@ -405,23 +389,11 @@ This function should only modify configuration layer settings."
                                     evil-anzu
                                     eval-sexp-fu
                                     elisp-slime-nav
-                                    ein
                                     doom-modeline
                                     disaster
                                     devdocs
-                                    dap-mode
-                                    cython-mode
                                     cquery
                                     cpp-auto-include
-                                    company-ycmd
-                                    company-tern
-                                    company-statistics
-                                    company-shell
-                                    company-rtags
-                                    company-lsp
-                                    company-c-headers
-                                    company-box
-                                    company-anaconda
                                     clang-format
                                     ccls
                                     browse-at-remote
@@ -636,7 +608,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; Which-key delay in seconds. The which-key buffer is the popup listing
    ;; the commands bound to the current keystroke sequence. (default 0.4)
-   dotspacemacs-which-key-delay 0.1
+   dotspacemacs-which-key-delay 0.2
 
    ;; Which-key frame position. Possible values are `right', `bottom' and
    ;; `right-then-bottom'. right-then-bottom tries to display the frame to the
