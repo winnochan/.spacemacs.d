@@ -74,12 +74,12 @@ This function should only modify configuration layer settings."
      helm
      (auto-completion :variables
                       auto-completion-idle-delay 0.2
-                      auto-completion-enable-snippets-in-popup nil
+                      auto-completion-enable-snippets-in-popup t
                       auto-completion-enable-sort-by-usage t
                       auto-completion-enable-help-tooltip nil
                       auto-completion-use-company-box nil
-                      auto-completion-private-snippets-directory
-                      "~/.spacemacs.d/snippets/")
+                      ;; auto-completion-private-snippets-directory "~/.spacemacs.d/snippets/"
+                      )
      ;; (templates :variables
      ;;            templates-private-directory (concat dotspacemacs-directory "templates")
      ;;            templates-use-default-templates t)
@@ -345,7 +345,6 @@ This function should only modify configuration layer settings."
                                     magit-svn
                                     magit-gitflow
                                     hybrid-mode
-                                    helm-c-yasnippet
                                     helm-rtags
                                     helm-dash
                                     github-search
