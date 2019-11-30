@@ -53,8 +53,7 @@ This function should only modify configuration layer settings."
      (spacemacs-navigation :variables
                            ahs-default-range 'ahs-range-beginning-of-defun
                            ;; ahs-default-range 'ahs-range-display
-                           ahs-idle-interval 0.5
-                           )
+                           ahs-idle-interval 0.5)
      spacemacs-org
      spacemacs-project
      spacemacs-purpose
@@ -191,8 +190,8 @@ This function should only modify configuration layer settings."
            json-fmt-tool 'prettier
            js-indent-level 2)
      ;; (lua)
-     ;; (markdown :variables
-     ;;           markdown-live-preview-engine 'eww)
+     (markdown :variables
+               markdown-live-preview-engine 'eww)
      ;; (plantuml :variables
      ;;           plantuml-default-exec-mode 'jar
      ;;           plantuml-jar-path "~/.spacemacs.d/3rd/plantuml.jar"
@@ -254,7 +253,7 @@ This function should only modify configuration layer settings."
                  ;; tide-always-show-documentation t
                  ;; company-tooltip-align-annotations t
                  )
-     ;; yaml
+     yaml
 
      ;; misc
      (multiple-cursors :variables
@@ -267,15 +266,15 @@ This function should only modify configuration layer settings."
      ;; speed-reading
 
      ;; source-control
-     ;; (git :variables
-     ;;      git-enable-magit-svn-plugin t
-     ;;      git-magit-status-fullscreen t)
-     ;; ;; github
-     ;; (version-control :variables
-     ;;                  spacemacs--smerge-ts-full-hint-toggle t
-     ;;                  version-control-global-margin t
-     ;;                  version-control-diff-tool 'git-gutter+
-     ;;                  version-control-diff-side 'right)
+     (git :variables
+          git-enable-magit-svn-plugin t
+          git-magit-status-fullscreen t)
+     ;; github
+     (version-control :variables
+                      spacemacs--smerge-ts-full-hint-toggle t
+                      version-control-global-margin t
+                      version-control-diff-tool 'git-gutter+
+                      version-control-diff-side 'right)
 
      ;; tools
      ;; command-log
@@ -321,43 +320,16 @@ This function should only modify configuration layer settings."
    dotspacemacs-excluded-packages '(
                                     exec-path-from-shell
                                     zeal-at-point
-                                    yatemplate
-                                    yaml-mode
                                     writeroom-mode
                                     web-beautify
                                     uuidgen
-                                    sqlup-mode
-                                    sql-indent
                                     plantuml-mode
                                     protobuf-mode
                                     password-generator
-                                    ox-twbs
-                                    ox-hugo
-                                    ;; ox-gfm
-                                    ox-epub
-                                    org-trello
-                                    org-sticky-header
-                                    org-ref
-                                    org-re-reveal
-                                    org-journal
-                                    org-download
                                     omnisharp
-                                    magit-svn
-                                    magit-gitflow
-                                    hybrid-mode
-                                    helm-rtags
-                                    helm-dash
-                                    github-search
-                                    github-clone
-                                    git-timemachine
-                                    git-messenger
-                                    git-link
-                                    git-gutter-fringe
-                                    gist
                                     google-translate
                                     google-c-style
                                     gnuplot
-                                    forge
                                     fish-mode
                                     fancy-battery
                                     evil-visualstar
@@ -385,16 +357,8 @@ This function should only modify configuration layer settings."
                                     evil-anzu
                                     eval-sexp-fu
                                     elisp-slime-nav
-                                    doom-modeline
-                                    disaster
                                     devdocs
-                                    cquery
-                                    cpp-auto-include
-                                    clang-format
-                                    ccls
                                     browse-at-remote
-                                    auto-dictionary
-                                    ac-ispell
                                     )
 
    ;; Defines the behaviour of Spacemacs when installing packages.
@@ -604,7 +568,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; Which-key delay in seconds. The which-key buffer is the popup listing
    ;; the commands bound to the current keystroke sequence. (default 0.4)
-   dotspacemacs-which-key-delay 0.2
+   dotspacemacs-which-key-delay 0.4
 
    ;; Which-key frame position. Possible values are `right', `bottom' and
    ;; `right-then-bottom'. right-then-bottom tries to display the frame to the
