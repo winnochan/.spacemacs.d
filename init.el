@@ -92,7 +92,7 @@ This function should only modify configuration layer settings."
      (org :variables
           org-directory "~/.spacemacs.d/org"
 
-          org-want-todo-bindings t
+          ;; org-want-todo-bindings t
           ;; org-enable-bootstrap-support t
           org-enable-github-support t
 
@@ -182,8 +182,9 @@ This function should only modify configuration layer settings."
                  javascript-backend 'tern
                  javascript-fmt-tool 'prettier
                  javascript-import-tool 'import-js
-                 javascript-fmt-on-save nil
+                 ;; javascript-fmt-on-save nil
                  javascript-repl 'nodejs
+                 javascript-lsp-linter nil
                  js-indent-level 2
                  node-add-modules-path t)
      (json :variables
@@ -198,12 +199,12 @@ This function should only modify configuration layer settings."
      ;;           org-plantuml-jar-path "~/.spacemacs.d/3rd/plantuml.jar")
      ;; protobuf
      (python :variables
-             python-backend 'anaconda
+             ;; python-backend 'anaconda
              ;; python-lsp-server 'pyls
              ;; python-lsp-git-root nil
              ;; python-pipenv-activate nil
              python-formatter 'yapf
-             ;; python-format-on-save nil
+             python-format-on-save t
              python-test-runner '(pytest nose)
              ;; python-save-before-test t
              python-fill-column 99
@@ -211,7 +212,7 @@ This function should only modify configuration layer settings."
              python-spacemacs-indent-guess t
              python-auto-set-local-pyenv-version 'on-project-switch
              python-auto-set-local-pyvenv-virtualenv 'on-project-switch
-             ;; python-sort-imports-on-save t
+             python-sort-imports-on-save t
              ;; spacemacs--python-pyenv-modes nil
              ;; spacemacs--python-pyvenv-modes nil
              ;; python-shell--interpreter nil
@@ -238,9 +239,9 @@ This function should only modify configuration layer settings."
      ;;      sql-auto-indent t)
      ;; swift
      (typescript :variables
-                 typescript-fmt-on-save nil
+                 ;; typescript-fmt-on-save t
                  typescript-fmt-tool 'prettier
-                 typescript-backend 'tide
+                 ;; typescript-backend 'tide
                  typescript-linter 'eslint
                  typescript-lsp-linter nil
                  typescript-indent-level 2
@@ -253,7 +254,8 @@ This function should only modify configuration layer settings."
                  ;; tide-always-show-documentation t
                  ;; company-tooltip-align-annotations t
                  )
-     yaml
+     (yaml :variables
+           yaml-enable-lsp t)
 
      ;; misc
      (multiple-cursors :variables
@@ -280,10 +282,10 @@ This function should only modify configuration layer settings."
      ;; command-log
      (dap :variables
           spacemacs--dap-supported-modes nil
-          dap-enable-mouse-support nil
+          ;; dap-enable-mouse-support nil
           )
      fasd
-     fzf
+     ;; fzf
      ;; imenu-list
      (lsp :variables
           ;; lsp-remap-xref-keybindings t
@@ -318,13 +320,12 @@ This function should only modify configuration layer settings."
 
    ;; A list of packages that will not be installed and loaded.
    dotspacemacs-excluded-packages '(
-                                    exec-path-from-shell
+                                    ;; exec-path-from-shell
                                     zeal-at-point
                                     writeroom-mode
                                     web-beautify
                                     uuidgen
                                     plantuml-mode
-                                    protobuf-mode
                                     password-generator
                                     omnisharp
                                     google-translate
@@ -356,7 +357,7 @@ This function should only modify configuration layer settings."
                                     evil-args
                                     evil-anzu
                                     eval-sexp-fu
-                                    elisp-slime-nav
+                                    ;; elisp-slime-nav
                                     devdocs
                                     browse-at-remote
                                     )
