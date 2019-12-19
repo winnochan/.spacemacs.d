@@ -54,7 +54,7 @@ This function should only modify configuration layer settings."
                            ahs-default-range 'ahs-range-beginning-of-defun
                            ;; ahs-default-range 'ahs-range-display
                            ahs-idle-interval 0.5)
-     spacemacs-org
+     ;; spacemacs-org
      spacemacs-project
      spacemacs-purpose
      spacemacs-visual
@@ -87,39 +87,39 @@ This function should only modify configuration layer settings."
      (better-defaults :variables
                       better-defaults-move-to-beginning-of-code-first nil
                       better-defaults-move-to-end-of-code-first nil)
-     (ibuffer :variables
-              ibuffer-group-buffers-by 'projects)
-     (org :variables
-          org-directory "~/.spacemacs.d/org"
+     ;; (ibuffer :variables
+     ;;          ibuffer-group-buffers-by 'projects)
+     ;; (org :variables
+     ;;      org-directory "~/.spacemacs.d/org"
 
-          ;; org-want-todo-bindings t
-          ;; org-enable-bootstrap-support t
-          org-enable-github-support t
+     ;;      ;; org-want-todo-bindings t
+     ;;      ;; org-enable-bootstrap-support t
+     ;;      org-enable-github-support t
 
-          ;; org-enable-reveal-js-support t
-          ;; org-re-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js@3.8.0"
+     ;;      ;; org-enable-reveal-js-support t
+     ;;      ;; org-re-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js@3.8.0"
 
-          org-projectile-file "TODOs.org"
-          ;; spaceline-org-clock-p t
+     ;;      org-projectile-file "TODOs.org"
+     ;;      ;; spaceline-org-clock-p t
 
-          ;; org-enable-org-journal-support t
-          ;; org-journal-dir "~/.spacemacs.d/org/journal/"
-          ;; org-journal-file-format "%Y-%m-%d"
-          ;; org-journal-date-prefix "#+TITLE: "
-          ;; org-journal-date-format "%A, %B %d %Y"
-          ;; org-journal-time-prefix "* "
-          ;; org-journal-time-format ""
+     ;;      ;; org-enable-org-journal-support t
+     ;;      ;; org-journal-dir "~/.spacemacs.d/org/journal/"
+     ;;      ;; org-journal-file-format "%Y-%m-%d"
+     ;;      ;; org-journal-date-prefix "#+TITLE: "
+     ;;      ;; org-journal-date-format "%A, %B %d %Y"
+     ;;      ;; org-journal-time-prefix "* "
+     ;;      ;; org-journal-time-format ""
 
-          ;; org-enable-sticky-header t
+     ;;      ;; org-enable-sticky-header t
 
-          ;; org-enable-hugo-support t
-          ;; org-enable-trello-support t
-          ;; org-bullets-bullet-list '("♠" "♥" "♦" "♣")
-          ;; org-bullets-bullet-list '("☞")
+     ;;      ;; org-enable-hugo-support t
+     ;;      ;; org-enable-trello-support t
+     ;;      ;; org-bullets-bullet-list '("♠" "♥" "♦" "♣")
+     ;;      ;; org-bullets-bullet-list '("☞")
 
-          ;; org-enable-epub-support t
-          ;; org-enable-jira-support t
-          )
+     ;;      ;; org-enable-epub-support t
+     ;;      ;; org-enable-jira-support t
+     ;;      )
 
      ;; filetree
      ;; treemacs
@@ -174,7 +174,7 @@ This function should only modify configuration layer settings."
      ;;       web-mode-enable-heredoc-fontification t
      ;;       web-mode-enable-current-element-highlight t
      ;;       web-mode-enable-current-column-highlight t)
-     ipython-notebook
+     ;; ipython-notebook
      ;; (java :variables
      ;;       java-backend 'lsp
      ;;       java--ensime-modes '(java-mode))
@@ -191,36 +191,36 @@ This function should only modify configuration layer settings."
            json-fmt-tool 'prettier
            js-indent-level 2)
      ;; (lua)
-     (markdown :variables
-               markdown-live-preview-engine 'eww)
+     ;; (markdown :variables
+     ;;           markdown-live-preview-engine 'eww)
      ;; (plantuml :variables
      ;;           plantuml-default-exec-mode 'jar
      ;;           plantuml-jar-path "~/.spacemacs.d/3rd/plantuml.jar"
      ;;           org-plantuml-jar-path "~/.spacemacs.d/3rd/plantuml.jar")
      ;; protobuf
-     (python :variables
-             ;; python-backend 'anaconda
-             ;; python-lsp-server 'pyls
-             ;; python-lsp-git-root nil
-             ;; python-pipenv-activate nil
-             python-formatter 'yapf
-             python-format-on-save t
-             python-test-runner '(pytest nose)
-             ;; python-save-before-test t
-             python-fill-column 99
-             python-tab-width 4
-             python-spacemacs-indent-guess t
-             python-auto-set-local-pyenv-version 'on-project-switch
-             python-auto-set-local-pyvenv-virtualenv 'on-project-switch
-             python-sort-imports-on-save t
-             ;; spacemacs--python-pyenv-modes nil
-             ;; spacemacs--python-pyvenv-modes nil
-             ;; python-shell--interpreter nil
-             ;; python-shell--interpreter-args nil
-             )
-     (rust :variables
-           rust-backend 'lsp
-           rust-format-on-save t)
+     ;; (python :variables
+     ;;         ;; python-backend 'anaconda
+     ;;         ;; python-lsp-server 'pyls
+     ;;         ;; python-lsp-git-root nil
+     ;;         ;; python-pipenv-activate nil
+     ;;         python-formatter 'yapf
+     ;;         python-format-on-save t
+     ;;         python-test-runner '(pytest nose)
+     ;;         ;; python-save-before-test t
+     ;;         python-fill-column 99
+     ;;         python-tab-width 4
+     ;;         python-spacemacs-indent-guess t
+     ;;         python-auto-set-local-pyenv-version 'on-project-switch
+     ;;         python-auto-set-local-pyvenv-virtualenv 'on-project-switch
+     ;;         python-sort-imports-on-save t
+     ;;         ;; spacemacs--python-pyenv-modes nil
+     ;;         ;; spacemacs--python-pyvenv-modes nil
+     ;;         ;; python-shell--interpreter nil
+     ;;         ;; python-shell--interpreter-args nil
+     ;;         )
+     ;; (rust :variables
+     ;;       rust-backend 'lsp
+     ;;       rust-format-on-save t)
      ;; (scala :variables
      ;;        scala-enable-eldoc t
      ;;        scala-auto-insert-asterisk-in-comments t
@@ -230,8 +230,8 @@ This function should only modify configuration layer settings."
      ;;        flycheck-scalastyle-jar "/usr/local/Cellar/scalastyle/1.0.0/libexec/scalastyle_2.12-1.0.0-batch.jar"
      ;;        flycheck-scalastylerc "/usr/local/etc/scalastyle_config.xml")
 
-     (shell-scripts :variables
-                    shell-scripts-backend nil)
+     ;; (shell-scripts :variables
+     ;;                shell-scripts-backend nil)
      ;; (sql :variables
      ;;      sql-capitalize-keywords t
      ;;      sql-capitalize-keywords-disable-interactive t
@@ -258,8 +258,8 @@ This function should only modify configuration layer settings."
            yaml-enable-lsp t)
 
      ;; misc
-     (multiple-cursors :variables
-                       multiple-cursors-backend 'mc)
+     ;; (multiple-cursors :variables
+     ;;                   multiple-cursors-backend 'mc)
 
      ;; readers
      ;; (dash :variables
@@ -268,36 +268,35 @@ This function should only modify configuration layer settings."
      ;; speed-reading
 
      ;; source-control
-     (git :variables
-          git-enable-magit-svn-plugin t
-          git-magit-status-fullscreen t)
-     ;; github
-     (version-control :variables
-                      spacemacs--smerge-ts-full-hint-toggle t
-                      version-control-global-margin t
-                      version-control-diff-tool 'git-gutter+
-                      version-control-diff-side 'right)
+     ;; (git :variables
+     ;;      git-enable-magit-svn-plugin t
+     ;;      git-magit-status-fullscreen t)
+     ;; ;; github
+     ;; (version-control :variables
+     ;;                  spacemacs--smerge-ts-full-hint-toggle t
+     ;;                  version-control-global-margin t
+     ;;                  version-control-diff-tool 'git-gutter+
+     ;;                  version-control-diff-side 'right)
 
      ;; tools
      ;; command-log
-     (dap :variables
-          spacemacs--dap-supported-modes nil
-          ;; dap-enable-mouse-support nil
-          )
+     ;; (dap :variables
+     ;;      spacemacs--dap-supported-modes nil
+     ;;      ;; dap-enable-mouse-support nil
+     ;;      )
      fasd
      ;; fzf
-     ;; imenu-list
-     (lsp :variables
-          ;; lsp-remap-xref-keybindings t
-          ;; lsp-navigation 'both
-          ;; lsp-prefer-flymake t
-          ;; lsp-ui-doc-enable t
-          ;; lsp-ui-doc-include-signature t
-          ;; lsp-ui-sideline-enable nil
-          ;; lsp-ui-sideline-show-symbol nil
-          ;; lsp-ui-sideline-ignore-duplicate nil
-          ;; lsp-layer--active-mode-list nil
-          )
+     ;; (lsp :variables
+     ;;      ;; lsp-remap-xref-keybindings t
+     ;;      ;; lsp-navigation 'both
+     ;;      ;; lsp-prefer-flymake t
+     ;;      ;; lsp-ui-doc-enable t
+     ;;      ;; lsp-ui-doc-include-signature t
+     ;;      ;; lsp-ui-sideline-enable nil
+     ;;      ;; lsp-ui-sideline-show-symbol nil
+     ;;      ;; lsp-ui-sideline-ignore-duplicate nil
+     ;;      ;; lsp-layer--active-mode-list nil
+     ;;      )
 
      ;; custom
      commenter
@@ -321,45 +320,45 @@ This function should only modify configuration layer settings."
    ;; A list of packages that will not be installed and loaded.
    dotspacemacs-excluded-packages '(
                                     ;; exec-path-from-shell
-                                    zeal-at-point
+                                    ;; zeal-at-point
                                     writeroom-mode
                                     web-beautify
-                                    uuidgen
-                                    plantuml-mode
-                                    password-generator
-                                    omnisharp
-                                    google-translate
-                                    google-c-style
-                                    gnuplot
+                                    ;; uuidgen
+                                    ;; plantuml-mode
+                                    ;; password-generator
+                                    ;; omnisharp
+                                    ;; google-translate
+                                    ;; google-c-style
+                                    ;; gnuplot
                                     fish-mode
                                     fancy-battery
-                                    evil-visualstar
-                                    evil-visual-mark-mode
-                                    evil-unimpaired
-                                    evil-tutor
-                                    evil-textobj-line
-                                    evil-surround
-                                    evil-org
-                                    evil-numbers
-                                    evil-nerd-commenter
-                                    evil-mc
-                                    evil-matchit
-                                    evil-magit
-                                    evil-lisp-state
-                                    evil-lion
-                                    evil-indent-plus
-                                    evil-iedit-state
-                                    evil-goggles
-                                    evil-exchange
-                                    evil-escape
-                                    evil-ediff
-                                    evil-cleverparens
-                                    evil-args
-                                    evil-anzu
+                                    ;; evil-visualstar
+                                    ;; evil-visual-mark-mode
+                                    ;; evil-unimpaired
+                                    ;; evil-tutor
+                                    ;; evil-textobj-line
+                                    ;; evil-surround
+                                    ;; evil-org
+                                    ;; evil-numbers
+                                    ;; evil-nerd-commenter
+                                    ;; evil-mc
+                                    ;; evil-matchit
+                                    ;; evil-magit
+                                    ;; evil-lisp-state
+                                    ;; evil-lion
+                                    ;; evil-indent-plus
+                                    ;; evil-iedit-state
+                                    ;; evil-goggles
+                                    ;; evil-exchange
+                                    ;; evil-escape
+                                    ;; evil-ediff
+                                    ;; evil-cleverparens
+                                    ;; evil-args
+                                    ;; evil-anzu
                                     eval-sexp-fu
                                     ;; elisp-slime-nav
-                                    devdocs
-                                    browse-at-remote
+                                    ;; devdocs
+                                    ;; browse-at-remote
                                     )
 
    ;; Defines the behaviour of Spacemacs when installing packages.
@@ -587,7 +586,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil a progress bar is displayed when spacemacs is loading. This
    ;; may increase the boot time on some systems and emacs builds, set it to
    ;; nil to boost the loading time. (default t)
-   dotspacemacs-loading-progress-bar t
+   dotspacemacs-loading-progress-bar nil
 
    ;; If non-nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
@@ -680,7 +679,7 @@ It should only modify the values of Spacemacs settings."
    ;; like \"~/.emacs.d/server\". It has no effect if
    ;; `dotspacemacs-enable-server' is nil.
    ;; (default nil)
-   dotspacemacs-server-socket-dir nil
+   dotspacemacs-server-socket-dir "~/.emacs.d/.cache/server"
 
    ;; If non-nil, advise quit functions to keep server open when quitting.
    ;; (default nil)
@@ -719,7 +718,7 @@ It should only modify the values of Spacemacs settings."
    ;; `trailing' to delete only the whitespace at end of lines, `changed' to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup 'changed
+   dotspacemacs-whitespace-cleanup 'all
 
    ;; Either nil or a number of seconds. If non-nil zone out after the specified
    ;; number of seconds. (default nil)
@@ -728,7 +727,8 @@ It should only modify the values of Spacemacs settings."
    ;; Run `spacemacs/prettify-org-buffer' when
    ;; visiting README.org files of Spacemacs.
    ;; (default nil)
-   dotspacemacs-pretty-docs nil))
+   dotspacemacs-pretty-docs t
+   ))
 
 (defun dotspacemacs/user-env ()
   "Environment variables setup.
