@@ -197,7 +197,7 @@ This function should only modify configuration layer settings."
      ;;           plantuml-default-exec-mode 'jar
      ;;           plantuml-jar-path "~/.spacemacs.d/3rd/plantuml.jar"
      ;;           org-plantuml-jar-path "~/.spacemacs.d/3rd/plantuml.jar")
-     ;; protobuf
+     protobuf
      ;; (python :variables
      ;;         ;; python-backend 'anaconda
      ;;         ;; python-lsp-server 'pyls
