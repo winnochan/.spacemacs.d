@@ -87,39 +87,39 @@ This function should only modify configuration layer settings."
      (better-defaults :variables
                       better-defaults-move-to-beginning-of-code-first nil
                       better-defaults-move-to-end-of-code-first nil)
-     ;; (ibuffer :variables
-     ;;          ibuffer-group-buffers-by 'projects)
-     ;; (org :variables
-     ;;      org-directory "~/.spacemacs.d/org"
+     (ibuffer :variables
+              ibuffer-group-buffers-by 'projects)
+     (org :variables
+          org-directory "~/.spacemacs.d/org"
 
-     ;;      ;; org-want-todo-bindings t
-     ;;      ;; org-enable-bootstrap-support t
-     ;;      org-enable-github-support t
+          ;; org-want-todo-bindings t
+          ;; org-enable-bootstrap-support t
+          org-enable-github-support t
 
-     ;;      ;; org-enable-reveal-js-support t
-     ;;      ;; org-re-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js@3.8.0"
+          ;; org-enable-reveal-js-support t
+          ;; org-re-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js@3.8.0"
 
-     ;;      org-projectile-file "TODOs.org"
-     ;;      ;; spaceline-org-clock-p t
+          org-projectile-file "TODOs.org"
+          ;; spaceline-org-clock-p t
 
-     ;;      ;; org-enable-org-journal-support t
-     ;;      ;; org-journal-dir "~/.spacemacs.d/org/journal/"
-     ;;      ;; org-journal-file-format "%Y-%m-%d"
-     ;;      ;; org-journal-date-prefix "#+TITLE: "
-     ;;      ;; org-journal-date-format "%A, %B %d %Y"
-     ;;      ;; org-journal-time-prefix "* "
-     ;;      ;; org-journal-time-format ""
+          ;; org-enable-org-journal-support t
+          ;; org-journal-dir "~/.spacemacs.d/org/journal/"
+          ;; org-journal-file-format "%Y-%m-%d"
+          ;; org-journal-date-prefix "#+TITLE: "
+          ;; org-journal-date-format "%A, %B %d %Y"
+          ;; org-journal-time-prefix "* "
+          ;; org-journal-time-format ""
 
-     ;;      ;; org-enable-sticky-header t
+          ;; org-enable-sticky-header t
 
-     ;;      ;; org-enable-hugo-support t
-     ;;      ;; org-enable-trello-support t
-     ;;      ;; org-bullets-bullet-list '("♠" "♥" "♦" "♣")
-     ;;      ;; org-bullets-bullet-list '("☞")
+          ;; org-enable-hugo-support t
+          ;; org-enable-trello-support t
+          ;; org-bullets-bullet-list '("♠" "♥" "♦" "♣")
+          ;; org-bullets-bullet-list '("☞")
 
-     ;;      ;; org-enable-epub-support t
-     ;;      ;; org-enable-jira-support t
-     ;;      )
+          ;; org-enable-epub-support t
+          ;; org-enable-jira-support t
+          )
 
      ;; filetree
      ;; treemacs
@@ -158,69 +158,70 @@ This function should only modify configuration layer settings."
      ;;     go-test-verbose nil
      ;;     go-run-args ""
      ;;     godoc-at-point-function 'godoc-gogetdoc)
-     ;; (html :variables
-     ;;       web-fmt-tool 'prettier
-     ;;       css-enable-lsp t
-     ;;       less-enable-lsp t
-     ;;       scss-enable-lsp t
-     ;;       web-mode-markup-indent-offset 2
-     ;;       web-mode-css-indent-offset 2
-     ;;       web-mode-code-indent-offset 2
-     ;;       web-mode-enable-auto-pairing t
-     ;;       web-mode-enable-css-colorization t
-     ;;       web-mode-enable-block-face t
-     ;;       web-mode-enable-part-face t
-     ;;       web-mode-enable-comment-interpolation t
-     ;;       web-mode-enable-heredoc-fontification t
-     ;;       web-mode-enable-current-element-highlight t
-     ;;       web-mode-enable-current-column-highlight t)
-     ;; ipython-notebook
+     (html :variables
+           web-fmt-tool 'prettier
+           css-enable-lsp t
+           less-enable-lsp t
+           scss-enable-lsp t
+           web-mode-markup-indent-offset 2
+           web-mode-css-indent-offset 2
+           web-mode-code-indent-offset 2
+           web-mode-enable-auto-pairing t
+           web-mode-enable-css-colorization t
+           web-mode-enable-block-face t
+           web-mode-enable-part-face t
+           web-mode-enable-comment-interpolation t
+           web-mode-enable-heredoc-fontification t
+           web-mode-enable-current-element-highlight t
+           web-mode-enable-current-column-highlight t)
+     ipython-notebook
      ;; (java :variables
      ;;       java-backend 'lsp
      ;;       java--ensime-modes '(java-mode))
      (javascript :variables
-                 javascript-backend 'tern
+                 javascript-backend 'lsp
                  javascript-fmt-tool 'prettier
                  javascript-import-tool 'import-js
-                 ;; javascript-fmt-on-save nil
+                 javascript-fmt-on-save t
                  javascript-repl 'nodejs
-                 javascript-lsp-linter nil
+                 ;; javascript-lsp-linter nil
                  js-indent-level 2
                  node-add-modules-path t)
      (json :variables
            json-fmt-tool 'prettier
+           json-fmt-on-save t
            js-indent-level 2)
      ;; (lua)
-     ;; (markdown :variables
-     ;;           markdown-live-preview-engine 'eww)
+     (markdown :variables
+               markdown-live-preview-engine 'eww)
      ;; (plantuml :variables
      ;;           plantuml-default-exec-mode 'jar
      ;;           plantuml-jar-path "~/.spacemacs.d/3rd/plantuml.jar"
      ;;           org-plantuml-jar-path "~/.spacemacs.d/3rd/plantuml.jar")
      protobuf
-     ;; (python :variables
-     ;;         ;; python-backend 'anaconda
-     ;;         ;; python-lsp-server 'pyls
-     ;;         ;; python-lsp-git-root nil
-     ;;         ;; python-pipenv-activate nil
-     ;;         python-formatter 'yapf
-     ;;         python-format-on-save t
-     ;;         python-test-runner '(pytest nose)
-     ;;         ;; python-save-before-test t
-     ;;         python-fill-column 99
-     ;;         python-tab-width 4
-     ;;         python-spacemacs-indent-guess t
-     ;;         python-auto-set-local-pyenv-version 'on-project-switch
-     ;;         python-auto-set-local-pyvenv-virtualenv 'on-project-switch
-     ;;         python-sort-imports-on-save t
-     ;;         ;; spacemacs--python-pyenv-modes nil
-     ;;         ;; spacemacs--python-pyvenv-modes nil
-     ;;         ;; python-shell--interpreter nil
-     ;;         ;; python-shell--interpreter-args nil
-     ;;         )
-     ;; (rust :variables
-     ;;       rust-backend 'lsp
-     ;;       rust-format-on-save t)
+     (python :variables
+             ;; python-backend 'anaconda
+             ;; python-lsp-server 'pyls
+             ;; python-lsp-git-root nil
+             ;; python-pipenv-activate nil
+             ;; python-formatter 'yapf
+             python-format-on-save t
+             python-test-runner '(pytest nose)
+             ;; python-save-before-test t
+             python-fill-column 99
+             python-tab-width 4
+             python-spacemacs-indent-guess t
+             ;; python-auto-set-local-pyenv-version 'on-project-switch
+             ;; python-auto-set-local-pyvenv-virtualenv 'on-project-switch
+             python-sort-imports-on-save t
+             ;; spacemacs--python-pyenv-modes nil
+             ;; spacemacs--python-pyvenv-modes nil
+             ;; python-shell--interpreter nil
+             ;; python-shell--interpreter-args nil
+             )
+     (rust :variables
+           rust-backend 'lsp
+           rust-format-on-save t)
      ;; (scala :variables
      ;;        scala-enable-eldoc t
      ;;        scala-auto-insert-asterisk-in-comments t
@@ -230,8 +231,8 @@ This function should only modify configuration layer settings."
      ;;        flycheck-scalastyle-jar "/usr/local/Cellar/scalastyle/1.0.0/libexec/scalastyle_2.12-1.0.0-batch.jar"
      ;;        flycheck-scalastylerc "/usr/local/etc/scalastyle_config.xml")
 
-     ;; (shell-scripts :variables
-     ;;                shell-scripts-backend nil)
+     (shell-scripts :variables
+                    shell-scripts-backend nil)
      ;; (sql :variables
      ;;      sql-capitalize-keywords t
      ;;      sql-capitalize-keywords-disable-interactive t
@@ -239,27 +240,18 @@ This function should only modify configuration layer settings."
      ;;      sql-auto-indent t)
      ;; swift
      (typescript :variables
-                 ;; typescript-fmt-on-save t
+                 typescript-fmt-on-save t
                  typescript-fmt-tool 'prettier
-                 ;; typescript-backend 'tide
+                 typescript-backend 'lsp
                  typescript-linter 'eslint
                  typescript-lsp-linter nil
-                 typescript-indent-level 2
-
-                 ;; tide config
-                 ;; tide-completion-detailed nil
-                 ;; tide-sync-request-timeout 1
-                 ;; tide-completion-enable-autoimport-suggestions t
-                 ;; tide-imenu-flatten nil
-                 ;; tide-always-show-documentation t
-                 ;; company-tooltip-align-annotations t
-                 )
+                 typescript-indent-level 2)
      (yaml :variables
            yaml-enable-lsp t)
 
      ;; misc
-     ;; (multiple-cursors :variables
-     ;;                   multiple-cursors-backend 'mc)
+     (multiple-cursors :variables
+                       multiple-cursors-backend 'mc)
 
      ;; readers
      ;; (dash :variables
@@ -268,35 +260,35 @@ This function should only modify configuration layer settings."
      ;; speed-reading
 
      ;; source-control
-     ;; (git :variables
-     ;;      git-enable-magit-svn-plugin t
-     ;;      git-magit-status-fullscreen t)
-     ;; ;; github
-     ;; (version-control :variables
-     ;;                  spacemacs--smerge-ts-full-hint-toggle t
-     ;;                  version-control-global-margin t
-     ;;                  version-control-diff-tool 'git-gutter+
-     ;;                  version-control-diff-side 'right)
+     (git :variables
+          git-enable-magit-svn-plugin t
+          git-magit-status-fullscreen t)
+     ;; github
+     (version-control :variables
+                      spacemacs--smerge-ts-full-hint-toggle t
+                      version-control-global-margin t
+                      version-control-diff-tool 'git-gutter+
+                      version-control-diff-side 'right)
 
      ;; tools
      ;; command-log
-     ;; (dap :variables
-     ;;      spacemacs--dap-supported-modes nil
-     ;;      ;; dap-enable-mouse-support nil
-     ;;      )
+     (dap :variables
+          spacemacs--dap-supported-modes nil
+          ;; dap-enable-mouse-support nil
+          )
      fasd
      ;; fzf
-     ;; (lsp :variables
-     ;;      ;; lsp-remap-xref-keybindings t
-     ;;      ;; lsp-navigation 'both
-     ;;      ;; lsp-prefer-flymake t
-     ;;      ;; lsp-ui-doc-enable t
-     ;;      ;; lsp-ui-doc-include-signature t
-     ;;      ;; lsp-ui-sideline-enable nil
-     ;;      ;; lsp-ui-sideline-show-symbol nil
-     ;;      ;; lsp-ui-sideline-ignore-duplicate nil
-     ;;      ;; lsp-layer--active-mode-list nil
-     ;;      )
+     (lsp :variables
+          ;; lsp-remap-xref-keybindings t
+          ;; lsp-navigation 'both
+          ;; lsp-prefer-flymake t
+          ;; lsp-ui-doc-enable t
+          ;; lsp-ui-doc-include-signature t
+          ;; lsp-ui-sideline-enable nil
+          ;; lsp-ui-sideline-show-symbol nil
+          ;; lsp-ui-sideline-ignore-duplicate nil
+          ;; lsp-layer--active-mode-list nil
+          )
 
      ;; custom
      commenter
