@@ -204,18 +204,19 @@ This function should only modify configuration layer settings."
              ;; python-lsp-server 'pyls
              ;; python-lsp-git-root nil
              ;; python-pipenv-activate nil
-             ;; python-formatter 'yapf
+             python-formatter 'yapf
              python-format-on-save t
              python-test-runner '(pytest nose)
              ;; python-save-before-test t
              python-fill-column 99
-             python-tab-width 4
+             ;; python-tab-width 4
              python-spacemacs-indent-guess t
              ;; python-auto-set-local-pyenv-version 'on-project-switch
              ;; python-auto-set-local-pyvenv-virtualenv 'on-project-switch
              python-sort-imports-on-save t
              ;; spacemacs--python-pyenv-modes nil
              ;; spacemacs--python-pyvenv-modes nil
+             ;; spacemacs--python-pipenv-modes nil
              ;; python-shell--interpreter nil
              ;; python-shell--interpreter-args nil
              )
