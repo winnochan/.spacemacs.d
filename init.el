@@ -233,7 +233,7 @@ This function should only modify configuration layer settings."
      ;;        flycheck-scalastylerc "/usr/local/etc/scalastyle_config.xml")
 
      (shell-scripts :variables
-                    shell-scripts-backend nil)
+                    shell-scripts-backend 'lsp)
      ;; (sql :variables
      ;;      sql-capitalize-keywords t
      ;;      sql-capitalize-keywords-disable-interactive t
@@ -241,11 +241,11 @@ This function should only modify configuration layer settings."
      ;;      sql-auto-indent t)
      ;; swift
      (typescript :variables
-                 typescript-fmt-on-save t
+                 typescript-fmt-on-save nil
                  typescript-fmt-tool 'prettier
                  typescript-backend 'lsp
                  typescript-linter 'eslint
-                 typescript-lsp-linter nil
+                 typescript-lsp-linter t
                  typescript-indent-level 2)
      (yaml :variables
            yaml-enable-lsp t)
@@ -277,6 +277,8 @@ This function should only modify configuration layer settings."
           spacemacs--dap-supported-modes nil
           ;; dap-enable-mouse-support nil
           )
+     (docker :variables
+             'lsp)
      fasd
      ;; fzf
      (lsp :variables
