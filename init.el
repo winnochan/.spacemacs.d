@@ -278,7 +278,7 @@ This function should only modify configuration layer settings."
           ;; dap-enable-mouse-support nil
           )
      (docker :variables
-             'lsp)
+             docker-dockerfile-backend 'lsp)
      fasd
      ;; fzf
      (lsp :variables
