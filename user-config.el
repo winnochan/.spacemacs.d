@@ -61,7 +61,7 @@
 
 ;; turn off highlight current line
 (spacemacs/toggle-highlight-current-line-globally-on)
-(spacemacs/toggle-automatic-symbol-highlight-on)
+;; (spacemacs/toggle-automatic-symbol-highlight-on)
 
 (spacemacs/toggle-smartparens-globally-on)
 

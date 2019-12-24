@@ -51,9 +51,10 @@ This function should only modify configuration layer settings."
      ;; spacemacs-misc
      ;; spacemacs-modeline
      (spacemacs-navigation :variables
-                           ahs-default-range 'ahs-range-beginning-of-defun
+                           ;; ahs-default-range 'ahs-range-beginning-of-defun
                            ;; ahs-default-range 'ahs-range-display
-                           ahs-idle-interval 0.5)
+                           ;; ahs-idle-interval 0.5
+                           )
      ;; spacemacs-org
      spacemacs-project
      spacemacs-purpose
