@@ -74,7 +74,7 @@ This function should only modify configuration layer settings."
      helm
      (auto-completion :variables
                       auto-completion-idle-delay 0.2
-                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-enable-snippets-in-popup nil
                       auto-completion-enable-sort-by-usage t
                       auto-completion-enable-help-tooltip nil
                       auto-completion-use-company-box nil
@@ -244,9 +244,9 @@ This function should only modify configuration layer settings."
      (typescript :variables
                  typescript-fmt-on-save nil
                  typescript-fmt-tool 'prettier
-                 typescript-backend 'lsp
+                 typescript-backend 'tide
                  typescript-linter 'eslint
-                 typescript-lsp-linter t
+                 typescript-lsp-linter nil
                  typescript-indent-level 2)
      (yaml :variables
            yaml-enable-lsp t)
