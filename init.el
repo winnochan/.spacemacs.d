@@ -186,6 +186,7 @@ This function should only modify configuration layer settings."
                  javascript-fmt-on-save t
                  javascript-repl 'nodejs
                  ;; javascript-lsp-linter nil
+                 js2-basic-offset 2
                  js-indent-level 2
                  node-add-modules-path t)
      (json :variables
