@@ -73,8 +73,8 @@ This function should only modify configuration layer settings."
      ;; completion
      helm
      (auto-completion :variables
-                      auto-completion-idle-delay 0.2
-                      auto-completion-enable-snippets-in-popup nil
+                      ;; auto-completion-idle-delay 0.2
+                      ;; auto-completion-enable-snippets-in-popup nil
                       auto-completion-enable-sort-by-usage t
                       auto-completion-enable-help-tooltip nil
                       auto-completion-use-company-box nil
