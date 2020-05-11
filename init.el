@@ -183,7 +183,7 @@ This function should only modify configuration layer settings."
                  javascript-backend 'lsp
                  javascript-fmt-tool 'prettier
                  javascript-import-tool 'import-js
-                 javascript-fmt-on-save t
+                 javascript-fmt-on-save nil
                  javascript-repl 'nodejs
                  ;; javascript-lsp-linter nil
                  js2-basic-offset 2
@@ -191,7 +191,7 @@ This function should only modify configuration layer settings."
                  node-add-modules-path t)
      (json :variables
            json-fmt-tool 'prettier
-           json-fmt-on-save t
+           json-fmt-on-save nil
            js-indent-level 2)
      ;; (lua)
      (markdown :variables
