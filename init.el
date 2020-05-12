@@ -76,8 +76,8 @@ This function should only modify configuration layer settings."
                       ;; auto-completion-idle-delay 0.2
                       ;; auto-completion-enable-snippets-in-popup nil
                       auto-completion-enable-sort-by-usage t
-                      auto-completion-enable-help-tooltip nil
-                      auto-completion-use-company-box nil
+                      ;; auto-completion-enable-help-tooltip nil
+                      ;; auto-completion-use-company-box nil
                       ;; auto-completion-private-snippets-directory "~/.spacemacs.d/snippets/"
                       )
      ;; (templates :variables
@@ -90,37 +90,38 @@ This function should only modify configuration layer settings."
                       better-defaults-move-to-end-of-code-first nil)
      (ibuffer :variables
               ibuffer-group-buffers-by 'projects)
-     (org :variables
-          org-directory "~/.spacemacs.d/org"
+     helpful
+     ;; (org :variables
+     ;;      org-directory "~/.spacemacs.d/org"
 
-          ;; org-want-todo-bindings t
-          ;; org-enable-bootstrap-support t
-          org-enable-github-support t
+     ;;      ;; org-want-todo-bindings t
+     ;;      ;; org-enable-bootstrap-support t
+     ;;      org-enable-github-support t
 
-          ;; org-enable-reveal-js-support t
-          ;; org-re-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js@3.8.0"
+     ;;      ;; org-enable-reveal-js-support t
+     ;;      ;; org-re-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js@3.8.0"
 
-          org-projectile-file "TODOs.org"
-          ;; spaceline-org-clock-p t
+     ;;      org-projectile-file "TODOs.org"
+     ;;      ;; spaceline-org-clock-p t
 
-          ;; org-enable-org-journal-support t
-          ;; org-journal-dir "~/.spacemacs.d/org/journal/"
-          ;; org-journal-file-format "%Y-%m-%d"
-          ;; org-journal-date-prefix "#+TITLE: "
-          ;; org-journal-date-format "%A, %B %d %Y"
-          ;; org-journal-time-prefix "* "
-          ;; org-journal-time-format ""
+     ;;      ;; org-enable-org-journal-support t
+     ;;      ;; org-journal-dir "~/.spacemacs.d/org/journal/"
+     ;;      ;; org-journal-file-format "%Y-%m-%d"
+     ;;      ;; org-journal-date-prefix "#+TITLE: "
+     ;;      ;; org-journal-date-format "%A, %B %d %Y"
+     ;;      ;; org-journal-time-prefix "* "
+     ;;      ;; org-journal-time-format ""
 
-          ;; org-enable-sticky-header t
+     ;;      ;; org-enable-sticky-header t
 
-          ;; org-enable-hugo-support t
-          ;; org-enable-trello-support t
-          ;; org-bullets-bullet-list '("♠" "♥" "♦" "♣")
-          ;; org-bullets-bullet-list '("☞")
+     ;;      ;; org-enable-hugo-support t
+     ;;      ;; org-enable-trello-support t
+     ;;      ;; org-bullets-bullet-list '("♠" "♥" "♦" "♣")
+     ;;      ;; org-bullets-bullet-list '("☞")
 
-          ;; org-enable-epub-support t
-          ;; org-enable-jira-support t
-          )
+     ;;      ;; org-enable-epub-support t
+     ;;      ;; org-enable-jira-support t
+     ;;      )
 
      ;; filetree
      ;; treemacs
@@ -159,22 +160,22 @@ This function should only modify configuration layer settings."
      ;;     go-test-verbose nil
      ;;     go-run-args ""
      ;;     godoc-at-point-function 'godoc-gogetdoc)
-     (html :variables
-           web-fmt-tool 'prettier
-           css-enable-lsp t
-           less-enable-lsp t
-           scss-enable-lsp t
-           web-mode-markup-indent-offset 2
-           web-mode-css-indent-offset 2
-           web-mode-code-indent-offset 2
-           web-mode-enable-auto-pairing t
-           web-mode-enable-css-colorization t
-           web-mode-enable-block-face t
-           web-mode-enable-part-face t
-           web-mode-enable-comment-interpolation t
-           web-mode-enable-heredoc-fontification t
-           web-mode-enable-current-element-highlight t
-           web-mode-enable-current-column-highlight t)
+     ;; (html :variables
+     ;;       web-fmt-tool 'prettier
+     ;;       css-enable-lsp t
+     ;;       less-enable-lsp t
+     ;;       scss-enable-lsp t
+     ;;       web-mode-markup-indent-offset 2
+     ;;       web-mode-css-indent-offset 2
+     ;;       web-mode-code-indent-offset 2
+     ;;       web-mode-enable-auto-pairing t
+     ;;       web-mode-enable-css-colorization t
+     ;;       web-mode-enable-block-face t
+     ;;       web-mode-enable-part-face t
+     ;;       web-mode-enable-comment-interpolation t
+     ;;       web-mode-enable-heredoc-fontification t
+     ;;       web-mode-enable-current-element-highlight t
+     ;;       web-mode-enable-current-column-highlight t)
      ipython-notebook
      ;; (java :variables
      ;;       java-backend 'lsp
@@ -194,28 +195,28 @@ This function should only modify configuration layer settings."
            json-fmt-on-save nil
            js-indent-level 2)
      ;; (lua)
-     (markdown :variables
-               markdown-live-preview-engine 'eww)
+     ;; (markdown :variables
+     ;;           markdown-live-preview-engine 'eww)
      ;; (plantuml :variables
      ;;           plantuml-default-exec-mode 'jar
      ;;           plantuml-jar-path "~/.spacemacs.d/3rd/plantuml.jar"
      ;;           org-plantuml-jar-path "~/.spacemacs.d/3rd/plantuml.jar")
-     protobuf
+     ;; protobuf
      (python :variables
              ;; python-backend 'anaconda
              ;; python-lsp-server 'pyls
              ;; python-lsp-git-root nil
              ;; python-pipenv-activate nil
              python-formatter 'yapf
-             python-format-on-save t
+             ;; python-format-on-save t
              python-test-runner '(pytest nose)
              ;; python-save-before-test t
              python-fill-column 99
              ;; python-tab-width 4
-             python-spacemacs-indent-guess t
+             ;; python-spacemacs-indent-guess t
              ;; python-auto-set-local-pyenv-version 'on-project-switch
              ;; python-auto-set-local-pyvenv-virtualenv 'on-project-switch
-             python-sort-imports-on-save t
+             ;; python-sort-imports-on-save t
              ;; spacemacs--python-pyenv-modes nil
              ;; spacemacs--python-pyvenv-modes nil
              ;; spacemacs--python-pipenv-modes nil
@@ -235,7 +236,8 @@ This function should only modify configuration layer settings."
      ;;        flycheck-scalastylerc "/usr/local/etc/scalastyle_config.xml")
 
      (shell-scripts :variables
-                    shell-scripts-backend 'lsp)
+                    ;; shell-scripts-backend 'lsp
+                    )
      ;; (sql :variables
      ;;      sql-capitalize-keywords t
      ;;      sql-capitalize-keywords-disable-interactive t
@@ -243,9 +245,9 @@ This function should only modify configuration layer settings."
      ;;      sql-auto-indent t)
      ;; swift
      (typescript :variables
-                 typescript-fmt-on-save nil
+                 ;; typescript-fmt-on-save nil
                  typescript-fmt-tool 'prettier
-                 typescript-backend 'tide
+                 ;; typescript-backend 'tide
                  typescript-linter 'eslint
                  typescript-lsp-linter nil
                  typescript-indent-level 2)
@@ -264,20 +266,23 @@ This function should only modify configuration layer settings."
 
      ;; source-control
      (git :variables
-          git-enable-magit-svn-plugin t
-          git-magit-status-fullscreen t)
+          ;; git-enable-magit-svn-plugin t
+          ;; git-magit-status-fullscreen t
+          )
      ;; github
      (version-control :variables
-                      spacemacs--smerge-ts-full-hint-toggle t
-                      version-control-global-margin t
-                      version-control-diff-tool 'git-gutter+
-                      version-control-diff-side 'right)
+                      ;; spacemacs--smerge-ts-full-hint-toggle t
+                      ;; version-control-global-margin t
+                      ;; version-control-diff-tool 'git-gutter+
+                      ;; version-control-diff-side 'right
+                      )
 
      ;; tools
      ;; command-log
      (dap :variables
-          spacemacs--dap-supported-modes nil
+          ;; spacemacs--dap-supported-modes nil
           ;; dap-enable-mouse-support nil
+          ;; dap-enable-ui-controls t
           )
      (docker :variables
              docker-dockerfile-backend 'lsp)
@@ -286,8 +291,7 @@ This function should only modify configuration layer settings."
      (lsp :variables
           ;; lsp-remap-xref-keybindings t
           ;; lsp-navigation 'both
-          ;; lsp-prefer-flymake t
-          ;; lsp-ui-doc-enable t
+           ;; lsp-ui-doc-enable t
           ;; lsp-ui-doc-include-signature t
           ;; lsp-ui-sideline-enable nil
           ;; lsp-ui-sideline-show-symbol nil
