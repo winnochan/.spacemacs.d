@@ -247,7 +247,7 @@ This function should only modify configuration layer settings."
      (typescript :variables
                  ;; typescript-fmt-on-save nil
                  typescript-fmt-tool 'prettier
-                 ;; typescript-backend 'tide
+                 typescript-backend 'tide
                  typescript-linter 'eslint
                  typescript-lsp-linter nil
                  typescript-indent-level 2)
