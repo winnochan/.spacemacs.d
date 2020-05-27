@@ -73,12 +73,13 @@ This function should only modify configuration layer settings."
      ;; completion
      helm
      (auto-completion :variables
-                      ;; auto-completion-idle-delay 0.2
+                      auto-completion-idle-delay 0
                       ;; auto-completion-enable-snippets-in-popup nil
                       auto-completion-enable-sort-by-usage t
                       ;; auto-completion-enable-help-tooltip nil
                       ;; auto-completion-use-company-box nil
                       ;; auto-completion-private-snippets-directory "~/.spacemacs.d/snippets/"
+                      company-minimum-prefix-length 1
                       )
      ;; (templates :variables
      ;;            templates-private-directory (concat dotspacemacs-directory "templates")

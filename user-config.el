@@ -51,7 +51,7 @@
 ;; (when (require 'so-long nil :noerror)
 ;;   (so-long-enable))
 
-(setq company-minimum-prefix-length 2)
+;; (setq company-minimum-prefix-length 2)
 
 (spacemacs/toggle-indent-guide-globally-on)
 (setq indent-guide-delay 0.2)
