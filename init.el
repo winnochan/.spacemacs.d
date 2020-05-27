@@ -320,6 +320,8 @@ This function should only modify configuration layer settings."
 
    ;; A list of packages that will not be installed and loaded.
    dotspacemacs-excluded-packages '(
+                                    company-tern
+
                                     ;; exec-path-from-shell
                                     ;; zeal-at-point
                                     writeroom-mode
