@@ -2,15 +2,11 @@
 ;;       '(("http" . "127.0.0.1:1087")
 ;;         ("https" . "127.0.0.1:1087")))
 
-;; emacs-china elpa mirrors
-;; (setq configuration-layer-elpa-archives
-;;       '(
-;;         ("gnu-cn"       . "http://elpa.emacs-china.org/gnu/")
-;;         ("melpa-cn"     . "http://elpa.emacs-china.org/melpa/")
-;;         ("marmalade-cn" . "http://elpa.emacs-china.org/marmalade/")
-;;         ("org-cn"       . "http://elpa.emacs-china.org/org/")
-;;         )
-;;       )
+;; tsinghua elpa mirrors
+(setq configuration-layer-elpa-archives
+      '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+        ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+        ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
 
 ;; tramp-ssh
 (setq tramp-ssh-controlmaster-options
