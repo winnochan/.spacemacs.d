@@ -286,8 +286,6 @@ This function should only modify configuration layer settings."
           )
      (docker :variables
              docker-dockerfile-backend 'lsp)
-     fasd
-     fzf
      (lsp :variables
           ;; lsp-remap-xref-keybindings t
           ;; lsp-navigation 'both
@@ -371,7 +369,7 @@ This function should only modify configuration layer settings."
    ;; installs only the used packages but won't delete unused ones. `all'
    ;; installs *all* packages supported by Spacemacs and never uninstalls them.
    ;; (default is `used-only')
-   dotspacemacs-install-packages 'used-but-keep-unused))
+   dotspacemacs-install-packages 'used-only))
 
 (defun dotspacemacs/init ()
   "Initialization:
