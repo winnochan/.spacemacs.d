@@ -144,6 +144,7 @@ This function should only modify configuration layer settings."
      ;;        c-c++-adopt-subprojects t)
 
      ;; csharp
+     csv
 
      ;; (dart)
      (emacs-lisp :variables
