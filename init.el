@@ -147,8 +147,9 @@ This function should only modify configuration layer settings."
      csv
 
      (dart :variables
-           lsp-dart-sdk-dir "$DART_SDK_HOME"
-           lsp-enable-on-type-formatting t)
+           ;; lsp-dart-sdk-dir "~/.zsh/.cache/flutter/bin/cache/dart-sdk/"
+           ;; lsp-enable-on-type-formatting t
+           )
      (emacs-lisp :variables
                  emacs-lisp-hide-namespace-prefix nil)
      ;; (go :variables
