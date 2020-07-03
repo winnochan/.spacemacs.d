@@ -146,7 +146,9 @@ This function should only modify configuration layer settings."
      ;; csharp
      csv
 
-     ;; (dart)
+     (dart :variables
+           lsp-dart-sdk-dir "$DART_SDK_HOME"
+           lsp-enable-on-type-formatting t)
      (emacs-lisp :variables
                  emacs-lisp-hide-namespace-prefix nil)
      ;; (go :variables
