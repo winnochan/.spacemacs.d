@@ -52,6 +52,7 @@
 ;;   (so-long-enable))
 
 ;; (setq company-minimum-prefix-length 2)
+(setq company-show-numbers t)
 
 (spacemacs/toggle-indent-guide-globally-on)
 (setq indent-guide-delay 0.2)
