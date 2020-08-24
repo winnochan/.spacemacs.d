@@ -152,19 +152,20 @@ This function should only modify configuration layer settings."
            )
      (emacs-lisp :variables
                  emacs-lisp-hide-namespace-prefix nil)
-     ;; (go :variables
-     ;;     go-backend 'lsp
-     ;;     go-use-gocheck-for-testing nil
-     ;;     go-use-testify-for-testing nil
-     ;;     go-format-before-save t
-     ;;     go-tab-width 4
-     ;;     go-use-golangci-lint t
-     ;;     go-use-gometalinter t
-     ;;     go-test-buffer-name "*go test*"
-     ;;     go-use-test-args ""
-     ;;     go-test-verbose nil
-     ;;     go-run-args ""
-     ;;     godoc-at-point-function 'godoc-gogetdoc)
+     (go :variables
+         ;; go-backend 'lsp
+         ;; go-use-gocheck-for-testing t
+         ;; go-use-testify-for-testing t
+         go-format-before-save t
+         go-tab-width 4
+         go-use-golangci-lint t
+         ;; go-test-buffer-name "*go test*"
+         ;; go-use-test-args ""
+         ;; go-test-verbose nil
+         ;; go-run-args ""
+         ;; go-run-command "go run"
+         ;; go-test-command "go test"
+         )
      ;; (html :variables
      ;;       web-fmt-tool 'prettier
      ;;       css-enable-lsp t
