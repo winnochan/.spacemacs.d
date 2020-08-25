@@ -91,7 +91,7 @@ This function should only modify configuration layer settings."
                       better-defaults-move-to-end-of-code-first nil)
      (ibuffer :variables
               ibuffer-group-buffers-by 'projects)
-     helpful
+     ;; helpful
      ;; (org :variables
      ;;      org-directory "~/.spacemacs.d/org"
 
@@ -127,6 +127,14 @@ This function should only modify configuration layer settings."
      ;; filetree
      ;; treemacs
 
+     ;; frameworks
+     ;; (vue :variables
+     ;;      vue-backend 'lsp
+     ;;      web-mode-markup-indent-offset 2
+     ;;      web-mode-css-indent-offset 2
+     ;;      web-mode-code-indent-offset 2
+     ;;      web-mode-attr-indent-offset 2)
+
      ;; lang
      ;; bibtex
      ;; (c-c++ :variables
@@ -144,28 +152,28 @@ This function should only modify configuration layer settings."
      ;;        c-c++-adopt-subprojects t)
 
      ;; csharp
-     csv
+     ;; csv
 
-     (dart :variables
-           ;; lsp-dart-sdk-dir "~/.zsh/.cache/flutter/bin/cache/dart-sdk/"
-           ;; lsp-enable-on-type-formatting t
-           )
+     ;; (dart :variables
+     ;;       ;; lsp-dart-sdk-dir "~/.zsh/.cache/flutter/bin/cache/dart-sdk/"
+     ;;       ;; lsp-enable-on-type-formatting t
+     ;;       )
      (emacs-lisp :variables
                  emacs-lisp-hide-namespace-prefix nil)
-     (go :variables
-         ;; go-backend 'lsp
-         ;; go-use-gocheck-for-testing t
-         ;; go-use-testify-for-testing t
-         go-format-before-save t
-         go-tab-width 4
-         go-use-golangci-lint t
-         ;; go-test-buffer-name "*go test*"
-         ;; go-use-test-args ""
-         ;; go-test-verbose nil
-         ;; go-run-args ""
-         ;; go-run-command "go run"
-         ;; go-test-command "go test"
-         )
+     ;; (go :variables
+     ;;     ;; go-backend 'lsp
+     ;;     ;; go-use-gocheck-for-testing t
+     ;;     ;; go-use-testify-for-testing t
+     ;;     go-format-before-save t
+     ;;     go-tab-width 4
+     ;;     go-use-golangci-lint t
+     ;;     ;; go-test-buffer-name "*go test*"
+     ;;     ;; go-use-test-args ""
+     ;;     ;; go-test-verbose nil
+     ;;     ;; go-run-args ""
+     ;;     ;; go-run-command "go run"
+     ;;     ;; go-test-command "go test"
+     ;;     )
      ;; (html :variables
      ;;       web-fmt-tool 'prettier
      ;;       css-enable-lsp t
@@ -182,12 +190,12 @@ This function should only modify configuration layer settings."
      ;;       web-mode-enable-heredoc-fontification t
      ;;       web-mode-enable-current-element-highlight t
      ;;       web-mode-enable-current-column-highlight t)
-     ipython-notebook
+     ;; ipython-notebook
      ;; (java :variables
      ;;       java-backend 'lsp
      ;;       java--ensime-modes '(java-mode))
      (javascript :variables
-                 javascript-backend 'lsp
+                 javascript-backend 'tide
                  javascript-fmt-tool 'prettier
                  javascript-import-tool 'import-js
                  javascript-fmt-on-save nil
@@ -195,7 +203,7 @@ This function should only modify configuration layer settings."
                  ;; javascript-lsp-linter nil
                  js2-basic-offset 2
                  js-indent-level 2
-                 node-add-modules-path t)
+                 js2-include-node-externs t)
      (json :variables
            json-fmt-tool 'prettier
            json-fmt-on-save nil
@@ -208,31 +216,31 @@ This function should only modify configuration layer settings."
      ;;           plantuml-jar-path "~/.spacemacs.d/3rd/plantuml.jar"
      ;;           org-plantuml-jar-path "~/.spacemacs.d/3rd/plantuml.jar")
      ;; protobuf
-     (python :variables
-             ;; python-backend 'anaconda
-             ;; python-lsp-server 'pyls
-             ;; python-lsp-git-root nil
-             ;; python-pipenv-activate nil
-             python-formatter 'yapf
-             ;; python-format-on-save t
-             python-test-runner '(pytest nose)
-             ;; python-save-before-test t
-             python-fill-column 99
-             ;; python-tab-width 4
-             ;; python-spacemacs-indent-guess t
-             ;; python-auto-set-local-pyenv-version 'on-project-switch
-             ;; python-auto-set-local-pyvenv-virtualenv 'on-project-switch
-             ;; python-sort-imports-on-save t
-             ;; spacemacs--python-pyenv-modes nil
-             ;; spacemacs--python-pyvenv-modes nil
-             ;; spacemacs--python-pipenv-modes nil
-             ;; python-shell--interpreter nil
-             ;; python-shell--interpreter-args nil
-             )
-     (rust :variables
-           rust-backend 'lsp
-           ;; lsp-rust-server 'rust-analyzer
-           rust-format-on-save t)
+     ;; (python :variables
+     ;;         ;; python-backend 'anaconda
+     ;;         ;; python-lsp-server 'pyls
+     ;;         ;; python-lsp-git-root nil
+     ;;         ;; python-pipenv-activate nil
+     ;;         python-formatter 'yapf
+     ;;         ;; python-format-on-save t
+     ;;         python-test-runner '(pytest nose)
+     ;;         ;; python-save-before-test t
+     ;;         python-fill-column 99
+     ;;         ;; python-tab-width 4
+     ;;         ;; python-spacemacs-indent-guess t
+     ;;         ;; python-auto-set-local-pyenv-version 'on-project-switch
+     ;;         ;; python-auto-set-local-pyvenv-virtualenv 'on-project-switch
+     ;;         ;; python-sort-imports-on-save t
+     ;;         ;; spacemacs--python-pyenv-modes nil
+     ;;         ;; spacemacs--python-pyvenv-modes nil
+     ;;         ;; spacemacs--python-pipenv-modes nil
+     ;;         ;; python-shell--interpreter nil
+     ;;         ;; python-shell--interpreter-args nil
+     ;;         )
+     ;; (rust :variables
+     ;;       rust-backend 'lsp
+     ;;       ;; lsp-rust-server 'rust-analyzer
+     ;;       rust-format-on-save t)
      ;; (scala :variables
      ;;        scala-enable-eldoc t
      ;;        scala-auto-insert-asterisk-in-comments t
@@ -256,14 +264,14 @@ This function should only modify configuration layer settings."
                  typescript-fmt-tool 'prettier
                  typescript-backend 'tide
                  typescript-linter 'eslint
-                 typescript-lsp-linter nil
+                 ;; typescript-lsp-linter nil
                  typescript-indent-level 2)
      (yaml :variables
            yaml-enable-lsp t)
 
      ;; misc
-     (multiple-cursors :variables
-                       multiple-cursors-backend 'mc)
+     ;; (multiple-cursors :variables
+     ;;                   multiple-cursors-backend 'mc)
 
      ;; readers
      ;; (dash :variables
@@ -272,10 +280,10 @@ This function should only modify configuration layer settings."
      ;; speed-reading
 
      ;; source-control
-     (git :variables
-          ;; git-enable-magit-svn-plugin t
-          ;; git-magit-status-fullscreen t
-          )
+     ;; (git :variables
+     ;;      ;; git-enable-magit-svn-plugin t
+     ;;      ;; git-magit-status-fullscreen t
+     ;;      )
      ;; github
      (version-control :variables
                       ;; spacemacs--smerge-ts-full-hint-toggle t
@@ -286,23 +294,28 @@ This function should only modify configuration layer settings."
 
      ;; tools
      ;; command-log
-     (dap :variables
-          ;; spacemacs--dap-supported-modes nil
-          dap-enable-mouse-support nil
-          dap-enable-ui-controls nil
-          )
-     (docker :variables
-             docker-dockerfile-backend 'lsp)
-     (lsp :variables
-          ;; lsp-remap-xref-keybindings t
-          ;; lsp-navigation 'both
-           ;; lsp-ui-doc-enable t
-          ;; lsp-ui-doc-include-signature t
-          ;; lsp-ui-sideline-enable nil
-          ;; lsp-ui-sideline-show-symbol nil
-          ;; lsp-ui-sideline-ignore-duplicate nil
-          ;; lsp-layer--active-mode-list nil
-          )
+     ;; conda
+     ;; (dap :variables
+     ;;      ;; spacemacs--dap-supported-modes nil
+     ;;      dap-enable-mouse-support nil
+     ;;      dap-enable-ui-controls nil
+     ;;      )
+     ;; (docker :variables
+     ;;         docker-dockerfile-backend 'lsp)
+     fasd
+     ;; (lsp :variables
+     ;;      ;; lsp-remap-xref-keybindings t
+     ;;      ;; lsp-navigation 'both
+     ;;       ;; lsp-ui-doc-enable t
+     ;;      ;; lsp-ui-doc-include-signature t
+     ;;      ;; lsp-ui-sideline-enable nil
+     ;;      ;; lsp-ui-sideline-show-symbol nil
+     ;;      ;; lsp-ui-sideline-ignore-duplicate nil
+     ;;      ;; lsp-layer--active-mode-list nil
+     ;;      )
+     (node :variables
+           node-add-modules-path t)
+     prettier
 
      ;; custom
      commenter
