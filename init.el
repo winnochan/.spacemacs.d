@@ -319,6 +319,7 @@ This function should only modify configuration layer settings."
 
      ;; custom
      commenter
+     fzf
      )
 
    ;; List of additional packages that will be installed without being
