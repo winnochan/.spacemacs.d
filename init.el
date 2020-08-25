@@ -231,6 +231,7 @@ This function should only modify configuration layer settings."
              )
      (rust :variables
            rust-backend 'lsp
+           ;; lsp-rust-server 'rust-analyzer
            rust-format-on-save t)
      ;; (scala :variables
      ;;        scala-enable-eldoc t
@@ -287,8 +288,8 @@ This function should only modify configuration layer settings."
      ;; command-log
      (dap :variables
           ;; spacemacs--dap-supported-modes nil
-          ;; dap-enable-mouse-support nil
-          ;; dap-enable-ui-controls t
+          dap-enable-mouse-support nil
+          dap-enable-ui-controls nil
           )
      (docker :variables
              docker-dockerfile-backend 'lsp)
