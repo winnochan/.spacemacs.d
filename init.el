@@ -302,7 +302,7 @@ This function should only modify configuration layer settings."
      ;;      )
      ;; (docker :variables
      ;;         docker-dockerfile-backend 'lsp)
-     fasd
+     ;; fasd
      ;; (lsp :variables
      ;;      ;; lsp-remap-xref-keybindings t
      ;;      ;; lsp-navigation 'both
