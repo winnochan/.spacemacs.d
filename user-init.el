@@ -14,6 +14,8 @@
         ("org-cn"   . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/org/")
         ("gnu-cn"   . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/gnu/")))
 
+(setq quelpa-melpa-repo-url "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/melpa/")
+
 ;; tramp-ssh
 (setq tramp-ssh-controlmaster-options
       "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
