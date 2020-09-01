@@ -209,8 +209,8 @@ This function should only modify configuration layer settings."
            json-fmt-on-save nil
            js-indent-level 2)
      ;; (lua)
-     ;; (markdown :variables
-     ;;           markdown-live-preview-engine 'eww)
+     (markdown :variables
+               markdown-live-preview-engine 'eww)
      ;; (plantuml :variables
      ;;           plantuml-default-exec-mode 'jar
      ;;           plantuml-jar-path "~/.spacemacs.d/3rd/plantuml.jar"
@@ -252,6 +252,9 @@ This function should only modify configuration layer settings."
 
      (shell-scripts :variables
                     ;; shell-scripts-backend 'lsp
+                    sh-basic-offset 2
+                    sh-indentation 2
+                    smie-indent-basic 2
                     )
      ;; (sql :variables
      ;;      sql-capitalize-keywords t
