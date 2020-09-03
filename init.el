@@ -301,24 +301,24 @@ This function should only modify configuration layer settings."
      ;; tools
      ;; command-log
      ;; conda
-     ;; (dap :variables
-     ;;      ;; spacemacs--dap-supported-modes nil
-     ;;      dap-enable-mouse-support nil
-     ;;      dap-enable-ui-controls nil
-     ;;      )
+     (dap :variables
+          ;; spacemacs--dap-supported-modes nil
+          dap-enable-mouse-support nil
+          dap-enable-ui-controls nil
+          )
      ;; (docker :variables
      ;;         docker-dockerfile-backend 'lsp)
      ;; fasd
-     ;; (lsp :variables
-     ;;      ;; lsp-remap-xref-keybindings t
-     ;;      ;; lsp-navigation 'both
-     ;;       ;; lsp-ui-doc-enable t
-     ;;      ;; lsp-ui-doc-include-signature t
-     ;;      ;; lsp-ui-sideline-enable nil
-     ;;      ;; lsp-ui-sideline-show-symbol nil
-     ;;      ;; lsp-ui-sideline-ignore-duplicate nil
-     ;;      ;; lsp-layer--active-mode-list nil
-     ;;      )
+     (lsp :variables
+          ;; lsp-remap-xref-keybindings t
+          ;; lsp-navigation 'both
+           ;; lsp-ui-doc-enable t
+          ;; lsp-ui-doc-include-signature t
+          ;; lsp-ui-sideline-enable nil
+          ;; lsp-ui-sideline-show-symbol nil
+          ;; lsp-ui-sideline-ignore-duplicate nil
+          ;; lsp-layer--active-mode-list nil
+          )
      (node :variables
            node-add-modules-path t)
      prettier
