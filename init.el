@@ -137,19 +137,22 @@ This function should only modify configuration layer settings."
 
      ;; lang
      ;; bibtex
-     ;; (c-c++ :variables
-     ;;        c-c++-backend 'lsp-ccls
-     ;;        c-c++-lsp-enable-semantic-highlight 'rainbow
+     (c-c++ :variables
+            c-c++-backend 'lsp-ccls
+            c-c++-lsp-enable-semantic-highlight 'rainbow
+            ;; c-c++-lsp-semantic-highlight-method 'font-lock
 
-     ;;        c-c++-enable-rtags-completion nil
-     ;;        c-c++-enable-clang-format-on-save nil
+            ;; c-c++-enable-rtags-completion nil
+            c-c++-enable-clang-format-on-save t
+            c++-enable-organize-includes-on-save t
 
-     ;;        c++-enable-organize-includes-on-save nil
-     ;;        c-c++-enable-auto-newline nil
-     ;;        c-c++-enable-google-style nil
-     ;;        c-c++-enable-google-newline nil
+            ;; c-c++-enable-auto-newline nil
+            ;; c-c++-enable-google-style nil
+            ;; c-c++-enable-google-newline nil
 
-     ;;        c-c++-adopt-subprojects t)
+            ;; c-c++-default-mode-for-headers (when (not (functionp 'c-or-c++-mode)) 'c-mode)
+
+            c-c++-adopt-subprojects t)
 
      ;; csharp
      ;; csv
